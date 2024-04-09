@@ -259,6 +259,7 @@ The `generate_file` block requires one label, **do not** support [merging](#conf
 |------------------|----------------|-------------|
 | [lets](#lets-block-schema) | block* | lets variables |
 | condition        | bool           | The condition for generation |
+| inherit          | bool           | If the block must be inherited in child stacks |
 | content          | string         | The content to be generated |
 
 
@@ -272,6 +273,7 @@ The `generate_hcl` block requires one label, **do not** support [merging](#confi
 |------------------|----------------|-------------|
 | [lets](#lets-block-schema) | block* | lets variables |
 | condition        | bool           | The condition for generation |
+| inherit          | bool           | If the block must be inherited in child stacks |
 | [content](#generate_hclcontent-block-schema) | block | The content to be generated |
 
 For detailed documentation about this block, see the [HCL Code Generation](../code-generation/generate-hcl.md) docs.

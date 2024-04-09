@@ -1,5 +1,5 @@
 ---
-title: How to Install
+title: How to Install Terramate CLI
 description: Learn how to install Terramate with Go or package managers such as brew. You can also run Terramate with Docker by building on top of our pre-configured image.
 ---
 

@@ -62,35 +62,35 @@ export default defineConfig({
         'meta',
         {
           name: 'og:type',
-          content: 'website'
+          content: 'website',
         },
       ],
       [
         'meta',
         {
           property: 'og:image',
-          content: `https://terramate.io${siteData.base}terramate-og_linkedin.png`
+          content: `https://terramate.io${siteData.base}terramate-og_linkedin.png`,
         },
       ],
       [
         'meta',
         {
           property: 'twitter:image',
-          content: `https://terramate.io${siteData.base}terramate-og_twitter.png`
+          content: `https://terramate.io${siteData.base}terramate-og_twitter.png`,
         },
       ],
       [
         'meta',
         {
           name: 'twitter:card',
-          content: 'summary_large_image'
+          content: 'summary_large_image',
         },
       ],
       [
         'meta',
         {
           name: 'twitter:creator',
-          content: '@terramateio'
+          content: '@terramateio',
         },
       ],
       // [
@@ -126,7 +126,6 @@ export default defineConfig({
       alt: 'Terramate',
     },
     outline: [2, 3],
-
 
     // https://vitepress.dev/reference/default-theme-search#local-search
     search: {
@@ -164,7 +163,7 @@ export default defineConfig({
         {
           text: '🚀 Getting Started',
           items: [
-            { text: 'Installation', link: '/cli/installation' },
+            { text: 'Install the CLI', link: '/cli/installation' },
             { text: 'Import Terraform', link: '/cli/on-boarding/terraform' },
             { text: 'Import Terragrunt', link: '/cli/on-boarding/terragrunt' },
             { text: 'Import OpenTofu', link: '/cli/on-boarding/opentofu' },
@@ -245,7 +244,7 @@ export default defineConfig({
                       text: 'Preview Workflow',
                       link: '/cli/automation/github-actions/preview-workflow',
                     },
-                  ]
+                  ],
                 },
                 {
                   text: 'GitLab CI 🚧',
@@ -852,11 +851,11 @@ export default defineConfig({
                 // },
                 {
                   text: 'Synchronize in Automation',
-                  link: '/cloud/previews/synchronization-in-automation'
+                  link: '/cloud/previews/synchronization-in-automation',
                 },
                 {
                   text: 'Synchronize via Scripts',
-                  link: '/cloud/previews/synchronization-with-scripts'
+                  link: '/cloud/previews/synchronization-with-scripts',
                 },
               ],
             },
@@ -871,19 +870,19 @@ export default defineConfig({
                 // },
                 {
                   text: 'Get Deployment Notification',
-                  link: '/cloud/deployments/notifications'
+                  link: '/cloud/deployments/notifications',
                 },
                 {
                   text: 'Synchronize in Automation',
-                  link: '/cloud/deployments/synchronization-in-automation'
+                  link: '/cloud/deployments/synchronization-in-automation',
                 },
                 {
                   text: 'Synchronize from CLI',
-                  link: '/cloud/deployments/synchronization-from-cli'
+                  link: '/cloud/deployments/synchronization-from-cli',
                 },
                 {
                   text: 'Synchronize via Scripts',
-                  link: '/cloud/deployments/synchronization-with-scripts'
+                  link: '/cloud/deployments/synchronization-with-scripts',
                 },
               ],
             },
@@ -894,19 +893,19 @@ export default defineConfig({
               items: [
                 {
                   text: 'Get Drift Notifications',
-                  link: '/cloud/drifts/notifications'
+                  link: '/cloud/drifts/notifications',
                 },
                 {
                   text: 'Synchronize in Automation',
-                  link: '/cloud/drifts/synchronization-in-automation'
+                  link: '/cloud/drifts/synchronization-in-automation',
                 },
                 {
                   text: 'Synchronize from CLI',
-                  link: '/cloud/drifts/synchronization-from-cli'
+                  link: '/cloud/drifts/synchronization-from-cli',
                 },
                 {
                   text: 'Synchronize via Scripts',
-                  link: '/cloud/drifts/synchronization-with-scripts'
+                  link: '/cloud/drifts/synchronization-with-scripts',
                 },
                 // {
                 //   text: 'View Drifted Stacks',
@@ -1054,7 +1053,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { text: 'Quickstart from Scratch', link: '/cli/getting-started/' },
-          ]
+          ],
         },
         {
           text: '🌍 Community',

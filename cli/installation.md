@@ -1,25 +1,68 @@
 ---
 title: How to Install Terramate CLI
-description: Learn how to install Terramate with Go or package managers such as brew. You can also run Terramate with Docker by building on top of our pre-configured image.
+description: Learn how to install Terramate CLI and how to connect the CLI to Terramate Cloud.
+outline: [2, 4]
 ---
 
-# Installation
+# How to install Terramate
 
-To get started with Terramate, the first step you need to take is to install [Terramate CLI](https://github.com/terramate-io/terramate),
-which distributes two binaries:
+This page explains how to install and configure Terramate CLI.
+
+## Install the CLI
+
+The first step you need to take is to install [Terramate CLI](https://github.com/terramate-io/terramate):
+
+```sh
+brew install terramate
+```
+
+This will install two binaries:
 
 - `terramate`: The CLI tool used to create, manage and orchestrate your IaC stacks and workflows.
 - `terramate-ls`: The Terramate Language Server to integrate Terramate into your IDE.
 
-## Using a package manager
+For other installation methods, please see [alternative installation methods](#alternative-installation-methods).
 
-### Brew
+### IDE Plugin
 
-You can install Terramate on macOS using [Homebrew](https://formulae.brew.sh/formula/terramate):
+For the best developer experience, we recommend you install an IDE plugin of your choice that integrates the Terramate
+language server and syntax highlighting into your IDE:
 
-`brew install terramate`
+- Install the [VSCode extension](https://marketplace.visualstudio.com/items?itemName=Mineiros.terramate#review-details)
+- Install the [VIM plugin](https://terramate.io/rethinking-iac/announcing-terramate-vim-plugin/)
 
-### Asdf
+### Auto completion
+
+Terramate supports the autocompletion of commands for _bash_, _zsh_ and _fish_. To
+install the completion just run the command below and open a new shell session:
+
+```sh
+terramate install-completions
+```
+
+## Authenticate with Terramate Cloud
+
+To authenticate the CLI with Terramate Cloud, you can run the [`cloud login`](./cmdline/cloud/cloud-info.md) command.
+If it's the first time you try to sign in to Terramate Cloud, you will be guided through an onboarding process to create
+a new organization in Terramate Cloud.
+
+```sh
+terramate cloud login
+```
+
+Once the CLI is authenticated with Terramate Cloud, you can use it to interact with the cloud. For example, the following
+command prints a list of all drifted stacks.
+
+```sh
+terramate list --cloud-status=drifted
+```
+
+For more details about how to initially sync your data to Terramate Cloud, please see
+[getting started with Terramate Cloud](../cloud/on-boarding/index.md#connect-terramate-cli-to-terramate-cloud)
+
+## Alternative installation methods
+
+### Using Asdf package manager
 
 You can install Terramate using [asdf](https://asdf-vm.com/):
 
@@ -28,7 +71,7 @@ asdf plugin add terramate
 asdf install terramate latest
 ```
 
-## Using release binaries
+### Using release binaries
 
 To install Terramate using a release binary, follow these steps:
 
@@ -41,7 +84,7 @@ To install Terramate using a release binary, follow these steps:
 4. Ensure that the `terramate` and `terramate-ls` binaries are available to your `PATH`.
    The process for this will vary based on your operating system.
 
-## Using Go
+### Using Go
 
 For installing Terramate with Go, please run:
 
@@ -59,7 +102,7 @@ go install github.com/terramate-io/terramate/cmd/...@latest
 The commands above install both `terramate` and `terramate-ls` into
 your Go binary folder (usually `$HOME/go/bin`).
 
-## Using docker
+### Using docker
 
 If you prefer not to install Terramate directly on your host system,
 you can use either [Docker](https://www.docker.com/) or [Podman](https://podman.io/) to run Terramate within a container.
@@ -86,13 +129,4 @@ Depending on your setup, you should set the correct permissions when running the
 docker run -it -u $(id -u ${USER}):$(id -g ${USER}) \
   -v /some/repo:/some/repo \
   ghcr.io/terramate-io/terramate:latest -C /some/repo --changed run -- cmd
-```
-
-## Auto completion
-
-Terramate supports the autocompletion of commands for _bash_, _zsh_ and _fish_. To
-install the completion just run the command below and open a new shell session:
-
-```sh
-terramate install-completions
 ```

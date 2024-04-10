@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.Bl20_RFa.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"cloud/index.md","filePath":"cloud/index.md"}'),o={name:"cloud/index.md"};function n(c,r,d,s,i,p){return a(),t("div")}const m=e(o,[["render",n]]);export{l as __pageData,m as default};

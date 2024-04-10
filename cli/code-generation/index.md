@@ -46,7 +46,7 @@ Code generation can be defined and used anywhere in a [Terramate Project](../pro
 
 Any stack that is part of the filesystem tree reachable from a code generation strategy configuration will be a selected target to generate code in.
 This means a configuration to generate code can be defined at the root level, reach all stacks, and trigger code generation in all
-stacks if not limited by [conditional code generation](#conditional-code-generation) or
+stacks if not limited by [conditional code generation](#conditional-code-generation), [inherit attribute](#inheritable-generation-blocks) or
 [stack filters](./generate-hcl.md#filter-based-code-generation).
 
 ### Failure modes
@@ -145,6 +145,14 @@ generate_hcl "_generate_main.tf" {
 ## Conditional code generation
 
 Terramate offers different ways to generate code conditionally.
+
+## Inheritable generation blocks
+
+The `generate_file` and `generate_hcl` blocks support an `inherit` attribute which determines if the block will be inherited into child stacks.
+By default, it's `true`, which means the code will be generated in all child stacks.
+When using `inherit = false`, then the code is only generated in the stack where the block is declared. 
+If the block with `inherit = false`  is declared outside a stack directory then it's 
+ignored and a warning is given to stderr.
 
 ### Stack filters - path-based code generation
 

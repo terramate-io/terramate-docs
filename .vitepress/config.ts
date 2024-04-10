@@ -163,10 +163,10 @@ export default defineConfig({
         {
           text: '🚀 Getting Started',
           items: [
-            { text: 'Install the CLI', link: '/cli/installation' },
-            { text: 'Import Terraform', link: '/cli/on-boarding/terraform' },
-            { text: 'Import Terragrunt', link: '/cli/on-boarding/terragrunt' },
-            { text: 'Import OpenTofu', link: '/cli/on-boarding/opentofu' },
+            { text: 'Install Terramate CLI', link: '/cli/installation' },
+            { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
+            { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
+            { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
             { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },
             // { text: 'AWS Terraform Quickstart', link: '/cli/getting-started/' },
           ],

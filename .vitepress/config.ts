@@ -224,7 +224,7 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Automation Blueprints',
+              text: 'CI/CD Setup',
               link: '/cli/automation/',
               collapsed: true,
               items: [

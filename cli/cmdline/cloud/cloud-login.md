@@ -9,4 +9,12 @@ The `terramate cloud login` command authorizes Terramate CLI to access Terramate
 
 ## Usage
 
+Authenticates using Google (default provider):
+
 `terramate cloud login`
+
+The command above does the same as `terramate cloud login --google`.
+
+Authenticates using GitHub:
+
+`terramate cloud login --github`

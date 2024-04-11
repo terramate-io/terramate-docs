@@ -26,6 +26,30 @@ To jump directly into the Blueprints follow the links below:
 
 Please read the following sections to understand the details all those workflows have in common.
 
+## Terraform Setup Action
+
+::: warning
+
+Ensure that you are not using the `terraform` wrapper when using the Terraform Setup GitHub Action provided by HashiCorp!
+
+```
+- uses: hashicorp/setup-terraform@v3
+  with:
+    terraform_wrapper: false
+
+```
+
+:::
+
+When using the [`hashicorp/setup-terraform`](https://github.com/hashicorp/setup-terraform) GitHub Action to install terraform, you need to disable the included wrapper.
+
+The `terraform` wrapper script takes care of setting up outputs for follow-up GitHub Actions steps.
+The `terramate-io/terramate-action`(https://github.com/terramate-io/terramate-action) also supports a wrapper that takes care of sharing the outputs and exit code for follow-up actions and is the recommended way of using it.
+
+As of version 3 - the latest at the point of writing this document - the wrapper got fixed to use the new GitHub APIs but it has a serious bug that hides the detailed exit code that is required to synchronize the drift status to Terramate Cloud or other tools.
+
+In addition, the outputs of the `terraform` wrapper will conflict for each execution of terraform when executing `terraform` in multiple stacks via `terramate run` or `terramate script run`.
+
 ## Workflow Permissions
 
 To be able to use password-less authentication to cloud providers as well as Terramate Cloud specific permissions are needed on the GitHub Token that is used to run the workflow.

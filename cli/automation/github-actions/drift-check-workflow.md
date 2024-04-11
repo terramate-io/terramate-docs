@@ -66,6 +66,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.4
+          terraform_wrapper: false
 
       ## Configure cloud credentials
 
@@ -126,6 +127,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.4
+          terraform_wrapper: false
 
       ## Configure cloud credentials
 
@@ -149,4 +151,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
+
 :::

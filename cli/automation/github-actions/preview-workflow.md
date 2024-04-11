@@ -82,6 +82,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.4
+          terraform_wrapper: false
 
       ### Linting
 
@@ -230,6 +231,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.4
+          terraform_wrapper: false
 
       ### Linting
 
@@ -379,6 +381,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.4
+          terraform_wrapper: false
 
       ### Linting
 
@@ -523,6 +526,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.4
+          terraform_wrapper: false
 
       ### Linting
 

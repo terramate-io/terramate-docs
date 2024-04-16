@@ -5,11 +5,6 @@ description: Import your existing Terragrunt Setup to Terramate
 
 # Start with existing Terragrunt Projects
 
-::: warning
-This is an experimental command and is likely subject to change in the future.
-It needs to be enabled in the experiments config by adding `terragrunt` to `terramate.config.experiments` list (see below) to make use of advanced features like Change Detection for Terragrunt.
-:::
-
 ## Import Existing Terragrunt Stacks
 
 To create Terramate Stacks from existing Terragrunt Modules run the following command.
@@ -69,16 +64,4 @@ terramate run --parallel 5 -- terragrunt plan -out plan.tfplan
 
 ```bash
 terramate run --changed -- terragrunt apply -out plan.tfplan -auto-approve
-```
-
-## Enable the Experiment
-
-To enable the experiment add the following to any top-level terramate configuration like `terramate.tm.hcl`:
-
-```hcl
-terramate {
-  config {
-    experiments = ["terragrunt"]
-  }
-}
 ```

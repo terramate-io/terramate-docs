@@ -89,4 +89,4 @@ terramate {
 ```
 
 Terramate CLI is now aware of Terramate Cloud and can be used to synchronize data. For example, to retrieve a list of
-all stacks that are drifted in Terramate Cloud you can run `terramate list --cloud-status=drifted`.
+all stacks that are drifted in Terramate Cloud you can run `terramate list --status=drifted`.

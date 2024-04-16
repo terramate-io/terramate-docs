@@ -20,8 +20,8 @@ To gather metadata from GitHub about the pull request associated with the deploy
 
 The following options are available in Terramate Scripts and mirror the CLI options with the name:
 
-- Set `cloud_sync_deployment = true` to let Terramate CLI know about the command that is doing the actual deployment.
-- Set `cloud_sync_terraform_plan_file` to the name of the terraform plan to synchronize the deployment details.
+- Set `sync_deployment = true` to let Terramate CLI know about the command that is doing the actual deployment.
+- Set `terraform_plan_file` to the name of the terraform plan to synchronize the deployment details.
 - Set `terragrunt = true` to use terragrunt for the plan file generation.
 
 ## Terramate Script Config
@@ -41,8 +41,8 @@ script "terraform" "deploy" {
       ["terraform", "validate"],
       ["terraform", "plan", "-out", "plan.tfplan", "-lock=false"],
       ["terraform", "apply", "-input=false", "-auto-approve", "-lock-timeout=5m", "plan.tfplan", {
-        cloud_sync_deployment          = true
-        cloud_sync_terraform_plan_file = "plan.tfplan"
+        sync_deployment          = true
+        terraform_plan_file = "plan.tfplan"
       }],
     ]
   }

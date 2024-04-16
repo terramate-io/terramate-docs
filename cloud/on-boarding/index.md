@@ -72,8 +72,8 @@ In addition, you will have visibility of the stacks that have drifts detected an
 
 ```bash
 terramate run \
-  --cloud-sync-drift-status \
-  --cloud-sync-terraform-plan-file=drift.tfplan \
+  --sync-drift-status \
+  --terraform-plan-file=drift.tfplan \
   --continue-on-error \
   -- \
   terraform plan -detailed-exitcode -out drift.tfplan
@@ -83,8 +83,8 @@ terramate run \
 
 ```bash
 terramate run \
-  --cloud-sync-drift-status \
-  --cloud-sync-terraform-plan-file=drift.tfplan \
+  --sync-drift-status \
+  --terraform-plan-file=drift.tfplan \
   --continue-on-error \
   --terragrunt \
   -- \

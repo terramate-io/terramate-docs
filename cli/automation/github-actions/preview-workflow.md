@@ -120,7 +120,7 @@ jobs:
       - name: Plan Terraform changes in changed stacks
         if: steps.list.outputs.stdout
         run: |
-          terramate run --parallel 5 --changed --cloud-sync-preview --cloud-sync-terraform-plan-file=out.tfplan --debug-preview-url preview_url.txt --continue-on-error -- terraform plan -out out.tfplan -detailed-exitcode -lock=false
+          terramate run --parallel 5 --changed --sync-preview --terraform-plan-file=out.tfplan --debug-preview-url preview_url.txt --continue-on-error -- terraform plan -out out.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -270,7 +270,7 @@ jobs:
       - name: Plan Terraform changes in changed stacks
         if: steps.list.outputs.stdout
         run: |
-          terramate run --parallel 5 --changed --cloud-sync-preview --cloud-sync-terraform-plan-file=out.tfplan --debug-preview-url preview_url.txt --continue-on-error -- terraform plan -out out.tfplan -detailed-exitcode -lock=false
+          terramate run --parallel 5 --changed --sync-preview --terraform-plan-file=out.tfplan --debug-preview-url preview_url.txt --continue-on-error -- terraform plan -out out.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
 

@@ -203,7 +203,7 @@ terramate {
 }
 ```
 Setting a cloud organization name is required when
-* syncing with Terramate Cloud, i.e. by using `terramate run` with the `--cloud-sync-drift-status` or `--cloud-sync-deployment` options, and
+* syncing with Terramate Cloud, i.e. by using `terramate run` with the `--sync-drift-status` or `--sync-deployment` options, and
 * the user is a member of more than one cloud organization.
 
 The specified name will be used to select which of the user's organizations to use in the scope of the project.

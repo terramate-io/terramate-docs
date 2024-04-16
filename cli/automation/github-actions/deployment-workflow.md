@@ -84,7 +84,7 @@ jobs:
 
       - name: Apply planned changes on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed --cloud-sync-deployment --cloud-sync-terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+        run: terramate run --changed --sync-deployment --terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -92,7 +92,7 @@ jobs:
 
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
-        run: terramate run --changed --cloud-sync-drift-status --cloud-sync-terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
+        run: terramate run --changed --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
@@ -162,7 +162,7 @@ jobs:
 
       - name: Apply planned changes on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed --cloud-sync-deployment --cloud-sync-terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+        run: terramate run --changed --sync-deployment --terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -170,7 +170,7 @@ jobs:
 
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
-        run: terramate run --changed --cloud-sync-drift-status --cloud-sync-terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
+        run: terramate run --changed --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```

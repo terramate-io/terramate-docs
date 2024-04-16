@@ -20,8 +20,8 @@ To gather metadata from GitHub about the pull request associated with the previe
 
 The following options are available in Terramate Scripts and mirror the CLI options with the name:
 
-- Set `cloud_sync_preview = true` to let Terramate CLI know about the command that is doing the actual preview and return a detailed exit status to define a successful run that has changed or has no changes detected.
-- Set `cloud_sync_terraform_plan_file` to the name of the terraform plan to synchronize the deployment details.
+- Set `sync_preview = true` to let Terramate CLI know about the command that is doing the actual preview and return a detailed exit status to define a successful run that has changed or has no changes detected.
+- Set `terraform_plan_file` to the name of the terraform plan to synchronize the deployment details.
 - Set `terragrunt = true` to use terragrunt for the plan file generation.
 
 ## Terramate Script Config
@@ -40,8 +40,8 @@ script "terraform" "preview" {
       ["terraform", "init", "-lock-timeout=5m"],
       ["terraform", "validate"],
       ["terraform", "plan", "-out", "preview.tfplan", "-detailed-exitcode", "-lock=false", {
-        cloud_sync_preview             = true
-        cloud_sync_terraform_plan_file = "preview.tfplan"
+        sync_preview             = true
+        terraform_plan_file = "preview.tfplan"
       }],
     ]
   }

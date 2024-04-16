@@ -25,15 +25,15 @@ To gather metadata from GitHub about the pull request associated with the previe
 The [run](../../cli/cmdline/run.md) command in Terramate CLI offers some command line options to synchronize deployment
 information to Terramate Cloud.
 
-- `--cloud-sync-deployment` Synchronizes the deployment status and logs to Terramate Cloud
-- `--cloud-sync-terraform-plan FILE` A Terraform integration that allows synchronization of details about the changed, added, or deleted Terraform Resources that were planned to be applied in the deployment
+- `--sync-deployment` Synchronizes the deployment status and logs to Terramate Cloud
+- `--terraform-plan FILE` A Terraform integration that allows synchronization of details about the changed, added, or deleted Terraform Resources that were planned to be applied in the deployment
 
 The full command line to run an auto-approved apply based on an existing plan file in changed stacks only looks like the following:
 
 ```bash
 terramate run \
-  --cloud-sync-deployment \
-  --cloud-sync-terraform-plan out.tfplan \
+  --sync-deployment \
+  --terraform-plan out.tfplan \
   --changed \
   terraform apply -auto-approve out.tfplan
 ```

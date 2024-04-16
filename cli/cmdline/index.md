@@ -90,7 +90,7 @@ The following command runs a `terraform deploy` Terramate Script (to be defined 
 You can add this to your CI/CD automation to auto reconcile drifts when they happen.
 
 ```bash
-terramate script run --cloud-status drifted --tags auto-reconcile-drift terraform deploy
+terramate script run --status drifted --tags auto-reconcile-drift terraform deploy
 ```
 
 ## Available global options

@@ -8,7 +8,7 @@ description: Terramate is an Infrastructure as Code Management Platform that emp
 Terramate enables teams to **build**, **deploy**, **manage** and **observe** cloud infrastructure with Infrastructure as
 Code (IaC) tools such as Terraform, OpenTofu, Terragrunt, Kubernetes and others.
 
-Infrastructure as Code is hard and complex - we get it! 
+Infrastructure as Code is hard and complex - we get it!
 
 Terramate helps you to overcome this by providing a ***next-generation*** Infrastructure as Code Management Platform that
 runs natively in your existing CI/CD system.
@@ -74,7 +74,7 @@ and **scale** all your infrastructure code, tools and workflows.
 - **Stacks:** Are Infrastructure as Code tooling agnostic and isolated units used to group, deploy and manage
 infrastructure resources such as a single service or an entire environment.
 - **Orchestration**: Allows orchestrating the execution of commands such as `terraform apply`, `kubectl apply` or
-`infracost breakdown` in stacks. 
+`infracost breakdown` in stacks.
 - **GitOps for Infrastructure**: Pre-configured and fully customizable GitOps automation workflows that run in your existing CI/CD platform.
 - **Workflows**: Define custom commands to combine multiple commands into one executable unit of work.
 - **Configuration:** Define and reuse data in stacks by using variables and metadata.
@@ -83,7 +83,6 @@ infrastructure resources such as a single service or an entire environment.
 - **Native Infrastructure as Code**: Terramate doesn't introduce any complex wrappers or abstraction layers and allows
 you to stay in native environments (e.g. native Terraform).
 - **Unlimited Integrations**: Terramate integrates with all existing tooling. OPA, Infracost, Checkov, Trivy, Terrascan, Terragrunt, etc - you name it.
-
 
 ### Terramate Cloud
 

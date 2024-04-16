@@ -5,7 +5,7 @@ description: Learn how stacks help you efficiently build and manage infrastructu
 
 # About stacks
 
-A modular approach is recommended when working with Infrastructure as Code (IaC). This approach breaks the entire infrastructure code and state into **smaller** and **isolated** units, often referred to as **_stacks._**
+A modular approach is recommended when working with Infrastructure as Code (IaC). This approach breaks the entire infrastructure code and state into **smaller** and **isolated** units, often referred to as **_stacks._**
 
 ## What are stacks?
 
@@ -25,10 +25,10 @@ provides the following benefits:
 **✅ Reduce run times significantly** by selectively targeting only the required stacks for execution (e.g., only the
 stacks that have changed in the last PR). Stacks also enable the possibility of parallel execution.
 
-✅ **Limit the blast radius risk** by grouping IaC-managed assets in logical units such as environments, business units,
+✅ **Limit the blast radius risk** by grouping IaC-managed assets in logical units such as environments, business units,
 regions or services isolated from each other.
 
-✅ **Separate management responsibilities across team boundaries** by assigning and managing the ownership of stacks to
+✅ **Separate management responsibilities across team boundaries** by assigning and managing the ownership of stacks to
 users and teams.
 
 ✅ **Remove sequential and blocking operations** by enabling parallel development and execution of independent stacks.

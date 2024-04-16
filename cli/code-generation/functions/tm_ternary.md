@@ -20,7 +20,7 @@ The function signature is:
 tm_ternary(bool, expr, expr) -> expr
 ```
 
-## Examples 
+## Examples
 
 ```hcl
 tm_ternary(false, access.data1, access.data2)

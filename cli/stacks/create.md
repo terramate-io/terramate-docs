@@ -49,7 +49,7 @@ directory hierarchy.
 
 Terramate detects stacks based on the existence of a `stack {}` block. The name of the file is not important and can be different from `stack.tm.hcl`. There can be exactly one stack block defined in a stack.
 
-## Code Generation
+### Code Generation
 
 Upon creation of a stack, [code generation](../code-generation/index.md) will be triggered so that the new stack can be
 initialized with a default configuration if desired. This is especially helpful when you want to generate required

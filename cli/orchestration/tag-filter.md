@@ -53,4 +53,3 @@ lowercase     ::= 'a' | 'b' | ... | 'z'
 The `ident` definition is a simplification and you should refer to
 [stack.tags](../stacks/configuration.md#stacktags-setstringoptional) for the correct definition
 (in prose) for the expected declaration of tag names.
-

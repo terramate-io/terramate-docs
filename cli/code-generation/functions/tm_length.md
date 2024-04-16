@@ -34,4 +34,4 @@ tm_length("👾🕹️")
 A "character" is a _grapheme cluster_, as defined by
 [Unicode Standard Annex #29](http://unicode.org/reports/tr29/). Note that
 remote APIs may have a different definition of "character" for the purpose of
-length limits on string arguments; 
+length limits on string arguments;

@@ -40,7 +40,7 @@ In Terramate, you have two main ways to run commands:
 1. **Terramate Run Command:**
    Use this for running single, straightforward commands in your setup. It's great for quickly doing specific tasks across your infrastructure.
 
-   Run a command in all stacks: 
+   Run a command in all stacks:
    ```bash
    terramate run terraform init
    ```
@@ -49,7 +49,6 @@ In Terramate, you have two main ways to run commands:
    These are like playbooks for more complicated jobs. With Terramate Scripts, you can set up and run sequences of commands, automating complex processes. They're perfect for managing bigger tasks and making sure everything runs smoothly.
 
 These two ways to orchestrate commands in Terramate give you everything you need to manage your commands, from simple tasks to bigger, more complicated workflows. Whether you're running one-off commands or managing a whole series of actions, Terramate has you covered.
-
 
 ## Change Detection Integration
 

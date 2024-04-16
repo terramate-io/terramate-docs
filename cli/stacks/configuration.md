@@ -5,11 +5,13 @@ description: Learn how to configure the metadata and orchestration behavior of s
 
 # Configure stacks
 
-Terramate detects stacks based on the existence of a `stack {}` block. The name of the file is not important and can be different from `stack.tm.hcl`. There can be exactly one stack block defined in a stack.
+Terramate detects stacks based on the existence of a `stack {}` block.
+The name of the file is not important and can be different from `stack.tm.hcl`.
+There can be exactly one stack block defined in a stack.
 
-- Define Stack Metadata: `name`, `description`, `id`, `tags`.
-- Set an explicit Order of Execution: `before`, `after`.
-- Configure Forced Execution: `watch`, `wants`, `wanted_by`.
+- Define stack metadata: `name`, `description`, `id`, `tags`.
+- Set an explicit order of execution: `before`, `after`.
+- Configure forced execution: `watch`, `wants`, `wanted_by`.
 
 ```hcl
 stack {

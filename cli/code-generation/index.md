@@ -42,7 +42,7 @@ are up to date.
 
 ## Hierarchical code generation
 
-Code generation can be defined and used anywhere in a [Terramate Project](../projects/configuration.md). 
+Code generation can be defined and used anywhere in a [Terramate Project](../projects/configuration.md).
 
 Any stack that is part of the filesystem tree reachable from a code generation strategy configuration will be a selected target to generate code in.
 This means a configuration to generate code can be defined at the root level, reach all stacks, and trigger code generation in all
@@ -150,8 +150,8 @@ Terramate offers different ways to generate code conditionally.
 
 The `generate_file` and `generate_hcl` blocks support an `inherit` attribute which determines if the block will be inherited into child stacks.
 By default, it's `true`, which means the code will be generated in all child stacks.
-When using `inherit = false`, then the code is only generated in the stack where the block is declared. 
-If the block with `inherit = false`  is declared outside a stack directory then it's 
+When using `inherit = false`, then the code is only generated in the stack where the block is declared.
+If the block with `inherit = false`  is declared outside a stack directory then it's
 ignored and a warning is given to stderr.
 
 ### Stack filters - path-based code generation
@@ -177,7 +177,7 @@ generate_hcl "vpc.tf" {
       "/path/to/many/stacks/**", # match all stacks within a tree
     ]
   }
-  
+
   content {
     resource "aws_vpc" "main" {
       cidr_block = "10.0.0.0/16"

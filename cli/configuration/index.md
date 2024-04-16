@@ -262,7 +262,6 @@ The `generate_file` block requires one label, **do not** support [merging](#conf
 | inherit          | bool           | If the block must be inherited in child stacks |
 | content          | string         | The content to be generated |
 
-
 For detailed documentation about this block, see the [File Code Generation](../code-generation/generate-file.md) docs.
 
 ## generate_hcl block schema
@@ -293,11 +292,9 @@ The `generate_hcl.content` block has no labels and accepts any valid HCL.
 The `import` block has no labels, **do not** supports [merging](#config-merging)
 and has the following schema:
 
-
 | name             |      type      | description |
 |------------------|----------------|-------------|
 | source           | string         | The file path to be imported |
-
 
 ## vendor block schema
 

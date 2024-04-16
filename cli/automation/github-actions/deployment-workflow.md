@@ -46,7 +46,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -57,22 +57,22 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ## Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-region: "CHANGEME: AWS REGION"
-          role-to-assume: "CHANGEME: IAM ROLE ARN"
+          aws-region: 'CHANGEME: AWS REGION'
+          role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      ## Run the Terraform deployment via Terramate in each changed stack
+      # Run the Terraform deployment via Terramate in each changed stack
 
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout
@@ -88,7 +88,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ## Run a health check
+      # Run a health check
 
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
@@ -123,7 +123,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -134,23 +134,23 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ## Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: "CHANGEME: WORKLOAD IDENTITY PROVIDER ID"
-          service_account: "CHANGEME: SERVICE ACCOUNT EMAIL"
+          workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
+          service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      ## Run the Terraform deployment via Terramate in each changed stack
+      # Run the Terraform deployment via Terramate in each changed stack
 
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout
@@ -166,7 +166,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ## Run a health check
+      # Run a health check
 
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
@@ -199,7 +199,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -210,22 +210,22 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ## Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-region: "CHANGEME: AWS REGION"
-          role-to-assume: "CHANGEME: IAM ROLE ARN"
+          aws-region: 'CHANGEME: AWS REGION'
+          role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      ## Run the Terraform deployment via Terramate in each changed stack
+      # Run the Terraform deployment via Terramate in each changed stack
 
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout
@@ -262,7 +262,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -272,23 +272,23 @@ jobs:
         with:
           terraform_version: 1.7.4
 
-      ## Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: "CHANGEME: WORKLOAD IDENTITY PROVIDER ID"
-          service_account: "CHANGEME: SERVICE ACCOUNT EMAIL"
+          workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
+          service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      ## Run the Terraform deployment via Terramate in each changed stack
+      # Run the Terraform deployment via Terramate in each changed stack
 
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout

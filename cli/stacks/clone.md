@@ -15,8 +15,8 @@ for you automatically.
 terramate experimental clone <source> <target>
 ```
 
-The `clone` command clones stacks and nested stacks from a source to a target directory. Terramate CLI will recursively
-copy the stack files and directories, and automatically update the `stack.id` with generated UUIDs for the cloned stacks.
+The `clone` command clones stacks and nested stacks from a source to a target directory. Terramate CLI will recursively
+copy the stack files and directories, and automatically update the `stack.id` with generated UUIDs for the cloned stacks.
 In addition, the code generation will be triggered to ensure that the generated code for cloned stacks will be up to date.
 
 For details please see the [clone command](../cmdline/experimental/experimental-clone.md) documentation.

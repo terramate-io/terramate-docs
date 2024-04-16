@@ -10,7 +10,7 @@ preserve a **small blast radius** and **fast execution run times**.
 
 That's why Terramate CLI comes with a change detection feature that can detect stacks containing changes in a commit, branch, or Pull Request.
 
-## Introduction 
+## Introduction
 
 The change detection is enabled by providing the `--changed` option to commands such as [`run`](../cmdline/run.md) or
 [`list`](../cmdline/list.md) and can be configured to use a specific branch as a reference.

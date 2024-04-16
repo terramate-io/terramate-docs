@@ -30,7 +30,7 @@ rarely a problem in practice.
 
 When encoding strings, this function escapes some characters using
 Unicode escape sequences: replacing `<`, `>`, `&`, `U+2028`, and `U+2029` with
-`\u003c`, `\u003e`, `\u0026`, `\u2028`, and `\u2029`. 
+`\u003c`, `\u003e`, `\u0026`, `\u2028`, and `\u2029`.
 
 The `jsonencode` command outputs a minified representation of the input.
 

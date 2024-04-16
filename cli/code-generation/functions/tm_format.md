@@ -138,7 +138,6 @@ Use the following symbols immediately after the `%` symbol to set additional for
 | `-`    | Pad the width with spaces on the right rather than the left.   |
 | `0`    | Pad the width with leading zeros rather than spaces.           |
 
-
 ## Related Functions
 
 * [`tm_formatdate`](./tm_formatdate.md) is a specialized formatting function for

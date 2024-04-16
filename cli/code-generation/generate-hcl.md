@@ -23,9 +23,7 @@ generate_hcl "backend.tf" {
 }
 ```
 
-The label of the `generate_hcl` block names the file that will be generated within a stack.
-[Terramate Variables](./variables/index.md) (`let`, `global`, and `terramate` namespaces) and all [Terramate Functions](./functions/index.md)
-are supported when defining labels. For more details about how code generation uses labels check the [Labels Overview](./index.md#labels) docs.
+The label of the `generate_hcl` block names the file that will be generated within a stack. For more details about how code generation use labels check the [Labels Overview](index.md#labels) docs.
 
 ### Argument reference of the `generate_hcl` block
 

@@ -83,8 +83,8 @@ terramate run --changed --parallel 5 -- \
 
 # run the deployment
 terramate run --changed --parallel 5 \
-  --cloud-sync-deployment \
-  --cloud-sync-terraform-plan-file=out.tfplan \
+  --sync-deployment \
+  --terraform-plan-file=out.tfplan \
   -- \
   terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
 ```
@@ -110,8 +110,8 @@ terramate run --parallel 5 -- \\
 
 # run the actual drift detection
 terramate run --parallel 5 \
-  --cloud-sync-drift-status \
-  --cloud-sync-terraform-plan-file=drift.tfplan \
+  --sync-drift-status \
+  --terraform-plan-file=drift.tfplan \
   -- \
   terraform plan -out drift.tfplan -detailed-exitcode -lock=false
 ```
@@ -140,7 +140,7 @@ To auto-reconcile drifts, three things are needed:
 The command can be tested locally by executing:
 
 ```bash
-terramate run --cloud-status drifted --tags auto-reconcile-drift -- terraform apply
+terramate run --status drifted --tags auto-reconcile-drift -- terraform apply
 ```
 
 ## Usage
@@ -240,47 +240,47 @@ terramate run [options] -- <cmd ...>
 
 ### TMC: Advanced filters
 
-- `--cloud-status <status>` is only available when connected to Terramate Cloud.
+- `--status <status>` is only available when connected to Terramate Cloud.
 
   Filter by Terramate Cloud (TMC) status of the stack.
 
 ### TMC: Deployment Synchronization
 
-- `--cloud-sync-deployment` is only available when connected to Terramate Cloud.
+- `--sync-deployment` is only available when connected to Terramate Cloud.
 
   Synchronize the command as a new deployment to Terramate Cloud (TMC).
 
-  For Terraform deployments `--cloud-sync-terraform-plan-file <plan-file>` should always be added to include Terraform plan details when synchronizing.
+  For Terraform deployments `--terraform-plan-file <plan-file>` should always be added to include Terraform plan details when synchronizing.
 
 ### TMC: Drift Synchronization
 
-- `--cloud-sync-drift-status` is only available when connected to Terramate Cloud.
+- `--sync-drift-status` is only available when connected to Terramate Cloud.
 
   Synchronize the command as a new drift run to Terramate Cloud (TMC).
 
-  For Terraform drift runs `--cloud-sync-terraform-plan-file <plan-file>` should always be added to include Terraform plan details when synchronizing.
+  For Terraform drift runs `--terraform-plan-file <plan-file>` should always be added to include Terraform plan details when synchronizing.
 
 ### TMC: Preview Synchronization
 
-- `--cloud-sync-preview` is only available when connected to Terramate Cloud.
+- `--sync-preview` is only available when connected to Terramate Cloud.
 
   Synchronize the command as a new preview to Terramate Cloud (TMC).
 
-  For Terraform previews `--cloud-sync-terraform-plan-file <plan-file>` is required to include Terraform plan details when synchronizing.
+  For Terraform previews `--terraform-plan-file <plan-file>` is required to include Terraform plan details when synchronizing.
 
-- `--cloud-sync-layer <layer>`
+- `--layer <layer>`
 
   Default `<layer>` is `default` when not set or not detected otherwise.
 
-  Set a custom layer for synchronizing a preview via `--cloud-sync-preview` to Terramate Cloud.
+  Set a custom layer for synchronizing a preview via `--sync-preview` to Terramate Cloud.
 
 ### TMC: Terraform Plan Synchronization
 
-- `--cloud-sync-terraform-plan-file <plan-file>` is only available when connected to Terramate Cloud.
+- `--terraform-plan-file <plan-file>` is only available when connected to Terramate Cloud.
 
   Add details of the Terraform Plan file to the synchronization to Terramate Cloud (TMC).
 
-  This flag is supported in combination with `--cloud-sync-drift-status`, `--cloud-sync-preview`, and `--cloud-sync-preview`.
+  This flag is supported in combination with `--sync-drift-status` and `--sync-preview`.
 
 - `--terragrunt`
 
@@ -340,14 +340,14 @@ For example, for applying all stacks with the `drifted` status, the command belo
 can be used:
 
 ```bash
-terramate run --cloud-status=drifted -- terraform apply
+terramate run --status=drifted -- terraform apply
 ```
 
 Valid statuses are documented on the [trigger page](./experimental/experimental-trigger.md).
 
 ### Sending deployment data to Terramate Cloud
 
-The `--cloud-sync-deployment` flag will send information about the deployment to Terramate Cloud.
+The `--sync-deployment` flag will send information about the deployment to Terramate Cloud.
 
 ```yaml
 jobs:
@@ -357,14 +357,14 @@ jobs:
       run: |
         terramate run \
         --changed \
-        --cloud-sync-deployment \
+        --sync-deployment \
         -- \
         terraform apply -input=false -auto-approve
 ```
 
 ### Sending a pull request preview to Terramate Cloud
 
-The `--cloud-sync-preview` flag will send information about the preview to Terramate Cloud.
+The `--sync-preview` flag will send information about the preview to Terramate Cloud.
 
 ```yaml
 jobs:
@@ -374,15 +374,15 @@ jobs:
       run: |
         terramate run \
         --changed \
-        --cloud-sync-preview \
-        --cloud-sync-terraform-plan-file=preview.tfplan \
+        --sync-preview \
+        --terraform-plan-file=preview.tfplan \
         -- \
         terraform plan -out preview.tfplan -detailed-exitcode
 ```
 
 ### Detecting Drift
 
-The `run` command supports `--cloud-sync-drift-status` which will set the Terramate Cloud status of any stack to `drifted` _if the exit code of the command that is run is `2`_ (which for `terraform plan -detailed-exitcode` signals that the plan succeeded and there was a diff). Terramate is also able to send the drifted plan with the `--cloud-sync-terraform-plan-file` option. A typical Github action for drift detection would look something like this:
+The `run` command supports `--sync-drift-status` which will set the Terramate Cloud status of any stack to `drifted` _if the exit code of the command that is run is `2`_ (which for `terraform plan -detailed-exitcode` signals that the plan succeeded and there was a diff). Terramate is also able to send the drifted plan with the `--terraform-plan-file` option. A typical Github action for drift detection would look something like this:
 
 ```yaml
 name: Check drift on all stacks once a day
@@ -408,5 +408,5 @@ jobs:
       - name: Run drift detection
         id: drift
         run: |
-          terramate run --cloud-sync-drift-status --cloud-sync-terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
+          terramate run --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
 ```

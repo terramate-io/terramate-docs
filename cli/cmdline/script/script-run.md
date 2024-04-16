@@ -71,7 +71,7 @@ terramate -C path/to/stack script run --no-recursive deploy
 Run a script in all stacks with an specific Terramate Cloud status:
 
 ```bash
-terramate script run --cloud-status=unhealthy deploy
+terramate script run --status=unhealthy deploy
 ```
 
 Run a script called "destroy" on all stacks in the reverse order:

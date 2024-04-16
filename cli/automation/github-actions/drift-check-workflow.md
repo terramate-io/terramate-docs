@@ -21,7 +21,7 @@ When synchronizing drift checks to Terramate Cloud, the following features will 
 - Highlight and identify drifted stacks in the Stacks List and Dashboard
 - See drift details without requiring your team to have elevated access to read the Terraform state or have access to read the cloud resources.
 - Identify the time when a drift happened and how long a stack stayed in a drifted state.
-- Create automation to reconcile a drift without human interaction using the `--cloud-status` filter in Terramate CLI.
+- Create automation to reconcile a drift without human interaction using the `--status` filter in Terramate CLI.
 
 ## Deployment Blueprints
 
@@ -85,7 +85,7 @@ jobs:
 
       - name: Run drift detection
         id: drift
-        run: terramate run -C stacks --cloud-sync-drift-status --cloud-sync-terraform-plan-file=drift.tfplan --continue-on-error --parallel 5 -- terraform plan -out drift.tfplan -detailed-exitcode -lock=false
+        run: terramate run -C stacks --sync-drift-status --terraform-plan-file=drift.tfplan --continue-on-error --parallel 5 -- terraform plan -out drift.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
@@ -147,7 +147,7 @@ jobs:
 
       - name: Run drift detection
         id: drift
-        run: terramate run -C stacks --cloud-sync-drift-status --cloud-sync-terraform-plan-file=drift.tfplan --continue-on-error --parallel 5 -- terraform plan -out drift.tfplan -detailed-exitcode -lock=false
+        run: terramate run -C stacks --sync-drift-status --terraform-plan-file=drift.tfplan --continue-on-error --parallel 5 -- terraform plan -out drift.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```

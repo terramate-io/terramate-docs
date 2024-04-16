@@ -54,7 +54,7 @@ Once the CLI is authenticated with Terramate Cloud, you can use it to interact w
 command prints a list of all drifted stacks.
 
 ```sh
-terramate list --cloud-status=drifted
+terramate list --status=drifted
 ```
 
 For more details about how to initially sync your data to Terramate Cloud, please see

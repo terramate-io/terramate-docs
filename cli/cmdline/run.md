@@ -318,7 +318,7 @@ terramate {
 Then if you have the script `bin/deploy-terraform.sh`, you can do:
 
 ```bash
-$ terramate run deploy-terraform.sh
+terramate run deploy-terraform.sh
 ```
 
 ## Terramate Cloud specifics
@@ -340,7 +340,7 @@ For example, for applying all stacks with the `drifted` status, the command belo
 can be used:
 
 ```bash
-$ terramate run --cloud-status=drifted -- terraform apply
+terramate run --cloud-status=drifted -- terraform apply
 ```
 
 Valid statuses are documented on the [trigger page](./experimental/experimental-trigger.md).
@@ -352,11 +352,14 @@ The `--cloud-sync-deployment` flag will send information about the deployment to
 ```yaml
 jobs:
   deploy:
-    name: Deploy
-    ...
-      - name: Apply changes
-        id: apply
-        run: terramate run --changed --cloud-sync-deployment -- terraform apply -input=false -auto-approve
+    - name: Apply changes
+      id: apply
+      run: |
+        terramate run \
+        --changed \
+        --cloud-sync-deployment \
+        -- \
+        terraform apply -input=false -auto-approve
 ```
 
 ### Sending a pull request preview to Terramate Cloud
@@ -366,17 +369,15 @@ The `--cloud-sync-preview` flag will send information about the preview to Terra
 ```yaml
 jobs:
   preview:
-    name: Preview
-    ...
-      - name: Run preview
-        id: preview
-        run: |
-          terramate run \
-          --changed \
-          --cloud-sync-preview \
-          --cloud-sync-terraform-plan-file=preview.tfplan \
-          -- \
-          terraform plan -out preview.tfplan -detailed-exitcode
+    - name: Run preview
+      id: preview
+      run: |
+        terramate run \
+        --changed \
+        --cloud-sync-preview \
+        --cloud-sync-terraform-plan-file=preview.tfplan \
+        -- \
+        terraform plan -out preview.tfplan -detailed-exitcode
 ```
 
 ### Detecting Drift
@@ -401,9 +402,9 @@ jobs:
       GITHUB_TOKEN: ${{ github.token }}
 
     steps:
-      ...
-      initial setup steps
-      ...
+      # ...
+      # initial setup steps
+      # ...
       - name: Run drift detection
         id: drift
         run: |

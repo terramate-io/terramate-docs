@@ -50,7 +50,6 @@ You can also use [OpenTofu](https://github.com/opentofu/opentofu) instead of
 [Terraform](https://github.com/hashicorp/terraform) to complete this guide.
 :::
 
-
 ### Create a new git repository
 
 These steps initialize a new git repository, navigate into the new repository and
@@ -67,9 +66,8 @@ cd terramate-quickstart
 Once you created the repository, create the first commit:
 
 ```sh
-git commit --allow-empty -m 'Initial empty commit' 
+git commit --allow-empty -m 'Initial empty commit'
 ```
-
 
 ## Create the first stack
 
@@ -93,7 +91,7 @@ The create command creates a file `stack.tm.hcl` containing a `stack {}` block t
 look something like this.
 
 ```sh
-cat stacks/first/stack.tm.hcl 
+cat stacks/first/stack.tm.hcl
 ```
 
 ```sh
@@ -120,7 +118,7 @@ To verify that Terramate is aware of the new stack, we can run [`terramate list`
 
 ::: code-group
 ```sh [shell]
-terramate list 
+terramate list
 ```
 
 ``` [output]
@@ -146,7 +144,7 @@ To verify that Terramate is aware of both stacks, we can run [`terramate list`](
 
 ::: code-group
 ```sh [shell]
-terramate list 
+terramate list
 ```
 
 ``` [output]
@@ -162,7 +160,7 @@ As we created our stacks step by step and created a git commit per stack, we can
 
 ::: code-group
 ```sh [shell]
-terramate list --changed 
+terramate list --changed
 ```
 
 ``` [output]
@@ -215,10 +213,10 @@ Code generation report
 Successes:
 
 - /stacks/first
-	[+] backend.tf
+  [+] backend.tf
 
 - /stacks/second
-	[+] backend.tf
+  [+] backend.tf
 
 Hint: '+', '~' and '-' mean the file was created, changed and deleted, respectively.
 ```
@@ -259,7 +257,7 @@ But before we can start, we need to prepare git to ignore terraform temporary fi
 located in the root directory of our repository:
 
 ```sh
-# NOTE: 
+# NOTE:
 # You might not want to add state and lock file here
 # This is just convenient when running the quickstart guide
 cat <<EOF >.gitignore

@@ -23,7 +23,6 @@ The label of the `generate_file` block names the file that will be generated.
 Terramate Variables (`let`, `global`, and `terramate` namespaces) and all [Terramate Functions](./functions/index.md)
 are supported when defining labels. For more details about how code generation uses labels check the [Labels Overview](./index.md#labels) docs.
 
-
 ### Argument reference of the `generate_file` block
 
 - `context` *(optional string)* The `context` attributes that override the [generation](./index.md#generation-context) context](index.md#generation-context)
@@ -43,7 +42,6 @@ are supported when defining labels. For more details about how code generation u
   - Terramate Stack Metadata references `terramate.stack.*`
 
   The final evaluated value of the **`content`** attribute **must** be a valid string.
-
 
   ```hcl
   content = <<-EOF

@@ -18,7 +18,7 @@ all stacks when orchestrated with Terramate CLI and keep track of this state ove
 The state of a stack is not to be confused with a Terraform state defined by the Terraform Backend Configuration.
 Still, the Terramate Cloud State of a stack includes this information and extends it with multiple status values and metadata.
 
-In addition, stack visibility is not limited to single stacks or single repositories but combines all stacks in all your 
+In addition, stack visibility is not limited to single stacks or single repositories but combines all stacks in all your
 organization's repositories in a central place.
 
 Each stack can be `healthy` or `unhealthy` (e.g. failed or drifted) depending on the result of deployments or drift runs.

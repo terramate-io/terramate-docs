@@ -9,9 +9,6 @@ The `terramate-ls` program is the _Terramate Language Server_, a tool that
 implements the [LSP](https://microsoft.github.io/language-server-protocol/) (_Language Server Protocol_)
 and then provides the same set of features to all editors that implement the protocol.
 
-The `terramate-ls` is still in early stage development, then it's not battle tested and only 
-supports basic features.
-
 ## Installation
 
 The `terramate-ls` is distributed alongside the `terramate` binary. Check the [installation page](../installation.md) for details.

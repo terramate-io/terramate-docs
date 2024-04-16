@@ -52,7 +52,7 @@ jobs:
       checks: read
 
     steps:
-      ### Create Pull Request comment
+      # Create Pull Request comment
 
       - name: Prepare pull request preview comment
         if: github.event.pull_request
@@ -65,7 +65,7 @@ jobs:
 
             :warning: preview is being created... please stand by!
 
-      ### Check out the code
+      # Check out the code
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -73,7 +73,7 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -84,7 +84,7 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ### Linting
+      # Linting
 
       - name: Check Terramate formatting
         run: terramate fmt --check
@@ -92,22 +92,22 @@ jobs:
       - name: Check Terraform formatting
         run: terraform fmt -recursive -check -diff
 
-      ### Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-region: "CHANGEME: AWS REGION"
-          role-to-assume: "CHANGEME: IAM ROLE ARN"
+          aws-region: 'CHANGEME: AWS REGION'
+          role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      ### Run the Terraform preview via Terramate in each changed stack
+      # Run the Terraform preview via Terramate in each changed stack
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
@@ -124,7 +124,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ### Update Pull Request comment
+      # Update Pull Request comment
 
       - name: Generate preview details
         if: steps.list.outputs.stdout
@@ -201,7 +201,7 @@ jobs:
       checks: read
 
     steps:
-      ### Create Pull Request comment
+      # Create Pull Request comment
 
       - name: Prepare pull request preview comment
         if: github.event.pull_request
@@ -214,7 +214,7 @@ jobs:
 
             :warning: preview is being created... please stand by!
 
-      ### Check out the code
+      # Check out the code
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -222,7 +222,7 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -233,7 +233,7 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ### Linting
+      # Linting
 
       - name: Check Terramate formatting
         run: terramate fmt --check
@@ -241,23 +241,23 @@ jobs:
       - name: Check Terraform formatting
         run: terraform fmt -recursive -check -diff
 
-      ### Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: "CHANGEME: WORKLOAD IDENTITY PROVIDER ID"
-          service_account: "CHANGEME: SERVICE ACCOUNT EMAIL"
+          workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
+          service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      ### Run the Terraform preview via Terramate in each changed stack
+      # Run the Terraform preview via Terramate in each changed stack
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
@@ -274,7 +274,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ### Update Pull Request comment
+      # Update Pull Request comment
 
       - name: Generate preview details
         if: steps.list.outputs.stdout
@@ -351,7 +351,7 @@ jobs:
       checks: read
 
     steps:
-      ### Create Pull Request comment
+      # Create Pull Request comment
 
       - name: Prepare pull request preview comment
         if: github.event.pull_request
@@ -364,7 +364,7 @@ jobs:
 
             :warning: preview is being created... please stand by!
 
-      ### Check out the code
+      # Check out the code
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -372,7 +372,7 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -383,7 +383,7 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ### Linting
+      # Linting
 
       - name: Check Terramate formatting
         run: terramate fmt --check
@@ -391,22 +391,22 @@ jobs:
       - name: Check Terraform formatting
         run: terraform fmt -recursive -check -diff
 
-      ### Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-region: "CHANGEME: AWS REGION"
-          role-to-assume: "CHANGEME: IAM ROLE ARN"
+          aws-region: 'CHANGEME: AWS REGION'
+          role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      ### Run the Terraform preview via Terramate in each changed stack
+      # Run the Terraform preview via Terramate in each changed stack
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
@@ -423,7 +423,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ### Update Pull Request comment
+      # Update Pull Request comment
 
       - name: Generate preview details
         if: steps.list.outputs.stdout
@@ -496,7 +496,7 @@ jobs:
       checks: read
 
     steps:
-      ### Create Pull Request comment
+      # Create Pull Request comment
 
       - name: Prepare pull request preview comment
         if: github.event.pull_request
@@ -509,7 +509,7 @@ jobs:
 
             :warning: preview is being created... please stand by!
 
-      ### Check out the code
+      # Check out the code
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -517,7 +517,7 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -528,7 +528,7 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ### Linting
+      # Linting
 
       - name: Check Terramate formatting
         run: terramate fmt --check
@@ -536,23 +536,23 @@ jobs:
       - name: Check Terraform formatting
         run: terraform fmt -recursive -check -diff
 
-      ### Check for changed stacks
+      # Check for changed stacks
 
       - name: List changed stacks
         id: list
         run: terramate list --changed
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: "CHANGEME: WORKLOAD IDENTITY PROVIDER ID"
-          service_account: "CHANGEME: SERVICE ACCOUNT EMAIL"
+          workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
+          service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      ### Run the Terraform preview via Terramate in each changed stack
+      # Run the Terraform preview via Terramate in each changed stack
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
@@ -569,7 +569,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ### Update Pull Request comment
+      # Update Pull Request comment
 
       - name: Generate preview details
         if: steps.list.outputs.stdout
@@ -621,5 +621,4 @@ jobs:
           header: preview
           path: pr-comment.txt
 ````
-
 :::

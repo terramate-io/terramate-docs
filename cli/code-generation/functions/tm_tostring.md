@@ -12,7 +12,7 @@ convert types automatically where required. Use the explicit type conversion
 functions only to normalize types returned in module outputs.
 
 Only the primitive types (string, number, and bool) and `null` can be converted to string.
-`tm_tostring(null)` produces a `null` value of type `string`. All other values produce an error. 
+`tm_tostring(null)` produces a `null` value of type `string`. All other values produce an error.
 
 ## Examples
 

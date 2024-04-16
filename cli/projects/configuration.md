@@ -26,7 +26,6 @@ terramate {
 
 ```
 
-
 ## The `terramate.required_version` attribute
 
 Required version is defined by the attribute `terramate.required_version` attribute

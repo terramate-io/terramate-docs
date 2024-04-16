@@ -175,6 +175,9 @@ export default defineConfig({
           text: '⭐ Core Concepts',
           items: [
             // {
+            //   text: 'Configuration',
+            // },
+            // {
             //   text: 'Projects',
             //   link: '/cli/projects/',
             //   collapsed: true,

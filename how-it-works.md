@@ -58,7 +58,6 @@ However, the Cloud provides a native Pull Request integration to enrich your pul
 
 Please find the diagram below for a more detailed overview of how Terramate works.
 
-
 ![Data Flow in Terramate](./cli/assets/terramate-diagram.png "Data Flow in Terramate")
 
 ## How to get started

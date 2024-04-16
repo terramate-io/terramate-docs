@@ -12,7 +12,7 @@ Terramate provides the same built-in functions as
 
 They can be used to do calculations on top of data structures. Terramate supports most of the functions known in
 Terraform, but all Terramate Functions are prefixed with `tm_` to identify them in partial code generation and execute
-them at build time. 
+them at build time.
 
 For example, to use the try function when evaluating a global:
 

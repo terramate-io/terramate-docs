@@ -29,7 +29,7 @@ To accept an invitation, you must visit the [Organization selection page](https:
 
 ## Deactivate a teammate
 
-After teammates become `active` `member`s of an organization, no invitation can be revoked anymore, and teammates need to be deactivated. 
+After teammates become `active` `member`s of an organization, no invitation can be revoked anymore, and teammates need to be deactivated.
 
 To deactivate a teammate, an `admin` can search or browse the teammate and remove it from the list by activating the remove icon on the teammates row.
 
@@ -37,7 +37,7 @@ No email will be sent to the deactivated teammate.
 
 ## Reactivate a teammate
 
-To reactivate a teammate, an `admin` can search or browse the teammate and reactivate it from the list by activating the reactivation icon on the teammates row. 
+To reactivate a teammate, an `admin` can search or browse the teammate and reactivate it from the list by activating the reactivation icon on the teammates row.
 
 No email will be sent to the teammate, and the membership will be active again. You might want to adjust the role of the reactivated member as a next step.
 

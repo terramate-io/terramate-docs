@@ -34,7 +34,7 @@ name: Scheduled Terraform Drift Detection
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: '0 2 * * *'
 
 jobs:
   drift-detection:
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      ### Check out the code
+      # Check out the code
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -68,16 +68,16 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-region: "CHANGEME: AWS REGION"
-          role-to-assume: "CHANGEME: IAM ROLE ARN"
+          aws-region: 'CHANGEME: AWS REGION'
+          role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      ### Run Dift Check
+      # Run Dift Check
 
       - name: Run Terraform init on all stacks
         id: init
@@ -95,7 +95,7 @@ name: Scheduled Terraform Drift Detection
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: '0 2 * * *'
 
 jobs:
   drift-detection:
@@ -110,7 +110,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      ### Check out the code
+      # Check out the code
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -118,7 +118,7 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      ## Install tooling
+      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -129,17 +129,17 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ## Configure cloud credentials
+      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: "CHANGEME: WORKLOAD IDENTITY PROVIDER ID"
-          service_account: "CHANGEME: SERVICE ACCOUNT EMAIL"
+          workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
+          service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      ### Run Dift Check
+      # Run Dift Check
 
       - name: Run Terraform init on all stacks
         id: init

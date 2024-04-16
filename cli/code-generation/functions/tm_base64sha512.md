@@ -8,7 +8,7 @@ description: |-
 # `tm_base64sha512` Function
 
 `tm_base64sha512` computes the SHA512 hash of a given string and encodes it with
-Base64. This is not equivalent to `tm_base64encode(tm_sha512("test"))` since 
+Base64. This is not equivalent to `tm_base64encode(tm_sha512("test"))` since
 `tm_sha512()` returns hexadecimal representation.
 
 The given string is first encoded as UTF-8 and then the SHA512 algorithm is applied

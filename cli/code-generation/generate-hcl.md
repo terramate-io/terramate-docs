@@ -29,14 +29,14 @@ are supported when defining labels. For more details about how code generation u
 
 ### Argument reference of the `generate_hcl` block
 
-- `content` *(required block)* The `content` block defines the HCL code that will be generated as file content. 
-  It supports block definitions, attributes and expressions. Terramate Variables and Terramate Functions can be used and will be interpolated during code generation. 
+- `content` *(required block)* The `content` block defines the HCL code that will be generated as file content.
+  It supports block definitions, attributes and expressions. Terramate Variables and Terramate Functions can be used and will be interpolated during code generation.
 
   The following variable namespaces are available within the `content` block:
   - [`terramate`](./variables/metadata.md)
   - [`global`](./variables/globals.md)
   - [`let`](./variables/lets.md)
-  
+
   ```hcl
   content {
     backend "local" {}
@@ -48,15 +48,15 @@ are supported when defining labels. For more details about how code generation u
   See [partial code generation](#partial-evaluation) for details.
 
 - `lets` *(optional block)* One or more [`lets`](./variables/lets.md) blocks can be used to define [Lets variables](./variables/lets.md)
-  that can be used in other arguments within the `generate_hcl` block and in the `content` block and are only available 
+  that can be used in other arguments within the `generate_hcl` block and in the `content` block and are only available
   inside the current `generate_hcl` block.
-  
+
   ```hcl
   lets {
     temp_a_plus_b = global.a + global.b
   }
   ```
-  
+
   ::: tip
   Use Lets over Global variables whenever you want to provide computed variables available inside the current `generate_hcl` block only.
   :::
@@ -113,9 +113,9 @@ Each `assert` block supports the following arguments:
     message   = "'global.is_enabled' needs to be set to either true or false"
   }
   ```
-    
+
 <!-- ### Complete Example -->
-    
+
 ## The `tm_dynamic` block
 
 ::: info
@@ -283,7 +283,6 @@ the project root level.
 If more complex logic is required to decide if a file should be generated,
 see the `condition` attribute described in the next section.
 
-
 ## Conditional Code Generation
 
 Conditional code generation is achieved by the use of the `condition` attribute.
@@ -352,7 +351,6 @@ globals {
 And we want to mix those Terramate references with Terraform
 references, like locals, vars, outputs, etc.
 All we have to do is define our `generate_hcl` block like this:
-
 
 ```hcl
 generate_hcl "main.tf" {

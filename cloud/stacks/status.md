@@ -28,7 +28,7 @@ the process and leave the stack in a partially applied state.
 
 ## Drifted
 
-A `drifted` stack is considered `unhealthy`. This status is reached after a drift run detects any differences between desired configuration (Code) and applied configuration (Cloud) on a `healthy` stack. 
+A `drifted` stack is considered `unhealthy`. This status is reached after a drift run detects any differences between desired configuration (Code) and applied configuration (Cloud) on a `healthy` stack.
 
 If a drift is detected in a `failed` stack, the status will NOT be updated to `drifted` as the drift is expected.
 

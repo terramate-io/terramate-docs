@@ -5,29 +5,33 @@ description: Learn how to create and manage Infrastructure as Code agnostic stac
 
 # Create Stacks
 
-## Create a plain stack
+On this page, you will learn how to create stacks with Terramate CLI.
 
-Stacks can be created using the [terramate create](../cmdline/create.md) command.
-The command accepts a set of options to allow to initialize all its details programmatically.
-You can set metadata like the `name`, `description`, add `tags`, or define an order of execution.
+## Create a new stack with the CLI
+
+Stacks can be created with the [`terramate create`](../cmdline/create.md) command.
 
 ```sh
 terramate create <directory>
 ```
 
-By default, the `terramate create` command will create a directory and add a `stack.tm.hcl` file that contains the configuration for your stack adding the directory basename as `name` and `description` and creating a UUIDv4 as `id` that needs to be unique within the current reposiory and identifies the stack in Terramate Cloud if connected.
+This command will create a directory and add a `stack.tm.hcl` file that contains the
+configuration for your stack adding the directory basename as `name` and `description` and creating a UUIDv4 as `id`
+that needs to be unique within the current repository and identifying the stack in Terramate Cloud if connected.
 
-It is recommended to never change the `id` once committed to allow tracking of the stack when refactoring the directory hierarchy.
+You can set a stack's [metadata](./configuration.md#general-stack-metadata) like its `name`, and `description`, add `tags`,
+and configure the [orchestration behavior](./configuration.md#explicit-order-of-execution) upon stack creation.
 
-The generated file is an HCL file and can be edited and extended at any point in time.
-
-The following example
+The following example:
 
 ```sh
-terramate create stacks/vpc --name "Main VPC" --description "Stack to manage the main VPC"
+terramate create \
+  stacks/vpc \
+  --name "Main VPC" \
+  --description "Stack to manage the main VPC"
 ```
 
-will lead to the creation of the following file:
+will create a stack with the following configuration:
 
 ```hcl
 # ./stacks/vpc/stack.tm.hcl
@@ -38,18 +42,24 @@ stack {
 }
 ```
 
-You can use all available configuration properties as attributes to the [terramate create](../cmdline/create.md) command, e.g.
+::: tip
+It is recommended to never change a stack's `id` once committed to allow tracking of the stack when refactoring the
+directory hierarchy.
+:::
 
-For an overview of all properties available for configuring stacks,
-please see [Stack Configuration](./configuration.md) documentation.
+Terramate detects stacks based on the existence of a `stack {}` block. The name of the file is not important and can be different from `stack.tm.hcl`. There can be exactly one stack block defined in a stack.
 
-Terramate detects stacks based on the exitance of a `stack {}` Block. The name of the file is not important and can be different from `stack.tm.hcl`. There can be exactly one stack block defined in a stack.
+## Code Generation
 
-For new stacks, [Code Generation](../code-generation/index.md) will be triggered so that the new stack gets initialized with a default configuration if desired.
+Upon creation of a stack, [code generation](../code-generation/index.md) will be triggered so that the new stack can be
+initialized with a default configuration if desired. This is especially helpful when you want to generate required
+configurations such as Terraform provider and backend configuration.
+
+You can disable code generation upon stack creation by passing the `--no-generate` flag, e.g. `terramate create some-stack --no-generate`.
 
 ## Import existing stacks
 
 Terramate can detect and import various existing configurations.
 
-- `terramate create --all-terraform` will [import existing Terraform](../on-boarding/terraform.md)
+- `terramate create --all-terraform` will [import existing Terraform and OpenTofu](../on-boarding/terraform.md)
 - `terramate create --all-terragrunt` will [import existing Terragrunt](../on-boarding/terragrunt.md)

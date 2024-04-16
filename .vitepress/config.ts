@@ -134,7 +134,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Docs', link: '/introduction' },
+      { text: 'Docs', link: '/' },
       { text: 'Blog', link: 'https://terramate.io/rethinking-iac' },
       { text: 'We are hiring!', link: 'https://jobs.ashbyhq.com/terramate' },
       {
@@ -154,7 +154,7 @@ export default defineConfig({
         {
           text: '👋 Introduction',
           items: [
-            { text: 'About Terramate', link: '/introduction' },
+            { text: 'About Terramate', link: '/' },
             { text: 'How it works', link: '/how-it-works' },
             { text: 'Why Terramate', link: '/why-terramate' },
             // { text: 'Product Roadmap', link: '/product-roadmap/' },

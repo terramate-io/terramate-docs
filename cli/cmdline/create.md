@@ -181,6 +181,18 @@ In the basic use case `[options]` can be one or multiple of:
   terramate create --before "tag:my-tag" --before "../another-stack" path/to/stack
   ```
 
+## Change detection
+
+- `--watch <list>` A comma separated list of files to be watched by the change detection.
+
+  This option can be used multiple times to define additional `watch` files.
+
+  Example:
+
+  ```bash
+  terramate create --watch "file.json" --watch "other-file.json" path/to/stack
+  ```
+
 ## Additional options
 
 - `--ignore-existing`

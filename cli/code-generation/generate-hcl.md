@@ -8,11 +8,29 @@ description: Learn how to use Terramate to generate Terraform and OpenTofu confi
 Terramate supports the generation of arbitrary HCL code such as Terraform, OpenTofu and other HCL configurations,
 referencing data such as [Variables](./variables/index.md) and [Metadata](./variables/metadata.md).
 
+Terramate offers two primary approaches for HCL code generation:
+
+The HCL generation can be done in two ways:
+
+1. `*.tmgen` files
+
+- A simplified HCL generation.
+- Prioritizes ease of use, especially when converting existing IaC code.
+- Might be less suitable for highly customized or complex scenarios.
+
+2. `generate_hcl` block
+
+- Provides maximum flexibility and customization for your HCL output.
+- Supports all Terramate [Variables](./variables/index.md) and [functions](./functions/index.md).
+- Ideal for complex configurations and fine-grained control.
+
+## TMGEN files
+
+TBD
+
 ## The `generate_hcl` block
 
-HCL code generation is done using `generate_hcl` blocks in Terramate configuration files.
-References to Terramate globals and metadata are evaluated, but any other reference is just transported to the generated code
-(For details, please see [partial evaluation](./index.md#partial-evaluation)).
+When using the `generate_hcl`, the references to Terramate [variables](./variables/index.md) are evaluated, but any other unknown reference is just transported to the generated code (For details, please see [partial evaluation](./index.md#partial-evaluation)).
 
 ```hcl
 # example.tm.hcl

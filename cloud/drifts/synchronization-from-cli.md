@@ -37,7 +37,7 @@ terramate run \
   --sync-drift-status \
   --terraform-plan out.tfplan \
   --continue-on-error \
-  terraform plan -out out.tfplan
+  terraform plan -out out.tfplan -detailed-exitcode
 ```
 
 It is recommended to create a Terramate Script as explained in the next section, to provide an easy interface for users that can be used on local machines the same way as in CI/CD automated environments.

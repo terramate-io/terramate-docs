@@ -252,6 +252,8 @@ terramate run [options] -- <cmd ...>
 
   For Terraform deployments `--terraform-plan-file <plan-file>` should always be added to include Terraform plan details when synchronizing.
 
+  For OpenTofu deployments `--tofu-plan-file <plan-file>` should always be added to include OpenTofu plan details when synchronizing.
+
 ### TMC: Drift Synchronization
 
 - `--sync-drift-status` is only available when connected to Terramate Cloud.
@@ -260,6 +262,8 @@ terramate run [options] -- <cmd ...>
 
   For Terraform drift runs `--terraform-plan-file <plan-file>` should always be added to include Terraform plan details when synchronizing.
 
+  For OpenTofu drift runs `--tofu-plan-file <plan-file>` should always be added to include OpenTofu plan details when synchronizing.
+
 ### TMC: Preview Synchronization
 
 - `--sync-preview` is only available when connected to Terramate Cloud.
@@ -267,6 +271,8 @@ terramate run [options] -- <cmd ...>
   Synchronize the command as a new preview to Terramate Cloud (TMC).
 
   For Terraform previews `--terraform-plan-file <plan-file>` is required to include Terraform plan details when synchronizing.
+
+  For OpenTofu previews `--tofu-plan-file <plan-file>` is required to include Tofu plan details when synchronizing.
 
 - `--layer <layer>`
 
@@ -282,9 +288,15 @@ terramate run [options] -- <cmd ...>
 
   This flag is supported in combination with `--sync-drift-status` and `--sync-preview`.
 
+- `--tofu-plan-file <plan-file>` is only available when connected to Terramate Cloud.
+
+  Add details of the OpenTofu Plan file to the synchronization to Terramate Cloud (TMC).
+
+  This flag is supported in combination with `--sync-drift-status` and `--sync-preview`.
+
 - `--terragrunt`
 
-  Use Terragrunt to generate the Terraform Plan file.
+  Use Terragrunt to generate the Terraform/OpenTofu Plan file.
 
 ## Configuration of the Run Command
 
@@ -362,7 +374,7 @@ jobs:
         terraform apply -input=false -auto-approve
 ```
 
-### Sending a pull request preview to Terramate Cloud
+### Sending a pull request Terraform preview to Terramate Cloud
 
 The `--sync-preview` flag will send information about the preview to Terramate Cloud.
 
@@ -380,9 +392,33 @@ jobs:
         terraform plan -out preview.tfplan -detailed-exitcode
 ```
 
+### Sending a pull request OpenTofu preview to Terramate Cloud
+
+The `--sync-preview` flag will send information about the preview to Terramate Cloud.
+
+```yaml
+jobs:
+  preview:
+    - name: Run preview
+      id: preview
+      run: |
+        terramate run \
+        --changed \
+        --sync-preview \
+        --tofu-plan-file=preview.tfplan \
+        -- \
+        tofu plan -out preview.tfplan -detailed-exitcode
+```
+
 ### Detecting Drift
 
-The `run` command supports `--sync-drift-status` which will set the Terramate Cloud status of any stack to `drifted` _if the exit code of the command that is run is `2`_ (which for `terraform plan -detailed-exitcode` signals that the plan succeeded and there was a diff). Terramate is also able to send the drifted plan with the `--terraform-plan-file` option. A typical Github action for drift detection would look something like this:
+The `run` command supports `--sync-drift-status` which will set the Terramate Cloud status of any stack to `drifted` _if the exit code of the command that is run is `2`_ (which for `terraform plan -detailed-exitcode` signals that the plan succeeded and there was a diff).
+
+Similarly, when using OpenTofu, `tofu plan -detailed-exitcode` signals that the plan succeeded and there was a diff.
+
+Terramate is also able to send the drifted plan with the `--terraform-plan-file` or `--tofu-plan-file` option, if using Terraform or OpenTofu, respectively.
+
+A typical Github action for Terraform drift detection would look something like this:
 
 ```yaml
 name: Check drift on all stacks once a day
@@ -410,3 +446,6 @@ jobs:
         run: |
           terramate run --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
 ```
+
+If using OpenTofu, just adjust the example above using `--tofu-plan-file` and 
+`tofu plan -out drift.tfplan -detailed-exitcode`.

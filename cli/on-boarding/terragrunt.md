@@ -15,7 +15,7 @@ terramate create --all-terragrunt
 
 This command will detect existing Terragrunt Modules, create a stack configuration in them and will set up the order of execution in `before` and `after` attributes for detected Terragrunt dependencies.
 
-## Terramate Features for Terrgrunt Repositories
+## Terramate Features for Terragrunt Repositories
 
 All Terramate features are now available to your team, so you get the best of both worlds.
 

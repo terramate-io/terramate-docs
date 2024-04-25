@@ -123,8 +123,9 @@ script "deploy" {
 - `sync_deployment` _(optional boolean)_ Send information about the deployment to Terramate Cloud. See [Sending deployment data to Terramate Cloud](../cmdline/run.md#sending-deployment-data-to-terramate-cloud). Only one command per script may have this option set to true.
 - `sync_preview` _(optional boolean)_ Send information about a _Pull Request_ preview to Terramate Cloud. See [Sending a Pull Request Preview to Terramate Cloud](../cmdline/run.md#sending-a-pull-request-preview-to-terramate-cloud). Only one command per script may have this option set to true.
 - `sync_drift_status` _(optional boolean)_ Send drift information to Terramate Cloud. See [Detecting Drifts](../cmdline/run.md#detecting-drift).
-- `terraform_plan_file` _(optional string)_ Sync a Terraform plan file to Terramate Cloud with a deployment or drift. This option is only used when `sync_deployment`, `sync_drift_status` or `sync_preview` are set to true.
-- `terragrunt` _(optional boolean)_ Use terragrunt for the plan file generation. This option is only used when `terraform_plan_file` is set.
+- `terraform_plan_file` _(optional string)_ Sync a Terraform plan file to Terramate Cloud with a deployment, preview or drift. This option is only used when `sync_deployment`, `sync_drift_status` or `sync_preview` are set to true.
+- `tofu_plan_file` _(optional string)_ Sync a Tofu plan file to Terramate Cloud with a deployment, preview or drift. This option is only used when `sync_deployment`, `sync_drift_status` or `sync_preview` are set to true.
+- `terragrunt` _(optional boolean)_ Use terragrunt for the plan file generation. This option is only used when `terraform_plan_file` or `tofu_plan_file` is set.
 
 ## Running Scripts
 

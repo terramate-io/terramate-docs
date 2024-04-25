@@ -145,6 +145,17 @@ This check ensures that it's not possible to accidentally run against outdated c
 
 In `terramate.config.run.env` block a map of environment variables can be defined
 that will be set when running a command using `terramate run`.
+The block has the same hierarchical properties of [Globals](../code-generation/variables/globals.md), which means definitions in parent directories are inherited
+in child directories.
+
+Hierarchical properties:
+
+- Any variable defined on a higher level will be inherited to the full subtree including nested stacks.
+- Any variable redefined on the same level conflicts.
+- Any variable redefined on lower levels will overwrite previous definitions.
+- All values will be only evaluated on stack level ([Lazy Evaluation](../code-generation/variables/globals.md#lazy-evaluation)).
+- Any `null` value will be treated as `unset` and no variable will be exported.
+- To unset a variable on a lower level you can assign `unset` value or `null`.
 
 The following example exports the `TF_PLUGIN_CACHE_DIR` environment variable to
 enable [Terraform Provider Plugin Caching](https://www.terraform.io/cli/config/config-file#provider-plugin-cache).

@@ -33,6 +33,29 @@ The following set of features highlights some special benefits:
   - Notifications on deployment failures or newly detected drifts
   - Advanced collaboration and alert routing
 
+## Options
+
+The Terragrunt change detection is automatically enabled if the project contains any 
+Terragrunt stack but this behavior can be turned off using the configuration below:
+
+```hcl
+terramate {
+  config {
+    change_detection {
+      terragrunt {
+        enabled = "off"
+      }
+    }
+  }
+}
+```
+
+The valid options for `terramate.config.change_detection.terragrunt.enabled` are:
+
+- `"auto"` (_default_): Only enables Terragrunt change detection if a Terragrunt stack is detected.
+- `"force"`: Run the Terragrunt change detection all the time.
+- `"off"`: Disables the Terragrunt change detection.
+
 ## Run Terragrunt Commands
 
 Since you are using Terramate to orchestrate Terragrunt now, the `terragrunt run-all` command is not needed anymore and you can replace it with `terramate run -- terragrunt <cmd>` to execute terragrunt within single stacks.

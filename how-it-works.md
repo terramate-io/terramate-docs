@@ -38,7 +38,8 @@ The Terramate platform comprises two main components:
 
 ## How it works
 
-Terramate CLI is used to orchestrate commands such as `terraform plan` in stacks and optionally sends data to Terramate Cloud.
+Terramate CLI is used to orchestrate commands such as `terraform plan`
+or `tofu plan` in stacks and optionally sends data to Terramate Cloud.
 
 Example: Run `terraform apply` in all changed stacks and sync the data to Terramate Cloud.
 

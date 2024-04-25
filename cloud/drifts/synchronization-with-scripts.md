@@ -22,9 +22,10 @@ The following options are available in Terramate Scripts and mirror the CLI opti
 
 - Set `sync_drift_status = true` to let Terramate CLI know about the command that is doing the actual drift check and returns a detailed exit status to define a successful run that has changed or has no changes detected.
 - Set `terraform_plan_file` to the name of the terraform plan to synchronize the deployment details.
+- Set `tofu_plan_file` to the name of the tofu plan to synchronize the deployment details.
 - Set `terragrunt = true` to use terragrunt for the plan file generation.
 
-## Terramate Script Config
+## Terramate Script Config for Terraform
 
 The script is executed with `terramate script run terraform detect-drift`.
 
@@ -41,6 +42,30 @@ script "terraform" "detect-drift" {
       ["terraform", "plan", "-out", "drift.tfplan", "-detailed-exitcode", "-lock=false", {
         sync_drift_status        = true
         terraform_plan_file = "drift.tfplan"
+      }],
+    ]
+  }
+}
+```
+
+
+## Terramate Script Config for OpenTofu
+
+The script is executed with `terramate script run tofu detect-drift`.
+
+```hcl
+script "tofu" "detect-drift" {
+  name        = "Tofu Drift Check"
+  description = "Detect drifts in Tofu configuration and synchronize it to Terramate Cloud."
+
+  job {
+    name        = "Tofu Plan"
+    description = "Initialize, validate, and plan Tofu changes."
+    commands = [
+      ["tofu", "init", "-lock-timeout=5m"],
+      ["tofu", "plan", "-out", "drift.tfplan", "-detailed-exitcode", "-lock=false", {
+        sync_drift_status        = true
+        tofu_plan_file = "drift.tfplan"
       }],
     ]
   }

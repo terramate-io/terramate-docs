@@ -22,9 +22,10 @@ The following options are available in Terramate Scripts and mirror the CLI opti
 
 - Set `sync_preview = true` to let Terramate CLI know about the command that is doing the actual preview and return a detailed exit status to define a successful run that has changed or has no changes detected.
 - Set `terraform_plan_file` to the name of the terraform plan to synchronize the deployment details.
+- Set `tofu_plan_file` to the name of the tofu plan to synchronize the deployment details.
 - Set `terragrunt = true` to use terragrunt for the plan file generation.
 
-## Terramate Script Config
+## Terramate Script Config for Terraform
 
 The script is executed with `terramate script run --changed terraform preview` to synchronize previews for all changed stacks in a pull request.
 
@@ -42,6 +43,30 @@ script "terraform" "preview" {
       ["terraform", "plan", "-out", "preview.tfplan", "-detailed-exitcode", "-lock=false", {
         sync_preview             = true
         terraform_plan_file = "preview.tfplan"
+      }],
+    ]
+  }
+}
+```
+
+## Terramate Script Config for OpenTofu
+
+The script is executed with `terramate script run --changed tofu preview` to synchronize previews for all changed stacks in a pull request.
+
+```hcl
+script "tofu" "preview" {
+  name        = "Tofu Deployment Preview"
+  description = "Create a preview of Tofu Changes and synchronize it to Terramate Cloud."
+
+  job {
+    name        = "Tofu Plan"
+    description = "Initialize, validate, and plan Tofu changes."
+    commands = [
+      ["tofu", "init", "-lock-timeout=5m"],
+      ["tofu", "validate"],
+      ["tofu", "plan", "-out", "preview.tfplan", "-detailed-exitcode", "-lock=false", {
+        sync_preview   = true
+        tofu_plan_file = "preview.tfplan"
       }],
     ]
   }

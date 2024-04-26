@@ -184,6 +184,22 @@ The `terramate.config.generate` block has no labels and has the following schema
 |------------------|----------------|-------------|---------|
 | hcl\_magic\_header\_comment\_style | string | The comment style used in `generate_hcl`` blocks | "//"
 
+## terramate.config.change_detection block schema
+
+The `terramate.config.change_detection` block has no labels and has the following schema:
+
+| name             |      type      | description |
+|------------------|----------------|-------------|
+| [terragrunt](#terramateconfigchange_detectionterragrunt-block-schema) | block | terragrunt change detection configuration |
+
+## terramate.config.change_detection.terragrunt block schema
+
+The `terramate.config.change_detection.terragrunt` block has no labels and has the following schema:
+
+| name             |      type      | description | default |
+|------------------|----------------|-------------|---------|
+| enabled          | string         | "auto" or "force" or "off" | "auto" |
+
 ## terramate.config.run block schema
 
 The `terramate.config.run` block has no labels and has the following schema:

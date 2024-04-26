@@ -49,6 +49,12 @@ deployments, drift detection, pull requests, and more.
 
 Initially, you will be located on the organization's dashboard. If no data has been synchronized to your organization so far, instructions to do so will lead you to this documentation.
 
+### Link another social login
+
+If you want to authenticate using a different social provider than the one that you previously used, just navigate to your user profile area. 
+
+In the Linked Accounts section, you can view all the login providers available and easily connect with additional providers. If you have multiple linked accounts, you can also disconnect from any provider you no longer want to use. However, please keep in mind that you won't be able to disconnect from the last provider you logged in with.
+
 ## Connecting the CLI
 
 You can use [`terramate cloud login`](../../cli/cmdline/cloud/cloud-login.md) to log in to Terramate Cloud. A browser window

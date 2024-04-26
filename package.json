@@ -2,6 +2,7 @@
   "type": "module",
   "packageManager": "pnpm@8.11.0",
   "scripts": {
+    "start": "pnpm docs:dev",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",

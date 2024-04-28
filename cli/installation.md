@@ -12,9 +12,20 @@ This page explains how to install and configure Terramate CLI.
 
 The first step you need to take is to install [Terramate CLI](https://github.com/terramate-io/terramate):
 
-```sh
+::: code-group
+```sh [macOS]
 brew install terramate
 ```
+
+```sh [Linux]
+brew install terramate
+```
+
+```txt [Windows]
+Download the binary from
+https://github.com/terramate-io/terramate/releases
+```
+:::
 
 This will install two binaries:
 

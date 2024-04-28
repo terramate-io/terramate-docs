@@ -5,168 +5,166 @@ description: Get started with Terramate CLI in 5 minutes. Learn basic Terramate 
 
 # Quickstart
 
-In this Quickstart guide, you will learn how to get started with [Terramate CLI](https://github.com/terramate-io/terramate)
-from scratch by building a basic Terramate project that manages Terraform in stacks using the most essential Terramate
-features, such as stacks, code generation, orchestration, and change detection.
+In this guide, you will learn how to get started with Terramate from scratch by building a basic Terramate
+project that manages Terraform or OpenTofu in stacks using the most essential Terramate features, such as **stacks**,
+**code generation**, **orchestration**, and **change detection**.
 
 <!-- NOTE: Add more tutorials over time -->
-<!-- If you want to learn how to use Terramate in an existing Terraform project, go here instead: -->
 
-If you want to get an overview of what Terramate CLI is and how it works, please read the [introduction guide](../../index.md).
+<!-- If you want to get an overview of what Terramate CLI is and how it works, please read the [introduction guide](../../index.md). -->
 
-::: tip
-Join the ***[Terramate community](https://terramate.io/discord)*** on Discord if you have questions, need help, or to
-join a fun community focussing on all things Infrastructure as Code. Come aboard ⛵️🏴‍☠️
-
-👉 [https://terramate.io/discord](https://terramate.io/discord)
+::: tip Terramate Community Discord Server
+Join the ***[Terramate Community](https://terramate.io/discord)*** on Discord, the best place to ask questions and get
+answers about Terramate and its ecosystem. Come aboard ⛵️🏴‍☠️
 :::
+
+<!-- If instead you want to learn how to use Terramate in an existing Terraform project, go here instead: -->
 
 ## Introduction
 
-Terramate works best when used inside a git repository. This repository does not need to be remote or synchronized to
-any VCS Platform such as GitHub, GitLab, or BitBucket - a local repository is a great start to test things.
+For a quick example of how Terramate works, this guide takes you through the following steps:
 
-In this Quickstart Guide, we will do the following:
-
-- Initialize a new git repository
-- Create two stacks `first` and `second` and learn about Terramate's [Change Detection](../change-detection/index.md)
-- Generate a Terraform Local Backend configuration in all stacks at once from a central place
-- Create a plain Terraform Null Resource in the `second` stack
-- Preview and apply the Null Resource using Terraform while leveraging [Change Detection](../change-detection/index.md)
-and [Orchestration](../orchestration/index.md) features of Terramate.
+1. Creating a new Terramate project.
+1. Adding a couple of stacks using Terramate CLI.
+1. Generating a Terraform Local Backend configuration in all stacks using code generation.
+1. Orchestrating commands such as `terraform plan` and `terraform apply` using orchestration and change detection.
+1. Syncing all stacks to Terramate Cloud.
 
 ## Prerequisites
 
-You will need the following tooling installed:
+Before you get started using Terramate, let’s run through a few quick steps to ensure your environment is set up correctly.
 
-- A recent version of the `git` command line tool
-  - Terramate assumes `main` to be the default branch. Any other branch can be set using the [`terramate.config.git.default_branch`](../projects/configuration.md) configuration option.
-- A recent version of [Terraform](https://developer.hashicorp.com/terraform/install)
-- Terramate CLI version [0.4.4](https://github.com/terramate-io/terramate/releases/) or above (for details on how to
-install Terramate CLI, please see the [installation guide](../installation.md))
+### Install Terramate
 
-::: tip
-You can also use [OpenTofu](https://github.com/opentofu/opentofu) instead of
-[Terraform](https://github.com/hashicorp/terraform) to complete this guide.
+::: code-group
+```sh [macOS]
+$ brew install terramate
+```
+
+```sh [Linux]
+$ brew install terramate
+```
+
+```sh [Windows]
+$ choco install terramate
+```
 :::
 
-### Create a new git repository
-
-These steps initialize a new git repository, navigate into the new repository and
-create an initial first commit. Terramate's [Change Detection](../change-detection/index.md) needs at least two commits
-inside a repository to work: one commit to compare the changes to and another commit introducing changes.
-
-As a first step, create a new git repository and navigate into it:
+Other installation options [are available](../installation.md#alternative-installation-methods). When the installation completes, you can test it out by reading the current version:
 
 ```sh
-git init -b main terramate-quickstart
-cd terramate-quickstart
+$ terramate version
 ```
 
-Once you created the repository, create the first commit:
+### Install Terraform or OpenTofu
+
+Next, Terraform or OpenTofu which we will orchestrate using Terramate:
+
+- [Install Terraform](https://developer.hashicorp.com/terraform/install)
+- [Install OpenTofu](https://opentofu.org/docs/intro/install/)
+
+## Create a new project
+
+Terramate requires a git repository to work and every git repository is considered
+a project in Terramate.
+
+Let's set up your first Terramate project by creating a new directory `terramate-quickstart` and initializing a new, empty
+repository:
 
 ```sh
-git commit --allow-empty -m 'Initial empty commit'
+$ git init -b main terramate-quickstart
+$ cd terramate-quickstart
 ```
 
-## Create the first stack
+New git repositories are empty per default and don't contain any commits. The change detection in Terramate works by detecting
+changes between at least two commits. Let's add an initial, empty commit to the repository:
 
-Now that the repository is ready, we can create our first Terramate Stack. We will give the stack an optional `name` and
-`description` at creation time. Name and description can be used to keep track of the purpose and details of a stack.
+```sh
+$ git commit --allow-empty -m "Initial empty commit"
+```
+
+## Create a stack
+
+Now that the repository is ready, you can create your first stack. We will give the stack an ***optional*** `name` and
+`description` upon creation. Name and description can be used to keep track of the purpose and details of a stack.
+
 Terramate will ensure that on creation, each stack gets an `id` set automatically if not defined by the user.
-This ID is a [`UUID`](https://en.wikipedia.org/wiki/Universally_unique_identifier) by default, guaranteeing the required
-uniqueness within the repository. It is recommended to use UUIDs here, but it is optional.
-
-The required argument defines a path to the stack that will be created. The path can be any directory with
-any level of child directories.
 
 ```sh
-terramate create \
-  --name "A first stack" \
-  --description "The very first Terramate Stack of the Quickstart guide" \
-  stacks/first
+$ terramate create \
+  --name "Alice" \
+  --description "Alice's first stack" \
+  stacks/alice
 ```
 
-The create command creates a file `stack.tm.hcl` containing a `stack {}` block to configure the stack, which should
+The `terramate create` command creates a file `stack.tm.hcl` containing a `stack {}` block to configure the stack, which will
 look something like this.
 
 ```sh
-cat stacks/first/stack.tm.hcl
-```
+$ cat stacks/alice/stack.tm.hcl
 
-```sh
 stack {
-  name        = "A first stack"
-  description = "The very first Terramate Stack of the Quickstart guide"
-  id          = "935ff534-3c7c-4cbe-a156-691713bdfaec"
+  name        = "Alice"
+  description = "Alice's first stack"
+  id          = "5b33e1c4-a3b0-477d-b0f1-add5918f764d"
 }
 ```
 
-::: info
-Stacks in Terramate are identified by a directory containing a `*.tm.hcl` file that contains a `stack {}` block.
-The file can have any name but the [create](../cmdline/create.md) command always creates a file named `stack.tm.hcl`
+::: info How does Terramate detect stacks?
+Stacks in Terramate are identified by a directory that includes a `*.tm.hcl` file, which contains a `stack {}` block.
+The file can have any name but the [terramate create](../cmdline/create.md) command always creates a file named `stack.tm.hcl`
 :::
 
-The new stack can be committed to the repository by running:
+Next, let's check in our newly created stack to the repository:
 
 ```sh
-git add stacks/first/stack.tm.hcl
-git commit -m 'Create the first terramate stack'
+$ git add stacks/alice/stack.tm.hcl
+$ git commit -m "Create a first stack with Terramate"
 ```
 
-To verify that Terramate is aware of the new stack, we can run [`terramate list`](../cmdline/list.md).
+To verify that Terramate is aware of the new stack, you can run [`terramate list`](../cmdline/list.md), which returns
+a list of all stacks available in your project.
 
-::: code-group
-```sh [shell]
-terramate list
+```sh
+$ terramate list
+stacks/alice
 ```
-
-``` [output]
-stacks/first
-```
-:::
 
 ## Create a second stack
 
-To create a second stack, we follow the same commands.
+To create a second stack, we follow the same commands. First, we create the stack:
 
 ```sh
-terramate create \
-  --name "A second stack" \
-  --description "The second Terramate Stack of the Quickstart guide" \
-  stacks/second
+$ terramate create \
+  --name "Bob" \
+  --description "Bob's first stack" \
+  stacks/bob
+```
 
-git add stacks/second/stack.tm.hcl
-git commit -m 'Create a second terramate stack'
+Next, we add the second stack to our repository:
+
+```sh
+$ git add stacks/bob/stack.tm.hcl
+$ git commit -m "Create a second stack with Terramate"
 ```
 
 To verify that Terramate is aware of both stacks, we can run [`terramate list`](../cmdline/list.md) again.
 
-::: code-group
-```sh [shell]
-terramate list
+```sh
+$ terramate list
+stacks/alice
+stacks/bob
 ```
-
-``` [output]
-stacks/first
-stacks/second
-```
-:::
 
 ## Change detection in action
 
-As we created our stacks step by step and created a git commit per stack, we can leverage Terramate’s
+Since we created our stacks step by step and created a git commit per stack, we can leverage Terramate’s
 [Change Detection](../change-detection/index.md) to see what changes we introduced in our latest commit.
 
-::: code-group
 ```sh [shell]
-terramate list --changed
-```
-
-``` [output]
+$ terramate list --changed
 stacks/second
 ```
-:::
 
 By running the command mentioned above, you will see only the second stack is listed now, as we newly introduced the
 second stack without changing the first stack. Terramate’s [Change Detection](../change-detection/index.md) is based on a

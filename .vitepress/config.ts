@@ -157,13 +157,14 @@ export default defineConfig({
             { text: 'About Terramate', link: '/' },
             { text: 'How it works', link: '/how-it-works' },
             { text: 'Why Terramate', link: '/why-terramate' },
-            // { text: 'Product Roadmap', link: '/product-roadmap/' },
+            { text: 'Product Roadmap', link: 'https://terramate.io/roadmap' },
           ],
         },
         {
           text: '🚀 Getting Started',
           items: [
             { text: 'Install Terramate CLI', link: '/cli/installation' },
+            { text: 'Quickstart', link: '/cli/getting-started/' },
             { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
             { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
             { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
@@ -174,20 +175,20 @@ export default defineConfig({
         {
           text: '⭐ Core Concepts',
           items: [
-            // {
-            //   text: 'Configuration',
-            // },
-            // {
-            //   text: 'Projects',
-            //   link: '/cli/projects/',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'Create Projects', link: '/cli/projects/create' },
-            //     { text: 'Configure a project', link: '/cli/projects/configuration' },
-            //     // { text: 'Start with Terraform', link: '/cli/projects/terraform' },
-            //     // { text: 'Start with Terragrunt', link: '/cli/projects/terragrunt' },
-            //   ],
-            // },
+            {
+              text: 'Configuration',
+            },
+            {
+              text: 'Projects',
+              link: '/cli/projects/',
+              collapsed: true,
+              items: [
+                // { text: 'Create Projects', link: '/cli/projects/create' },
+                { text: 'Configure a project', link: '/cli/projects/configuration' },
+                // { text: 'Start with Terraform', link: '/cli/projects/terraform' },
+                // { text: 'Start with Terragrunt', link: '/cli/projects/terragrunt' },
+              ],
+            },
             {
               text: 'Stacks',
               collapsed: true,
@@ -206,8 +207,8 @@ export default defineConfig({
               collapsed: true,
               link: '/cli/orchestration/',
               items: [
-                { text: 'Run any Commands', link: '/cli/orchestration/run-commands-in-stacks' },
-                { text: 'Run Terramate Scripts', link: '/cli/orchestration/scripts' },
+                { text: 'Run Commands', link: '/cli/orchestration/run-commands-in-stacks' },
+                { text: 'Workflows', link: '/cli/orchestration/scripts' },
                 {
                   text: 'Change Detection',
                   collapsed: true,

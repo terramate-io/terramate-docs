@@ -25,8 +25,8 @@ answers about Terramate and its ecosystem. Come aboard ⛵️🏴‍☠️
 For a quick example of how Terramate works, this guide takes you through the following steps:
 
 1. Creating a new Terramate project.
-1. Adding a couple of stacks using Terramate CLI.
-1. Generating a Terraform Local Backend configuration in all stacks using code generation.
+1. Adding stacks using Terramate CLI.
+1. Generating a Terraform local backend configuration in all stacks using code generation.
 1. Orchestrating commands such as `terraform plan` and `terraform apply` using orchestration and change detection.
 1. Syncing all stacks to Terramate Cloud.
 
@@ -58,7 +58,7 @@ $ terramate version
 
 ### Install Terraform or OpenTofu
 
-Next, Terraform or OpenTofu which we will orchestrate using Terramate:
+Next, install Terraform or OpenTofu which we will orchestrate using Terramate:
 
 - [Install Terraform](https://developer.hashicorp.com/terraform/install)
 - [Install OpenTofu](https://opentofu.org/docs/intro/install/)
@@ -83,10 +83,13 @@ changes between at least two commits. Let's add an initial, empty commit to the 
 $ git commit --allow-empty -m "Initial empty commit"
 ```
 
-## Create a stack
+## Create stacks
 
-Now that the repository is ready, you can create your first stack. We will give the stack an ***optional*** `name` and
-`description` upon creation. Name and description can be used to keep track of the purpose and details of a stack.
+Now that the repository is ready, you can create your first stack. Stacks in Terramate are a collection of infrastructure
+resources that you configure, provision and manage as a unit.
+
+We will give the stack an ***optional*** `name` and `description` upon creation. Name and description can be used to keep
+track of the purpose and details of a stack.
 
 Terramate will ensure that on creation, each stack gets an `id` set automatically if not defined by the user.
 
@@ -130,8 +133,6 @@ $ terramate list
 stacks/alice
 ```
 
-## Create a second stack
-
 To create a second stack, we follow the same commands. First, we create the stack:
 
 ```sh
@@ -158,33 +159,33 @@ stacks/bob
 
 ## Change detection in action
 
-Since we created our stacks step by step and created a git commit per stack, we can leverage Terramate’s
-[Change Detection](../change-detection/index.md) to see what changes we introduced in our latest commit.
+Since we created our stacks step by step and created a git commit per stack, we can leverage
+[change detection](../change-detection/index.md) to see what changes we introduced in our latest commit.
 
-```sh [shell]
+```sh
 $ terramate list --changed
 stacks/second
 ```
 
 By running the command mentioned above, you will see only the second stack is listed now, as we newly introduced the
-second stack without changing the first stack. Terramate’s [Change Detection](../change-detection/index.md) is based on a
-[Git Integration](../change-detection/integrations/git.md) but also supports more integrations like
+second stack without changing the first stack. Terramate’s [change detection](../change-detection/index.md) is based on a
+[Git integration](../change-detection/integrations/git.md) but also supports more integrations like
 [Terraform](../change-detection/integrations/terraform.md) to detect affected stacks using a local Terraform Module
 that has been updated outside of the stack.
 
 ## Code generation
 
-Empty stacks are of not much use. One of Terramate’s primary use cases is orchestrating Terraform and generating code for
-it - but Terramate is not limited to Terraform and can also be used with other tooling such as OpenTofu, Terragrunt,
-Kubernetes, Helm, CloudFormation, etc.
+Empty stacks are of not much use. One of Terramate’s primary use cases is orchestrating IaC tools such as Terraform and
+generating code for it - but Terramate is not limited to Terraform and can also be used with other tooling such as
+OpenTofu, Terragrunt, Kubernetes, Helm, CloudFormation, etc.
 
-Every Terraform stack will need a backend configuration. For the sake of this Quickstart Guide, we will use the
-Terraform local backend.
+Every Terraform stack will need a backend configuration. For the sake of this guide, we will use the Terraform local backend.
 
 To generate backend code we create a file called `stacks/backend.tm.hcl`:
 
-```sh
-cat <<EOF >stacks/backend.tm.hcl
+::: code-group
+```sh [Terraform]
+$ cat <<EOF >stacks/backend.tm.hcl
 generate_hcl "backend.tf" {
   content {
     terraform {
@@ -195,48 +196,47 @@ generate_hcl "backend.tf" {
 EOF
 ```
 
-This configuration tells Terramate to generate a `backend.tf` file in every stack it can reach within the `stacks/` directory.
-In this case our `first` and `second` stack.
-
-To trigger the code generation we need to run the [`generate`](../cmdline/generate.md) command:
-
-::: code-group
-```sh [shell]
-terramate generate
+```sh [OpenTofu]
+$ cat <<EOF >stacks/backend.tm.hcl
+generate_hcl "backend.tf" {
+  content {
+    terraform {
+      backend "local" {}
+    }
+  }
+}
+EOF
 ```
+:::
 
-``` [output]
+This configures Terramate to generate a `backend.tf` file in every stack it can reach within the `stacks/` directory.
+In this case our `alice` and `bob` stacks.
+
+To trigger the code generation we need to run the [`terramate generate`](../cmdline/generate.md) command:
+
+```sh
+$ terramate generate
+
 Code generation report
 
 Successes:
 
-- /stacks/first
+- /stacks/alice
   [+] backend.tf
 
-- /stacks/second
+- /stacks/bob
   [+] backend.tf
 
 Hint: '+', '~' and '-' mean the file was created, changed and deleted, respectively.
 ```
-:::
 
-The generation report will report any changes in the generated code. When run twice, no changes will be made.
-
-::: code-group
-```sh [shell]
-terramate generate
-```
-
-``` [output]
-Nothing to do, generated code is up to date
-```
-:::
+The generation report will report any changes in the generated code.
 
 Let’s commit the changes and generated code:
 
 ```sh
-git add stacks
-git commit -m 'Add a Terraform Backend Config to all stacks'
+$ git add stacks
+$ git commit -m 'Add a backend configuration to all stacks'
 ```
 
 ::: tip
@@ -244,12 +244,11 @@ It's a recommended best practice to check in generated code to your repository.
 For details, please see [code generation best practices](../code-generation/index.md#best-practices).
 :::
 
-## Run Terraform in both stacks
+## Orchestration in action
 
-The stacks created in the previous sections both represent isolated Terraform environments. To make them functional,
-we must run `terraform init` in both. This is where the Terramate Orchestration comes in handy, which allows us to
-[run commands in stacks](../orchestration/run-commands-in-stacks.md) with the [run](../cmdline/run.md) command.
-As mentioned before, Terramate is not limited to orchestrating Terraform but can run any command.
+The stacks created in the previous sections both represent isolated environments, often referred
+to as "root modules" in Terraform and OpenTofu. To make them functional, we must run `terraform init` or `tofu init`
+in both. Terramate allows you to orchestrate any command in stacks using the [terramate run](../cmdline/run.md) command.
 
 But before we can start, we need to prepare git to ignore terraform temporary files by adding a `.gitignore` file, which is
 located in the root directory of our repository:
@@ -258,110 +257,62 @@ located in the root directory of our repository:
 # NOTE:
 # You might not want to add state and lock file here
 # This is just convenient when running the quickstart guide
-cat <<EOF >.gitignore
+$ cat <<EOF >.gitignore
 .terraform
 .terraform.lock.hcl
 terraform.tfstate
 EOF
 
-git add .gitignore
-git commit -m 'Add .gitignore'
+$ git add .gitignore
+$ git commit -m 'Add .gitignore'
 ```
 
-Now let’s initialize Terraform in all stacks:
+Now let’s initialize our stacks:
 
 ::: code-group
-```sh [shell]
-terramate run terraform init
+```sh [Terraform]
+$ terramate run terraform init
 ```
 
-``` [output]
-terramate: Entering stack in /stacks/first
-terramate: Executing command "terraform init"
-
-Initializing the backend...
-
-Successfully configured the backend "local"! Terraform will automatically
-use this backend unless the backend configuration changes.
-
-Initializing provider plugins...
-
-Terraform has been successfully initialized!
-
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
-terramate: Entering stack in /stacks/second
-terramate: Executing command "terraform init"
-
-Initializing the backend...
-
-Successfully configured the backend "local"! Terraform will automatically
-use this backend unless the backend configuration changes.
-
-Initializing provider plugins...
-
-Terraform has been successfully initialized!
-
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
+```sh [OpenTofu]
+$ terramate run tofu init
 ```
 :::
 
 And run a Terraform plan:
 
 ::: code-group
-```sh [shell]
-terramate run terraform plan
+```sh [Terraform]
+$ terramate run terraform plan
 ```
 
-``` [output]
-terramate: Entering stack in /stacks/first
-terramate: Executing command "terraform plan"
-
-No changes. Your infrastructure matches the configuration.
-
-Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
-terramate: Entering stack in /stacks/second
-terramate: Executing command "terraform plan"
-
-No changes. Your infrastructure matches the configuration.
-
-Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
+```sh [OpenTofu]
+$ terramate run tofu plan
 ```
 :::
 
 ## Add Terraform resources
 
-In this section, we create a Terraform [Null Resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource.html)
+In this section, we create a Terraform [null resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource.html)
 for the purpose of demonstration. Null Resources do not need to configure any cloud credentials as they do not create real
 resources but only virtual ones.
 
 This example will show:
-- You can use plain Terraform config in any stack and do not need to use Terramate’s [Code Generation](../code-generation/index.md).
+- You can use plain Terraform config in any stack and do not need to use [code generation](../code-generation/index.md).
 - Running only on changed stacks can save us time running and reviewing.
 
 ```sh
-cat <<EOF >stacks/second/null.tf
+$ cat <<EOF >stacks/bob/null.tf
 resource "null_resource" "quickstart" {
 }
 EOF
 
-git add stacks/second/null.tf
-git commit -m "Add a null resource"
+$ git add stacks/bob/null.tf
+$ git commit -m "Add a null resource"
 ```
 
 Applying the changes will need a sequence of re-initializing Terraform, and running `terraform apply` in the changed stacks.
-As we only added the resource to the `second` stack, we can leverage Terramate’s [Change Detection](../change-detection/index.md)
+As we only added the resource to the `second` stack, we can leverage [change detection](../change-detection/index.md)
 to run in the changed stack only too.
 
 Running commands in stacks containing changes only, allows us to keep execution run times fast and blast radius small.
@@ -369,113 +320,52 @@ Running commands in stacks containing changes only, allows us to keep execution 
 Re-initialize Terraform to download the null provider:
 
 ::: code-group
-```sh [shell]
-terramate run --changed terraform init
+```sh [Terraform]
+$ terramate run --changed terraform init
 ```
 
-``` [output]
-terramate: Entering stack in /stacks/second
-terramate: Executing command "terraform init"
-
-Initializing the backend...
-
-Initializing provider plugins...
-- Finding latest version of hashicorp/null...
-- Installing hashicorp/null v3.2.2...
-- Installed hashicorp/null v3.2.2 (signed by HashiCorp)
-
-Terraform has created a lock file .terraform.lock.hcl to record the provider
-selections it made above. Include this file in your version control repository
-so that Terraform can guarantee to make the same selections by default when
-you run "terraform init" in the future.
-
-Terraform has been successfully initialized!
-
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
+```sh [OpenTofu]
+$ terramate run --changed tofu init
 ```
 :::
 
 Preview a plan:
 
 ::: code-group
-```sh [shell]
+```sh [Terraform]
 terramate run --changed terraform plan
 ```
 
-``` [output]
-terramate: Entering stack in /stacks/second
-terramate: Executing command "terraform plan"
-
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # null_resource.quickstart will be created
-  + resource "null_resource" "quickstart" {
-      + id = (known after apply)
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+```sh [OpenTofu]
+terramate run --changed tofu plan
 ```
 :::
 
 After reviewing the plan, we can apply the changes:
 
 ::: code-group
-```sh [shell]
+```sh [Terraform]
 terramate run --changed terraform apply -auto-approve
 ```
 
-``` [output]
-terramate: Entering stack in /stacks/second
-terramate: Executing command "terraform apply -auto-approve"
-
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # null_resource.quickstart will be created
-  + resource "null_resource" "quickstart" {
-      + id = (known after apply)
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-null_resource.quickstart: Creating...
-null_resource.quickstart: Creation complete after 0s [id=6372471593458417750]
-
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+```sh [OpenTofu]
+terramate run --changed tofu apply -auto-approve
 ```
 :::
 
 When running `terraform plan` again, we expect no changes to be planned anymore:
 
 ::: code-group
-```sh [shell]
+```sh [Terraform]
 terramate run --changed terraform plan
 ```
 
-``` [output]
-terramate: Entering stack in /stacks/second
-terramate: Executing command "terraform plan"
-null_resource.quickstart: Refreshing state... [id=6372471593458417750]
-
-No changes. Your infrastructure matches the configuration.
-
-Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
+```sh [OpenTofu]
+terramate run --changed tofu plan
 ```
 :::
+
+## Connecting Terramate Cloud
 
 ## Conclusion
 

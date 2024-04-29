@@ -3,7 +3,7 @@ title: terramate run - Command
 description: Execute any commands in all stacks or in a filtered subset of stacks by using the `terramate run` command.
 ---
 
-# Run any Commands in Stacks
+# Run any commands in stacks
 
 ## Overview
 
@@ -447,5 +447,5 @@ jobs:
           terramate run --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
 ```
 
-If using OpenTofu, just adjust the example above using `--tofu-plan-file` and 
+If using OpenTofu, just adjust the example above using `--tofu-plan-file` and
 `tofu plan -out drift.tfplan -detailed-exitcode`.

@@ -158,6 +158,7 @@ export default defineConfig({
             { text: 'How it works', link: '/how-it-works' },
             { text: 'Why Terramate', link: '/why-terramate' },
             { text: 'Product Roadmap', link: 'https://terramate.io/roadmap' },
+            { text: 'Discord Community', link: 'https://terramate.io/discord' },
           ],
         },
         {
@@ -168,7 +169,7 @@ export default defineConfig({
             { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
             { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
             { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
-            { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },
+            // { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },
             // { text: 'AWS Terraform Quickstart', link: '/cli/getting-started/' },
           ],
         },
@@ -225,43 +226,6 @@ export default defineConfig({
                 { text: 'Order of Execution ', link: '/cli/orchestration/order-of-execution' },
                 { text: 'Configure Runtime ENV', link: '/cli/orchestration/runtime-configuration' },
                 { text: 'Disable Safeguards', link: '/cli/orchestration/safeguards' },
-              ],
-            },
-            {
-              text: 'CI/CD Setup',
-              link: '/cli/automation/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'GitHub Actions',
-                  link: '/cli/automation/github-actions/',
-                  items: [
-                    {
-                      text: 'Deployment Workflow',
-                      link: '/cli/automation/github-actions/deployment-workflow',
-                    },
-                    {
-                      text: 'Drift Check Workflow',
-                      link: '/cli/automation/github-actions/drift-check-workflow',
-                    },
-                    {
-                      text: 'Preview Workflow',
-                      link: '/cli/automation/github-actions/preview-workflow',
-                    },
-                  ],
-                },
-                {
-                  text: 'GitLab CI 🚧',
-                  // link: '/cli/automation/gitlab'
-                },
-                {
-                  text: 'BitBucket Pipelines 🚧',
-                  // link: '/cli/automation/bitbucket'
-                },
-                {
-                  text: 'Azure DevOps 🚧',
-                  // link: '/cli/automation/azure-devops'
-                },
               ],
             },
             {
@@ -795,167 +759,242 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: 'Pull Requests',
+              link: '',
+            },
+            {
+              text: 'Deployments',
+              link: '',
+            },
+            {
+              text: 'Alerts',
+              link: '',
+            },
+            {
+              text: 'Drift Management',
+              link: '',
+            },
+            {
+              text: 'Organization Settings',
+              link: '',
+            },
+          ],
+        },
+        {
+          text: '🤖 CI/CD Integration',
+          collapsed: false,
+          items: [
+            {
+              text: 'GitHub Actions',
+              link: '/cli/automation/github-actions/',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Deployment Workflow',
+                  link: '/cli/automation/github-actions/deployment-workflow',
+                },
+                {
+                  text: 'Drift Check Workflow',
+                  link: '/cli/automation/github-actions/drift-check-workflow',
+                },
+                {
+                  text: 'Preview Workflow',
+                  link: '/cli/automation/github-actions/preview-workflow',
+                },
+              ],
+            },
+            {
+              text: 'GitLab CI/CD 🚧',
+              // link: '/cli/automation/gitlab'
+            },
+            {
+              text: 'BitBucket Pipelines 🚧',
+              // link: '/cli/automation/bitbucket'
+            },
+            {
+              text: 'Azure DevOps 🚧',
+              // link: '/cli/automation/azure-devops'
+            },
           ],
         },
 
         {
-          text: '⛅️ Terramate Cloud',
+          text: '➕ Integrations',
           items: [
             {
-              text: 'Create your Account',
-              link: '/cloud/signup/',
+              text: 'Infracost',
+              link: '',
             },
             {
-              text: 'Dashboard',
-              link: '/cloud/dashboard/',
+              text: 'Checkov 🚧',
+              // link: '',
             },
             {
-              text: 'Stacks',
-              link: '/cloud/stacks/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'About Stack Status',
-                  link: '/cloud/stacks/status',
-                },
-                {
-                  text: 'View Stacks',
-                  link: '/cloud/stacks/list',
-                },
-                {
-                  text: 'View Stack Details',
-                  link: '/cloud/stacks/details',
-                },
-                {
-                  text: 'Synchronize Stacks',
-                  link: '/cloud/stacks/sync',
-                },
-                {
-                  text: 'Book a Demo',
-                  link: 'https://terramate.io/demo/',
-                },
-                // {
-                //   text: 'Use Stack Status in CLI 🚧',
-                //   // link: '/cloud/deployments/use-cloud-status-in-cli'
-                // },
-              ],
+              text: 'OPA 🚧',
+              // link: '',
             },
-            {
-              text: 'Pull Request Previews',
-              // link: '/cloud/previews/',
-              collapsed: true,
-              items: [
-                // {
-                //   text: 'View Pull Requests 🚧',
-                //   // link: '/cloud/previews/view-pull-requests'
-                // },
-                // {
-                //   text: 'View Previews 🚧',
-                //   // link: '/cloud/previews/view-previews'
-                // },
-                {
-                  text: 'Synchronize in Automation',
-                  link: '/cloud/previews/synchronization-in-automation',
-                },
-                {
-                  text: 'Synchronize via Scripts',
-                  link: '/cloud/previews/synchronization-with-scripts',
-                },
-              ],
-            },
-            {
-              text: 'Deployments',
-              link: '/cloud/deployments/',
-              collapsed: true,
-              items: [
-                // {
-                //   text: 'View Deloyments 🚧',
-                //   // link: '/cloud/deployments/view-deployments'
-                // },
-                {
-                  text: 'Get Deployment Notification',
-                  link: '/cloud/deployments/notifications',
-                },
-                {
-                  text: 'Synchronize in Automation',
-                  link: '/cloud/deployments/synchronization-in-automation',
-                },
-                {
-                  text: 'Synchronize from CLI',
-                  link: '/cloud/deployments/synchronization-from-cli',
-                },
-                {
-                  text: 'Synchronize via Scripts',
-                  link: '/cloud/deployments/synchronization-with-scripts',
-                },
-              ],
-            },
-            {
-              text: 'Drift Management',
-              // link: '/cloud/drifts/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'Get Drift Notifications',
-                  link: '/cloud/drifts/notifications',
-                },
-                {
-                  text: 'Synchronize in Automation',
-                  link: '/cloud/drifts/synchronization-in-automation',
-                },
-                {
-                  text: 'Synchronize from CLI',
-                  link: '/cloud/drifts/synchronization-from-cli',
-                },
-                {
-                  text: 'Synchronize via Scripts',
-                  link: '/cloud/drifts/synchronization-with-scripts',
-                },
-                // {
-                //   text: 'View Drifted Stacks',
-                //   // link: '/cloud/drifts/view-drifts'
-                // },
-                // {
-                //   text: 'Reconcile Drifts 🚧',
-                //   // link: '/cloud/drifts/reconcile-drifts'
-                // },
-              ],
-            },
-            // {
-            //   text: 'Notifications',
-            //   collapsed: false,
-            //   items: [
-            //   // { text: 'Introduction', link: '/cli/introduction' },
-            //   ],
-            // },
-            {
-              text: 'Organization',
-              link: '/cloud/organization/',
-              collapsed: true,
-              items: [
-                { text: 'General Settings', link: '/cloud/organization/settings' },
-                { text: 'User Management', link: '/cloud/organization/user-management' },
-              ],
-            },
-            // {
-            //   text: '👟 Profile',
-            //   collapsed: false,
-            //   items: [
-            //     // { text: 'Introduction', link: '/cli/introduction' },
-            //   ],
-            // },
-            // {
-            //   text: '🏠 Integrations',
-            //   collapsed: false,
-            //   items: [
-            //     { text: 'Slack', link: '/cloud/integrations/slack/' },
-            //     { text: 'GitHub Actions', link: '/cloud/integrations/github-actions/' },
-            //     { text: 'Gitlab CI/CD', link: '/cloud/integrations/gitlab-cicd/' },
-            //     { text: 'BitBucket Pipelines', link: '/cloud/integrations/bitbucket-pipelines/' },
-            //   ],
-            // },
           ],
         },
+
+        // {
+        //   text: '⛅️ Terramate Cloud',
+        //   items: [
+        //     {
+        //       text: 'Create your Account',
+        //       link: '/cloud/signup/',
+        //     },
+        //     {
+        //       text: 'Dashboard',
+        //       link: '/cloud/dashboard/',
+        //     },
+        //     {
+        //       text: 'Stacks',
+        //       link: '/cloud/stacks/',
+        //       collapsed: true,
+        //       items: [
+        //         {
+        //           text: 'About Stack Status',
+        //           link: '/cloud/stacks/status',
+        //         },
+        //         {
+        //           text: 'View Stacks',
+        //           link: '/cloud/stacks/list',
+        //         },
+        //         {
+        //           text: 'View Stack Details',
+        //           link: '/cloud/stacks/details',
+        //         },
+        //         {
+        //           text: 'Synchronize Stacks',
+        //           link: '/cloud/stacks/sync',
+        //         },
+        //         {
+        //           text: 'Book a Demo',
+        //           link: 'https://terramate.io/demo/',
+        //         },
+        //         // {
+        //         //   text: 'Use Stack Status in CLI 🚧',
+        //         //   // link: '/cloud/deployments/use-cloud-status-in-cli'
+        //         // },
+        //       ],
+        //     },
+        //     {
+        //       text: 'Pull Request Previews',
+        //       // link: '/cloud/previews/',
+        //       collapsed: true,
+        //       items: [
+        //         // {
+        //         //   text: 'View Pull Requests 🚧',
+        //         //   // link: '/cloud/previews/view-pull-requests'
+        //         // },
+        //         // {
+        //         //   text: 'View Previews 🚧',
+        //         //   // link: '/cloud/previews/view-previews'
+        //         // },
+        //         {
+        //           text: 'Synchronize in Automation',
+        //           link: '/cloud/previews/synchronization-in-automation',
+        //         },
+        //         {
+        //           text: 'Synchronize via Scripts',
+        //           link: '/cloud/previews/synchronization-with-scripts',
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       text: 'Deployments',
+        //       link: '/cloud/deployments/',
+        //       collapsed: true,
+        //       items: [
+        //         // {
+        //         //   text: 'View Deloyments 🚧',
+        //         //   // link: '/cloud/deployments/view-deployments'
+        //         // },
+        //         {
+        //           text: 'Get Deployment Notification',
+        //           link: '/cloud/deployments/notifications',
+        //         },
+        //         {
+        //           text: 'Synchronize in Automation',
+        //           link: '/cloud/deployments/synchronization-in-automation',
+        //         },
+        //         {
+        //           text: 'Synchronize from CLI',
+        //           link: '/cloud/deployments/synchronization-from-cli',
+        //         },
+        //         {
+        //           text: 'Synchronize via Scripts',
+        //           link: '/cloud/deployments/synchronization-with-scripts',
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       text: 'Drift Management',
+        //       // link: '/cloud/drifts/',
+        //       collapsed: true,
+        //       items: [
+        //         {
+        //           text: 'Get Drift Notifications',
+        //           link: '/cloud/drifts/notifications',
+        //         },
+        //         {
+        //           text: 'Synchronize in Automation',
+        //           link: '/cloud/drifts/synchronization-in-automation',
+        //         },
+        //         {
+        //           text: 'Synchronize from CLI',
+        //           link: '/cloud/drifts/synchronization-from-cli',
+        //         },
+        //         {
+        //           text: 'Synchronize via Scripts',
+        //           link: '/cloud/drifts/synchronization-with-scripts',
+        //         },
+        //         // {
+        //         //   text: 'View Drifted Stacks',
+        //         //   // link: '/cloud/drifts/view-drifts'
+        //         // },
+        //         // {
+        //         //   text: 'Reconcile Drifts 🚧',
+        //         //   // link: '/cloud/drifts/reconcile-drifts'
+        //         // },
+        //       ],
+        //     },
+        //     // {
+        //     //   text: 'Notifications',
+        //     //   collapsed: false,
+        //     //   items: [
+        //     //   // { text: 'Introduction', link: '/cli/introduction' },
+        //     //   ],
+        //     // },
+        //     {
+        //       text: 'Organization',
+        //       link: '/cloud/organization/',
+        //       collapsed: true,
+        //       items: [
+        //         { text: 'General Settings', link: '/cloud/organization/settings' },
+        //         { text: 'User Management', link: '/cloud/organization/user-management' },
+        //       ],
+        //     },
+        //     // {
+        //     //   text: '👟 Profile',
+        //     //   collapsed: false,
+        //     //   items: [
+        //     //     // { text: 'Introduction', link: '/cli/introduction' },
+        //     //   ],
+        //     // },
+        //     // {
+        //     //   text: '🏠 Integrations',
+        //     //   collapsed: false,
+        //     //   items: [
+        //     //     { text: 'Slack', link: '/cloud/integrations/slack/' },
+        //     //     { text: 'GitHub Actions', link: '/cloud/integrations/github-actions/' },
+        //     //     { text: 'Gitlab CI/CD', link: '/cloud/integrations/gitlab-cicd/' },
+        //     //     { text: 'BitBucket Pipelines', link: '/cloud/integrations/bitbucket-pipelines/' },
+        //     //   ],
+        //     // },
+        //   ],
+        // },
         {
           text: '👨🏽‍💻 Dev Tooling',
           collapsed: true,
@@ -1052,16 +1091,12 @@ export default defineConfig({
           ],
         },
         {
-          text: '🤓 Tutorials',
+          text: '🤓 Guides',
           link: '/cli/guides/',
           collapsed: true,
           items: [
             { text: 'Quickstart from Scratch', link: '/cli/getting-started/' },
           ],
-        },
-        {
-          text: '🌍 Community',
-          link: 'https://terramate.io/discord',
         },
       ],
     },

@@ -51,9 +51,9 @@ install the completion just run the command below and open a new shell session:
 terramate install-completions
 ```
 
-## Authenticate with Terramate Cloud
+## Sign in to Terramate Cloud
 
-To authenticate the CLI with Terramate Cloud, you can run the [`cloud login`](./cmdline/cloud/cloud-info.md) command.
+To authenticate the CLI with Terramate Cloud, you can run the [`terramate cloud login`](./cmdline/cloud/cloud-info.md) command.
 If it's the first time you try to sign in to Terramate Cloud, you will be guided through an onboarding process to create
 a new organization in Terramate Cloud.
 

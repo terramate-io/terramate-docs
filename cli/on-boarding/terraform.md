@@ -1,19 +1,35 @@
 ---
-title: "On-boarding: Terraform On-boarding"
-description: Import your existing Terraform Setup to Terramate
+title: Get Started with Terramate and Terraform
+description: Learn how to onboard Terramate to any existing Terraform project with a single command.
 ---
 
-# Start with existing Terraform Projects
+# Get started with Terramate and Terraform
+
+This page will teach you how to onboard Terramate to an existing Terraform project.
+
+Terramate can be added to any existing Terraform project with a single command
+and without changing any existing configuration, making the onboarding **seamless**
+and **fast**.
+
+::: tip
+If instead, you'd like to learn how to get started with Terramate from scratch, take a look at our
+[Getting Started Guide](../getting-started/index.md).
+:::
+
+<!-- The following sections will teach you how to:
+- Import Terraform root modules as Terramate stacks
+- Orchestrate  -->
 
 ## Import Existing Terraform Stacks
 
-To create Terramate Stacks from existing Terraform Root Modules run the following command.
+To onboard Terramate to an existing Terraform project, you first need to import your Terraform root modules into Terramate.
 
 ```bash
 terramate create --all-terraform
 ```
 
-This command will detect existing Terraform Root modules and create a stack configuration in them.
+This command will detect existing Terraform root modules and create a stack configuration in them, which Terramate
+requires to identify a Terraform root module as a stack.
 
 ## Terramate Features for Terraform Repositories
 

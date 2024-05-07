@@ -157,17 +157,19 @@ export default defineConfig({
             { text: 'About Terramate', link: '/' },
             { text: 'How it works', link: '/how-it-works' },
             { text: 'Why Terramate', link: '/why-terramate' },
-            // { text: 'Product Roadmap', link: '/product-roadmap/' },
+            { text: 'Product Roadmap', link: 'https://terramate.io/roadmap' },
+            { text: 'Discord Community', link: 'https://terramate.io/discord' },
           ],
         },
         {
           text: '🚀 Getting Started',
           items: [
             { text: 'Install Terramate CLI', link: '/cli/installation' },
+            { text: 'Quickstart', link: '/cli/getting-started/' },
             { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
-            { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
             { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
-            { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },
+            { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
+            // { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },
             // { text: 'AWS Terraform Quickstart', link: '/cli/getting-started/' },
           ],
         },
@@ -1048,14 +1050,6 @@ export default defineConfig({
                 { text: 'experimental vendor download', link: '/cli/cmdline/experimental/experimental-vendor-download' },
               ],
             },
-          ],
-        },
-        {
-          text: '🤓 Tutorials',
-          link: '/cli/guides/',
-          collapsed: true,
-          items: [
-            { text: 'Quickstart from Scratch', link: '/cli/getting-started/' },
           ],
         },
         {

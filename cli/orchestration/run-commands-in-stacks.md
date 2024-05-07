@@ -3,7 +3,7 @@ title: Run Commands in Stacks
 description: Learn how to orchestrate the execution of commands in stacks with the terramate run command.
 ---
 
-# Run any Commands in Stacks
+# Run any commands in stacks
 
 Terramate CLI allows you to orchestrate the execution of stacks by running
 commands in all stacks or filtering stacks using certain criteria.

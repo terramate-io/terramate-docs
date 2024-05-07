@@ -1,5 +1,5 @@
 ---
-title: Get started with Terramate and Terraform
+title: Get Started with Terramate and Terraform
 description: Learn how to onboard Terramate to any existing Terraform project with a single command.
 ---
 
@@ -7,34 +7,29 @@ description: Learn how to onboard Terramate to any existing Terraform project wi
 
 This page will teach you how to onboard Terramate to an existing Terraform project.
 
-One of Terramate's features is that you can onboard Terramate to any existing Terraform project with a single command
+Terramate can be added to any existing Terraform project with a single command
 and without changing any existing configuration, making the onboarding **seamless**
 and **fast**.
 
 ::: tip
 If instead, you'd like to learn how to get started with Terramate from scratch, take a look at our
-[Getting Started Guide](https://terramate.io/docs/cli/getting-started/).
+[Getting Started Guide](../getting-started/index.md).
 :::
 
-The following sections will teach you how to:
+<!-- The following sections will teach you how to:
+- Import Terraform root modules as Terramate stacks
+- Orchestrate  -->
 
 ## Import Existing Terraform Stacks
 
-To onboard Terramate to any existing Terraform project, the first step you need to take is to import your Terraform root
-modules to Terramate. The following command will detect all root modules available in your repository and create a
-`stack.tm.hcl` file in each root detected root module. This file is used to configure the metadata and orchestration behavior
-of a stack in Terramate.
+To onboard Terramate to an existing Terraform project, you first need to import your Terraform root modules into Terramate.
 
 ```bash
 terramate create --all-terraform
 ```
 
-This command will detect existing Terraform root modules and create a stack configuration in them, which is required for
-Terramate to identify a Terraform root module as a stack. This allows you to
-
-## Create a Cloud Account
-
-## Sync your stacks to Terramate Cloud
+This command will detect existing Terraform root modules and create a stack configuration in them, which Terramate
+requires to identify a Terraform root module as a stack.
 
 ## Terramate Features for Terraform Repositories
 

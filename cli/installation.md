@@ -17,8 +17,26 @@ The first step you need to take is to install [Terramate CLI](https://github.com
 brew install terramate
 ```
 
-```sh [Linux]
-brew install terramate
+```sh [Ubuntu & Debian]
+# Add the Terramate repo to your sources
+echo "deb [trusted=yes] https://repo.terramate.io/apt/ /" \
+  | sudo tee /etc/apt/sources.list.d/terramate.list
+
+apt update
+apt install terramate
+```
+
+```sh [Fedora & CentOS]
+# Add the Terramate repo to your sources
+sudo tee /etc/yum.repos.d/terramate.repo <<EOF
+[terramate]
+name=Terramate Repository
+baseurl=https://repo.terramate.io/yum/
+enabled=1
+gpgcheck=0
+EOF
+
+dnf install terramate
 ```
 
 ```txt [Windows]

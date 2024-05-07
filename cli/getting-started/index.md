@@ -38,15 +38,34 @@ Before you get started using Terramate, let’s run through a few quick steps to
 
 ::: code-group
 ```sh [macOS]
-$ brew install terramate
+brew install terramate
 ```
 
-```sh [Linux]
-$ brew install terramate
+```sh [Ubuntu & Debian]
+# Add the Terramate repo to your sources
+echo "deb [trusted=yes] https://repo.terramate.io/apt/ /" \
+  | sudo tee /etc/apt/sources.list.d/terramate.list
+
+apt update
+apt install terramate
+```
+
+```sh [Fedora & CentOS]
+# Add the Terramate repo to your sources
+sudo tee /etc/yum.repos.d/terramate.repo <<EOF
+[terramate]
+name=Terramate Repository
+baseurl=https://repo.terramate.io/yum/
+enabled=1
+gpgcheck=0
+EOF
+
+dnf install terramate
 ```
 
 ```sh [Windows]
-$ choco install terramate
+# Download the binary from
+https://github.com/terramate-io/terramate/releases
 ```
 :::
 
@@ -260,7 +279,10 @@ located in the root directory of our repository:
 $ cat <<EOF >.gitignore
 .terraform
 .terraform.lock.hcl
+*.tfstate
 terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
 EOF
 
 $ git add .gitignore
@@ -301,7 +323,8 @@ This example will show:
 - You can use plain Terraform config in any stack and do not need to use [code generation](../code-generation/index.md).
 - Running only on changed stacks can save us time running and reviewing.
 
-```sh
+::: code-group
+```sh [Terraform]
 $ cat <<EOF >stacks/bob/null.tf
 resource "null_resource" "quickstart" {
 }
@@ -310,6 +333,17 @@ EOF
 $ git add stacks/bob/null.tf
 $ git commit -m "Add a null resource"
 ```
+
+```sh [OpenTofu]
+$ cat <<EOF >stacks/bob/null.tf
+resource "null_resource" "quickstart" {
+}
+EOF
+
+$ git add stacks/bob/null.tf
+$ git commit -m "Add a null resource"
+```
+:::
 
 Applying the changes will need a sequence of re-initializing Terraform, and running `terraform apply` in the changed stacks.
 As we only added the resource to the `second` stack, we can leverage [change detection](../change-detection/index.md)
@@ -367,31 +401,188 @@ terramate run --changed tofu plan
 
 ## Connecting Terramate Cloud
 
-## Conclusion
+Now that you have your first Terramate project created, let's connect it to Terramate Cloud and learn how we can enable
+observability, CI/CD, drift detection and more! Terramate CLI and Terramate Cloud work in tandem to deliver a reliable
+experience. Terramate Cloud is free for individual use, with features available for teams.
 
-We hope this tutorial has helped you grasp the basics of Terramate.
-Here's a summary of what we learned:
+### Create a cloud account
 
-- How to initialize a Terramate Repository with Git support
-- How to create [Terramate Stacks](../stacks/index.md)
-- How to leverage [Change Detection](../change-detection/index.md) when [managing stacks](../stacks/manage.md) or [running commands](../orchestration/run-commands-in-stacks.md)
-- How to [generate code](../code-generation/index.md) (Terraform Backend) in all stacks to keep the configuration DRY
-- How to deploy Terraform using a local backend and [null resources](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource.html) as an example
-- Terramate is not limited to executing Terraform, but can help scale Terraform for any use case
+To start using the cloud, you need to sign up for a free cloud account and create an organization.
+
+- Sign in and Sign up to [cloud.terramate.io](https://cloud.terramate.io) and
+- Create your Organization
+
+Remember the organization's short name that you set for accessing the organization on Terramate Cloud to configure your Terramate CLI in the next steps.
+
+### Configure your repository
+
+After creating your organization configure your Terramate project to define which Terramate Cloud organization to synchronize data to.
+
+```sh
+$ cat <<EOF >terramate.tm.hcl
+terramate {
+  config {
+    cloud {
+      organization = "{organization-short-name}" # TODO: fill in your org short name
+    }
+  }
+}
+EOF
+
+$ git add terramate.tm.hcl
+$ git commit -m "Add Terramate Cloud configuration"
+$ git push origin main
+```
+
+### Create a GitHub repository
+
+Terramate Cloud requires a GitHub, GitLab or BitBucket repository to work properly. We will use GitHub in this guide.
+Let's start by [creating a new repository](https://github.com/new) in your personal GitHub account or an organization.
+We'll name the repository `terramate-quickstart` and create it as a private repository.
+
+![Create a new GitHub Repository](../assets/quickstart/github-create-new-repo.png)
+
+Once the repository is created on GitHub, you can add it to your local repository and push your data to GitHub.
+Don't forget to replace `your-account` with your GitHub account or organization handle.
+
+```sh
+$ git remote add origin git@github.com:your-account/terramate-quickstart.git
+$ git branch -M main
+$ git push -u origin main
+```
+
+## Login from CLI
+
+To synchronize data from your local machine, you will need to `login` to Terramate Cloud from the CLI.
+Terramate CLI will store a session on your machine after a successful login.
+
+Use the following command to initiate the login.
+
+```sh
+$ terramate cloud login
+```
+
+If you want to login with GitHub instead, use:
+
+```sh
+$ terramate cloud login --github
+```
+
+## Sync stacks to Terramate Cloud
+
+After setting up your GitHub repository and Terramate Cloud organization, let's sync the stacks configured in our Terramate
+project to Terramate Cloud. The easiest to sync your stacks is to run a drift detection workflow in all stacks and sync
+the result to Terramate Cloud:
+
+::: code-group
+```sh [Terraform]
+$ terramate run \
+  --sync-drift-status \
+  --terraform-plan-file=drift.tfplan \
+  --continue-on-error \
+  -- \
+  terraform plan -detailed-exitcode -out drift.tfplan
+```
+
+```sh [OpenTofu]
+$ terramate run \
+  --sync-drift-status \
+  --tofu-plan-file=drift.tfplan \
+  --continue-on-error \
+  -- \
+  tofu plan -detailed-exitcode -out drift.tfplan
+```
+:::
+
+In a nutshell, the command above runs a `terraform plan` or `tofu plan` in all your stacks and sends the result to
+Terramate Cloud. Since the plans don't detect any changes, Terramate Cloud won't mark those stacks as drifted but only
+adds them to your inventory of stacks.
+
+![Terramate Cloud Stack Inventory](../assets/quickstart/terramate-cloud-stack-inventory.png)
+
+## Trigger a deployment
+
+As a final step of this guide, we will introduce a change to one of our stacks and trigger a new deployment. For that,
+let's add another null resource to our `bob` stack.
+
+::: code-group
+```sh [Terraform]
+$ cat <<EOF >>stacks/bob/null.tf
+resource "null_resource" "quickstart2" {
+}
+EOF
+
+$ git add stacks/bob/null.tf
+$ git commit -m "Add another null resource"
+```
+
+```sh [OpenTofu]
+$ cat <<EOF >>stacks/bob/null.tf
+resource "null_resource" "quickstart2" {
+}
+EOF
+
+$ git add stacks/bob/null.tf
+$ git commit -m "Add another null resource"
+```
+:::
+
+Next, the plan and apply the changes. The following command will create a plan in all changed stacks, apply the generated
+plan files and sync the result as a deployment to Terramate Cloud.
+
+::: code-group
+```sh [Terraform]
+$ terramate run \
+  --changed \
+  -- \
+  terraform plan -lock-timeout=5m -out deploy.tfplan
+
+$ terramate run \
+  --changed \
+  --sync-deployment \
+  --terraform-plan-file=deploy.tfplan \
+  -- \
+  terraform apply -input=false -auto-approve -lock-timeout=5m deploy.tfplan
+```
+
+```sh [OpenTofu]
+$ terramate run \
+  --changed \
+  -- \
+  tofu plan -lock-timeout=5m -out deploy.tfplan
+
+$ terramate run \
+  --changed \
+  --sync-deployment \
+  --tofu-plan-file=deploy.tfplan \
+  -- \
+  tofu apply -input=false -auto-approve -lock-timeout=5m deploy.tfplan
+```
+:::
+
+If you take a look at Deployments in Terramate Cloud, you will see that a new deployment has been created.
+
+![Terramate Cloud Deployment](../assets/quickstart/terramate-cloud-deployment.png)
+
+## Summary
+
+We hope this tutorial has helped you grasp the basics of Terramate. Here's a summary of what we learned:
+
+- How to initialize a Terramate Project in a Git repository.
+- How to create [stacks](../stacks/index.md).
+- How to leverage [change detection](../change-detection/index.md) when [managing stacks](../stacks/manage.md) or [running commands](../orchestration/run-commands-in-stacks.md).
+- How to [generate code](../code-generation/index.md) in all stacks to keep the configuration DRY.
+- How to deploy Terraform and OpenTofu using a local backend and [null resources](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource.html) as an example.
+- How to create a [Terramate Cloud](https://cloud.terramate.io) account and connect it to your project.
 
 Those examples hopefully give you a starting point and help you get insights into the capabilities of Terramate.
 This is just the tip of the iceberg and running code generation and change detection on scale can help you save a lot of time when maintaining or running Terraform.
 
 ## Next steps
 
-- Learn more about [Stacks](../stacks/index.md)
-- Learn more about [Orchestration](../orchestration/index.md)
-- Learn more about [Code Generation](../code-generation/index.md)
-- Learn more about [Change Detection](../change-detection/index.md)
-- Learn more about [Variables](../code-generation/variables/index.md) available in Terramate such as
-[Globals](../code-generation/variables/globals.md) or [Metadata](../code-generation/variables/metadata.md).
-- Learn more about [Running Terramate in CI/CD](https://blog.terramate.io/how-to-build-a-ci-cd-pipeline-for-terraform-with-terramate-on-github-actions-57de86d9e66a)
-- Learn more about use cases outside of the Terraform Universe
+- Configure CI/CD workflows for pull request previews, deployment, drift detection and reconciliation using GitHub Actions, GitLab, BitBucket pipeline or any other CI/CD platform.
+- Configure Slack Notifications.
+- Invite your team members to your organization.
 
 ## Join the community
 

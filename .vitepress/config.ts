@@ -173,69 +173,69 @@ export default defineConfig({
             // { text: 'AWS Terraform Quickstart', link: '/cli/getting-started/' },
           ],
         },
+
         {
-          text: '⭐ Core Concepts',
+          text: '⭐ Terramate Concept',
           items: [
-            // {
-            //   text: 'Configuration',
-            // },
-            // {
-            //   text: 'Projects',
-            //   link: '/cli/projects/',
-            //   collapsed: true,
-            //   items: [
-            //     { text: 'Create Projects', link: '/cli/projects/create' },
-            //     { text: 'Configure a project', link: '/cli/projects/configuration' },
-            //     // { text: 'Start with Terraform', link: '/cli/projects/terraform' },
-            //     // { text: 'Start with Terragrunt', link: '/cli/projects/terragrunt' },
-            //   ],
-            // },
+            { text: 'Configuration', link: '/configuration/' },
+            { text: 'Stacks', link: '/stacks/' },
+            { text: 'Orchestration', link: '/stacks/' },
+            { text: 'Automation', link: '/stacks/' },
+            { text: 'Code Generation', link: '/stacks/' },
             {
-              text: 'Stacks',
-              collapsed: true,
-              link: '/cli/stacks/',
+              text: 'Pull Request Previews',
+              link: '/code-generation/',
+            },
+            {
+              text: 'Deployments',
+              link: '/code-generation/',
+            },
+            {
+              text: 'Drift Management',
+              link: '/code-generation/',
+            },
+            {
+              text: 'Alerts',
+              link: '/code-generation/',
+            },
+          ],
+        },
+
+        {
+          text: '⭐ How-to Guides',
+          items: [
+            {
+              text: 'Working with Stacks',
               items: [
                 { text: 'Create Stacks', link: '/cli/stacks/create' },
                 { text: 'Configure Stacks', link: '/cli/stacks/configuration' },
                 { text: 'Clone Stacks', link: '/cli/stacks/clone' },
                 { text: 'Manage Stacks', link: '/cli/stacks/manage' },
                 { text: 'Delete Stacks', link: '/cli/stacks/delete' },
-                { text: 'Nesting Stacks', link: '/cli/stacks/nesting' },
               ],
             },
             {
-              text: 'Orchestration',
-              collapsed: true,
-              link: '/cli/orchestration/',
+              text: 'Orchestrating Commands',
               items: [
-                { text: 'Run any Commands', link: '/cli/orchestration/run-commands-in-stacks' },
-                { text: 'Run Terramate Scripts', link: '/cli/orchestration/scripts' },
-                {
-                  text: 'Change Detection',
-                  collapsed: true,
-                  link: '/cli/change-detection/',
-                  items: [
-                    { text: 'Integration: Git', link: '/cli/change-detection/integrations/git' },
-                    { text: 'Integration: Terraform', link: '/cli/change-detection/integrations/terraform' },
-                    { text: 'Integration: Terragrunt', link: '/cli/change-detection/integrations/terragrunt' },
-                    { text: 'Integration: OpenTofu', link: '/cli/change-detection/integrations/opentofu' },
-                    { text: 'Integration: Local Files', link: '/cli/change-detection/file-watchers' },
-                  ],
-                },
-                // { text: 'Filter Stacks', link: '/cli/orchestration/tag-filter' },
-                { text: 'Order of Execution ', link: '/cli/orchestration/order-of-execution' },
-                { text: 'Configure Runtime ENV', link: '/cli/orchestration/runtime-configuration' },
-                { text: 'Disable Safeguards', link: '/cli/orchestration/safeguards' },
+                { text: 'Run commands', link: '/cli/orchestration/run-commands-in-stacks' },
+                { text: 'Workflows', link: '/cli/orchestration/scripts' },
+                { text: 'Parallel Execution', link: '/cli/orchestration/parallel-execution' },
+                { text: 'Safeguards', link: '/cli/orchestration/safeguards' },
               ],
             },
             {
-              text: 'CI/CD Setup',
-              link: '/cli/automation/',
-              collapsed: true,
+              text: 'Configuration',
+              items: [
+                { text: 'Environment variables', link: '/cli/orchestration/runtime-configuration' },
+              ],
+            },
+            {
+              text: 'CI/CD Workflows',
               items: [
                 {
                   text: 'GitHub Actions',
                   link: '/cli/automation/github-actions/',
+                  collapsed: true,
                   items: [
                     {
                       text: 'Deployment Workflow',
@@ -252,7 +252,7 @@ export default defineConfig({
                   ],
                 },
                 {
-                  text: 'GitLab CI 🚧',
+                  text: 'GitLab CI/CD 🚧',
                   // link: '/cli/automation/gitlab'
                 },
                 {
@@ -266,9 +266,7 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Code Generation',
-              collapsed: true,
-              link: '/cli/code-generation/',
+              text: 'Generating Code',
               items: [
                 { text: 'Generate ad-hoc HCL', link: '/cli/code-generation/tmgen' },
                 { text: 'Generate HCL', link: '/cli/code-generation/generate-hcl' },
@@ -801,166 +799,292 @@ export default defineConfig({
         },
 
         {
-          text: '⛅️ Terramate Cloud',
+          text: 'Reference Guides',
           items: [
             {
-              text: 'Create your Account',
-              link: '/cloud/signup/',
-            },
-            {
-              text: 'Dashboard',
-              link: '/cloud/dashboard/',
-            },
-            {
               text: 'Stacks',
-              link: '/cloud/stacks/',
-              collapsed: true,
               items: [
                 {
-                  text: 'About Stack Status',
-                  link: '/cloud/stacks/status',
+                  text: 'Configuration',
                 },
-                {
-                  text: 'View Stacks',
-                  link: '/cloud/stacks/list',
-                },
-                {
-                  text: 'View Stack Details',
-                  link: '/cloud/stacks/details',
-                },
-                {
-                  text: 'Synchronize Stacks',
-                  link: '/cloud/stacks/sync',
-                },
-                {
-                  text: 'Book a Demo',
-                  link: 'https://terramate.io/demo/',
-                },
-                // {
-                //   text: 'Use Stack Status in CLI 🚧',
-                //   // link: '/cloud/deployments/use-cloud-status-in-cli'
-                // },
+                { text: 'Nesting Stacks', link: '/cli/stacks/nesting' },
+
               ],
             },
             {
-              text: 'Pull Request Previews',
-              // link: '/cloud/previews/',
-              collapsed: true,
+              text: 'Orchestration',
               items: [
-                // {
-                //   text: 'View Pull Requests 🚧',
-                //   // link: '/cloud/previews/view-pull-requests'
-                // },
-                // {
-                //   text: 'View Previews 🚧',
-                //   // link: '/cloud/previews/view-previews'
-                // },
-                {
-                  text: 'Synchronize in Automation',
-                  link: '/cloud/previews/synchronization-in-automation',
-                },
-                {
-                  text: 'Synchronize via Scripts',
-                  link: '/cloud/previews/synchronization-with-scripts',
-                },
+                { text: 'Order of Execution ', link: '/cli/orchestration/order-of-execution' },
+                { text: 'Safeguards', link: '/cli/orchestration/safeguards' },
+                // { text: 'Filter Stacks', link: '/cli/orchestration/tag-filter' },
+
               ],
             },
             {
-              text: 'Deployments',
-              link: '/cloud/deployments/',
-              collapsed: true,
+              text: 'Change Detection',
               items: [
-                // {
-                //   text: 'View Deloyments 🚧',
-                //   // link: '/cloud/deployments/view-deployments'
-                // },
-                {
-                  text: 'Get Deployment Notification',
-                  link: '/cloud/deployments/notifications',
-                },
-                {
-                  text: 'Synchronize in Automation',
-                  link: '/cloud/deployments/synchronization-in-automation',
-                },
-                {
-                  text: 'Synchronize from CLI',
-                  link: '/cloud/deployments/synchronization-from-cli',
-                },
-                {
-                  text: 'Synchronize via Scripts',
-                  link: '/cloud/deployments/synchronization-with-scripts',
-                },
+                { text: 'Integration: Git', link: '/cli/change-detection/integrations/git' },
+                { text: 'Integration: Terraform', link: '/cli/change-detection/integrations/terraform' },
+                { text: 'Integration: Terragrunt', link: '/cli/change-detection/integrations/terragrunt' },
+                { text: 'Integration: OpenTofu', link: '/cli/change-detection/integrations/opentofu' },
               ],
             },
             {
-              text: 'Drift Management',
-              // link: '/cloud/drifts/',
-              collapsed: true,
+              text: 'Terramate Cloud',
               items: [
                 {
-                  text: 'Get Drift Notifications',
-                  link: '/cloud/drifts/notifications',
+                  text: 'Create your Account',
+                  link: '/cloud/signup/',
                 },
-                {
-                  text: 'Synchronize in Automation',
-                  link: '/cloud/drifts/synchronization-in-automation',
-                },
-                {
-                  text: 'Synchronize from CLI',
-                  link: '/cloud/drifts/synchronization-from-cli',
-                },
-                {
-                  text: 'Synchronize via Scripts',
-                  link: '/cloud/drifts/synchronization-with-scripts',
-                },
-                // {
-                //   text: 'View Drifted Stacks',
-                //   // link: '/cloud/drifts/view-drifts'
-                // },
-                // {
-                //   text: 'Reconcile Drifts 🚧',
-                //   // link: '/cloud/drifts/reconcile-drifts'
-                // },
               ],
             },
-            // {
-            //   text: 'Notifications',
-            //   collapsed: false,
-            //   items: [
-            //   // { text: 'Introduction', link: '/cli/introduction' },
-            //   ],
-            // },
-            {
-              text: 'Organization',
-              link: '/cloud/organization/',
-              collapsed: true,
-              items: [
-                { text: 'General Settings', link: '/cloud/organization/settings' },
-                { text: 'User Management', link: '/cloud/organization/user-management' },
-              ],
-            },
-            // {
-            //   text: '👟 Profile',
-            //   collapsed: false,
-            //   items: [
-            //     // { text: 'Introduction', link: '/cli/introduction' },
-            //   ],
-            // },
-            // {
-            //   text: '🏠 Integrations',
-            //   collapsed: false,
-            //   items: [
-            //     { text: 'Slack', link: '/cloud/integrations/slack/' },
-            //     { text: 'GitHub Actions', link: '/cloud/integrations/github-actions/' },
-            //     { text: 'Gitlab CI/CD', link: '/cloud/integrations/gitlab-cicd/' },
-            //     { text: 'BitBucket Pipelines', link: '/cloud/integrations/bitbucket-pipelines/' },
+            //     {
+            //       text: 'Dashboard',
+            //       link: '/cloud/dashboard/',
+            //     },
+            //     {
+            //       text: 'Stacks',
+            //       link: '/cloud/stacks/',
+            //       collapsed: true,
+            //       items: [
+            //         {
+            //           text: 'About Stack Status',
+            //           link: '/cloud/stacks/status',
+            //         },
+            //         {
+            //           text: 'View Stacks',
+            //           link: '/cloud/stacks/list',
+            //         },
+            //         {
+            //           text: 'View Stack Details',
+            //           link: '/cloud/stacks/details',
+            //         },
+            //         {
+            //           text: 'Synchronize Stacks',
+            //           link: '/cloud/stacks/sync',
+            //         },
+            //         {
+            //           text: 'Book a Demo',
+            //           link: 'https://terramate.io/demo/',
+            //         },
+            //         // {
+            //         //   text: 'Use Stack Status in CLI 🚧',
+            //         //   // link: '/cloud/deployments/use-cloud-status-in-cli'
+            //         // },
+            //       ],
+            //     },
+            //     {
+            //       text: 'Pull Request Previews',
+            //       // link: '/cloud/previews/',
+            //       collapsed: true,
+            //       items: [
+            //         // {
+            //         //   text: 'View Pull Requests 🚧',
+            //         //   // link: '/cloud/previews/view-pull-requests'
+            //         // },
+            //         // {
+            //         //   text: 'View Previews 🚧',
+            //         //   // link: '/cloud/previews/view-previews'
+            //         // },
+            //         {
+            //           text: 'Synchronize in Automation',
+            //           link: '/cloud/previews/synchronization-in-automation',
+            //         },
+            //         {
+            //           text: 'Synchronize via Scripts',
+            //           link: '/cloud/previews/synchronization-with-scripts',
+            //         },
+            //       ],
+            //     },
+            //     {
+            //       text: 'Deployments',
+            //       link: '/cloud/deployments/',
+            //       collapsed: true,
+            //       items: [
+            //         // {
+            //         //   text: 'View Deloyments 🚧',
+            //         //   // link: '/cloud/deployments/view-deployments'
+            //         // },
+            //         {
+            //           text: 'Get Deployment Notification',
+            //           link: '/cloud/deployments/notifications',
+            //         },
+            //         {
+            //           text: 'Synchronize in Automation',
+            //           link: '/cloud/deployments/synchronization-in-automation',
+            //         },
+            //         {
+            //           text: 'Synchronize from CLI',
+            //           link: '/cloud/deployments/synchronization-from-cli',
+            //         },
+            //         {
+            //           text: 'Synchronize via Scripts',
+            //           link: '/cloud/deployments/synchronization-with-scripts',
+            //         },
+            //       ],
+            //     },
+            //     {
+            //       text: 'Drift Management',
+            //       // link: '/cloud/drifts/',
+            //       collapsed: true,
+            //       items: [
+            //         {
+            //           text: 'Get Drift Notifications',
+            //           link: '/cloud/drifts/notifications',
+            //         },
+            //         {
+            //           text: 'Synchronize in Automation',
+            //           link: '/cloud/drifts/synchronization-in-automation',
+            //         },
+            //         {
+            //           text: 'Synchronize from CLI',
+            //           link: '/cloud/drifts/synchronization-from-cli',
+            //         },
+            //         {
+            //           text: 'Synchronize via Scripts',
+            //           link: '/cloud/drifts/synchronization-with-scripts',
+            //         },
+            //         // {
+            //         //   text: 'View Drifted Stacks',
+            //         //   // link: '/cloud/drifts/view-drifts'
+            //         // },
+            //         // {
+            //         //   text: 'Reconcile Drifts 🚧',
+            //         //   // link: '/cloud/drifts/reconcile-drifts'
+            //         // },
+            //       ],
+            //     },
+            //     // {
+            //     //   text: 'Notifications',
+            //     //   collapsed: false,
+            //     //   items: [
+            //     //   // { text: 'Introduction', link: '/cli/introduction' },
+            //     //   ],
+            //     // },
+            //     {
+            //       text: 'Organization',
+            //       link: '/cloud/organization/',
+            //       collapsed: true,
+            //       items: [
+            //         { text: 'General Settings', link: '/cloud/organization/settings' },
+            //         { text: 'User Management', link: '/cloud/organization/user-management' },
+            //       ],
+            //     },
+            //     // {
+            //     //   text: '👟 Profile',
+            //     //   collapsed: false,
+            //     //   items: [
+            //     //     // { text: 'Introduction', link: '/cli/introduction' },
+            //     //   ],
+            //     // },
+            //     // {
+            //     //   text: '🏠 Integrations',
+            //     //   collapsed: false,
+            //     //   items: [
+            //     //     { text: 'Slack', link: '/cloud/integrations/slack/' },
+            //     //     { text: 'GitHub Actions', link: '/cloud/integrations/github-actions/' },
+            //     //     { text: 'Gitlab CI/CD', link: '/cloud/integrations/gitlab-cicd/' },
+            //     //     { text: 'BitBucket Pipelines', link: '/cloud/integrations/bitbucket-pipelines/' },
+            //     //   ],
+            //     // },
             //   ],
             // },
           ],
         },
+
+        {
+          text: '⚙️ Reference',
+          items: [
+            {
+              text: 'Configuration',
+              collapsed: true,
+              items: [
+                { text: 'Terramate Configuration', link: '/cli/configuration/' },
+                { text: 'Upgrade Check', link: '/cli/configuration/upgrade-check' },
+              ],
+            },
+            {
+              text: 'Terramate CLI',
+              collapsed: true,
+              items: [
+                { text: 'Overview', link: '/cli/cmdline/' },
+                // {
+                //   text: 'Most important actions',
+                //   items: [
+                //     { text: 'Create or Import Stacks', link: '/cli/cmdline/create' },
+                //     { text: 'List Stacks', link: '/cli/cmdline/list' },
+                //     { text: 'Generate Code', link: '/cli/cmdline/generate' },
+                //     { text: 'Run any Commands', link: '/cli/cmdline/run' },
+                //     { text: 'Run Terramate Scripts', link: '/cli/cmdline/script/script-run' },
+                //     { text: 'Terramate Cloud Login', link: '/cli/cmdline/cloud/cloud-login' },
+                //   ],
+                // },
+                {
+                  text: 'Stacks and Orchestration',
+                  collapsed: false,
+                  items: [
+                    { text: 'create', link: '/cli/cmdline/create' },
+                    { text: 'list', link: '/cli/cmdline/list' },
+                    { text: 'run', link: '/cli/cmdline/run' },
+                    { text: 'debug show runtime-env', link: '/cli/cmdline/debug/show/debug-show-runtime-env' },
+                    { text: 'experimental clone', link: '/cli/cmdline/experimental/experimental-clone' },
+                    { text: 'experimental trigger', link: '/cli/cmdline/experimental/experimental-trigger' },
+                  ],
+                },
+                {
+                  text: 'Terramate Scripts',
+                  collapsed: false,
+                  items: [
+                    { text: 'script run', link: '/cli/cmdline/script/script-run' },
+                    { text: 'script info', link: '/cli/cmdline/script/script-info' },
+                    { text: 'script list', link: '/cli/cmdline/script/script-list' },
+                    { text: 'script tree', link: '/cli/cmdline/script/script-tree' },
+                  ],
+                },
+                {
+                  text: 'Code Generation',
+                  collapsed: false,
+                  items: [
+                    { text: 'fmt', link: '/cli/cmdline/fmt' },
+                    { text: 'generate', link: '/cli/cmdline/generate' },
+                    { text: 'debug show metadata', link: '/cli/cmdline/debug/show/debug-show-metadata' },
+                    { text: 'debug show globals', link: '/cli/cmdline/debug/show/debug-show-globals' },
+                  ],
+                },
+                {
+                  text: 'Terramate Cloud',
+                  collapsed: false,
+                  items: [
+                    { text: 'cloud login', link: '/cli/cmdline/cloud/cloud-login' },
+                    { text: 'cloud info', link: '/cli/cmdline/cloud/cloud-info' },
+                    { text: 'cloud drift show', link: '/cli/cmdline/cloud/drift/cloud-drift-show' },
+                  ],
+                },
+                {
+                  text: 'Misc',
+                  collapsed: true,
+                  items: [
+                    { text: 'install-completions', link: '/cli/cmdline/install-completions' },
+                    { text: 'version', link: '/cli/cmdline/version' },
+                  ],
+                },
+                {
+                  text: 'Experimental',
+                  collapsed: true,
+                  items: [
+                    { text: 'experimental eval', link: '/cli/cmdline/experimental/experimental-eval' },
+                    { text: 'experimental partial-eval', link: '/cli/cmdline/experimental/experimental-partial-eval' },
+                    { text: 'experimental get-config-value', link: '/cli/cmdline/experimental/experimental-get-config-value' },
+                    { text: 'experimental run-graph', link: '/cli/cmdline/experimental/experimental-run-graph' },
+                    { text: 'experimental vendor download', link: '/cli/cmdline/experimental/experimental-vendor-download' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
         {
           text: '👨🏽‍💻 Dev Tooling',
-          collapsed: true,
           items: [
             { text: 'VSCode Extension', link: 'https://marketplace.visualstudio.com/items?itemName=Mineiros.terramate' },
             { text: 'VIM Plugin', link: 'https://github.com/terramate-io/vim-terramate' },
@@ -968,95 +1092,35 @@ export default defineConfig({
           ],
         },
         {
-          text: '⚙️ Configuration',
-          collapsed: true,
+          text: '🤓 Tutorials and Examples',
+          link: '/cli/guides/',
           items: [
-            { text: 'Terramate Configuration', link: '/cli/configuration/' },
-            { text: 'Upgrade Check', link: '/cli/configuration/upgrade-check' },
-          ],
-        },
-        {
-          text: '💻 Terramate CLI',
-          collapsed: true,
-          items: [
-            { text: 'Overview', link: '/cli/cmdline/' },
-            // {
-            //   text: 'Most important actions',
-            //   items: [
-            //     { text: 'Create or Import Stacks', link: '/cli/cmdline/create' },
-            //     { text: 'List Stacks', link: '/cli/cmdline/list' },
-            //     { text: 'Generate Code', link: '/cli/cmdline/generate' },
-            //     { text: 'Run any Commands', link: '/cli/cmdline/run' },
-            //     { text: 'Run Terramate Scripts', link: '/cli/cmdline/script/script-run' },
-            //     { text: 'Terramate Cloud Login', link: '/cli/cmdline/cloud/cloud-login' },
-            //   ],
-            // },
             {
-              text: 'Stacks and Orchestration',
-              collapsed: false,
+              text: 'Reference Architectures',
               items: [
-                { text: 'create', link: '/cli/cmdline/create' },
-                { text: 'list', link: '/cli/cmdline/list' },
-                { text: 'run', link: '/cli/cmdline/run' },
-                { text: 'debug show runtime-env', link: '/cli/cmdline/debug/show/debug-show-runtime-env' },
-                { text: 'experimental clone', link: '/cli/cmdline/experimental/experimental-clone' },
-                { text: 'experimental trigger', link: '/cli/cmdline/experimental/experimental-trigger' },
-              ],
-            },
-            {
-              text: 'Terramate Scripts',
-              collapsed: false,
-              items: [
-                { text: 'script run', link: '/cli/cmdline/script/script-run' },
-                { text: 'script info', link: '/cli/cmdline/script/script-info' },
-                { text: 'script list', link: '/cli/cmdline/script/script-list' },
-                { text: 'script tree', link: '/cli/cmdline/script/script-tree' },
+                { text: 'AWS', link: 'https://github.com/terramate-io/terramate-quickstart-aws' },
+                { text: 'Microsoft Azure', link: 'https://github.com/terramate-io/terramate-quickstart-azure' },
+                // { text: 'Google Cloud', link: '/cli/guides/reference-architectures/aws' },
+                { text: 'Terragrunt and AWS', link: 'https://github.com/terramate-io/terramate-terragrunt-infrastructure-live-example' },
               ],
             },
             {
               text: 'Code Generation',
-              collapsed: false,
               items: [
-                { text: 'fmt', link: '/cli/cmdline/fmt' },
-                { text: 'generate', link: '/cli/cmdline/generate' },
-                { text: 'debug show metadata', link: '/cli/cmdline/debug/show/debug-show-metadata' },
-                { text: 'debug show globals', link: '/cli/cmdline/debug/show/debug-show-globals' },
-                { text: 'debug show generate-origins', link: '/cli/cmdline/debug/show/debug-show-generate-origins' },
+                { text: 'Example Code Generation', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
+                { text: 'Terraform Backend and Provider', link: 'https://github.com/terramate-io/terramate-examples/tree/main/01-keep-terraform-dry' },
+                { text: 'Dynamic Provider Generation', link: 'https://github.com/terramate-io/terramate-examples/tree/main/02-manage-providers-programmatically' },
               ],
             },
-            {
-              text: 'Terramate Cloud',
-              collapsed: false,
-              items: [
-                { text: 'cloud login', link: '/cli/cmdline/cloud/cloud-login' },
-                { text: 'cloud info', link: '/cli/cmdline/cloud/cloud-info' },
-                { text: 'cloud drift show', link: '/cli/cmdline/cloud/drift/cloud-drift-show' },
-              ],
-            },
-            {
-              text: 'Misc',
-              collapsed: true,
-              items: [
-                { text: 'install-completions', link: '/cli/cmdline/install-completions' },
-                { text: 'version', link: '/cli/cmdline/version' },
-              ],
-            },
-            {
-              text: 'Experimental',
-              collapsed: true,
-              items: [
-                { text: 'experimental eval', link: '/cli/cmdline/experimental/experimental-eval' },
-                { text: 'experimental partial-eval', link: '/cli/cmdline/experimental/experimental-partial-eval' },
-                { text: 'experimental get-config-value', link: '/cli/cmdline/experimental/experimental-get-config-value' },
-                { text: 'experimental run-graph', link: '/cli/cmdline/experimental/experimental-run-graph' },
-                { text: 'experimental vendor download', link: '/cli/cmdline/experimental/experimental-vendor-download' },
-              ],
-            },
+            // {
+            //   text: 'Stacks',
+            //   items: [
+            //     { text: 'How to size Stacks', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
+            //     { text: 'Share Data between Stacks', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
+            //     { text: 'Manage environments with Stacks', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
+            //   ],
+            // },
           ],
-        },
-        {
-          text: '🌍 Community',
-          link: 'https://terramate.io/discord',
         },
       ],
     },

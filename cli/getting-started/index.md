@@ -86,7 +86,7 @@ Next, install Terraform or OpenTofu:
 
 Terramate requires a git repository, and every git repository is a project in Terramate.
 
-Let's create a new directory called `terramate-quickstart` and initialize Git to set up your first Terramate project.
+Let's create a new repository `terramate-quickstart` to set up your first Terramate project.
 
 ```sh
 $ git init -b main terramate-quickstart

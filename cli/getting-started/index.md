@@ -77,7 +77,7 @@ $ terramate version
 
 ### Install Terraform or OpenTofu
 
-Next, install Terraform or OpenTofu to orchestrate it using Terramate:
+Next, install Terraform or OpenTofu:
 
 - [Install Terraform](https://developer.hashicorp.com/terraform/install)
 - [Install OpenTofu](https://opentofu.org/docs/intro/install/)

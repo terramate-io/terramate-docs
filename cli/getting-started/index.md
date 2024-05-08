@@ -572,7 +572,7 @@ We hope this tutorial has helped you grasp the basics of Terramate. Here's a sum
 - How to create a [Terramate Cloud](https://cloud.terramate.io) account and connect it to your project.
 
 Those examples hopefully give you a starting point and help you get insights into the capabilities of Terramate.
-This quickstart is just the tip of the iceberg. Running code generation and change detection on the scale can help you save a lot of time when maintaining or running Terraform.
+This quickstart is just the tip of the iceberg. Running code generation and change detection can help you save a lot of time when maintaining or running Terraform.
 
 ## Next steps
 

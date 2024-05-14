@@ -505,7 +505,7 @@ generate_hcl "example3.hcl" {
 }
 ```
 
-Note that `var.name` is outside the scope of Terramate, then this loop cannot be fully evaluated and it's kept in the generated code. See below:
+Note that `var.name` is beyond Terramate's scope, so this loop cannot be evaluated and remains in the generated code. See below:
 
 ```hcl
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT

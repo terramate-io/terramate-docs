@@ -492,7 +492,7 @@ values = [
 
 ### Partial evaluation
 
-If any part of the `for` expression contains unknown variables, then the loop construct is kept in the generated code but Terramate variables are evaluated. See example below:
+If any part of the `for` expression contains unknown variables, the loop construct stays in the generated code, while Terramate variables are evaluated. See example below:
 
 ```
 generate_hcl "example3.hcl" {

@@ -7,12 +7,12 @@ description: Learn how Terramate can help to detect OpenTofu stacks that referen
 
 ## Local OpenTofu Module Support
 
-When calculating stacks that have changed and need to be deployed, Terramate will scan each stack's OpenTofu files (`*.tf`) and detect any local OpenTofu Modules the stacks use.
+Terramate scans each stack's OpenTofu files (`*.tf`) to detect any local OpenTofu Modules the stacks use when calculating changed stacks for deployment.
 
-A local OpenTofu Module is located within the same repository and referenced via a relative path. Any generated or plain OpenTofu files will be considered.
+When using a local OpenTofu Module from the same repository, referenced via a relative path, Terramate considers any generated or plain OpenTofu files associated with it.
 
-If local OpenTofu Modules are referencing other local OpenTofu Modules recursively, all recursion levels will be detected.
+Terramate will detect all recursion levels if local OpenTofu Modules reference other local OpenTofu Modules recursively.
 
-If any OpenTofu Module has been changed, all stacks referencing any of those Modules either directly or indirectly will be also marked as changed and will be executed even though no changes need to be detected within the stack itself.
+If any OpenTofu Module changes, all stacks that use these Modules, directly or indirectly, will be marked as changed and executed, even if there are no changes within the stacks themselves.
 
 As OpenTofu supports Terraform Modules the integration considers Terraform and OpenTofu Modules.

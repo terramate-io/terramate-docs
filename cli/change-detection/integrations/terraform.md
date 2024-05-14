@@ -9,10 +9,10 @@ description: Learn how Terramate can help to detect Terraform stacks that refere
 
 When calculating stacks that have changed and need to be deployed, Terramate will scan each stack's Terraform files (`*.tf`) and detect any local Terraform Modules the stacks use.
 
-A local Terraform Module is located within the same repository and referenced via a relative path. Any generated or plain Terraform files will be considered.
+When using a local Terraform Module from the same repository, referenced via a relative path, Terramate considers any generated or plain Terraform files associated with it.
 
-If local Terraform Modules are referencing other local Terraform Modules recursively, all recursion levels will be detected.
+Terramate will detect all recursion levels if local Terraform Modules reference other local Terraform Modules recursively.
 
-If any Terraform Module has been changed, all stacks referencing any of those Modules either directly or indirectly will be also marked as changed and will be executed even though no changes need to be detected within the stack itself.
+If any Terraform Module changes, all stacks that use these Modules, directly or indirectly, will be marked as changed and executed, even if there are no changes within the stacks themselves.
 
 ![Module Change Detection](../../assets/module-change-detection.gif)

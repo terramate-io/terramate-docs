@@ -436,7 +436,7 @@ generate_hcl "main.tf" {
 }
 ```
 
-The `[for ...]` and `{for ...}` expressions are evaluated as much as possible, which means the "for" is only kept in the generated code if it contains unknown variables. 
+The expressions `[for ...]` and `{for ...}` are evaluated as much as possible, so the generated code only retains the "for" keyword if it includes unknown variables.
 
 See examples below:
 

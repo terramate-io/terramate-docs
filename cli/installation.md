@@ -79,6 +79,11 @@ a new organization in Terramate Cloud.
 terramate cloud login
 ```
 
+::: tip
+Per default, `terramate cloud login` is using Google Workspaces as the identity provider. To use GitHub instead,
+please run `terramate cloud login --github`. Microsoft Entra ID is not supported in the CLI yet.
+:::
+
 Once the CLI is authenticated with Terramate Cloud, you can use it to interact with the cloud. For example, the following
 command prints a list of all drifted stacks.
 

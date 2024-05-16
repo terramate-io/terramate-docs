@@ -16,8 +16,8 @@ All project configurations are defined within the `terramate` block.
 # terramate.tm.hcl
 
 terramate {
-  # allow any Terramate v0.4.x version starting at v0.4.3
-  required_version = "~> 0.4.3"
+  # allow any Terramate v0.8.x version starting at v0.8.2
+  required_version = "~> 0.8.2"
 
   config {
     # config options
@@ -49,15 +49,15 @@ Valid examples:
 
 ```hcl
 terramate {
-  # allow any Terramate v0.4.x version starting at v0.4.3
-  required_version = "~> 0.4.3"
+  # allow any Terramate v0.8.x version starting at v0.8.2
+  required_version = "~> 0.8.2"
 }
 ```
 
 ```hcl
 terramate {
-  # allow any Terramate v0.4.x version starting at v0.4.3
-  required_version = ">= 0.4.3, < 0.5.0"
+  # allow any Terramate v0.8.x version starting at v0.4.2
+  required_version = ">= 0.8.2, < 0.9.0"
 }
 ```
 

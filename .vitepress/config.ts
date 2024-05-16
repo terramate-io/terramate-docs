@@ -153,6 +153,7 @@ export default defineConfig({
       '/': [
         {
           text: '👋 Introduction',
+          collapsed: false,
           items: [
             { text: 'About Terramate', link: '/' },
             { text: 'How it works', link: '/how-it-works' },
@@ -163,6 +164,7 @@ export default defineConfig({
         },
         {
           text: '🚀 Getting Started',
+          collapsed: false,
           items: [
             { text: 'Install Terramate CLI', link: '/cli/installation' },
             { text: 'Quickstart', link: '/cli/getting-started/' },
@@ -175,7 +177,7 @@ export default defineConfig({
 
         {
           text: '⭐ Features',
-          // collapsed: true,
+          collapsed: false,
           items: [
             // { text: 'Terramate CLI', link: '/cli/' },
             // { text: 'Terramate Cloud', link: '/cloud/' },
@@ -205,6 +207,7 @@ export default defineConfig({
 
         {
           text: 'Working with Stacks',
+          collapsed: false,
           items: [
             { text: 'Create Stacks', link: '/cli/stacks/create' },
             { text: 'Configure Stacks', link: '/cli/stacks/configuration' },
@@ -215,6 +218,7 @@ export default defineConfig({
         },
         {
           text: 'Orchestrating Commands',
+          collapsed: false,
           items: [
             { text: 'Run Commands', link: '/cli/orchestration/run-commands-in-stacks' },
             { text: 'Workflows', link: '/cli/orchestration/scripts' },
@@ -224,6 +228,7 @@ export default defineConfig({
         },
         {
           text: 'Generating Code',
+          collapsed: false,
           items: [
             { text: 'Generate HCL', link: '/cli/code-generation/generate-hcl' },
             { text: 'Generate File', link: '/cli/code-generation/generate-file' },
@@ -231,12 +236,14 @@ export default defineConfig({
         },
         {
           text: 'Configuration',
+          // collapsed: false,
           items: [
             { text: 'Environment Variables', link: '/cli/orchestration/runtime-configuration' },
           ],
         },
         {
           text: 'Automation',
+          collapsed: false,
           items: [
             {
               text: 'Pull Requests',
@@ -295,12 +302,14 @@ export default defineConfig({
         },
         {
           text: 'Working with Alerts',
+          // collapsed: false,
           items: [
             { text: 'Create Alerts', link: '/cli/alerts/create' },
           ],
         },
         {
           text: 'Integrations',
+          collapsed: false,
           items: [
             {
               text: 'Slack',
@@ -319,6 +328,7 @@ export default defineConfig({
 
         {
           text: '⚙️ Reference',
+          collapsed: false,
           items: [
             {
               text: 'Configuration',
@@ -1125,6 +1135,7 @@ export default defineConfig({
         },
         {
           text: '👨🏽‍💻 Dev Tooling',
+          collapsed: false,
           items: [
             { text: 'VSCode Extension', link: 'https://marketplace.visualstudio.com/items?itemName=Mineiros.terramate' },
             { text: 'VIM Plugin', link: 'https://github.com/terramate-io/vim-terramate' },
@@ -1133,12 +1144,14 @@ export default defineConfig({
         },
         {
           text: 'Conceptual Guides',
+          collapsed: false,
           items: [
             { text: 'An introduction to Stacks', link: '/cli/stacks/' },
           ],
         },
         {
           text: '🤓 Tutorials and Examples',
+          collapsed: false,
           link: '/cli/guides/',
           items: [
             {

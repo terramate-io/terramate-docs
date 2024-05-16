@@ -222,6 +222,10 @@ export default defineConfig({
               text: 'Generating Code',
               collapsed: false,
               items: [
+                { text: 'Simple Templates', link: '/cli/code-generation/' },
+                { text: 'Generate HCL', link: '/cli/code-generation/' },
+                { text: 'Generate JSON', link: '/cli/code-generation/' },
+                { text: 'Generate YAML', link: '/cli/code-generation/' },
               ],
             },
             {
@@ -997,8 +1001,14 @@ export default defineConfig({
                 },
               ],
             },
-            { text: 'Generate HCL', link: '/cli/code-generation/generate-hcl' },
-            { text: 'Generate File', link: '/cli/code-generation/generate-file' },
+            {
+              text: 'Code Generation',
+              collapsed: true,
+              items: [
+                { text: 'generate_hcl', link: '/cli/code-generation/generate-hcl' },
+                { text: 'generate_file', link: '/cli/code-generation/generate-file' },
+              ],
+            },
             {
               text: 'Change Detection',
               link: '/cli/change-detection/',
@@ -1086,11 +1096,11 @@ export default defineConfig({
                     { text: 'experimental vendor download', link: '/cli/cmdline/experimental/experimental-vendor-download' },
                   ],
                 },
+                {
+                  text: 'Upgrade Check',
+                  link: '/cli/configuration/upgrade-check',
+                },
               ],
-            },
-            {
-              text: 'Upgrade Check',
-              link: '/cli/configuration/upgrade-check',
             },
             {
               text: 'Configuration Reference',
@@ -1111,10 +1121,6 @@ export default defineConfig({
           text: '📖 Conceptual Guides',
           collapsed: true,
           items: [
-            {
-              text: 'An introduction to Stacks',
-              link: '/cli/stacks/',
-            },
             {
               text: 'Order of Execution ',
               link: '/cli/orchestration/order-of-execution',

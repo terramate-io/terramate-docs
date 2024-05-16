@@ -254,7 +254,7 @@ export default defineConfig({
                     {
                       text: 'GitHub Actions',
                       link: '/cli/automation/github-actions/',
-                      collapsed: false,
+                      collapsed: true,
                       items: [
                         {
                           text: 'Deployment Workflow',

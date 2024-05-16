@@ -10,3 +10,19 @@ BitBucket Pipelines and Atlantis to automate your IaC lifecycle management using
 
 Compared to other tooling in the market, Terramate doesn't require you to manage any additional infrastructure and runs
 without a backend.
+
+## CI/CD Integration
+
+## GitOps
+
+### Workflows
+
+#### apply-after-merge
+
+#### apply-before-merge
+
+## Pull Requests
+
+## Deployments
+
+## Drift Detection and Reconciliation

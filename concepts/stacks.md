@@ -11,7 +11,7 @@ In this section, we will cover stacks as a core concept in Terramate.
 
 A modular approach is recommended when working with Infrastructure as Code (IaC). This approach breaks the entire infrastructure code and state into **smaller** and **isolated** units, often referred to as **_stacks._**
 
-## What are stacks?
+## What are stacks
 
 A stack is a collection of infrastructure resources that you _configure, provision_ and _manage_ as a unit.
 

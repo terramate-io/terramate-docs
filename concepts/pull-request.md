@@ -5,6 +5,10 @@ description: Learn how stacks help you efficiently build and manage infrastructu
 
 # Pull Requests
 
+In this section, we will cover code generation as a core concept in Terramate.
+
+## Introduction
+
 Terramate allows you to provide change previews in Pull Requests to ensure the review of changes by individuals or teams
 before triggering a deployment.
 

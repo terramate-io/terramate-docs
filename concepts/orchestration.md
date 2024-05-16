@@ -1,6 +1,6 @@
 ---
 title: Orchestration | Terramate Concepts
-description: Learn how stacks help you efficiently build and manage infrastructure as code projects at any scale with technologies such as Terraform.
+description: Learn how orchestration in Terramate can be used to execute single commands or workflows in stacks.
 ---
 
 # Orchestration
@@ -27,16 +27,13 @@ Per default, commands and workflows are executed in stacks sequentially but can 
 Terramate can be used to invoke commands and workflows on a single stack or a DAG "directed acyclic graph" of stacks.
 This graph models the dependency relations between the stacks. The run order is then based on a
 [topological ordering](https://en.wikipedia.org/wiki/Topological_sorting) of the nodes, which can be optionally filtered
-and reversed.
+using change detection or tag filter. Additionally, the order of execution can be reversed also, which is useful when
+running commands such as `terraform destroy` on a graph of dependent stacks.
 
-## Change Detection
+## Change detection
 
 Terramate comes with a change detection feature, which allows you to orchestrate stacks that contain changes only.
 The change detection comes with several integrations to cover IaC-specific use-cases, such as Terraform module change
 detection or Terragrunt dependency change detection.
 
 For details, please see the [change detection](../cli/change-detection/index.md) documentation.
-
-<!-- ## Filters
-
-Additional filters are available when selecting a list of stacks for orchestration. -->

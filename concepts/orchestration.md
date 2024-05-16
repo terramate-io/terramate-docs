@@ -18,24 +18,25 @@ Currently, two ways of orchestrating commands exist:
 - Executing a single command such as `terraform apply` with the `terramate run` command, e.g. `terramate run -- terraform apply`.
 - Executing a sequence of commands combined as workflow using Terramate scripts with the `terrmate run script` command, e.g. `terramate script run terraform deploy`.
 
+## Sequential and parallel execution
+
 Per default, commands and workflows are executed in stacks sequentially but can be executed [in parallel](../cli/orchestration/parallel-execution.md) also.
 
-## Graph-based execution
+## Dependency graph
 
 Terramate can be used to invoke commands and workflows on a single stack or a DAG "directed acyclic graph" of stacks.
+This graph models the dependency relations between the stacks. The run order is then based on a
+[topological ordering](https://en.wikipedia.org/wiki/Topological_sorting) of the nodes, which can be optionally filtered
+and reversed.
 
 ## Change Detection
 
 Terramate comes with a change detection feature, which allows you to orchestrate stacks that contain changes only.
-The change detection comes with several integrations to cover IaC-specific use-cases such as Terraform module change
+The change detection comes with several integrations to cover IaC-specific use-cases, such as Terraform module change
 detection or Terragrunt dependency change detection.
 
-For details, please see:
-- Git change detection
-- Terraform change detection
-- OpenTofu change detection
-- Terragrunt -
+For details, please see the [change detection](../cli/change-detection/index.md) documentation.
 
-## Filters
+<!-- ## Filters
 
-Additional filters are available, when selecting a list of stacks for orchestration.
+Additional filters are available when selecting a list of stacks for orchestration. -->

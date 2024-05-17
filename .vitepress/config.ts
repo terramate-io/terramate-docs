@@ -177,10 +177,8 @@ export default defineConfig({
 
         {
           text: '⭐ Concepts',
-          collapsed: true,
+          collapsed: false,
           items: [
-            // { text: 'Terramate CLI', link: '/cli/' },
-            // { text: 'Terramate Cloud', link: '/cloud/' },
             { text: 'Configuration', link: '/concepts/configuration' },
             { text: 'Stacks', link: '/concepts/stacks' },
             { text: 'Orchestration', link: '/concepts/orchestration' },
@@ -195,11 +193,11 @@ export default defineConfig({
 
         {
           text: '👷 How-to Guides',
-          collapsed: true,
+          collapsed: false,
           items: [
             {
               text: 'Working with Stacks',
-              collapsed: false,
+              collapsed: true,
               items: [
                 { text: 'Create Stacks', link: '/cli/stacks/create' },
                 { text: 'Configure Stacks', link: '/cli/stacks/configuration' },
@@ -210,7 +208,7 @@ export default defineConfig({
             },
             {
               text: 'Orchestrating Commands',
-              collapsed: false,
+              collapsed: true,
               items: [
                 { text: 'Run Commands', link: '/cli/orchestration/run-commands-in-stacks' },
                 { text: 'Workflows', link: '/cli/orchestration/scripts' },
@@ -220,7 +218,7 @@ export default defineConfig({
             },
             {
               text: 'Generating Code',
-              collapsed: false,
+              collapsed: true,
               items: [
                 { text: 'Simple Templates', link: '/cli/code-generation/' },
                 { text: 'Generate HCL', link: '/cli/code-generation/' },
@@ -230,14 +228,14 @@ export default defineConfig({
             },
             {
               text: 'Configuration',
-              collapsed: false,
+              collapsed: true,
               items: [
                 { text: 'Environment Variables', link: '/cli/orchestration/runtime-configuration' },
               ],
             },
             {
               text: 'Automation',
-              collapsed: false,
+              collapsed: true,
               items: [
                 {
                   text: 'Pull Requests',

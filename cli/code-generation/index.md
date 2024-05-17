@@ -21,7 +21,7 @@ Currently, the following code-generation strategies are available:
 
 - [HCL generation](./generate-hcl.md) with `stack` [context](#generation-context) to generate Terraform, OpenTofu and other HCL configurations inside of stacks. The blocks will be inherited through the hierarchy into all stacks reachable from the definition of the block.
 
-- [File generation](./generate-file.md) with `root` and `stack` [context](#generation-context) to generate arbitrary files such as JSON and YAML, following the ame inheritance logic as for generating HCL.
+- [File generation](./generate-file.md) with `root` and `stack` [context](#generation-context) to generate arbitrary files such as JSON and YAML, following the same inheritance logic as for generating HCL.
 
 ## Generate code
 

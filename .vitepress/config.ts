@@ -270,6 +270,7 @@ export default defineConfig({
               collapsed: true,
               link: '/cli/code-generation/',
               items: [
+                { text: 'Generate ad-hoc HCL', link: '/cli/code-generation/tmgen' },
                 { text: 'Generate HCL', link: '/cli/code-generation/generate-hcl' },
                 { text: 'Generate File', link: '/cli/code-generation/generate-file' },
                 {

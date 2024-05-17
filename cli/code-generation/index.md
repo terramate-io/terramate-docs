@@ -7,27 +7,21 @@ description: Learn how to keep your stacks DRY by generating files such as Terra
 
 ## Introduction
 
-Terramate CLI supports the generation of code in stacks.
-This section contains usage documentation and examples of the code generation in Terramate and all available strategies.
+Terramate CLI supports the generation of code in stacks based on blueprints defined in code inside of the stack or on higher levels of the hierarchy.
 
-Generating code in stacks can help keep your stacks DRY (think generating files such as Terraform provider configuration
-or Kubernetes manifests). This is especially useful whenever you want to conditionally generate code for stacks based on
-stack metadata such as tags or paths.
+Generating code in stacks helps keep stacks DRY.
 
-Currently, the following code generation strategies are available:
+The most common use cases are generating code for Terraform Backends and Provider configurations by defining the logic one on the root level of your repository and generating the same code on all stacks based on the configuration available in the stacks.
 
-* [HCL generation](./generate-hcl.md) with `stack` [context](#generation-context) to generate Terraform, OpenTofu and other HCL configurations.
-* [File generation](./generate-file.md) with `root` and `stack` [context](#generation-context) to generate arbitrary
-files such as JSON and YAML.
+In more advanced scenarios, code can be generated based on conditions or filters to generate based on the hierarchy or based on tags or other exprssions.
 
-E.g., the following generates a simple file using the [file generation](./generate-file.md) strategy.
+Currently, the following code-generation strategies are available:
 
-```hcl
-# config.tm.hcl
-generate_file "file.txt" {
-  content = "file contents"
-}
-```
+- [.tmgen](./tmgen.md) Generate HCL files ad-hoc within a stack. This is the fastest and easiest way when existing code is available and shall be extended with some Terramate Features of Code Generation like Terramate Globals or Functions. Existing code can be renamed and generation will happen in place extending the capabilities of the configuration of e.g. Terraform or OpenTofu
+
+- [HCL generation](./generate-hcl.md) with `stack` [context](#generation-context) to generate Terraform, OpenTofu and other HCL configurations inside of stacks. The blocks will be inherited through the hierarchy into all stacks reachable from the definition of the block.
+
+- [File generation](./generate-file.md) with `root` and `stack` [context](#generation-context) to generate arbitrary files such as JSON and YAML, following the same inheritance logic as for generating HCL.
 
 ## Generate code
 
@@ -37,23 +31,20 @@ The [`generate`](../cmdline/generate.md) command generates all files configured 
 terramate generate
 ```
 
-This command always runs the code generation in your entire Terramate project and ensures that all generated files
-are up to date.
+This command always runs the code generation in your entire Terramate project and ensures that all generated files are up to date.
 
-## Hierarchical code generation
+## Hierarchical Code Generation
 
 Code generation can be defined and used anywhere in a [Terramate Project](../projects/configuration.md).
 
 Any stack that is part of the filesystem tree reachable from a code generation strategy configuration will be a selected target to generate code in.
-This means a configuration to generate code can be defined at the root level, reach all stacks, and trigger code generation in all
-stacks if not limited by [conditional code generation](#conditional-code-generation), [inherit attribute](#inheritable-generation-blocks) or
-[stack filters](./generate-hcl.md#filter-based-code-generation).
+
+This means a configuration to generate code can be defined at the root level, reach all stacks, and trigger code generation in all stacks if not limited by [conditional code generation](#conditional-code-generation), [inherit attributes](#inheritable-generation-blocks) or [stack filters](./generate-hcl.md#filter-based-code-generation).
 
 ### Failure modes
 
 There is no overriding or merging behavior for code generation blocks.
-Blocks defined at different levels with the same label aren't allowed, resulting
-in failure for the overall code generation process.
+Blocks defined at different levels with the same label aren't allowed, failing the overall code generation process.
 
 ## Import
 
@@ -76,17 +67,17 @@ Code generation supports two execution contexts:
 
 The `stack` context gives access to all code generation features, such as:
 
-* [Globals](./variables/globals.md)
-* [All Metadata](./variables/metadata.md)
-* [Functions](./functions/index.md)
-* [Lets](./variables/lets.md)
-* [Assertions](#assertions)
+- [Globals](./variables/globals.md)
+- [All Metadata](./variables/metadata.md)
+- [Functions](./functions/index.md)
+- [Lets](./variables/lets.md)
+- [Assertions](#assertions)
 
 But the `root` context gives access to:
 
-* [Project Metadata](./variables/metadata.md#project-metadata)
-* [Functions](./functions/index.md)
-* [Lets](./variables/lets.md)
+- [Project Metadata](./variables/metadata.md#project-metadata)
+- [Functions](./functions/index.md)
+- [Lets](./variables/lets.md)
 
 If not specified the default generation context is `stack`.
 The `generate_hcl` block doesn't support changing the `context`, it will always be
@@ -109,24 +100,24 @@ on the [generation context](#generation-context).
 
 For `stack` context, the labels must follow the constraints below:
 
-* It is a relative path in the form `<dir>/<filename>` or just `<filename>`
-* It is always defined with `/` independent on the OS you are working on
-* It does not contain `../` (code can only be generated inside the stack)
-* It does not start with `./`
-* It does not contain a dot directory (invalid example: `somedir/.invalid/main.tf`)
-* It is not a symbolic link
-* It is not a stack
-* It is unique on the whole hierarchy of a stack for all blocks with condition=true.
+- It is a relative path in the form `<dir>/<filename>` or just `<filename>`
+- It is always defined with `/` independent on the OS you are working on
+- It does not contain `../` (code can only be generated inside the stack)
+- It does not start with `./`
+- It does not contain a dot directory (invalid example: `somedir/.invalid/main.tf`)
+- It is not a symbolic link
+- It is not a stack
+- It is unique on the whole hierarchy of a stack for all blocks with condition=true.
 
 For `root` context, the constraints are:
 
-* It is an absolute path in the form `/<dir>/<filename>` or just `/<filename>`.
-* It is always defined with `/` independent on the OS you are working on
-* It does not contain `../` (code can only be generated inside the project root)
-* It does not contain a dot directory (invalid example: `somedir/.invalid/file.txt`)
-* It is not a symbolic link
-* It is not a stack
-* It is unique on the whole hierarchy for all blocks with condition=true.
+- It is an absolute path in the form `/<dir>/<filename>` or just `/<filename>`.
+- It is always defined with `/` independent on the OS you are working on
+- It does not contain `../` (code can only be generated inside the project root)
+- It does not contain a dot directory (invalid example: `somedir/.invalid/file.txt`)
+- It is not a symbolic link
+- It is not a stack
+- It is unique on the whole hierarchy for all blocks with condition=true.
 
 **Example:**
 
@@ -151,7 +142,7 @@ Terramate offers different ways to generate code conditionally.
 The `generate_file` and `generate_hcl` blocks support an `inherit` attribute which determines if the block will be inherited into child stacks.
 By default, it's `true`, which means the code will be generated in all child stacks.
 When using `inherit = false`, then the code is only generated in the stack where the block is declared.
-If the block with `inherit = false`  is declared outside a stack directory then it's
+If the block with `inherit = false` is declared outside a stack directory then it's
 ignored and a warning is given to stderr.
 
 ### Stack filters - path-based code generation
@@ -192,6 +183,7 @@ Conditions allow for more complex targeting of stacks using Terramate Globals, T
 As complex calculations require more CPU time and access more data, the execution of conditions is significantly slower compared to using Stack Filters.
 
 The following list names some examples of what conditions could be used for:
+
 - Path-based Code Generation (prefer Stack Filters or use in combination with Stack Filters for large amounts of stacks)
 - Tag-based Code Generation
 - Generation of code based on the state of Terramate Globals
@@ -229,9 +221,9 @@ if some pre-condition is not met, helping to catch mistakes in your configuratio
 Assertions can be only used when the [generation context](#generation-context)
 is of type `stack` and it has the following fields:
 
-- `assertion` *(optional boolean)* The `condition` attribute supports any expression that renders to a boolean.
-- `message` *(optional string)* Obligatory, must evaluate to string
-- `warning` *(optional string)*  Must evaluate to boolean. Defaults to `false`.
+- `assertion` _(optional boolean)_ The `condition` attribute supports any expression that renders to a boolean.
+- `message` _(optional string)_ Obligatory, must evaluate to string
+- `warning` _(optional string)_ Must evaluate to boolean. Defaults to `false`.
 
 All fields can contain expressions using Terramate Variables (`let`, `global`, and `terramate` namespaces) and all Terramate Functions are supported.
 
@@ -278,6 +270,7 @@ In addition to the recommended prefix, each generated file contains a header to 
 all changes will be overwritten by the `terramate generate`.
 
 Example:
+
 ```hcl
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
 ....

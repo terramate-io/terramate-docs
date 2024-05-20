@@ -25,5 +25,5 @@ terramate -C path/to/directory debug show generate-origins
 Filter results based on change detection and path:
 
 ```bash
-terramate -C stacks/ --changed debug show generate-origins
+terramate -C stacks debug show generate-origins --changed 
 ```

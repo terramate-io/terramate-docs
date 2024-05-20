@@ -20,7 +20,7 @@ terramate debug show generate-origins
 Change the working directory before listing origins:
 
 ```bash
-terramate debug show generate-origins --chdir path/to/directory
+terramate -C path/to/directory debug show generate-origins 
 ```
 Filter results based on change detection and path:
 

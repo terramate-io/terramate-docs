@@ -1021,6 +1021,7 @@ export default defineConfig({
                 { text: 'generate', link: '/cli/cmdline/generate' },
                 { text: 'debug show metadata', link: '/cli/cmdline/debug/show/debug-show-metadata' },
                 { text: 'debug show globals', link: '/cli/cmdline/debug/show/debug-show-globals' },
+                { text: 'debug show generate-origins', link: '/cli/cmdline/debug/show/debug-show-generate-origins' },
               ],
             },
             {

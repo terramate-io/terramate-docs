@@ -1003,6 +1003,7 @@ export default defineConfig({
               text: 'Code Generation',
               collapsed: true,
               items: [
+                { text: 'Generate ad-hoc HCL', link: '/cli/code-generation/tmgen' },
                 { text: 'generate_hcl', link: '/cli/code-generation/generate-hcl' },
                 { text: 'generate_file', link: '/cli/code-generation/generate-file' },
               ],
@@ -1064,6 +1065,7 @@ export default defineConfig({
                     { text: 'generate', link: '/cli/cmdline/generate' },
                     { text: 'debug show metadata', link: '/cli/cmdline/debug/show/debug-show-metadata' },
                     { text: 'debug show globals', link: '/cli/cmdline/debug/show/debug-show-globals' },
+                    { text: 'debug show generate-origins', link: '/cli/cmdline/debug/show/debug-show-generate-origins' },
                   ],
                 },
                 {
@@ -1131,7 +1133,6 @@ export default defineConfig({
               text: 'Nesting Stacks',
               link: '/cli/stacks/nesting',
             },
-
           ],
         },
         {

@@ -15,20 +15,17 @@ Orchestration allows the execution of commands such as `terraform apply` or `tof
 
 Currently, two ways of orchestrating commands exist:
 
-- Executing a single command such as `terraform apply` with the `terramate run` command, e.g. `terramate run -- terraform apply`.
-- Executing a sequence of commands combined as workflow using Terramate scripts with the `terrmate run script` command, e.g. `terramate script run terraform deploy`.
+- Executing a single command such as `terraform apply` with the `terramate run` command, e.g., `terramate run -- terraform apply`.
+- Executing a sequence of commands combined as workflow using Terramate scripts with the `terramate script run` command, e.g., `terramate script run terraform deploy`.
 
 ## Sequential and parallel execution
 
-Per default, commands and workflows are executed in stacks sequentially but can be executed [in parallel](../cli/orchestration/parallel-execution.md) also.
+By default, commands and workflows run sequentially in stacks but can also run in [parallel](../cli/orchestration/parallel-execution.md).
 
 ## Dependency graph
 
-Terramate can be used to invoke commands and workflows on a single stack or a DAG "directed acyclic graph" of stacks.
-This graph models the dependency relations between the stacks. The run order is then based on a
-[topological ordering](https://en.wikipedia.org/wiki/Topological_sorting) of the nodes, which can be optionally filtered
-using change detection or tag filter. Additionally, the order of execution can be reversed also, which is useful when
-running commands such as `terraform destroy` on a graph of dependent stacks.
+Terramate can invoke commands and workflows on a single stack or a directed acyclic graph (DAG) of stacks.
+The graph depicts the dependency relations between the stacks. The run order follows a [topological ordering](https://en.wikipedia.org/wiki/Topological_sorting) of the nodes, which can be filtered using change detection or tag filters. Furthermore, the execution order can also be reversed, which is beneficial when running commands like `terraform destroy` on a graph of dependent stacks.
 
 ## Change detection
 

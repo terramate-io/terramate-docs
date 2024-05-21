@@ -5,20 +5,20 @@ description: Learn how Terramate follows the everything as code principle by usi
 
 # Configuration
 
-In this section, we will cover the configuration as a core concept in Terramate.
+This section explains configuration as a core concept in Terramate.
 
 ## Introduction
 
-Terramate follows the **"everything as code"** principle, which means that you can fully configure Terramate with code.
+Terramate follows the **"everything as code"** principle, meaning you can fully configure Terramate with code.
 
-For that, Terramate uses **Hashicorp Configuration Language (HCL)** as its configuration language. This is done by
+Terramate uses **Hashicorp Configuration Language (HCL)** as its configuration language by
 extending HCL with Terramate-specific language constructs such as the `terramate`, `stack`, `generate_hcl` or `globals`
 blocks that allow you to configure Terramate features such as Stacks, Orchestration, Code Generation, and Variables.
 
 ## Why HCL
 
 HCL is a structured configuration language rather than a data structure serialization language.
-This means that, unlike languages such as JSON, YAML, or TOML, HCL is always decoded using an application-defined schema.
+It means that, unlike languages such as JSON, YAML, or TOML, HCL gets decoded using an application-defined schema.
 
 In a nutshell:
 - HCL allows you to **define**, **compute** and **reuse** configurations easily.
@@ -34,6 +34,6 @@ possible while working with Terramate. For details, please see the [installation
 
 ## Why not YAML, JSON, etc
 
-Most traditional configuration languages are static, do not support variable or function calls and are meant for static
+Most traditional configuration languages are static and do not support variable or function calls for static
 configuration management. HCL comes with variables and functions built-in, allowing users to easily reuse and compute
-configuration. E.g., in Terramate you can use all available Terraform functions prefixed with `_tm` out of the box.
+configuration. For example, in Terramate, you can use all available Terraform functions prefixed with `_tm` out of the box.

@@ -5,7 +5,7 @@ description: Learn how Terramate follows the everything as code principle by usi
 
 # Configuration
 
-This section explains configuration as a core concept in Terramate.
+This section explains **configuration** as a core concept in Terramate.
 
 ## Introduction
 

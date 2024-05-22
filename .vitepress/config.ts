@@ -177,23 +177,22 @@ export default defineConfig({
 
         {
           text: '⭐ Concepts',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'Configuration', link: '/concepts/configuration' },
             { text: 'Stacks', link: '/concepts/stacks' },
             { text: 'Orchestration', link: '/concepts/orchestration' },
+            { text: 'Deployments', link: '/concepts/deployments' },
+            { text: 'Pull Requests', link: '/concepts/pull-requests' },
+            { text: 'Drift', link: '/concepts/drift' },
+            { text: 'Alerts', link: '/concepts/alerts' },
             { text: 'Code Generation', link: '/concepts/code-generation' },
-            { text: 'Automation', link: '/concepts/automation' },
-            {
-              text: 'Observability',
-              link: '/concepts/drift',
-            },
           ],
         },
 
         {
           text: '👷 How-to Guides',
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               text: 'Working with Stacks',

@@ -47,7 +47,8 @@ Example: Run `terraform apply` in all changed stacks and sync the data to Terram
 terramate run \
   --changed \
   --sync-deployment \
-  --terraform-plan-file=out.tfplan -- \
+  --terraform-plan-file=out.tfplan \
+  -- \
   terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
 ```
 

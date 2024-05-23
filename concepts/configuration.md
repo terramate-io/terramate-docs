@@ -23,7 +23,7 @@ It means that, unlike languages such as JSON, YAML, or TOML, HCL gets decoded us
 In a nutshell:
 - HCL allows you to **define**, **compute** and **reuse** configurations easily.
 - Terramate builds on top of HCL by adding Terramate-specific language constructs to HCL.
-- Terramate provides a **great** developer experience** by providing a language server and IDE plugins.
+- Terramate provides a **great developer experience** by providing a language server and IDE plugins.
 - Using HCL enables you to use all Terraform and OpenTofu functions such as `upper` or `regex` prefixed with `tm_` at any place
 in your Terramate project.
 
@@ -32,7 +32,7 @@ Terramate provides a language server and several IDE plugins to provide the best
 possible while working with Terramate. For details, please see the [installation guide](../cli/installation.md).
 :::
 
-## Why not YAML, JSON, etc
+## Why not YAML, JSON, etc.
 
 Most traditional configuration languages are static and do not support variable or function calls for static
 configuration management. HCL comes with variables and functions built-in, allowing users to easily reuse and compute

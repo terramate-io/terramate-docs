@@ -64,23 +64,6 @@ once into a single configuration set.
 
 An imported file can import other files but cycles are not allowed.
 
-## Terramate Projects
-
-A Terramate project is essentially a collection of Terraform code organized into
-stacks.
-
-It is not a hard requirement for Terramate to work that the project uses Git
-for version control (support to other VCS might be added in the future), but
-features like change detection do depend on a VCS to work and will fail if this
-soft requirement is not met.
-
-In general, a Terramate project looks like this:
-
-* A Git project.
-* The git top-level dir is the project root dir.
-* Stacks are organized as different directories.
-* Configuration may be present on any directory.
-
 # Config merging
 
 Multiple configuration blocks of the same type defined in a directory are merged into

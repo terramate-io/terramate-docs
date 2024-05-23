@@ -5,10 +5,6 @@ description: Learn how Terramate helps you to manage failed deployments, drift a
 
 # Alerts
 
-This section explains **alerts** as a core concept in Terramate.
-
-## Introduction
-
 Alerts in Terramate help to manage special events that need attention such as failed deployment or detected drift. Terramate automatically creates an alert for those events and assigns individuals such as the author of a Pull Request or the CODEOWNER
 of a stack.
 

@@ -10,7 +10,7 @@ In this section, we will cover code generation as a core concept in Terramate.
 
 ## Introduction
 
-Terramate supports code generation for Terraform, OpenTofu, YAML, or JSON files. Generating code in stacks can help keep
+Terramate supports code generation for Terraform, OpenTofu, YAML, or JSON, and any arbitray files. Generating code in stacks can help keep
 your stacks DRY (think generating files such as Terraform provider configuration or Kubernetes manifests).
 
 This feature is useful whenever you want to conditionally generate code for stacks based on stack metadata such as tags or paths.
@@ -20,7 +20,7 @@ This feature is useful whenever you want to conditionally generate code for stac
 Terramate chooses code generation over abstraction to enable backward compatibility and integrations with all supporting
 tooling. By generating, e.g., native Terraform code, you can use Terramate with all supporting tooling without requiring
 any additional integration. Stacks in Terramate are native environments by default, like Terraform or OpenTofu root
-modules, which is why generating code with Terramate doesn't cause any lock-in. You can off-board Terramate at
+modules, which is why generating code with Terramate doesn't cause any lock-ins. You can off-board Terramate at
 any point in time from your project without any migration effort.
 
 In addition, generation code allows for all STA ("Static Code Analysis") tools to be integrated with Terramate, meaning

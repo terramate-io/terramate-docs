@@ -17,11 +17,23 @@ you to identify and manage drift
 
 ![Drift in Terramate Cloud](../cli/assets/concepts/drift.png)
 
-<!-- ## Types of Drift Detection -->
+## Types of Drift Detection
+
+Terramate currently supports two types of drift detection:
+
+- **Post-deployment drift detection** You can use Terramate to run a drift detection immediately after a deployment
+to understand if resources in stacks drift right away.
+- **Scheduled drift detection:** You can use Terramate to run scheduled drift detection workflows for all stacks managed
+in a repository or specific directories or stacks by using filters. This allows you to configure more frequent drift
+detection workflows for specific environments and services.
+
+## Alerts
+
+Terramate can create actionable alerts for drifted stacks that notify an owner or a group of owners of stacks.
+In addition, notifications can be sent to a centralized Slack channel or directly to Slack users by using our Slack app.
+
 ## Drift Reconciliation
 
-We generally suggest enabling automated reconciliation as it ensures that you get the most out of drift detection.
+Terramate allows you to enable automated reconciliation as it ensures that you get the most out of drift detection.
 Reconciliation jobs run in your CI/CD using configurable intervals. In addition, you can configure specific stacks to be
 considered for reconciliation only by e.g. using a tag-based approach.
-<!--  TODO: Add more reconciliation content-->
-<!-- ## Alerts -->

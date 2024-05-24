@@ -10,6 +10,7 @@ Terramate CLI offers flexible options for configuring environment variables for 
 ## Configuring Environment Variables
 
 ### Using the Current Environment
+
 You can access any environment variable that is exposed by the host when orchestrating commands with the `terramate run` and `terramate script run` commands.
 
 ```sh

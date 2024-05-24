@@ -42,6 +42,7 @@ terramate {
 }
 ```
 ## Stack-level Environment Variables
+
 To configure stack-specific environment variables, define them in the `terramate.config.run.env` block inside the `stack.tm.hcl` file within the desired stack.
 
 ```hcl

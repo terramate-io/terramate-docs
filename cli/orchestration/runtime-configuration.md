@@ -133,6 +133,7 @@ terramate {
 }
 ```
 ## Using Functions
+
 All Terramate exported functions are available for use within environment variable configurations.
 
 ```hcl

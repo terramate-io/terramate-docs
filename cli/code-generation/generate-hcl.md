@@ -436,6 +436,79 @@ generate_hcl "main.tf" {
 }
 ```
 
-Currently, there is no partial evaluation of `for` expressions.
-Referencing Terramate data inside a `for` expression will result
-in an error (`for` expressions with unknown references are copied as is).
+The expressions `[for ...]` and `{for ...}` are evaluated as much as possible, so the generated code only retains the "for" keyword if it includes unknown variables.
+
+See examples below:
+
+### Full evaluation
+
+```hcl
+generate_hcl "example.hcl" {
+  lets {
+    numbers = [1, 2, 3]
+  }
+
+  content {
+    square_values = [for x in let.numbers : x*x]
+  }
+}
+```
+
+Generates:
+```hcl
+// TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
+
+square_values = [
+  1,
+  4,
+  9,
+]
+```
+
+You can also fully evaluate a loop containing `tm_hcl_expression()` calls.
+Example:
+
+```hcl
+generate_hcl "example2.hcl" {
+  lets {
+    modules = ["module1", "module2"]
+  }
+
+  content {
+    values = [for v in let.modules : tm_hcl_expression("var.${v}")]
+  }
+}
+```
+which generates:
+
+```hcl
+// TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
+
+values = [
+  var.module1,
+  var.module2,
+]
+```
+
+### Partial evaluation
+
+If any part of the `for` expression contains unknown variables, the loop construct stays in the generated code, while Terramate variables are evaluated. See example below:
+
+```
+generate_hcl "example3.hcl" {
+  lets {
+    list = ["terramate", "is", "fun"]
+  }
+  content {
+    values = [for v in let.list : v if v == var.name]
+  }
+}
+```
+
+Note that `var.name` is beyond Terramate's scope, so this loop cannot be evaluated and remains in the generated code. See below:
+
+```hcl
+// TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
+
+values = [for v in ["terramate", "is", "fun"] : v if v == var.name]
+```

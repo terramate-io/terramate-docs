@@ -25,6 +25,7 @@ ENVIRONMENT=prod terramate run --eval -- echo "\${terramate.root.path.fs.absolut
 ```
 
 ## Project-wide Environment Variables
+
 To configure project-wide environment variables, define them in the `terramate.config.run.env` block inside the `terramate.tm.hcl` file at the root of your repository.
 
 ```hcl
@@ -41,9 +42,10 @@ terramate {
   }
 }
 ```
+
 ## Stack-level Environment Variables
 
-To configure stack-specific environment variables, define them in the `terramate.config.run.env` block inside the `stack.tm.hcl` file within the desired stack.
+To configure stack-specific environment variables, define them in the `terramate.config.run.env` block inside the `stack.tm.hcl` file. You can place this file in any stack or directory, and the variables will be available to any stacks or directories nested within it.
 
 ```hcl
 # stacks/bob/stack.tm.hcl
@@ -79,6 +81,7 @@ When defining values in the `terramate.config.run.env` block, Terramate follows 
 - To unset a variable at lower levels, assign them to be `unset` or `null` .
 
 ## Using the `env` Namespace
+
 Use the `env` namespace to access all environment variables available to the process. It is read-only and available at run time. For example, you can read any variable passed to the `terramate` command or exposed to the process by your operating system.
 ```hcl
 # terramate.tm.hcl or any stack configuration
@@ -107,6 +110,7 @@ production
 ```
 
 ## Using Globals and Metadata
+
 Globals (`global.*`) and Metadata (`terramate.*`) are available and are evaluated lazily within the context of the stack where commands are executed.
 
 ```hcl

@@ -161,6 +161,7 @@ terramate {
 ```
 
 ## Using Direnv
+
 Direnv is an extension for your shell that can load and unload environment variables based on the current directory. Use Direnv with Terramate to configure environment variables for specific stacks.
 
 ```sh

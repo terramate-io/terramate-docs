@@ -68,6 +68,7 @@ terramate {
 Here, `FOO` is specific to the stack "Bob" and its nested stacks.
 
 ### Evaluation Rules and Flexibility
+
 When defining values in the `terramate.config.run.env` block, Terramate follows clear evaluation rules:
 
 - Higher-level variables pass down to all nested stacks.

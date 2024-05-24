@@ -17,6 +17,7 @@ You can access any environment variable that is exposed by the host when orchest
 export ENVIRONMENT=prod
 terramate run --eval -- echo "\${terramate.root.path.fs.absolute}/config/${ENVIRONMENT}.tfvars"
 ### Passing Variables Directly to the Terramate Process
+
 You can also pass variables directly to the Terramate process.
 
 ```sh

@@ -1,17 +1,19 @@
 ---
 title: Context-based Variables
-description: Learn how to use the lets block to define context-based, temporary variables that can be used in code generation blocks.
+description: Learn how to use the lets block to define context-based, temporary variables that can be used in code generation and script blocks.
 ---
 
 # Context-based Variables
 
-Terramate Lets Variables represent context-based variables that can be used to compute local blocks available in the
-current code generation block only to not pollute the global namespace with temporary or intermediate variables.
+Terramate Lets Variables represent context-based variables that can be used in the surrounding attributes or
+blocks where it's defined. They are local to the parent block where they are defined and are never 
+inherited in child directories. The Lets variables are recommended to not pollute the global namespace with temporary or intermediate variables.
 
 Available contexts are:
 
 - within [`generate_hcl`](../generate-hcl.md) blocks
 - within [`generate_file`](../generate-file.md) blocks
+- within [`script`](../../orchestration/scripts.md] blocks
 
 They are defined the same way as [Global Variables](./globals.md) and support similar features.
 

@@ -87,7 +87,7 @@ script "command" "subcommand" { # any level of subcommands is supported
   - `name` _(optional)_ - A name for the jobs being executed (maximum of 128 chars)
   - `description` _(optional)_ - A description of the jobs being executed (maximum of 1000 chars)
   - [`lets`](../reference/variables/lets.md) _(optional)_ - One or more blocks containing local variable definitions for the script.
-	Multiple `lets` blocks are merged
+  Multiple `lets` blocks are merged
   - `job` _(required)_ - One or more blocks each defining a sequence of commands to be executed in the script.
     Jobs are executed in the order of definition.
 
@@ -108,7 +108,7 @@ To run a Terraform deployment, a script can be defined as:
 script "deploy" {
   description = "Run a Terraform/Tofu deployment"
   lets {
-	provisioner = "terraform" # another option: "tofu"
+    provisioner = "terraform" # another option: "tofu"
   }
   job {
     name        = "deploy"

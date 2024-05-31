@@ -48,7 +48,6 @@ script "terraform" "detect-drift" {
 }
 ```
 
-
 ## Terramate Script Config for OpenTofu
 
 The script is executed with `terramate script run tofu detect-drift`.

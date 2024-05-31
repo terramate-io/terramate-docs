@@ -67,7 +67,7 @@ Please find the diagram below for a more detailed overview of how Terramate work
 1. Start by installing [Terramate CLI](https://github.com/terramate-io/terramate).
 2. Add Terramate to any existing [Terraform](./cli/on-boarding/terraform.md), [OpenTofu](./cli/on-boarding/opentofu.md)
   or [Terragrunt](./cli/on-boarding/terragrunt.md) project. Or simply start with a [new project](./cli/getting-started/index.md)!
-3. Instead of running `terraform apply` (or any other command), start using [`terramate run terraform apply`](./cli/cmdline/run.md).
+3. Instead of running `terraform apply` (or any other command), start using [`terramate run terraform apply`](./cli/reference/cmdline/run.md).
 4. Set up your CI/CD by using our [GitOps Automation Blueprints](./cli/automation/index.md).
 5. [Sign up](https://cloud.terramate.io) for a free Terramate Cloud Account (or run `terramate cloud login`).
 6. Sync your stacks to Terramate Cloud.

@@ -13,7 +13,7 @@ The `terramate experimental partial-eval` command allows you to partial evaluate
 the rest is left in the expression as is.
 
 Similarly to [experimental eval](./experimental-eval.md), for security reasons the `partial-eval` **does not**
-support **filesystem related** [functions](../../code-generation/functions/index.md).
+support **filesystem related** [functions](../../../reference/functions/index.md).
 Below is the list of functions **not available** in this command:
 
 - tm_abspath,

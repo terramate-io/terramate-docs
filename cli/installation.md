@@ -71,7 +71,7 @@ terramate install-completions
 
 ## Sign in to Terramate Cloud
 
-To authenticate the CLI with Terramate Cloud, you can run the [`terramate cloud login`](./cmdline/cloud/cloud-info.md) command.
+To authenticate the CLI with Terramate Cloud, you can run the [`terramate cloud login`](./reference/cmdline/cloud/cloud-info.md) command.
 If it's the first time you try to sign in to Terramate Cloud, you will be guided through an onboarding process to create
 a new organization in Terramate Cloud.
 

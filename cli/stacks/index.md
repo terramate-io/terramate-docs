@@ -78,7 +78,7 @@ infrastructure service:
 ```
 
 The stacks `db`, `k8s` and `vpc` are all parent stacks located inside the `dev` directory. If you orchestrate commands
-such as `terraform apply` with the [`terramate run`](../cli/cmdline/run.md) command, Terramate detects that those stacks
+such as `terraform apply` with the [`terramate run`](../reference/cmdline/run.md) command, Terramate detects that those stacks
 aren't nested and dependent on each other, which means they can be executed in parallel.
 
 ### Child Stacks
@@ -115,11 +115,10 @@ If we look back at the previous example, but this time we assume that the `db` a
 ```
 
 This means that the `db` and `k8s` stacks depend on the `vpc` stack. If you orchestrate commands such as
-`terraform apply` with the [`terramate run`](../cli/cmdline/run.md) command, Terramate detects this dependency and ensures
-that the parent `vpc` stack will be successfully executed before executing the child stacks `k8s` and `db` using a
-[graph-based](./orchestration.md#dependency-graph) approach.
+`terraform apply` with the [`terramate run`](../reference/cmdline/run.md) command, Terramate detects this dependency and ensures
+that the parent `vpc` stack will be successfully executed before executing the child stacks `k8s` and `db` using a graph-based approach.
 
-To learn more about this topic, please find the guide at [nesting stacks](../cli/stacks/nesting.md).
+To learn more about this topic, please find the guide at [nesting stacks](../stacks/nesting.md).
 
 <!-- ## Create and configure Stacks
 

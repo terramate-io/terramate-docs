@@ -9,7 +9,7 @@ To display deployments on Terramate Cloud, we need to synchronize the status and
 
 When already using [Terramate CLI](../../cli/installation.md) to orchestrate your stacks, the configuration needed to synchronize deployments is minimal.
 
-You can synchronize deployments using [`terramate run`](../../cli/cmdline/run.md) or reduce the overhead on the caller side by using [Terramate Scripts](../../cli/orchestration/scripts.md), e.g. `terramate script run` where you can trigger deployment sync automatically.
+You can synchronize deployments using [`terramate run`](../../cli/reference/cmdline/run.md) or reduce the overhead on the caller side by using [Terramate Scripts](../../cli/orchestration/scripts.md), e.g. `terramate script run` where you can trigger deployment sync automatically.
 
 ## Required Permission
 
@@ -20,7 +20,7 @@ To gather metadata from GitHub about the pull request associated with the previe
 
 ## `terramate run`
 
-The [run](../../cli/cmdline/run.md) command in Terramate CLI offers some command line options to synchronize drift status information to Terramate Cloud.
+The [run](../../cli/reference/cmdline/run.md) command in Terramate CLI offers some command line options to synchronize drift status information to Terramate Cloud.
 
 - `--sync-drift-status` Synchronizes the drift status and logs to Terramate Cloud
 - `--terraform-plan-file FILE` A Terraform integration that allows synchronization of details about the changed, added, or deleted Terraform Resources that were planned and define the drift between code and cloud.

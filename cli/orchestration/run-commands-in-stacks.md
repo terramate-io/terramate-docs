@@ -17,7 +17,7 @@ Terramate is not limited to executing `terraform` inside of stacks but can execu
 ## Run commands in all stacks
 
 Running commands in stacks sequentially can be done with the
-[terramate run](../cmdline/run.md) command.
+[terramate run](../reference/cmdline/run.md) command.
 
 **Example:** Run hello world commands in all stacks with `terramate run`
 

@@ -9,7 +9,7 @@ description: Debug the order of execution by creating a dot graph using the `ter
 This is an experimental command and is likely subject to change in the future.
 :::
 
-The `terramate experimental run-graph` command prints a graph describing the [order of execution](../../orchestration/index.md) of your stacks.
+The `terramate experimental run-graph` command prints a graph describing the [order of execution](../../../orchestration/index.md) of your stacks.
 
 ## Usage
 

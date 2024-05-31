@@ -22,14 +22,14 @@ the sequence of execution, all without changing any code.
 This ordering will fit well with the natural project organization and eliminate
 the need for hard-coded dependencies between stacks.
 
-Per default, commands such as [`run`](../cmdline/run.md) or [`list`](../cmdline/list.md) follow the default order of execution
+Per default, commands such as [`run`](../reference/cmdline/run.md) or [`list`](../reference/cmdline/list.md) follow the default order of execution
 so that parent stacks will run before child stacks.
 
 The default order of execution can be altered in a stack's configuration. For details, please see
 [configuring the order of execution](../stacks/configuration.md#configuring-the-order-of-execution).
 
 ::: tip
-You can use the [list --run-order](../cmdline/list.md)
+You can use the [list --run-order](../reference/cmdline/list.md)
 command to understand the order of execution of your stacks.
 :::
 

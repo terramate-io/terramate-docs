@@ -131,7 +131,7 @@ stack {
 
 ::: info How does Terramate detect stacks?
 Stacks in Terramate are identified by a directory that includes a `*.tm.hcl` file, which contains a `stack {}` block.
-The file can have any name but the [terramate create](../cmdline/create.md) command always creates a file named `stack.tm.hcl`
+The file can have any name but the [terramate create](../reference/cmdline/create.md) command always creates a file named `stack.tm.hcl`
 :::
 
 Next, let's check in our newly created stack to the repository:
@@ -141,7 +141,7 @@ $ git add stacks/alice/stack.tm.hcl
 $ git commit -m "Create a first stack with Terramate"
 ```
 
-To verify that Terramate is aware of the new stack, you can run [`terramate list`](../cmdline/list.md), which returns
+To verify that Terramate is aware of the new stack, you can run [`terramate list`](../reference/cmdline/list.md), which returns
 a list of all stacks available in your project.
 
 ```sh
@@ -165,7 +165,7 @@ $ git add stacks/bob/stack.tm.hcl
 $ git commit -m "Create a second stack with Terramate"
 ```
 
-To verify that Terramate is aware of both stacks, we can run [`terramate list`](../cmdline/list.md) again.
+To verify that Terramate is aware of both stacks, we can run [`terramate list`](../reference/cmdline/list.md) again.
 
 ```sh
 $ terramate list
@@ -227,7 +227,7 @@ EOF
 
 This configures Terramate to generate a `backend.tf` file in every stack it can reach within the `stacks/` directory. In this case, it applies to our `alice` and `bob` stacks.
 
-To trigger the code generation we need to run the [`terramate generate`](../cmdline/generate.md) command:
+To trigger the code generation we need to run the [`terramate generate`](../reference/cmdline/generate.md) command:
 
 ```sh
 $ terramate generate
@@ -263,7 +263,7 @@ For details, please see [code generation best practices](../code-generation/inde
 
 The stacks created in the previous sections represent isolated environments, often referred
 to as "root modules" in Terraform and OpenTofu. To make them functional, we must run `terraform init` or `tofu init`
-in both. Terramate allows you to orchestrate any command in stacks using the [terramate run](../cmdline/run.md) command.
+in both. Terramate allows you to orchestrate any command in stacks using the [terramate run](../reference/cmdline/run.md) command.
 
 But before we can start, we need to prepare git to ignore temporary Terraform files by adding a `.gitignore` file, which is
 located in the root directory of our repository:

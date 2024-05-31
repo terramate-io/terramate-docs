@@ -26,9 +26,9 @@ or OpenTofu. Instead, you can use Terramate to orchestrate any command in stacks
 
 Currently, two ways of orchestrating commands exist:
 
-- **Executing a single command** such as `terraform apply` using the [`terramate run`](../cli/cmdline/run.md) command, e.g.,
+- **Executing a single command** such as `terraform apply` using the [`terramate run`](../cli/reference/cmdline/run.md) command, e.g.,
 `terramate run -- terraform apply`.
-- **Executing a sequence of commands** combined as a workflow with Terramate scripts using the [`terramate script run`](../cli/cmdline/script/script-run.md)
+- **Executing a sequence of commands** combined as a workflow with Terramate scripts using the [`terramate script run`](../cli/reference/cmdline/script/script-run.md)
 command, e.g., `terramate script run terraform deploy`.
 
 ## Change detection

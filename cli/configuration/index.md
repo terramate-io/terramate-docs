@@ -312,6 +312,27 @@ and has the following schema:
 |------------------|----------------|-------------|
 | source           | string         | The file path to be imported |
 
+## script block schema
+
+The `script` block has multiple labels, **do not** supports [merging](#config-merging) and has
+the following schema:
+
+| name             			 |      type      | description            |
+| ---------------------------|----------------|------------------------|
+| name                       | string         | The script name        |
+| description                | string         | The script description |
+| [lets](#lets-block-schema) | block* 		  | lets local variables   |
+| [job](#job-block-schema)   | block*         | The script job         | 
+
+## job block schema
+
+| name             			 |      type               | description                 |
+| ---------------------------|-------------------------|-----------------------------|
+| name                       | string                  | The job name                |
+| description                | string                  | The job description         |
+| command                    | list of string          | The command to be executed  |
+| commands                   | list of (list of string)| The commands to be executed |
+
 ## vendor block schema
 
 The `vendor` block has no labels, **do not** support [merging](#config-merging)

@@ -86,8 +86,8 @@ script "command" "subcommand" { # any level of subcommands is supported
 
   - `name` _(optional)_ - A name for the jobs being executed (maximum of 128 chars)
   - `description` _(optional)_ - A description of the jobs being executed (maximum of 1000 chars)
-  - [`lets`](../code-generation/variables/lets.md) _(optional)_ - One or more blocks containing local variable definitions for the script.
-	Multiple `lets` blocks are merged 
+  - [`lets`](../reference/variables/lets.md) _(optional)_ - One or more blocks containing local variable definitions for the script.
+	Multiple `lets` blocks are merged
   - `job` _(required)_ - One or more blocks each defining a sequence of commands to be executed in the script.
     Jobs are executed in the order of definition.
 
@@ -125,9 +125,9 @@ script "deploy" {
 
 ### Command options
 
-- `sync_deployment` _(optional boolean)_ Send information about the deployment to Terramate Cloud. See [Sending deployment data to Terramate Cloud](../cmdline/run.md#sending-deployment-data-to-terramate-cloud). Only one command per script may have this option set to true.
-- `sync_preview` _(optional boolean)_ Send information about a _Pull Request_ preview to Terramate Cloud. See [Sending a Pull Request Preview to Terramate Cloud](../cmdline/run.md#sending-a-pull-request-preview-to-terramate-cloud). Only one command per script may have this option set to true.
-- `sync_drift_status` _(optional boolean)_ Send drift information to Terramate Cloud. See [Detecting Drifts](../cmdline/run.md#detecting-drift).
+- `sync_deployment` _(optional boolean)_ Send information about the deployment to Terramate Cloud. See [Sending deployment data to Terramate Cloud](../reference/cmdline/run.md#sending-deployment-data-to-terramate-cloud). Only one command per script may have this option set to true.
+- `sync_preview` _(optional boolean)_ Send information about a _Pull Request_ preview to Terramate Cloud. See [Sending a Pull Request Preview to Terramate Cloud](../reference/cmdline/run.md#sending-a-pull-request-preview-to-terramate-cloud). Only one command per script may have this option set to true.
+- `sync_drift_status` _(optional boolean)_ Send drift information to Terramate Cloud. See [Detecting Drifts](../reference/cmdline/run.md#detecting-drift).
 - `terraform_plan_file` _(optional string)_ Sync a Terraform plan file to Terramate Cloud with a deployment, preview or drift. This option is only used when `sync_deployment`, `sync_drift_status` or `sync_preview` are set to true.
 - `tofu_plan_file` _(optional string)_ Sync a Tofu plan file to Terramate Cloud with a deployment, preview or drift. This option is only used when `sync_deployment`, `sync_drift_status` or `sync_preview` are set to true.
 - `terragrunt` _(optional boolean)_ Use terragrunt for the plan file generation. This option is only used when `terraform_plan_file` or `tofu_plan_file` is set.
@@ -187,14 +187,14 @@ This will print out the commands that would be executed per stack, without actua
 
 Besides this, there are additional experimental commands that can be used to inspect and debug script definitions:
 
-- [`terramate script list`](../cmdline/script/script-list.md)
+- [`terramate script list`](../reference/cmdline/script/script-list.md)
   Shows a list of all uniquely named scripts that are visible in the current directory, their description, and the root
   directory of their scope. If there are multiple definitions with the same name, a parent is selected over a child,
   or a first sibling over a later sibling (ordered by directory name).
-- [`terramate script info <scriptname>`](../cmdline/script/script-info.md)
+- [`terramate script info <scriptname>`](../reference/cmdline/script/script-info.md)
   Shows a detailed list of definitions for a given script name. This list includes the jobs and the stacks within the scope
   of each definition. As with the command before, this information is always relative to the current directory.
-- [`terramate script tree`](../cmdline/script/script-tree.md)
+- [`terramate script tree`](../reference/cmdline/script/script-tree.md)
   Shows a tree view of all scripts relative to the current directory. The tree expands all sub-directories, and the parent
   path back to the project root, showing script definitions per directory. Example:
 

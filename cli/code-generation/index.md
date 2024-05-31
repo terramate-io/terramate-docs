@@ -25,7 +25,7 @@ Currently, the following code-generation strategies are available:
 
 ## Generate code
 
-The [`generate`](../cmdline/generate.md) command generates all files configured by the available code generation strategies.
+The [`generate`](../reference/cmdline/generate.md) command generates all files configured by the available code generation strategies.
 
 ```sh
 terramate generate
@@ -56,7 +56,7 @@ import {
 }
 ```
 
-For details, please see the [import documentation](../configuration/index.md#import-block-schema).
+For details, please see the [import documentation](../reference/configuration/index.md#import-block-schema).
 
 ## Generation context
 
@@ -67,17 +67,17 @@ Code generation supports two execution contexts:
 
 The `stack` context gives access to all code generation features, such as:
 
-- [Globals](./variables/globals.md)
-- [All Metadata](./variables/metadata.md)
-- [Functions](./functions/index.md)
-- [Lets](./variables/lets.md)
+- [Globals](../reference/variables/globals.md)
+- [All Metadata](../reference/variables/metadata.md)
+- [Functions](../reference/functions/index.md)
+- [Lets](../reference/variables/lets.md)
 - [Assertions](#assertions)
 
 But the `root` context gives access to:
 
-- [Project Metadata](./variables/metadata.md#project-metadata)
-- [Functions](./functions/index.md)
-- [Lets](./variables/lets.md)
+- [Project Metadata](../reference/variables/metadata.md#project-metadata)
+- [Functions](../reference/functions/index.md)
+- [Lets](../reference/variables/lets.md)
 
 If not specified the default generation context is `stack`.
 The `generate_hcl` block doesn't support changing the `context`, it will always be
@@ -187,7 +187,7 @@ The following list names some examples of what conditions could be used for:
 - Path-based Code Generation (prefer Stack Filters or use in combination with Stack Filters for large amounts of stacks)
 - Tag-based Code Generation
 - Generation of code based on the state of Terramate Globals
-- [Metadata](./variables/metadata.md)-based Code Generation when using the `terramate` variable namespace to access more stack details.
+- [Metadata](../reference/variables/metadata.md)-based Code Generation when using the `terramate` variable namespace to access more stack details.
 - Any combination of the above
 - Any complex calculation using Terramate Functions or Terramate Variables
 

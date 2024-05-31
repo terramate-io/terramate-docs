@@ -33,9 +33,9 @@ stack {
 The stack ID **must** be a `string` composed of alphanumeric chars, dashes, and underscores.
 The ID can't be bigger than 64 bytes, **is case insensitive** and **must** be unique over the whole project. It is required when synchronizen data to Terramate Cloud.
 
-It is recommended to use a lowercase [UUIDv4](<https://en.wikipedia.org/wiki/Universally_unique_identifier#:~:text=Version%204%20(random)%5Bedit%5D>) as stack ID as this is the default when a stack is created using the [`terramate create`](../cmdline/create.md) command.
+It is recommended to use a lowercase [UUIDv4](<https://en.wikipedia.org/wiki/Universally_unique_identifier#:~:text=Version%204%20(random)%5Bedit%5D>) as stack ID as this is the default when a stack is created using the [`terramate create`](../reference/cmdline/create.md) command.
 
-When stacks are [cloned](../cmdline/experimental/experimental-clone.md) a new UUIDv4 is generated for cloned stacks.
+When stacks are [cloned](../reference/cmdline/experimental/experimental-clone.md) a new UUIDv4 is generated for cloned stacks.
 
 When `id` is missing in stacks, the `terramate create --ensure-id` command can be used to add a UUIDv4 to stacks that did not define an `id` yet.
 

@@ -12,7 +12,7 @@ Terramate supports different Variables and Metadata to help manage user- and Ter
 ## Variable Namespaces
 
 Terramate supports multiple variable namespaces. They can be available at build-time (when running
-[code generation](../index.md)) or run-time (when orchestrating stacks and
+[code generation](../../code-generation/index.md)) or run-time (when orchestrating stacks and
 [running commands](../../orchestration/run-commands-in-stacks.md)).
 
 - The `terramate` namespace represents [Terramate Metadata](./metadata.md) such as stack context information or repository context information.

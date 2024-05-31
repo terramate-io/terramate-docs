@@ -9,7 +9,7 @@ On this page, you will learn how to create stacks with Terramate CLI.
 
 ## Create a new stack with the CLI
 
-Stacks can be created with the [`terramate create`](../cmdline/create.md) command.
+Stacks can be created with the [`terramate create`](../reference/cmdline/create.md) command.
 
 ```sh
 terramate create <directory>

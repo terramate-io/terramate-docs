@@ -8,14 +8,16 @@ description: Learn how to orchestrate the execution of commands in stacks with t
 Terramate CLI allows you to orchestrate the execution of stacks by running
 commands in all stacks or filtering stacks using certain criteria.
 
-Terramate is not limited to executing `terraform` inside of stacks but can execute any command available. This includes but is not limited to `terragrunt`, `tofu`, `kubectl`, `helm`, and `make`.
-
 When running commands in stacks the [defined order of execution](../stacks/configuration#explicit-order-of-execution) is honored and stacks are run in order.
+
+::: tip
+Terramate is not limited to executing `terraform` inside of stacks but can execute any command available. This includes but is not limited to `terragrunt`, `tofu`, `kubectl`, `helm`, and `make`.
+:::
 
 ## Run commands in all stacks
 
 Running commands in stacks sequentially can be done with the
-[terramate run](../cmdline/run.md) command.
+[terramate run](../reference/cmdline/run.md) command.
 
 **Example:** Run hello world commands in all stacks with `terramate run`
 

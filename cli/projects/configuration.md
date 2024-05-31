@@ -16,8 +16,8 @@ All project configurations are defined within the `terramate` block.
 # terramate.tm.hcl
 
 terramate {
-  # allow any Terramate v0.4.x version starting at v0.4.3
-  required_version = "~> 0.4.3"
+  # allow any Terramate v0.8.x version starting at v0.8.2
+  required_version = "~> 0.8.2"
 
   config {
     # config options
@@ -49,15 +49,15 @@ Valid examples:
 
 ```hcl
 terramate {
-  # allow any Terramate v0.4.x version starting at v0.4.3
-  required_version = "~> 0.4.3"
+  # allow any Terramate v0.8.x version starting at v0.8.2
+  required_version = "~> 0.8.2"
 }
 ```
 
 ```hcl
 terramate {
-  # allow any Terramate v0.4.x version starting at v0.4.3
-  required_version = ">= 0.4.3, < 0.5.0"
+  # allow any Terramate v0.8.x version starting at v0.4.2
+  required_version = ">= 0.8.2, < 0.9.0"
 }
 ```
 
@@ -145,7 +145,7 @@ This check ensures that it's not possible to accidentally run against outdated c
 
 In `terramate.config.run.env` block a map of environment variables can be defined
 that will be set when running a command using `terramate run`.
-The block has the same hierarchical properties of [Globals](../code-generation/variables/globals.md), which means definitions in parent directories are inherited
+The block has the same hierarchical properties of [Globals](../reference/variables/globals.md), which means definitions in parent directories are inherited
 in child directories.
 
 Hierarchical properties:
@@ -153,7 +153,7 @@ Hierarchical properties:
 - Any variable defined on a higher level will be inherited to the full subtree including nested stacks.
 - Any variable redefined on the same level conflicts.
 - Any variable redefined on lower levels will overwrite previous definitions.
-- All values will be only evaluated on stack level ([Lazy Evaluation](../code-generation/variables/globals.md#lazy-evaluation)).
+- All values will be only evaluated on stack level ([Lazy Evaluation](../reference/variables/globals.md#lazy-evaluation)).
 - Any `null` value will be treated as `unset` and no variable will be exported.
 - To unset a variable on a lower level you can assign `unset` value or `null`.
 

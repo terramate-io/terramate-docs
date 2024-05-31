@@ -6,7 +6,7 @@ description: Learn how to use Terramate to generate files such as JSON or YAML.
 # File Code Generation
 
 Terramate supports the generation of arbitrary files such as JSON or YAML referencing data such as
-[Variables](../reference/variables/index.md) and [Metadata](../reference/variables/metadata.md).
+[Variables](../variables/index.md) and [Metadata](../variables/metadata.md).
 
 ## The `generate_file` block
 
@@ -20,12 +20,12 @@ generate_file "hello_world.json" {
 ```
 
 The label of the `generate_file` block names the file that will be generated.
-Terramate Variables (`let`, `global`, and `terramate` namespaces) and all [Terramate Functions](../reference/functions/index.md)
-are supported when defining labels. For more details about how code generation uses labels check the [Labels Overview](./index.md#labels) docs.
+Terramate Variables (`let`, `global`, and `terramate` namespaces) and all [Terramate Functions](../functions/index.md)
+are supported when defining labels. For more details about how code generation uses labels check the [Labels Overview](../../code-generation/index.md#labels) docs.
 
 ### Argument reference of the `generate_file` block
 
-- `context` *(optional string)* The `context` attributes that override the [generation](./index.md#generation-context) context](index.md#generation-context)
+- `context` *(optional string)* The `context` attributes that override the [generation context](../../code-generation/index.md#generation-context)
 - `content` *(required string)* The `content` argument defines the string that will be generated as the content of the file.
   The value of the **`content`** has access to different Terramate features
   depending on the `context` defined.
@@ -33,7 +33,7 @@ are supported when defining labels. For more details about how code generation u
   For `context=root` it has access to:
 
   - Terramate Project Metadata references `terramate.root.*` and `terramate.stacks.*`
-  - [Terramate function](../reference/functions/index.md) calls `tm_*(...)`
+  - [Terramate function](../functions/index.md) calls `tm_*(...)`
   - Expressions using string interpolation `"${}"`
 
   and for `context=stack` (the default), it has access to everything that `root` has plus the features below:
@@ -49,7 +49,7 @@ are supported when defining labels. For more details about how code generation u
   EOF
   ```
 
-- `lets` *(optional block)* One or more `lets` blocks can be used to define [temporary variables](../reference/variables/lets.md)
+- `lets` *(optional block)* One or more `lets` blocks can be used to define [temporary variables](../variables/lets.md)
   that can be used in other arguments within the `generate_file` block and in the `content` block.
 
   ```hcl

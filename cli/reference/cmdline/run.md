@@ -8,7 +8,7 @@ description: Execute any commands in all stacks or in a filtered subset of stack
 ## Overview
 
 The `terramate run` command executes **any command** in all or a subset of stacks honoring
-the defined [order of execution](../orchestration/index.md). Commands can be executed sequentially or in parallel.
+the defined [order of execution](../../orchestration/index.md). Commands can be executed sequentially or in parallel.
 
 When running commands you can filter for a specific subset of stacks such as:
 
@@ -19,8 +19,8 @@ When running commands you can filter for a specific subset of stacks such as:
 
 For details on how the change detection and order of execution works in Terramate please see:
 
-- [Change Detection](../change-detection/index.md)
-- [Orchestration](../orchestration/index.md)
+- [Change Detection](../../change-detection/index.md)
+- [Orchestration](../../orchestration/index.md)
 
 ## Examples
 
@@ -53,7 +53,7 @@ terramate run --chdir stacks/aws -- terraform init
 
 ### Run in changed stacks
 
-Stacks [containing changes](../change-detection/index.md) can be selected with the `--changed` flag.
+Stacks [containing changes](../../change-detection/index.md) can be selected with the `--changed` flag.
 This flag is also supported in `terramate list` which can be used to preview the affected stacks in advance.
 
 ```bash
@@ -302,7 +302,7 @@ terramate run [options] -- <cmd ...>
 
 The `terramate` block at the project root can be used to customize
 the default exported environment variables in the
-[terramate.config.run.env](../projects/configuration.md#the-terramateconfigrunenv-block).
+[terramate.config.run.env](../../projects/configuration.md#the-terramateconfigrunenv-block).
 
 It's also possible to set a different `PATH` environment variable and
 in this case, Terramate will honor it when looking up the program's

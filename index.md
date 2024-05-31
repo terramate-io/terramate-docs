@@ -16,7 +16,7 @@ runs natively in your existing CI/CD system.
 Using Terramate makes it possible to:
 
 1. **Streamline configuration management and environments**: Terramate enables you to manage environments and services with
-stacks and adds code generation to keep configuration DRY, which means you can easily deploy multiple services and environments
+stacks and adds code generation to keep configuration DRY, which means you can easily provision multiple services and environments
 and avoid manual copy & paste of duplicate configuration files.
 2. **Automate and orchestrate Terraform, OpenTofu and Terragrunt in any CI/CD**: Terramate enables you to turn any CI/CD into a powerful
 IaC vending machine which means no more wasted time and money maintaining DIY solutions or buying expensive purpose-built

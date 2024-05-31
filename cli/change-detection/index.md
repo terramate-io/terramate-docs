@@ -12,8 +12,8 @@ That's why Terramate CLI comes with a change detection feature that can detect s
 
 ## Introduction
 
-The change detection is enabled by providing the `--changed` option to commands such as [`run`](../cmdline/run.md) or
-[`list`](../cmdline/list.md) and can be configured to use a specific branch as a reference.
+The change detection is enabled by providing the `--changed` option to commands such as [`run`](../reference/cmdline/run.md) or
+[`list`](../reference/cmdline/list.md) and can be configured to use a specific branch as a reference.
 
 E.g., to list all stacks that contain changes:
 

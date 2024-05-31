@@ -15,7 +15,7 @@ This section will provide information to the most used CLI commands and also off
 
 ## Quickstart
 
-Please check out our [quick start guide](../getting-started/index.md) or continue reading to see a summary of the commands used daily when working with terramate.
+Please check out our [quick start guide](../../getting-started/index.md) or continue reading to see a summary of the commands used daily when working with terramate.
 
 ## Create a Stack
 

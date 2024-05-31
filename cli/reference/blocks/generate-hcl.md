@@ -6,13 +6,13 @@ description: Learn how to use Terramate to generate Terraform and OpenTofu confi
 # HCL Code Generation
 
 Terramate supports the generation of arbitrary HCL code such as Terraform, OpenTofu and other HCL configurations,
-referencing data such as [Variables](../reference/variables/index.md) and [Metadata](../reference/variables/metadata.md).
+referencing data such as [Variables](../variables/index.md) and [Metadata](../variables/metadata.md).
 
 ## The `generate_hcl` block
 
 HCL code generation is done using `generate_hcl` blocks in Terramate configuration files.
 References to Terramate globals and metadata are evaluated, but any other reference is just transported to the generated code
-(For details, please see [partial evaluation](./index.md#partial-evaluation)).
+(For details, please see [partial evaluation](./generate-hcl.md#partial-evaluation)).
 
 ```hcl
 # example.tm.hcl
@@ -23,7 +23,7 @@ generate_hcl "backend.tf" {
 }
 ```
 
-The label of the `generate_hcl` block names the file that will be generated within a stack. For more details about how code generation use labels check the [Labels Overview](index.md#labels) docs.
+The label of the `generate_hcl` block names the file that will be generated within a stack. For more details about how code generation uses labels check the [Labels Overview](../../code-generation/index.md#labels) docs.
 
 ### Argument reference of the `generate_hcl` block
 
@@ -31,9 +31,9 @@ The label of the `generate_hcl` block names the file that will be generated with
   It supports block definitions, attributes and expressions. Terramate Variables and Terramate Functions can be used and will be interpolated during code generation.
 
   The following variable namespaces are available within the `content` block:
-  - [`terramate`](../reference/variables/metadata.md)
-  - [`global`](../reference/variables/globals.md)
-  - [`let`](../reference/variables/lets.md)
+  - [`terramate`](../variables/metadata.md)
+  - [`global`](../variables/globals.md)
+  - [`let`](../variables/lets.md)
 
   ```hcl
   content {
@@ -45,7 +45,7 @@ The label of the `generate_hcl` block names the file that will be generated with
   Any references to functions, variables or blocks that Terramate is unaware of will be rendered as-is.
   See [partial code generation](#partial-evaluation) for details.
 
-- `lets` *(optional block)* One or more [`lets`](../reference/variables/lets.md) blocks can be used to define [Lets variables](../reference/variables/lets.md)
+- `lets` *(optional block)* One or more [`lets`](../variables/lets.md) blocks can be used to define [Lets variables](../variables/lets.md)
   that can be used in other arguments within the `generate_hcl` block and in the `content` block and are only available
   inside the current `generate_hcl` block.
 
@@ -85,7 +85,7 @@ first for performance reasons. A stack will only be selected for code generation
 
 - `condition` *(optional boolean)* The `condition` attribute supports any expression that renders to a boolean.
 Terramate Variables (`let`, `global`, and `terramate` namespaces) and all Terramate Functions are supported.
-Variables are evaluated with the stack context. For details, please see [Lazy Evaluation](./index.md#lazy-evaluation).
+Variables are evaluated with the stack context. For details, please see [Lazy Evaluation](../variables/globals.md#lazy-evaluation).
 If the condition is `true` and any `stack_filter` (if defined) is `true` the stack is selected for generating the code.
 As evaluating the condition for multiple stacks can be slow, using `stack_filter` for path-based generation is recommended.
 
@@ -436,79 +436,6 @@ generate_hcl "main.tf" {
 }
 ```
 
-The expressions `[for ...]` and `{for ...}` are evaluated as much as possible, so the generated code only retains the "for" keyword if it includes unknown variables.
-
-See examples below:
-
-### Full evaluation
-
-```hcl
-generate_hcl "example.hcl" {
-  lets {
-    numbers = [1, 2, 3]
-  }
-
-  content {
-    square_values = [for x in let.numbers : x*x]
-  }
-}
-```
-
-Generates:
-```hcl
-// TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
-
-square_values = [
-  1,
-  4,
-  9,
-]
-```
-
-You can also fully evaluate a loop containing `tm_hcl_expression()` calls.
-Example:
-
-```hcl
-generate_hcl "example2.hcl" {
-  lets {
-    modules = ["module1", "module2"]
-  }
-
-  content {
-    values = [for v in let.modules : tm_hcl_expression("var.${v}")]
-  }
-}
-```
-which generates:
-
-```hcl
-// TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
-
-values = [
-  var.module1,
-  var.module2,
-]
-```
-
-### Partial evaluation
-
-If any part of the `for` expression contains unknown variables, the loop construct stays in the generated code, while Terramate variables are evaluated. See example below:
-
-```
-generate_hcl "example3.hcl" {
-  lets {
-    list = ["terramate", "is", "fun"]
-  }
-  content {
-    values = [for v in let.list : v if v == var.name]
-  }
-}
-```
-
-Note that `var.name` is beyond Terramate's scope, so this loop cannot be evaluated and remains in the generated code. See below:
-
-```hcl
-// TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
-
-values = [for v in ["terramate", "is", "fun"] : v if v == var.name]
-```
+Currently, there is no partial evaluation of `for` expressions.
+Referencing Terramate data inside a `for` expression will result
+in an error (`for` expressions with unknown references are copied as is).

@@ -1,9 +1,9 @@
 ---
-title: Runtime Configuration
+title: Environment Variables
 description: Learn how to configure environment variables available to the terramate run command.
 ---
 
-# Runtime Configuration
+# Environment Variables
 
 The `terramate.config.run.env` block can be used to define a map of environment variables
 that will be set when running a command using `terramate run`.

@@ -546,6 +546,17 @@ export default defineConfig({
               ],
             },
             {
+              text: 'Variables',
+              collapsed: true,
+              // link: '/cli/reference/variables/',
+              items: [
+                { text: 'Globals', link: '/cli/reference/variables/globals' },
+                { text: 'Lets', link: '/cli/reference/variables/lets' },
+                { text: 'Metadata', link: '/cli/reference/variables/metadata' },
+                { text: 'Map', link: '/cli/reference/variables/map' },
+              ],
+            },
+            {
               text: 'Functions',
               collapsed: true,
               link: '/cli/reference/functions/',

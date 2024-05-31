@@ -35,7 +35,7 @@ The following set of features highlights some special benefits:
 
 ## Options
 
-The Terragrunt change detection is automatically enabled if the project contains any 
+The Terragrunt change detection is automatically enabled if the project contains any
 Terragrunt stack but this behavior can be turned off using the configuration below:
 
 ```hcl

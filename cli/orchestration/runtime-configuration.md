@@ -16,6 +16,7 @@ You can access any environment variable that is exposed by the host when orchest
 ```sh
 export ENVIRONMENT=prod
 terramate run --eval -- echo "\${terramate.root.path.fs.absolute}/config/${ENVIRONMENT}.tfvars"
+```
 ### Passing Variables Directly to the Terramate Process
 
 You can also pass variables directly to the Terramate process.
@@ -170,8 +171,5 @@ Direnv is an extension for your shell that can load and unload environment varia
 
 ```sh
 echo export ALICE=bob > path/to/stack/.envrc
-```
-
-```sh
 terramate run -C path/to/stack -- bash -c 'eval "$(direnv export bash)"; echo $ALICE'
 ```

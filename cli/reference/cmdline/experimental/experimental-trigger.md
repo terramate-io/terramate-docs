@@ -20,13 +20,13 @@ The trigger mechanism has various use cases. It may be that a previous CI/CD run
 | ----------- | ------------------------------------------------------------------------ |
 | `ok`        | The stack is not drifted and the last deployment succeeded               |
 | `failed`    | The last deployment of the stack failed so the status is unknown         |
-| `drifted`   | The actual state is different from that defined in the code of the stack |
+| `drifted`   | The actual state is different from that defined in the code of the stack  |
 | `unhealthy` | This meta state matches any undesirable state (failed, drifted etc)      |
-| `healthy`   | This meta state matches stacks that have no undesireable state           |
+| `healthy`   | This meta state matches stacks that have no undesirable state            |
 
 ## Usage
 
-`terramate experimental trigger PATH`
+`terramate experimental trigger [options] <stack-path>`
 
 ## Examples
 
@@ -36,8 +36,18 @@ Create a change trigger for a stack:
 terramate experimental trigger /path/to/stack
 ```
 
-Create triggers for all stacks that have drifted
+Create triggers for all stacks that have drifted.
 
 ```bash
 terramate experimental trigger --status=drifted
+```
+
+## Ignore Trigger
+
+Sometimes, when you introduce changes to one or multiple stacks that are of a cosmetic nature but don't affect the
+managed resources, instead of marking all stacks as changed you can create an ignore trigger with the `--ignore-change`
+flag. Ignore trigger will configure the change detection to ignore stacks in the next Pull Request and deployment.
+
+```bash
+terramate experimental trigger --ignore-change /path/to/stack
 ```

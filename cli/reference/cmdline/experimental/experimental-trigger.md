@@ -47,7 +47,7 @@ terramate experimental trigger --status=drifted
 ### Create ignore triggers recursively
 
 ```bash
-terramate experimental trigger some/stack --recursive --ignore-change
+terramate experimental trigger some/path --recursive --ignore-change
 ```
 
 ## Ignore Trigger
@@ -64,4 +64,5 @@ terramate experimental trigger /path/to/stack --ignore-change
 
 - `--status <status>`: Creates a trigger for all stacks filtered by status on Terramate Cloud.
 - `--recursive`: Creates triggers for all nested stacks recursively starting from the targeted stack.
+- `--change` (*default*): Creates a trigger that configures the change detection to mark the stack as changed.
 - `--ignore-change`: Creates an ignore trigger to configure the change detection to ignore a stack in the next run.

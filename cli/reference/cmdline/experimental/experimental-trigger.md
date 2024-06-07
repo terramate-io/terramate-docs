@@ -26,20 +26,28 @@ The trigger mechanism has various use cases. It may be that a previous CI/CD run
 
 ## Usage
 
-`terramate experimental trigger [options] <stack-path>`
+```sh
+terramate experimental trigger [options] <stack-path>
+```
 
 ## Examples
 
-Create a change trigger for a stack:
+### Create a change trigger for a stack
 
 ```bash
 terramate experimental trigger /path/to/stack
 ```
 
-Create triggers for all stacks that have drifted.
+### Create triggers for all stacks that have drifted
 
 ```bash
 terramate experimental trigger --status=drifted
+```
+
+### Create ignore triggers recursively
+
+```bash
+terramate experimental trigger some/stack --recursive --ignore-change
 ```
 
 ## Ignore Trigger
@@ -49,5 +57,11 @@ managed resources, instead of marking all stacks as changed you can create an ig
 flag. Ignore trigger will configure the change detection to ignore stacks in the next Pull Request and deployment.
 
 ```bash
-terramate experimental trigger --ignore-change /path/to/stack
+terramate experimental trigger /path/to/stack --ignore-change
 ```
+
+## Options
+
+- `--status <status>`: Creates a trigger for all stacks filtered by status on Terramate Cloud.
+- `--recursive`: Creates triggers for all nested stacks recursively starting from the targeted stack.
+- `--ignore-change`: Creates an ignore trigger to configure the change detection to ignore a stack in the next run.

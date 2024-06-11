@@ -25,13 +25,13 @@ Currently, the following code-generation strategies are available:
 
 ## Generate code
 
-The [`generate`](../reference/cmdline/generate.md) command generates all files configured by the available code generation strategies.
+The [`generate`](../reference/cmdline/generate.md) command generate files configured by the available code generation strategies.
 
 ```sh
 terramate generate
 ```
 
-This command always runs the code generation in your entire Terramate project and ensures that all generated files are up to date.
+The command above generates files for all configurations found within the current directory and its subdirectories. To generate files only for configurations in specific subdirectories, use the `-C` (or `--chdir`) flag followed by the desired directory path. Alternatively, you can navigate to the subdirectory using `cd` and run the command there.
 
 ## Hierarchical Code Generation
 

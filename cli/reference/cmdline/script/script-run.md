@@ -32,6 +32,8 @@ script "command" "subcommand" {
 
 The above can be run with `script run command subcommand`.
 
+If the experimental deployment targets option is enabled, `--target` is required (see [run](../run#tmc-deployment-targets)).
+
 ## Usage
 
 `terramate script run [options] CMD...`

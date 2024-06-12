@@ -298,6 +298,38 @@ terramate run [options] -- <cmd ...>
 
   Use Terragrunt to generate the Terraform/OpenTofu Plan file.
 
+### TMC: Deployment Targets
+
+**Note:** This is an experimental feature and may change. Enable it by setting the project config option `terramate.config.experiments = ["targets"]`.
+
+Terramate supports synchronizing stacks to different deployment targets, each with an isolated state. It allows deployment to multiple environments, such as `testing`, `staging`, and `prod`, or to different regions.
+
+Before using this feature, enable targets for your project by setting the config option `terramate.config.cloud.targets.enabled = true`.
+
+- `--target <target-identifier>`
+
+  Synchronize data to the Terramate Cloud (TMC) for the given deployment target. Stacks for each target are isolated and have a separate status.
+
+  After enabling the targets feature, you must specify a target for any option which uses Terramate Cloud to prevent accidental synchronization to the default target.
+
+  Target identifiers must match the pattern `[a-zA-Z0-9_-]{1,64}`.
+
+  This flag is supported in combination with `--sync-deployment`, `--sync-drift-status`, `--sync-preview`, and `--status`.
+
+- `--from-target <target-identifier>`
+
+  Attempt to migrate stacks from `--from-target <old-target>` to `--target <new-target>`.
+  
+  The rules for this migration are applied per stack as follows:
+	- Skip the migration if the stack already exists in `new-target`.
+	- Skip the migration if the stack doesn't exist in `old-target`.
+	- Skip the migration if used with `--sync-preview`.
+	- Otherwise, move/rename the stack from `old-target` to `new-target`.
+
+  After the migration, all subsequent operations are applied to the `new-target` as usual.
+
+  This flag is only supported in combination with `--target`.
+
 ## Configuration of the Run Command
 
 The `terramate` block at the project root can be used to customize

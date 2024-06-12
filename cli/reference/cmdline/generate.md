@@ -13,7 +13,7 @@ The `terramate generate` command generates files for all code generation strateg
 
 ## Examples
 
-Generate files for all configurations defined in the current directory and all of its subdirectories.
+Generate files for all configurations defined in the current directory and its subdirectories.
 
 ```bash
 terramate generate

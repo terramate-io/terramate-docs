@@ -26,7 +26,7 @@ terramate -C some/dir generate
 ```
 
 By default, Terramate returns status code = 0 when it succeeds at ensuring that all files are updated.
-If you wish to know when files were touched in disk, then use the `--detailed-exit-code` flag.
+Use the `--detailed-exit-code` flag to check when files were modified on disk.
 
 ```bash
 terramate generate --detailed-exit-code

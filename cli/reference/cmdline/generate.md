@@ -19,7 +19,7 @@ Generate files for all configurations defined in the current directory and its s
 terramate generate
 ```
 
-To generate Terraform configurations only for configirations defined within a specific subdirectory, use the `-C` (or `--chdir`) flag followed by the desired directory path.
+To generate Terraform files targeting configurations defined within a specific subdirectory, use the `-C` (or `--chdir`) flag followed by the desired directory path.
 
 ```bash
 terramate -C some/dir generate

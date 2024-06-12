@@ -31,7 +31,7 @@ The [`generate`](../reference/cmdline/generate.md) command generate files config
 terramate generate
 ```
 
-The command above generates files for all configurations found within the current directory and its subdirectories. To generate files only for configurations in specific subdirectories, use the `-C` (or `--chdir`) flag followed by the desired directory path. Alternatively, you can navigate to the subdirectory using `cd` and run the command there.
+The above command generates files for all configurations within the current directory and its subdirectories. To generate files targeting configurations in a specific subdirectory, use the `-C` (or `--chdir`) flag followed by the desired directory path. Alternatively, navigate to the subdirectory using `cd` and run the command there.
 
 ## Hierarchical Code Generation
 

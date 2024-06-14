@@ -13,7 +13,20 @@ The `terramate generate` command generates files for all code generation strateg
 
 ## Examples
 
-Generate files and return status code = 2 when files were touched:
+Generate files for all configurations defined in the current directory and its subdirectories.
+
+```bash
+terramate generate
+```
+
+To generate Terraform files targeting configurations defined within a specific subdirectory, use the `-C` (or `--chdir`) flag followed by the desired directory path.
+
+```bash
+terramate -C some/dir generate
+```
+
+By default, Terramate returns status code = 0 when it succeeds at ensuring that all files are updated.
+Use the `--detailed-exit-code` flag to check when files were modified on disk.
 
 ```bash
 terramate generate --detailed-exit-code

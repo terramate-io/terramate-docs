@@ -53,4 +53,5 @@ terramate list --status=drifted
 - `-v, --verbose=<level>`: Increase the verbosity of the output. The level is optional and defaults to 0 if not specified.
 - `--why`: Show the reason why a stack has changed.
 - `--status=<status>`: Filter by status on Terramate Cloud.
+  - If the experimental deployment targets option is enabled, `--target` is required (see [run](./run#tmc-deployment-targets)).
 - `--run-order`: Sort stacks by order of execution.****

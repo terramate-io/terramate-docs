@@ -423,15 +423,6 @@ export default defineConfig({
             //     // { text: 'Introduction', link: '/cli/introduction' },
             //   ],
             // },
-            {
-              text: 'Organization',
-              link: '/cloud/organization/',
-              collapsed: true,
-              items: [
-                { text: 'General Settings', link: '/cloud/organization/settings' },
-                { text: 'User Management', link: '/cloud/organization/user-management' },
-              ],
-            },
             // {
             //   text: 'Pofile',
             //   collapsed: false,
@@ -440,14 +431,26 @@ export default defineConfig({
             //   ],
             // },
 
-            { text: 'Alert Routing', link: '/concepts/alerts' },
+            { text: 'Alert Routing', link: '/cloud/alerts/' },
             {
               text: 'Integrations',
               collapsed: true,
               items: [
                 { text: 'Slack', link: '/cloud/integrations/slack/' },
                 { text: 'GitHub', link: '/cloud/integrations/github/' },
-                { text: 'GitLab', link: '/cloud/integrations/gitlab/' },
+                {
+                  text: 'GitLab 🚧',
+                  // link: '/cloud/integrations/gitlab/',
+                },
+              ],
+            },
+            {
+              text: 'Organization',
+              link: '/cloud/organization/',
+              collapsed: true,
+              items: [
+                { text: 'General Settings', link: '/cloud/organization/settings' },
+                { text: 'User Management', link: '/cloud/organization/user-management' },
               ],
             },
           ],

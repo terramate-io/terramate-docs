@@ -1,5 +1,5 @@
 ---
-title: tm_range - Functions - Configuration Language
+title: tm_range | Functions | Configuration Language
 description: The tm_range function generates sequences of numbers.
 ---
 

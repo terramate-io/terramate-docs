@@ -1,5 +1,5 @@
 ---
-title: tm_title - Functions - Configuration Language
+title: tm_title | Functions | Configuration Language
 description: |-
   The tm_title function converts the first letter of each word in a given string
   to uppercase.

@@ -1,5 +1,5 @@
 ---
-title: tm_trim - Functions - Configuration Language
+title: tm_trim | Functions | Configuration Language
 description: >-
   The tm_trim function removes the specified set of characters from the start and
   end of

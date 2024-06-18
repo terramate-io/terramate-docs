@@ -1,5 +1,5 @@
 ---
-title: tm_toset - Functions - Configuration Language
+title: tm_toset | Functions | Configuration Language
 description: The tm_toset function converts a value to a set.
 ---
 

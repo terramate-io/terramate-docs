@@ -1,5 +1,5 @@
 ---
-title: tm_contains - Functions - Configuration Language
+title: tm_contains | Functions | Configuration Language
 description: The tm_contains function determines whether a list or set contains a given value.
 ---
 

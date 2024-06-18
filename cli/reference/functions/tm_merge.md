@@ -1,5 +1,5 @@
 ---
-title: tm_merge - Functions - Configuration Language
+title: tm_merge | Functions | Configuration Language
 description: |-
   The tm_merge function takes an arbitrary number maps or objects, and returns a
   single map or object that contains a merged set of elements from all

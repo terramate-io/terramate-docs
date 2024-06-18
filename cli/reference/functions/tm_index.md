@@ -1,5 +1,5 @@
 ---
-title: tm_index - Functions - Configuration Language
+title: tm_index | Functions | Configuration Language
 description: The tm_index function finds the element index for a given value in a list.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_flatten - Functions - Configuration Language
+title: tm_flatten | Functions | Configuration Language
 description: The tm_flatten function eliminates nested lists from a list.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_base64gzip - Functions - Configuration Language
+title: tm_base64gzip | Functions | Configuration Language
 description: |-
   The tm_base64gzip function compresses the given string with gzip and then
   encodes the result in Base64.

@@ -1,5 +1,5 @@
 ---
-title: tm_coalescelist - Functions - Configuration Language
+title: tm_coalescelist | Functions | Configuration Language
 description: |-
   The tm_coalescelist function takes any number of list arguments and returns the
   first one that isn't empty.

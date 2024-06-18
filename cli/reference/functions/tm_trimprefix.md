@@ -1,5 +1,5 @@
 ---
-title: tm_trimprefix - Functions - Configuration Language
+title: tm_trimprefix | Functions | Configuration Language
 description: |-
   The tm_trimprefix function removes the specified prefix from the start of a
   given string.

@@ -1,5 +1,5 @@
 ---
-title: tm_urlencode - Functions - Configuration Language
+title: tm_urlencode | Functions | Configuration Language
 description: The tm_urlencode function applies URL encoding to a given string.
 ---
 

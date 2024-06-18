@@ -1,5 +1,5 @@
 ---
-title: tm_chunklist - Functions - Configuration Language
+title: tm_chunklist | Functions | Configuration Language
 description: |-
   The tm_chunklist function splits a single list into fixed-size chunks, returning
   a list of lists.

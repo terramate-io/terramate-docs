@@ -1,5 +1,5 @@
 ---
-title: tm_strrev - Functions - Configuration Language
+title: tm_strrev | Functions | Configuration Language
 description: The tm_strrev function reverses a string.
 ---
 

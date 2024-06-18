@@ -1,5 +1,5 @@
 ---
-title: tm_distinct - Functions - Configuration Language
+title: tm_distinct | Functions | Configuration Language
 description: The tm_distinct function removes duplicate elements from a list.
 ---
 

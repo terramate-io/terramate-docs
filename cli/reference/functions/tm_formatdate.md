@@ -1,5 +1,5 @@
 ---
-title: tm_formatdate - Functions - Configuration Language
+title: tm_formatdate | Functions | Configuration Language
 description: The tm_formatdate function converts a timestamp into a different time format.
 ---
 

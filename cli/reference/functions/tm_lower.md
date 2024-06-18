@@ -1,5 +1,5 @@
 ---
-title: tm_lower - Functions - Configuration Language
+title: tm_lower | Functions | Configuration Language
 description: >-
   The tm_lower function converts all cased letters in the given string to
   lowercase.

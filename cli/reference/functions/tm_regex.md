@@ -1,5 +1,5 @@
 ---
-title: tm_regex - Functions - Configuration Language
+title: tm_regex | Functions | Configuration Language
 description: |-
   The tm_regex function applies a regular expression to a string and returns the
   matching substrings.

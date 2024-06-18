@@ -1,5 +1,5 @@
 ---
-title: tm_sort - Functions - Configuration Language
+title: tm_sort | Functions | Configuration Language
 description: |-
   The tm_sort function takes a list of strings and returns a new list with those
   strings sorted lexicographically.

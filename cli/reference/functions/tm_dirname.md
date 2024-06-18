@@ -1,5 +1,5 @@
 ---
-title: tm_dirname - Functions - Configuration Language
+title: tm_dirname | Functions | Configuration Language
 description: The tm_dirname function removes the last portion from a filesystem path.
 ---
 

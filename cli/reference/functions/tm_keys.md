@@ -1,5 +1,5 @@
 ---
-title: tm_keys - Functions - Configuration Language
+title: tm_keys | Functions | Configuration Language
 description: The tm_keys function returns a list of the keys in a given map.
 ---
 

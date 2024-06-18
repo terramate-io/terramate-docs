@@ -1,5 +1,5 @@
 ---
-title: tm_sha1 - Functions - Configuration Language
+title: tm_sha1 | Functions | Configuration Language
 description: |-
   The tm_sha1 function computes the SHA1 hash of a given string and encodes it
   with hexadecimal digits.

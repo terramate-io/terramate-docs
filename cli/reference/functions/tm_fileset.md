@@ -1,5 +1,5 @@
 ---
-title: tm_fileset - Functions - Configuration Language
+title: tm_fileset | Functions | Configuration Language
 description: The tm_fileset function enumerates a set of regular file names given a pattern.
 ---
 

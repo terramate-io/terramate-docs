@@ -1,5 +1,5 @@
 ---
-title: tm_replace - Functions - Configuration Language
+title: tm_replace | Functions | Configuration Language
 description: |-
   The tm_replace function searches a given string for another given substring,
   and replaces all occurrences with a given replacement string.

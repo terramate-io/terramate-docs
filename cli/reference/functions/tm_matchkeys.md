@@ -1,5 +1,5 @@
 ---
-title: tm_matchkeys - Functions - Configuration Language
+title: tm_matchkeys | Functions | Configuration Language
 description: |-
   The tm_matchkeys function takes a subset of elements from one list by matching
   corresponding indexes in another list.

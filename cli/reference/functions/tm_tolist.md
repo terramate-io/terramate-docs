@@ -1,5 +1,5 @@
 ---
-title: tm_tolist - Functions - Configuration Language
+title: tm_tolist | Functions | Configuration Language
 description: The tm_tolist function converts a value to a list.
 ---
 

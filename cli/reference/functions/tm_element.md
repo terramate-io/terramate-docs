@@ -1,5 +1,5 @@
 ---
-title: tm_element - Functions - Configuration Language
+title: tm_element | Functions | Configuration Language
 description: The tm_element function retrieves a single element from a list.
 ---
 

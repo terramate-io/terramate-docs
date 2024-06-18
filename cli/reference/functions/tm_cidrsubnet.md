@@ -1,5 +1,5 @@
 ---
-title: tm_cidrsubnet - Functions - Configuration Language
+title: tm_cidrsubnet | Functions | Configuration Language
 description: |-
   The tm_cidrsubnet function calculates a subnet address within a given IP network
   address prefix.

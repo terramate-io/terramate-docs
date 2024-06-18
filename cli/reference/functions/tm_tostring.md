@@ -1,5 +1,5 @@
 ---
-title: tm_tostring - Functions - Configuration Language
+title: tm_tostring | Functions | Configuration Language
 description: The tm_tostring function converts a value to a string.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_chomp - Functions - Configuration Language
+title: tm_chomp | Functions | Configuration Language
 description: The tm_chomp function removes newline characters at the end of a string.
 ---
 

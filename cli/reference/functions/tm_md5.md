@@ -1,5 +1,5 @@
 ---
-title: tm_md5 - Functions - Configuration Language
+title: tm_md5 | Functions | Configuration Language
 description: |-
   The tm_md5 function computes the MD5 hash of a given string and encodes it
   with hexadecimal digits.

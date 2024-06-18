@@ -1,5 +1,5 @@
 ---
-title: tm_try - Functions - Configuration Language
+title: tm_try | Functions | Configuration Language
 description: |-
   The tm_try function tries to evaluate a sequence of expressions given as
   arguments and returns the result of the first one that does not produce

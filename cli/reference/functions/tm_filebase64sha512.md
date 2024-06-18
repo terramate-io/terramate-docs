@@ -1,5 +1,5 @@
 ---
-title: tm_filebase64sha512 - Functions - Configuration Language
+title: tm_filebase64sha512 | Functions | Configuration Language
 description: |-
   The tm_filebase64sha512 function computes the SHA512 hash of the contents of
   a given file and encodes it with Base64.

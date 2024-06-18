@@ -1,5 +1,5 @@
 ---
-title: tm_setsubtract - Functions - Configuration Language
+title: tm_setsubtract | Functions | Configuration Language
 description: |-
   The tm_setsubtract function returns a new set containing the elements
   from the first set that are not present in the second set

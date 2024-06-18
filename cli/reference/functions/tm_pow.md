@@ -1,5 +1,5 @@
 ---
-title: tm_pow - Functions - Configuration Language
+title: tm_pow | Functions | Configuration Language
 description: The tm_pow function raises a number to a power.
 ---
 

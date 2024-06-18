@@ -1,5 +1,5 @@
 ---
-title: tm_cidrsubnets - Functions - Configuration Language
+title: tm_cidrsubnets | Functions | Configuration Language
 description: |-
   The tm_cidrsubnets function calculates a sequence of consecutive IP address
   ranges within a particular CIDR prefix.

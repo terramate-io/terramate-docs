@@ -1,5 +1,5 @@
 ---
-title: tm_split - Functions - Configuration Language
+title: tm_split | Functions | Configuration Language
 description: |-
   The tm_split function produces a list by dividing a given string at all
   occurrences of a given separator.

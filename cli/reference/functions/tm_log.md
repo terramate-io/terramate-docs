@@ -1,5 +1,5 @@
 ---
-title: tm_log - Functions - Configuration Language
+title: tm_log | Functions | Configuration Language
 description: The tm_log function returns the logarithm of a given number in a given base.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_trimsuffix - Functions - Configuration Language
+title: tm_trimsuffix | Functions | Configuration Language
 description: |-
   The tm_trimsuffix function removes the specified suffix from the end of a
   given string.

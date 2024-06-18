@@ -1,5 +1,5 @@
 ---
-title: tm_format - Functions - Configuration Language
+title: tm_format | Functions | Configuration Language
 description: |-
   The tm_format function produces a string by formatting a number of other values
   according to a specification string.

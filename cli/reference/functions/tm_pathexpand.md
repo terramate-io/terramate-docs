@@ -1,5 +1,5 @@
 ---
-title: tm_pathexpand - Functions - Configuration Language
+title: tm_pathexpand | Functions | Configuration Language
 description: |-
   The tm_pathexpand function expands a leading ~ character to the current user's
   home directory.

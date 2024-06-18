@@ -1,5 +1,5 @@
 ---
-title: tm_cidrnetmask - Functions - Configuration Language
+title: tm_cidrnetmask | Functions | Configuration Language
 description: |-
   The tm_cidrnetmask function converts an IPv4 address prefix given in CIDR
   notation into a subnet mask address.

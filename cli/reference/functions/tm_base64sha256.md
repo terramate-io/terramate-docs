@@ -1,5 +1,5 @@
 ---
-title: tm_base64sha256 - Functions - Configuration Language
+title: tm_base64sha256 | Functions | Configuration Language
 description: |-
   The tm_base64sha256 function computes the SHA256 hash of a given string and
   encodes it with Base64.

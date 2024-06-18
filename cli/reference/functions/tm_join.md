@@ -1,5 +1,5 @@
 ---
-title: tm_join - Functions - Configuration Language
+title: tm_join | Functions | Configuration Language
 description: |-
   The tm_join function produces a string by concatenating the elements of a list
   with a given delimiter.

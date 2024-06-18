@@ -1,5 +1,5 @@
 ---
-title: tm_cidrhost - Functions - Configuration Language
+title: tm_cidrhost | Functions | Configuration Language
 description: |-
   The tm_cidrhost function calculates a full host IP address within a given
   IP network address prefix.

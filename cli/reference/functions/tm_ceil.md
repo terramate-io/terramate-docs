@@ -1,5 +1,5 @@
 ---
-title: tm_ceil - Functions - Configuration Language
+title: tm_ceil | Functions | Configuration Language
 description: |-
   The tm_ceil function returns the closest whole number greater than or equal to
   the given value.

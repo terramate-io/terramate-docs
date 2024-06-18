@@ -1,5 +1,5 @@
 ---
-title: tm_setintersection - Functions - Configuration Language
+title: tm_setintersection | Functions | Configuration Language
 description: |-
   The tm_setintersection function takes multiple sets and produces a single set
   containing only the elements that all of the given sets have in common.

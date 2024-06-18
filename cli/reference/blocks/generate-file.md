@@ -1,9 +1,9 @@
 ---
-title: Generate Files
-description: Learn how to use Terramate to generate files such as JSON or YAML.
+title: generate_file | Block | Configuration Language
+description: Learn how to use the generate_file block to generate arbitrary files such as JSON and YAML.
 ---
 
-# File Code Generation
+# The `generate_file` block
 
 Terramate supports the generation of arbitrary files such as JSON or YAML referencing data such as
 [Variables](../variables/index.md) and [Metadata](../variables/metadata.md).

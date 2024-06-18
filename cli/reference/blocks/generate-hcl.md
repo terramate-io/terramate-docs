@@ -1,9 +1,9 @@
 ---
-title: Terraform, OpenTofu and HCL Code Generation
-description: Learn how to use Terramate to generate Terraform and OpenTofu configurations.
+title: generate_hcl | Block | Configuration Language
+description: Learn how to use the generate_hcl block to generate HCL files such as Terraform, OpenTofu,or Packer.
 ---
 
-# HCL Code Generation
+# The `generate_hcl` block
 
 Terramate supports the generation of arbitrary HCL code such as Terraform, OpenTofu and other HCL configurations,
 referencing data such as [Variables](../variables/index.md) and [Metadata](../variables/metadata.md).

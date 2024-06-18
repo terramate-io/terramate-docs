@@ -1,5 +1,5 @@
 ---
-title: tm_base64sha512 - Functions - Configuration Language
+title: tm_base64sha512 | Functions | Configuration Language
 description: |-
   The tm_base64sha512 function computes the SHA512 hash of a given string and
   encodes it with Base64.

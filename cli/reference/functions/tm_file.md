@@ -1,5 +1,5 @@
 ---
-title: tm_file - Functions - Configuration Language
+title: tm_file | Functions | Configuration Language
 description: |-
   The tm_file function reads the contents of the file at the given path and
   returns them as a string.

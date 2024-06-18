@@ -1,5 +1,5 @@
 ---
-title: tm_floor - Functions - Configuration Language
+title: tm_floor | Functions | Configuration Language
 description: |-
   The tm_floor function returns the closest whole number less than or equal to
   the given value.

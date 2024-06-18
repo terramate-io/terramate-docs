@@ -1,5 +1,5 @@
 ---
-title: tm_signum - Functions - Configuration Language
+title: tm_signum | Functions | Configuration Language
 description: The tm_signum function determines the sign of a number.
 ---
 

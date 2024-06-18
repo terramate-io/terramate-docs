@@ -1,5 +1,5 @@
 ---
-title: tm_templatefile - Functions - Configuration Language
+title: tm_templatefile | Functions | Configuration Language
 description: |-
   The tm_templatefile function reads the file at the given path and renders its
   content as a template.

@@ -1,5 +1,5 @@
 ---
-title: tm_formatlist - Functions - Configuration Language
+title: tm_formatlist | Functions | Configuration Language
 description: |-
   The tm_formatlist function produces a list of strings by formatting a number of
   other values according to a specification string.

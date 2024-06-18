@@ -1,5 +1,5 @@
 ---
-title: tm_lookup - Functions - Configuration Language
+title: tm_lookup | Functions | Configuration Language
 description: The tm_lookup function retrieves an element value from a map given its key.
 ---
 

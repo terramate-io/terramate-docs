@@ -1,5 +1,5 @@
 ---
-title: tm_max - Functions - Configuration Language
+title: tm_max | Functions | Configuration Language
 description: The tm_max function takes one or more numbers and returns the greatest number.
 ---
 

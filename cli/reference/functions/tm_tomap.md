@@ -1,5 +1,5 @@
 ---
-title: tm_tomap - Functions - Configuration Language
+title: tm_tomap | Functions | Configuration Language
 description: The tm_tomap function converts a value to a map.
 ---
 

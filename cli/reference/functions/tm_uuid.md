@@ -1,5 +1,5 @@
 ---
-title: tm_uuid - Functions - Configuration Language
+title: tm_uuid | Functions | Configuration Language
 description: The tm_uuid function generates a unique id.
 ---
 

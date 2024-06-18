@@ -1,5 +1,5 @@
 ---
-title: tm_regexall - Functions - Configuration Language
+title: tm_regexall | Functions | Configuration Language
 description: >-
   The tm_regex function applies a regular expression to a string and returns a list
   of all matches.

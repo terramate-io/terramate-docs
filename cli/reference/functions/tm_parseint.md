@@ -1,5 +1,5 @@
 ---
-title: tm_parseint - Functions - Configuration Language
+title: tm_parseint | Functions | Configuration Language
 description: >-
   The tm_parseint function parses the given string as a representation of an
   integer.

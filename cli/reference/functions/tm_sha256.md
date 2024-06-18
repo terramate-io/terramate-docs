@@ -1,5 +1,5 @@
 ---
-title: tm_sha256 - Functions - Configuration Language
+title: tm_sha256 | Functions | Configuration Language
 description: |-
   The tm_sha256 function computes the SHA256 hash of a given string and encodes it
   with hexadecimal digits.

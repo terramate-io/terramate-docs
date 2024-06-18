@@ -1,5 +1,5 @@
 ---
-title: tm_yamldecode - Functions - Configuration Language
+title: tm_yamldecode | Functions | Configuration Language
 description: |-
   The tm_yamldecode function decodes a YAML string into a representation of its
   value.

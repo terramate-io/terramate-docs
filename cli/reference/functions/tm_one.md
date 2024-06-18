@@ -1,5 +1,5 @@
 ---
-title: tm_one - Functions - Configuration Language
+title: tm_one | Functions | Configuration Language
 description: |-
   The tm_one function transforms a list with either zero or one elements into
   either a null value or the value of the first element.

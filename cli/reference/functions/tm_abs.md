@@ -1,5 +1,5 @@
 ---
-title: tm_abs - Functions - Configuration Language
+title: tm_abs | Functions | Configuration Language
 description: The tm_abs function returns the absolute value of the given number.
 ---
 

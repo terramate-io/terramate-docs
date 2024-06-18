@@ -1,5 +1,5 @@
 ---
-title: tm_anytrue - Functions - Configuration Language
+title: tm_anytrue | Functions | Configuration Language
 description: |-
   The tm_anytrue function determines whether any element of a collection
   is true or "true". If the collection is empty, it returns false.

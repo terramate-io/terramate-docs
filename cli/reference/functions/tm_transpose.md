@@ -1,5 +1,5 @@
 ---
-title: tm_transpose - Functions - Configuration Language
+title: tm_transpose | Functions | Configuration Language
 description: |-
   The tm_transpose function takes a map of lists of strings and swaps the keys
   and values.

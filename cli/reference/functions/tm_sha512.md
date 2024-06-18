@@ -1,5 +1,5 @@
 ---
-title: tm_sha512 - Functions - Configuration Language
+title: tm_sha512 | Functions | Configuration Language
 description: |-
   The tm_sha512 function computes the SHA512 hash of a given string and encodes it
   with hexadecimal digits.

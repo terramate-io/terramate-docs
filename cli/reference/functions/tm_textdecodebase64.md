@@ -1,5 +1,5 @@
 ---
-title: tm_textdecodebase64 - Functions - Configuration Language
+title: tm_textdecodebase64 | Functions | Configuration Language
 description: >-
   The tm_textdecodebase64 function decodes a string that was previously
   Base64-encoded,

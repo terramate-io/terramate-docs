@@ -1,5 +1,5 @@
 ---
-title: tm_values - Functions - Configuration Language
+title: tm_values | Functions | Configuration Language
 description: The tm_values function returns a list of the element values in a given map.
 ---
 

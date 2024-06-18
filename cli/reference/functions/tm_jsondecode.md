@@ -1,5 +1,5 @@
 ---
-title: tm_jsondecode - Functions - Configuration Language
+title: tm_jsondecode | Functions | Configuration Language
 description: |-
   The tm_jsondecode function decodes a JSON string into a representation of its
   value.

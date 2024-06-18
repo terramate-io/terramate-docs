@@ -1,5 +1,5 @@
 ---
-title: tm_fileexists - Functions - Configuration Language
+title: tm_fileexists | Functions | Configuration Language
 description: The tm_fileexists function determines whether a file exists at a given path.
 ---
 

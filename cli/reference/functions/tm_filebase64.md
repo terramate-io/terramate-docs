@@ -1,5 +1,5 @@
 ---
-title: tm_filebase64 - Functions - Configuration Language
+title: tm_filebase64 | Functions | Configuration Language
 description: |-
   The tm_filebase64 function reads the contents of the file at the given path and
   returns them as a base64-encoded string.

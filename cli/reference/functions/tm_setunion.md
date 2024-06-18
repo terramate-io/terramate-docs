@@ -1,5 +1,5 @@
 ---
-title: tm_setunion - Functions - Configuration Language
+title: tm_setunion | Functions | Configuration Language
 description: |-
   The tm_setunion function takes multiple sets and produces a single set
   containing the elements from all of the given sets.

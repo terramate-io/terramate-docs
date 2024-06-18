@@ -1,5 +1,5 @@
 ---
-title: tm_bcrypt - Functions - Configuration Language
+title: tm_bcrypt | Functions | Configuration Language
 description: |-
   The tm_bcrypt function computes a hash of the given string using the Blowfish
   cipher.

@@ -1,5 +1,5 @@
 ---
-title: tm_trimspace - Functions - Configuration Language
+title: tm_trimspace | Functions | Configuration Language
 description: |-
   The tm_trimspace function removes space characters from the start and end of
   a given string.

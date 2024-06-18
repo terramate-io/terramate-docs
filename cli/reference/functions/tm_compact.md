@@ -1,5 +1,5 @@
 ---
-title: tm_compact - Functions - Configuration Language
+title: tm_compact | Functions | Configuration Language
 description: The tm_compact function removes null or empty string elements from a list.
 ---
 

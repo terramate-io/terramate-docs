@@ -1,5 +1,5 @@
 ---
-title: tm_rsadecrypt - Functions - Configuration Language
+title: tm_rsadecrypt | Functions | Configuration Language
 description: The tm_rsadecrypt function decrypts an RSA-encrypted message.
 ---
 

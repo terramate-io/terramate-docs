@@ -1,5 +1,5 @@
 ---
-title: tm_substr - Functions - Configuration Language
+title: tm_substr | Functions | Configuration Language
 description: |-
   The tm_substr function extracts a substring from a given string by offset and
   length.

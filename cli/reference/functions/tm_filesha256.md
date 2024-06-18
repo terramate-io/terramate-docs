@@ -1,5 +1,5 @@
 ---
-title: tm_filesha256 - Functions - Configuration Language
+title: tm_filesha256 | Functions | Configuration Language
 description: |-
   The tm_filesha256 function computes the SHA256 hash of the contents of
   a given file and encodes it as hex.

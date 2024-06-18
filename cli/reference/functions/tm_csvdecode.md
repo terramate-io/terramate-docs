@@ -1,5 +1,5 @@
 ---
-title: tm_csvdecode - Functions - Configuration Language
+title: tm_csvdecode | Functions | Configuration Language
 description: The tm_csvdecode function decodes CSV data into a list of maps.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_timestamp - Functions - Configuration Language
+title: tm_timestamp | Functions | Configuration Language
 description: |-
   The tm_timestamp function returns a string representation of the current date
   and time.

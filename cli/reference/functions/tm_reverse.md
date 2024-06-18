@@ -1,5 +1,5 @@
 ---
-title: tm_reverse - Functions - Configuration Language
+title: tm_reverse | Functions | Configuration Language
 description: The tm_reverse function reverses a sequence.
 ---
 

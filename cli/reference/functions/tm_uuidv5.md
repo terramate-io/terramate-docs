@@ -1,5 +1,5 @@
 ---
-title: tm_uuidv5 - Functions - Configuration Language
+title: tm_uuidv5 | Functions | Configuration Language
 description: >-
   The tm_uuidv5 function generates a uuid v5 string representation of the value in
   the specified namespace.

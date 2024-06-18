@@ -1,5 +1,5 @@
 ---
-title: tm_base64encode - Functions - Configuration Language
+title: tm_base64encode | Functions | Configuration Language
 description: The tm_base64encode function applies Base64 encoding to a string.
 ---
 

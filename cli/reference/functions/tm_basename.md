@@ -1,5 +1,5 @@
 ---
-title: tm_basename - Functions - Configuration Language
+title: tm_basename | Functions | Configuration Language
 description: |-
   The tm_basename function removes all except the last portion from a filesystem
   path.

@@ -1,5 +1,5 @@
 ---
-title: tm_min - Functions - Configuration Language
+title: tm_min | Functions | Configuration Language
 description: The tm_min function takes one or more numbers and returns the smallest number.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_zipmap - Functions - Configuration Language
+title: tm_zipmap | Functions | Configuration Language
 description: |-
   The tm_zipmap function constructs a map from a list of keys and a corresponding
   list of values.

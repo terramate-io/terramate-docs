@@ -1,5 +1,5 @@
 ---
-title: tm_base64decode - Functions - Configuration Language
+title: tm_base64decode | Functions | Configuration Language
 description: The tm_base64decode function decodes a string containing a base64 sequence.
 ---
 

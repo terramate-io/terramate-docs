@@ -1,5 +1,5 @@
 ---
-title: tm_abspath - Functions - Configuration Language
+title: tm_abspath | Functions | Configuration Language
 description: The tm_abspath function converts the argument to an absolute filesystem path.
 ---
 

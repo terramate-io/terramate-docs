@@ -1,5 +1,5 @@
 ---
-title: tm_tobool - Functions - Configuration Language
+title: tm_tobool | Functions | Configuration Language
 description: The tm_tobool function converts a value to boolean.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: tm_upper - Functions - Configuration Language
+title: tm_upper | Functions | Configuration Language
 description: >-
   The tm_upper function converts all cased letters in the given string to
   uppercase.

@@ -1,5 +1,5 @@
 ---
-title: tm_yamlencode - Functions - Configuration Language
+title: tm_yamlencode | Functions | Configuration Language
 description: The tm_yamlencode function encodes a given value as a YAML string.
 ---
 

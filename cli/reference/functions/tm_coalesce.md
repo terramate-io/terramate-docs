@@ -1,5 +1,5 @@
 ---
-title: tm_coalesce - Functions - Configuration Language
+title: tm_coalesce | Functions | Configuration Language
 description: |-
   The tm_coalesce function takes any number of arguments and returns the
   first one that isn't null nor empty.

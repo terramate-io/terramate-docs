@@ -1,5 +1,5 @@
 ---
-title: tm_sum - Functions - Configuration Language
+title: tm_sum | Functions | Configuration Language
 description: |-
   The tm_sum function takes a list or set of numbers and returns the sum of those
   numbers.

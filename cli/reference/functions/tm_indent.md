@@ -1,5 +1,5 @@
 ---
-title: tm_indent - Functions - Configuration Language
+title: tm_indent | Functions | Configuration Language
 description: |-
   The tm_indent function adds a number of spaces to the beginnings of all but the
   first line of a given multi-line string.

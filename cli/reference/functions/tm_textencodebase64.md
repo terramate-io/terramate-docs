@@ -1,5 +1,5 @@
 ---
-title: tm_textencodebase64 - Functions - Configuration Language
+title: tm_textencodebase64 | Functions | Configuration Language
 description: >-
   The tm_textencodebase64 function encodes the unicode characters in a given string
   using a specified character encoding, returning the result base64 encoded.

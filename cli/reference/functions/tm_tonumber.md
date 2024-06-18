@@ -1,5 +1,5 @@
 ---
-title: tm_tonumber - Functions - Configuration Language
+title: tm_tonumber | Functions | Configuration Language
 description: The tm_tonumber function converts a value to a number.
 ---
 

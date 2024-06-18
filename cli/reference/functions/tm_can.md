@@ -1,5 +1,5 @@
 ---
-title: tm_can - Functions - Configuration Language
+title: tm_can | Functions | Configuration Language
 description: |-
   The tm_can function tries to evaluate an expression given as an argument and
   indicates whether the evaluation succeeded.

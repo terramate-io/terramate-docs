@@ -1,5 +1,5 @@
 ---
-title: tm_jsonencode - Functions - Configuration Language
+title: tm_jsonencode | Functions | Configuration Language
 description: The tm_jsonencode function encodes a given value as a JSON string.
 ---
 

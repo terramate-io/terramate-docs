@@ -1,5 +1,5 @@
 ---
-title: tm_slice - Functions - Configuration Language
+title: tm_slice | Functions | Configuration Language
 description: The tm_slice function extracts some consecutive elements from within a list.
 ---
 

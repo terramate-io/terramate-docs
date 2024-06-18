@@ -1,5 +1,5 @@
 ---
-title: tm_length - Functions - Configuration Language
+title: tm_length | Functions | Configuration Language
 description: The tm_length function determines the length of a collection or string.
 ---
 

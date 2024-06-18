@@ -1,5 +1,5 @@
 ---
-title: tm_setproduct - Functions - Configuration Language
+title: tm_setproduct | Functions | Configuration Language
 description: |-
   The tm_setproduct function finds all of the possible combinations of elements
   from all of the given sets by computing the cartesian product.

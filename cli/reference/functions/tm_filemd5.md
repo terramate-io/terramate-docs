@@ -1,5 +1,5 @@
 ---
-title: tm_filemd5 - Functions - Configuration Language
+title: tm_filemd5 | Functions | Configuration Language
 description: |-
   The tm_filemd5 function computes the MD5 hash of the contents of
   a given file and encodes it as hex.

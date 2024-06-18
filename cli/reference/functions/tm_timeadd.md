@@ -1,5 +1,5 @@
 ---
-title: tm_timeadd - Functions - Configuration Language
+title: tm_timeadd | Functions | Configuration Language
 description: |-
   The tm_timeadd function adds a duration to a timestamp, returning a new timestamp.
 ---

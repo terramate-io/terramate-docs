@@ -4,4 +4,4 @@ Stacks, Stack Metadata and Stack status, do not need to be synchronized regularl
 
 - Synchronize Previews (coming soon)
 - [Synchronize Deployments](../deployments/)
-- [Synchronize Drift Runs](../drifts/)
+- [Synchronize Drift Runs](../drift/)

@@ -417,8 +417,8 @@ export default defineConfig({
               text: 'Integrations',
               collapsed: true,
               items: [
-                { text: 'Slack', link: '/cloud/integrations/slack/' },
-                { text: 'GitHub', link: '/cloud/integrations/github/' },
+                { text: 'Slack', link: '/cloud/integrations/slack' },
+                { text: 'GitHub', link: '/cloud/integrations/github' },
                 {
                   text: 'GitLab 🚧',
                   // link: '/cloud/integrations/gitlab/',
@@ -533,7 +533,7 @@ export default defineConfig({
                 { text: 'script', link: '/cli/reference/blocks/script' },
                 { text: 'assert', link: '/cli/reference/blocks/assert' },
                 { text: 'import', link: '/cli/reference/blocks/import' },
-                // { text: 'vendor', link: '/cli/code-generation/variables/lets' },
+                // { text: 'vendor', link: '/cli/code-generation/variables/vendor' },
               ],
             },
             {

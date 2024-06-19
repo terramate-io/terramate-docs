@@ -3,7 +3,7 @@ title: Drift | Terramate Concepts
 description: Learn how Terramate helps you to detect, manage and reconcile drift.
 ---
 
-# Drift
+# Drift Management
 
 This section explains **drift** as a core concept in Terramate.
 
@@ -15,7 +15,7 @@ diverges from your configuration.
 Terramate helps you to detect drift by periodically running drift detection workflows in your CI/CD such as GitHub Actions, GitLab CI/CD or BitBucket pipelines. Upon detection of drift in stacks, Terramate will sync those drift to Terramate Cloud allowing
 you to identify and manage drift
 
-![Drift in Terramate Cloud](../cli/assets/concepts/drift.png)
+![Drift in Terramate Cloud](../assets/drift/drift.png)
 
 ## Types of Drift Detection
 

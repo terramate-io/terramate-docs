@@ -175,18 +175,6 @@ export default defineConfig({
           ],
         },
 
-        // {
-        //   text: '⭐️ Concepts',
-        //   collapsed: false,
-        //   items: [
-        //     { text: 'GitOps', link: '/concepts/gitops' },
-        //     { text: 'Pull Requests Previews', link: '/concepts/pull-requests' },
-        //     { text: 'Deployments History', link: '/concepts/deployments' },
-        //     { text: 'Drift Detection', link: '/concepts/drift' },
-        //     { text: 'Configuration', link: '/concepts/configuration' },
-        //   ],
-        // },
-
         {
           text: '💻 Terramate CLI',
           collapsed: false,
@@ -232,6 +220,7 @@ export default defineConfig({
             },
             {
               text: 'CI/CD',
+              link: '/cli/automation/',
               collapsed: true,
               items: [
                 {
@@ -304,10 +293,10 @@ export default defineConfig({
               text: 'Dashboard',
               link: '/cloud/dashboard/',
             },
-            // {
-            //   text: 'Alerts',
-            //   link: '/cli/alerts/create',
-            // },
+            {
+              text: 'Alerts',
+              link: '/cloud/alerts/',
+            },
             {
               text: 'Stacks Inventory',
               link: '/cloud/stacks/',
@@ -337,7 +326,7 @@ export default defineConfig({
             },
             {
               text: 'Pull Request Previews',
-              // link: '/cloud/previews/',
+              link: '/cloud/previews/',
               collapsed: true,
               items: [
                 // {
@@ -364,7 +353,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 // {
-                //   text: 'View Deloyments 🚧',
+                //   text: 'View Deployments 🚧',
                 //   // link: '/cloud/deployments/view-deployments'
                 // },
                 {
@@ -387,24 +376,24 @@ export default defineConfig({
             },
             {
               text: 'Drift Management',
-              // link: '/cloud/drifts/',
+              link: '/cloud/drift/',
               collapsed: true,
               items: [
                 {
                   text: 'Get Drift Notifications',
-                  link: '/cloud/drifts/notifications',
+                  link: '/cloud/drift/notifications',
                 },
                 {
                   text: 'Synchronize in Automation',
-                  link: '/cloud/drifts/synchronization-in-automation',
+                  link: '/cloud/drift/synchronization-in-automation',
                 },
                 {
                   text: 'Synchronize from CLI',
-                  link: '/cloud/drifts/synchronization-from-cli',
+                  link: '/cloud/drift/synchronization-from-cli',
                 },
                 {
                   text: 'Synchronize via Scripts',
-                  link: '/cloud/drifts/synchronization-with-scripts',
+                  link: '/cloud/drift/synchronization-with-scripts',
                 },
                 // {
                 //   text: 'View Drifted Stacks',
@@ -416,22 +405,14 @@ export default defineConfig({
                 // },
               ],
             },
-            // {
-            //   text: 'Notifications',
-            //   collapsed: false,
-            //   items: [
-            //     // { text: 'Introduction', link: '/cli/introduction' },
-            //   ],
-            // },
-            // {
-            //   text: 'Pofile',
-            //   collapsed: false,
-            //   items: [
-            //     // { text: 'Introduction', link: '/cli/introduction' },
-            //   ],
-            // },
+            {
+              text: 'Notifications',
+              collapsed: false,
+              items: [
+                // { text: 'Introduction', link: '/cli/introduction' },
+              ],
+            },
 
-            { text: 'Alert Routing', link: '/cloud/alerts/' },
             {
               text: 'Integrations',
               collapsed: true,
@@ -442,6 +423,13 @@ export default defineConfig({
                   text: 'GitLab 🚧',
                   // link: '/cloud/integrations/gitlab/',
                 },
+              ],
+            },
+            {
+              text: 'Pofile',
+              collapsed: false,
+              items: [
+                // { text: 'Introduction', link: '/cli/introduction' },
               ],
             },
             {
@@ -1072,20 +1060,9 @@ export default defineConfig({
             },
             {
               text: 'CLI Commands',
+              link: '/cli/reference/cmdline/',
               collapsed: true,
               items: [
-                { text: 'Overview', link: '/cli/reference/cmdline/' },
-                // {
-                //   text: 'Most important actions',
-                //   items: [
-                //     { text: 'Create or Import Stacks', link: '/cli/reference/cmdline/create' },
-                //     { text: 'List Stacks', link: '/cli/reference/cmdline/list' },
-                //     { text: 'Generate Code', link: '/cli/reference/cmdline/generate' },
-                //     { text: 'Run any Commands', link: '/cli/reference/cmdline/run' },
-                //     { text: 'Run Terramate Scripts', link: '/cli/reference/cmdline/script/script-run' },
-                //     { text: 'Terramate Cloud Login', link: '/cli/reference/cmdline/cloud/cloud-login' },
-                //   ],
-                // },
                 {
                   text: 'Stacks and Orchestration',
                   collapsed: false,

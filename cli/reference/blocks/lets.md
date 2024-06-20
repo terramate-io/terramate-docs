@@ -73,10 +73,12 @@ generate_hcl {
     greeting = "Hello, World!"
   }
 
-  content = <<EOF
-  {
-    "message": "${let.greeting}"
+  content {
+    body = <<EOF
+    {
+      "message": "${let.greeting}"
+    }
+    EOF
   }
-  EOF
 }
 ```

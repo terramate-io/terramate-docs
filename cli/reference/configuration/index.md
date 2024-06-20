@@ -297,7 +297,7 @@ and has the following schema:
 
 ## script block schema
 
-The `script` block has multiple labels, **do not** supports [merging](#config-merging) and has
+The `script` block has multiple labels, **does not** support [merging](#config-merging) and has
 the following schema:
 
 | name                       |      type      | description            |

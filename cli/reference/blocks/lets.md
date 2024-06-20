@@ -74,11 +74,7 @@ generate_hcl {
   }
 
   content {
-    body = <<EOF
-    {
-      "message": "${let.greeting}"
-    }
-    EOF
+    message: let.greeting
   }
 }
 ```

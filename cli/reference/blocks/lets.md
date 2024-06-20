@@ -5,14 +5,14 @@ description: Learn how to define variables available to the current generate_hcl
 
 # The `lets` block
 
-## Usecase
-
-Use the `lets` block in Terramate to define context-based variables local to the parent block where you declare them. Utilize these variables in surrounding attributes or blocks, such as `generate_hcl`, `generate_file`, and `script` blocks. The `lets` block achieves cleaner code by preventing global namespace clutter with locally scoped variables.
+Use the `lets` block in Terramate to define context-based variables local to the parent block where you declare them.
+Utilize these variables in surrounding attributes or blocks, such as `generate_hcl`, `generate_file`, and `script` blocks.
+The `lets` block achieves cleaner code by preventing global namespace clutter with locally scoped variables.
 
 ## Arguments
 
-<variable-name>: The name of the variable to be defined.
-<expression>: The expression to be evaluated and assigned to the variable.
+`<variable-name>`: The name of the variable to be defined.
+`<expression>`: The expression to be evaluated and assigned to the variable.
 
 ### Syntax
 

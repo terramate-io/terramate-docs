@@ -11,8 +11,8 @@ The `lets` block achieves cleaner code by preventing global namespace clutter wi
 
 ## Arguments
 
-`<variable-name>`: The name of the variable to be defined.
-`<expression>`: The expression to be evaluated and assigned to the variable.
+- `<variable-name>`: The name of the variable to be defined.
+- `<expression>`: The expression to be evaluated and assigned to the variable.
 
 ### Syntax
 

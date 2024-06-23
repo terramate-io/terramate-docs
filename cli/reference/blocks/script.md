@@ -35,7 +35,7 @@ script "command" "subcommand" { # any level of subcommands is supported
 
 ### Run a Terraform/OpenTofu deployment
 
-Run a sequence of commands by executing a single command, `terramate script run deploy` to deploy using Terraform or OpenTofu.
+Run `terramate script run deploy` to deploy using Terraform or OpenTofu.
 
 ```hcl
 script "deploy" {

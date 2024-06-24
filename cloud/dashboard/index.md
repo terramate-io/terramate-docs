@@ -1,5 +1,5 @@
 ---
-title: Dashboard in Terramate Cloud
+title: Dashboard | Terramate Cloud
 description: Learn how the dashboard in Terramate Cloud helps to keep an overview of the health of all stacks. In addition, it shows historical data about deployments.
 ---
 

@@ -1,3 +1,8 @@
+---
+title: Stack Details | Terramate Cloud
+description: Learn how to see all detail such as metadata, status, last deployments and resources managed of a stack in Terramate Cloud.
+---
+
 # Stack Details
 
 In the stack details page, all stack metadata is displayed as configured in Terramate CLI and collected by Terramate Cloud.
@@ -28,9 +33,9 @@ For `drifted` stacks, drift details in the form of a `terraform plan` are displa
 
 Each stack has a list of historic deployments the stack was included in.
 
-This information helps to detect the deployment that introduces the `failed` state. Each deployment can be used to visit the deployment in GitHub.
+This information helps to detect the deployment that introduces the `failed` state. Each deployment can be used to visit the deployment in GitHub Actions, GitLab CI/CD or any other [supported CI/CD platform](../../automation/index.md).
 
-See [Deployments](../deployments/) Visibility to learn how to synchronize deployments with Terramate Cloud.
+See [Deployments](../deployments/index.md) to learn how to synchronize deployments with Terramate Cloud.
 
 ## Drift Runs
 
@@ -38,4 +43,4 @@ Each stack has a list of historic drift runs the stack was included in.
 
 This information helps to detect the point in time when a drift was first detected and if a drift was related to a specific deployment.
 
-See [Drift Detection](../drift/) to learn how to synchronize drift runs with Terramate Cloud.
+See [Drift Detection](../drift/index.md) to learn how to synchronize drift runs with Terramate Cloud.

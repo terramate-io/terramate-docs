@@ -3,9 +3,9 @@ title: GitHub App | Integrations | Terramate Cloud
 description: Learn how to install and use the Terramate Cloud GitHub App to integrate your GitHub and Terramate Cloud Organizations.
 ---
 
-# GitHub App
+# GitHub Integration
 
-Terramate Cloud integrates well with GitHub by providing a [GitHub App](https://github.com/apps/terramate-cloud) that
+Terramate Cloud integrates with GitHub by providing a [GitHub App](https://github.com/apps/terramate-cloud) that
 can be installed in your personal GitHub account or your GitHub organization. Installing our GitHub App allows you to
 use features such as **rendered plan previews** in Pull Requests, automated **Pull Request approvals**,
 **status checks**, **policies**, and more.

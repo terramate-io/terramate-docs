@@ -9,6 +9,8 @@ Use the `stack` block to define a stack within a stack directory. Terramate dete
 
 ## Arguments
 
+You can see `stack` metadata details [here](../../stacks/configuration.md#general-stack-metadata).
+
 - `id` (string) The user-defined id of the stack.
 - `name` (string) The user-defined name of the stack.
 - `description` (string) The user-defined description of the stack.

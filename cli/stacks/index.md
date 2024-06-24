@@ -95,23 +95,20 @@ If we look back at the previous example, but this time we assume that the `db` a
 └── vpc
     ├── backend.tf
     ├── main.tf
-    ├── stack.tm.hcl
     ├── terraform.tf
+    ├── stack.tm.hcl
+    │
     ├── db
     │   ├── backend.tf
     │   ├── main.tf
-    │   ├── stack.tm.hcl
     │   └── terraform.tf
+    │   ├── stack.tm.hcl
+    │
     └── k8s
         ├── backend.tf
         ├── main.tf
+        └── terraform.tf
         ├── stack.tm.hcl
-        ├── terraform.tf
-        └── db
-            ├── backend.tf
-            ├── main.tf
-            ├── stack.tm.hcl
-            └── terraform.tf
 ```
 
 This means that the `db` and `k8s` stacks depend on the `vpc` stack. If you orchestrate commands such as

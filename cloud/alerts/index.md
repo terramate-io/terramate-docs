@@ -15,13 +15,13 @@ integration, which sends direct messages to individuals and teams assigned to al
 
 ![Alerts in Terramate Cloud](../assets/alerts/alerts.png)
 
-::: Warning
+::: info
 Unless a member of your Terramate Cloud organization uses the same email address among all their third-party accounts
 (e.g., GitHub user, GitLab user, Slack user, etc.), users must link their accounts with their Terramate Cloud user in the
 profile section. Otherwise, Terramate cannot automatically assign alerts because of the lack of mapping, e.g., for
 GitHub and Slack users.
 
-Linking accounts can be done in the profile section
+Linking accounts can be done in the [user profile](../profile/index.md).
 :::
 
 ## Types of Alerts

@@ -303,7 +303,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 {
-                  text: 'About Stack Status',
+                  text: 'Stack Status',
                   link: '/cloud/stacks/status',
                 },
                 {
@@ -403,13 +403,6 @@ export default defineConfig({
                 //   text: 'Reconcile Drifts 🚧',
                 //   // link: '/cloud/drifts/reconcile-drifts'
                 // },
-              ],
-            },
-            {
-              text: 'Notifications',
-              collapsed: false,
-              items: [
-                // { text: 'Introduction', link: '/cli/introduction' },
               ],
             },
 

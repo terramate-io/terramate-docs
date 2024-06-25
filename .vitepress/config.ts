@@ -243,8 +243,23 @@ export default defineConfig({
                   ],
                 },
                 {
-                  text: 'GitLab CI/CD 🚧',
-                  // link: '/cli/automation/gitlab'
+                  text: 'GitLab CI/CD',
+                  link: '/cli/automation/gitlab/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Deployment Workflow',
+                      link: '/cli/automation/gitlab/deployment-workflow',
+                    },
+                    {
+                      text: 'Drift Check Workflow',
+                      link: '/cli/automation/gitlab/drift-check-workflow',
+                    },
+                    {
+                      text: 'Preview Workflow',
+                      link: '/cli/automation/gitlab/preview-workflow',
+                    },
+                  ],
                 },
                 {
                   text: 'BitBucket Pipelines 🚧',

@@ -10,7 +10,7 @@ Follow these rules when defining `globals`:
 
 - Redefining a `globals` identifier in the same directory causes a conflict/error.
 - Multiple `globals` blocks defined at different hierarchy levels result in the child block overriding the same `globals` identifiers in the parent block.
-- Multiple `globals` blocks defined at the same hierarchy level merge the unique `globals` identifiers
+- Multiple `globals` blocks defined at the same hierarchy level merge the unique `globals` identifiers.
 - Importing a `globals` file preserves the original hierarchy level of the imported `globals`.
 
 ## Arguments

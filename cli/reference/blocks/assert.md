@@ -15,7 +15,7 @@ You can define `assert` blocks inside `generate_hcl` and `generate_file` blocks,
 
 | name             |      type      | description |
 |------------------|----------------|-------------|
-| `assertion` (optional)       | `boolean` | any expression which results in a boolean |
+| `assertion`        | `boolean` | any expression which results in a boolean |
 | `message`             | `string`  | error message that must evaluate as string |
 | `warning`   (optional)| `boolean` | boolean attribute, defaults to `false` |
 

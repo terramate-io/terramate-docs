@@ -185,6 +185,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Create Stacks', link: '/cli/stacks/create' },
+                { text: 'Nesting Stacks', link: '/cli/stacks/nesting' },
                 { text: 'Configure Stacks', link: '/cli/stacks/configuration' },
                 { text: 'Clone Stacks', link: '/cli/stacks/clone' },
                 { text: 'Manage Stacks', link: '/cli/stacks/manage' },

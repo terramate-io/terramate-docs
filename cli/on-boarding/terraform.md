@@ -73,5 +73,5 @@ terramate run --parallel 5 -- terraform plan -out plan.tfplan
 ### Apply a Terraform Plan in Changed Stacks
 
 ```bash
-terramate run --changed -- terraform apply -out plan.tfplan -auto-approve
+terramate run --changed -- terraform apply -auto-approve plan.tfplan
 ```

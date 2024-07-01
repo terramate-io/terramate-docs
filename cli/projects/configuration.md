@@ -69,6 +69,7 @@ will occur.
 
 Project-wide configuration can be defined in this block. All possible settings are described in the following subsections.
 
+<a id="the-terramateconfiggit-block"></a>
 ### The `terramate.config.git` block
 
 [Git integration](../change-detection/integrations/git.md) related configurations used in the
@@ -92,6 +93,7 @@ terramate {
 }
 ```
 
+<a id="the-terramateconfiggenerate-block"></a>
 ### The `terramate.config.generate` block
 
 The `terramate.config.generate` block can be used to configure the code generate feature.
@@ -112,6 +114,7 @@ terramate {
 The config above will make Terramate generate files using `#` as comment style.
 The only valid options are `//` and `#`.
 
+<a id="the-terramateconfigrun-block"></a>
 ### The `terramate.config.run` Block
 
 Configuration for the `terramate run` command can be set in the `terramate.config.run` block.
@@ -200,6 +203,7 @@ on `terramate.config.run.env` blocks won't affect the `env` namespace.
 You can have multiple `terramate.config.run.env` blocks defined on different
 files, but variable names **cannot** be defined twice.
 
+<a id="the-terramateconfigcloud-block"></a>
 ### The `terramate.config.cloud` block
 
 Properties related to Terramate Cloud can be defined inside the `terramate.config.cloud` block.

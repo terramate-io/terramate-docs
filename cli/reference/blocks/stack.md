@@ -5,18 +5,18 @@ description: Learn how to configure stacks using the stack block.
 
 # The `stack` block
 
-Use the `stack` block to define a stack within a stack directory. Terramate detects stacks based on this `stack` block, and you can define only one `stack` block per stack directory. Use the `stack` block to configure:
-- The metadata of stack
-- The orchestration behavior of a stack
-- The change detection behavior of a stack
+Use the `stack` block to define a stack within a directory. Terramate detects stacks based on this `stack` block, and you can define only one `stack` block per stack directory. Use the `stack` block to configure:
+- The metadata of the stack
+- The orchestration behaviour of a stack
+- The change detection behaviour of a stack
 
 ### Metadata
 
-The stack metadata defined in the `stack` block is accessible only from the stack directory where it is defined. You can access this metadata via the `terramate` namespace using the `terramate.stack` object. For example, `terramate.stack.<key>` where `<key>` is any key defined in the `stack` block.
+The stack metadata defined in the `stack` block is scoped locally to the directory where it is defined. You can access this metadata via the `terramate` namespace using the `terramate.stack` object. For example, `terramate.stack.<key>` where `<key>` is any key defined in the `stack` block.
 
 ### Orchestration Behavior
 
-In Terramate, the default execution order is that the parent stacks always run before child stacks as per the filesystem hierarchy. For a particular stack, you can override this default and control which stacks will run before or after by explicitly defining the execution order in the `stack` block using the `before`, `after`, or `wants` keywords. 
+In Terramate, the default execution order is that the parent stacks always run before child stacks as per the filesystem hierarchy. For a particular stack, you can override this default and control which stacks will run before or after by explicitly defining the execution order in the `stack` block using the `before`, `after`, or `wants` keywords. For details, please see [orchestration](../../orchestration/index.md).
 
 ### Change Detection Behavior
 
@@ -33,10 +33,11 @@ You can see `stack` argument details [here](../../stacks/configuration.md#genera
 | name             | string         | The name of the stack |
 | description      | string         | The description of the stack |
 | tags             | list(string)   | The tags of the stack |
-| before           | list(string)   | The list of [`before`](../../stacks/configuration.md#before) stacks |
-| after            | list(string)   | The list of [`after`](../../stacks/configuration.md#after) stacks |
-| wants            | list(string)   | The list of [`wanted`](../../stacks//configuration.md#wants) stacks |
-| watch            | list(string)   | The list of [`watch`](../../stacks/configuration.md#watch) files
+| before           | list(string)   | Always run this stack [`before`](../../stacks/configuration.md#before) stacks in this list |
+| after            | list(string)   | Always run this stack [`after`](../../stacks/configuration.md#after) stacks in this list |
+| wants            | list(string)   | Always run these [`wanted`](../../stacks//configuration.md#wants) stacks when this stack is run |
+| wanted_by            | list(string)   | Always run this stack when running stacks in this list as it is [`wanted_by`](../../stacks//configuration.md#wanted_by) them |
+| watch            | list(string)   | Mark this stack as changed if any files in this [`watch`](../../stacks/configuration.md#watch) list is changed
 
 
 ## Syntax

@@ -62,6 +62,8 @@ globals {
   ]
 }
 ```
+Structure those values by `product` for each `name` by using the nested `map` block as defined below:
+
 ```hcl
 globals {
   map totals {
@@ -89,7 +91,9 @@ globals {
   }
 }
 ```
+
 It will result in the below object: 
+
 ```hcl
 obj = {
   Anderson = {

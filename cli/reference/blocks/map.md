@@ -9,6 +9,7 @@ Use the `map` block to convert a list into a map (key-value pair) or a nested ma
 If you have multiple objects in a list with one or more identical keys, you can merge values corresponding to the identical keys while iterating over them.
 For each object in the list, you can access the previous or the current value of any of its keys.
 In the `for-each` iteration, the iterator (default name `element`) is an object with the following properties:
+
 ```hcl
 element = {
     new = <current element>

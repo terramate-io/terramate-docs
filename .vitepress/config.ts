@@ -244,8 +244,24 @@ export default defineConfig({
                   ],
                 },
                 {
-                  text: 'GitLab CI/CD 🚧',
-                  // link: '/cli/automation/gitlab'
+                  text: 'GitLab CI',
+                  link: '/cli/automation/gitlab-ci/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Preview Workflow',
+                      link: '/cli/automation/gitlab-ci/preview-workflow',
+                    },
+                    {
+                      text: 'Deployment Workflow',
+                      link: '/cli/automation/gitlab-ci/deployment-workflow',
+                    },
+                    // The drift detection section will be added once support for Gitlab integration is released
+                    // {
+                    //   text: 'Drift Check Workflow',
+                    //   link: '/cli/automation/gitlab-ci/drift-check-workflow',
+                    // },
+                  ],
                 },
                 {
                   text: 'BitBucket Pipelines 🚧',

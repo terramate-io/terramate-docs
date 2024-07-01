@@ -37,9 +37,9 @@ terramate {
     }
     run {
          check_gen_code = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)
-        env {
-        TF_PLUGIN_CACHE_DIR = "/some/path/etc"
-        }
+         env {
+            TF_PLUGIN_CACHE_DIR = "/some/path/etc"
+         }
     }
     cloud {
       organization = "cloud-org-name"

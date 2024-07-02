@@ -5,7 +5,7 @@ description: Learn how to configure stacks using the stack block.
 
 # The `stack` block
 
-Use the `stack` block to define a stack within a directory. Terramate detects stacks based on this `stack` block, and you can define only one `stack` block per stack directory. Use the `stack` block to configure:
+Use the `stack` block to define a stack within a directory. Terramate detects stacks based on this `stack` block, and you can define only one `stack` block per directory. Use the `stack` block to configure:
 - The metadata of the stack
 - The orchestration behaviour of a stack
 - The change detection behaviour of a stack
@@ -13,6 +13,8 @@ Use the `stack` block to define a stack within a directory. Terramate detects st
 ### Metadata
 
 The stack metadata defined in the `stack` block is scoped locally to the directory where it is defined. You can access this metadata via the `terramate` namespace using the `terramate.stack` object. For example, `terramate.stack.<key>` where `<key>` is any key defined in the `stack` block.
+
+**Note:** Not every stack block attribute is available at runtime. Please refer to the [this](../variables/metadata.md#stack-metadata) page for available fields.
 
 ### Orchestration Behavior
 
@@ -51,7 +53,7 @@ You can see `stack` argument details [here](../../stacks/configuration.md#genera
 ```hcl
 stack{
     id = "some-id"
-    name = "name can be different from stack.tm.hcl"
+    name = "some name"
     description = "stack description"
     tags = ["list", "of", "tags"]
 }

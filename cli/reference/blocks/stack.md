@@ -22,7 +22,7 @@ In Terramate, the default [execution order](../../orchestration/index.md#default
 
 ### Change Detection Behavior
 
-Your stacks might depend on files not in the stack's directory. If any of these files change, you would like Terramate to see your stack as 'changed' to use the [change detection](../../change-detection/index.md) feature.
+Your stacks might depend on files outside the stack's directory, such as files not in the stack directory or its subdirectories. If any of these files change, you would like Terramate to see your stack as 'changed' to use the [change detection](../../change-detection/index.md) feature.
 You can include these dependent files in the `watch` list of the stack's block. Any changes in these files will mark your stack as changed.
 
 ### Arguments

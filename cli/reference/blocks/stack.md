@@ -16,7 +16,7 @@ The stack metadata defined in the `stack` block is scoped locally to the directo
 
 ### Orchestration Behavior
 
-In Terramate, the default execution order is that the parent stacks always run before child stacks as per the filesystem hierarchy. For a particular stack, you can override this default and control which stacks will run before or after by explicitly defining the execution order in the `stack` block using the `before`, `after`, or `wants` keywords. For details, please see [orchestration](../../orchestration/index.md).
+In Terramate, the default [execution order](../../orchestration/index.md#default-order-of-execution) is that the parent stacks always run before child stacks as per the filesystem hierarchy. For a particular stack, you can override this default and control which stacks will run before or after by explicitly defining the execution order in the `stack` block using the `before` and `after` attributes. For details, please see [orchestration](../../orchestration/index.md).
 
 ### Change Detection Behavior
 
@@ -27,18 +27,24 @@ You can include these dependent files in the `watch` list of the stack's block. 
 
 You can see `stack` argument details [here](../../stacks/configuration.md#general-stack-metadata).
 
-| name             |      type      | description |
-|------------------|----------------|-------------|
-| id               | string         | The id of the stack |
-| name             | string         | The name of the stack |
-| description      | string         | The description of the stack |
-| tags             | list(string)   | The tags of the stack |
-| before           | list(string)   | Always run this stack [`before`](../../stacks/configuration.md#before) stacks in this list |
-| after            | list(string)   | Always run this stack [`after`](../../stacks/configuration.md#after) stacks in this list |
-| wants            | list(string)   | Always run these [`wanted`](../../stacks//configuration.md#wants) stacks when this stack is run |
-| wanted_by            | list(string)   | Always run this stack when running stacks in this list as it is [`wanted_by`](../../stacks//configuration.md#wanted_by) them |
-| watch            | list(string)   | Mark this stack as changed if any files in this [`watch`](../../stacks/configuration.md#watch) list is changed
-
+- `id` (string): the id of the stack
+- `name` (string): The name of the stack
+- `description` (string): the description of the stack
+- `tags` (list(string)): the tags of the stack
+- `before` (list(string)): always run this stack [`before`](../../stacks/configuration.md#before) stacks in this list. It accepts: 
+  - project absolute paths (e.g., `/other/stack`)
+  - paths relative to the directory of this stack (e.g., `../other/stack`)
+  - [tags](../../orchestration/tag-filter.md)
+- `after` (list(string)): always run this stack [`after`](../../stacks/configuration.md#after) stacks in this list. It accepts: 
+  - project absolute paths (e.g., `/other/stack`)
+  - paths relative to the directory of this stack (e.g., `../other/stack`)
+  - [tags](../../orchestration/tag-filter.md)
+- `wants` (list(string)): always run these [`wanted`](../../stacks//configuration.md#wants) stacks when this stack is run. It accepts file paths and tags, same as `before` or `after` arguments.
+- `wanted-by` (list(string)): always run this stack when running stacks in this list as it is [`wanted_by`](../../stacks//configuration.md#wanted_by) them. It accepts file paths and tags, same as `before` or `after` arguments.
+- `watch` (list(string)): Mark this stack as changed if any files in this [`watch`](../../stacks/configuration.md#watch) list is changed. It accepts: 
+  - project absolute paths (e.g., `/other/stack`)
+  - paths relative to the directory of this stack (e.g., `../other/stack`)
+  - expression with [functions](../functions/index.md)(but not [variables](../variables/index.md)).
 
 ## Syntax
 

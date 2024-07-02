@@ -75,7 +75,7 @@ stack {
     "/external/file2.txt"
    ]
   after = [
-  "tag:prod:networking",
+  "tag:prod:networking", # all stacks containing `prod` and `networking` tags.
   "/prod/apps/auth",
   ]
 }

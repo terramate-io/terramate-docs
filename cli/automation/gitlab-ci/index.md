@@ -7,13 +7,13 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 
 GitLab CI adds continuous integration to GitLab repositories to automate your software builds, tests, and deployments. Automating Terraform with CI/CD enforces configuration best practices, promotes collaboration, and automates the Terraform workflow.
 
-Terramate integrates seamlessly with GitLab CI to automate and orchestrate IaC tools such as Terraform and OpenTofu.
+Terramate integrates seamlessly with GitLab CI to automate and orchestrate IaC tools like Terraform and OpenTofu.
 
 ## Terramate Blueprints
 
-This page explains some details about the workflows setup and authentication flows that the following workflows have in common.
+This page explains the workflow setup and authentication flows common in the following workflows.
 
-To jump directly into the Blueprints follow the links below:
+To jump directly to the Blueprints, follow the links below:
 
 - [Deployment Workflow Blueprints](./deployment-workflow.md)
 <!---
@@ -21,13 +21,13 @@ To jump directly into the Blueprints follow the links below:
 -->
 - [Pull Request Preview Workflow Blueprints](./preview-workflow.md)
 
-Please read the following sections to understand the details all those workflows have in common.
+Please read the following sections to understand the shared details among these workflows.
 
 ## Installing the necessary packages
 
-The workflows in these examples use the `google/cloud-sdk:alpine` docker image that is based on a minimal Alpine image and includes the `gcloud` packages.
+The workflows in these examples use the `google/cloud-sdk:alpine` docker image based on a minimal Alpine image and include the `gcloud` packages.
 
-In addition to installing Terraform and Terramate, a few other other packages are needed for the workflows to work.
+In addition to installing Terraform and Terramate, you need other packages for the workflows to work.
 
 ```yaml
 .setup:
@@ -43,7 +43,7 @@ In addition to installing Terraform and Terramate, a few other other packages ar
 
 ## Code Checkout
 
-For the Terramate Change Detection to work, the Git history is needed to be able to compare the current commit with previous commits.
+For the Terramate Change Detection to work, the Git history is needed to compare the current commit with previous commits.
 
 Here is the code snippet that sets the required variables to make it happen:
 
@@ -56,7 +56,7 @@ Here is the code snippet that sets the required variables to make it happen:
 
 ## OIDC Setup
 
-To allow the workflow to authenticate to the cloud provider (in this example Google Cloud) using OIDC, it is necessary to set the `id_tokens` attribute in the Gitlab CI workflow.
+To enable the workflow to authenticate to the cloud provider (in this example, Google Cloud) using OIDC, configure the `id_tokens` attribute in the GitLab CI workflow.
 
 ```yaml
 

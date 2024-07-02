@@ -51,7 +51,7 @@ You can see `stack` argument details [here](../../stacks/configuration.md#genera
 ## Syntax
 
 ```hcl
-stack{
+stack {
     id = "some-id"
     name = "some name"
     description = "stack description"

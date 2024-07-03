@@ -12,7 +12,7 @@ Use the `stack` block to define a stack within a directory. Terramate detects st
 
 ### Metadata
 
-The stack metadata defined in the `stack` block is scoped locally to the directory where it is defined. You can access this metadata via the `terramate` namespace using the `terramate.stack` object. For example, `terramate.stack.<key>` where `<key>` is any key defined in the `stack` block.
+The stack metadata defined in the `stack` block is scoped locally to the directory where it is defined. You can access this metadata via the `terramate` namespace using the `terramate.stack` object. For example, `terramate.stack.<key>` where `<key>` is any key defined in the `stack` block but not all stack block attributes are available at runtime, please refer to the [Stack Metadata Variable](../../variables/metadata#stack-metadata) page for the complete list of available fields.
 
 **Note:** Not every stack block attribute is available at runtime. Please refer to the [this](../variables/metadata.md#stack-metadata) page for available fields.
 

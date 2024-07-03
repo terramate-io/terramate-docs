@@ -436,7 +436,7 @@ export default defineConfig({
               ],
             },
             {
-              text: 'Pofile',
+              text: 'Profile',
               collapsed: false,
               items: [
                 // { text: 'Introduction', link: '/cli/introduction' },

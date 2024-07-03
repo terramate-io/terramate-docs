@@ -68,7 +68,7 @@ generate_file "example.txt" {
 In this example, a lets block is used within a generate_hcl block to define a temporary variable.
 
 ```hcl
-generate_hcl {
+generate_hcl "file.tf" {
   lets {
     greeting = "Hello, World!"
   }

@@ -33,7 +33,7 @@ terramate {
       check_remote      = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)
     }
     generate {
-        hcl_magic_header_comment_style = "# or //"
+        hcl_magic_header_comment_style = "#"
     }
     run {
          check_gen_code = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)

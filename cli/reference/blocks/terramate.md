@@ -9,12 +9,12 @@ Use the `terramate` block to define project-wide configurations in the project's
 
 ## Arguments
 
-- `required_version`: specify the Terramate version to be used inside a project. More details about this attribute are [here](../../projects/configuration.md#the-terramaterequired_version-attribute).
+- `required_version`: specify the Terramate version to be used inside a project. More details about this attribute are [here](../../projects/configuration.md#the-terramate-required_version-attribute).
 - `config`: define project-wide configurations in this block.
-    - `config.git`: [configure](../../projects/configuration.md#the-terramateconfiggit-block) git integration
-    - `config.generate`: [configure](../../projects/configuration.md#the-terramateconfiggenerate-block) code generation feature
-    - `config.run`: [configure](../../projects/configuration.md#the-terramateconfiggenerate-block) the `terramate run` command or set environment variables for it
-    - `config.cloud`: [configure](../../projects/configuration.md#the-terramateconfigcloud-block) the default Terramate Cloud organization name
+    - `config.git`: [configure](../../projects/configuration.md#the-terramate-config-git-block) git integration
+    - `config.generate`: [configure](../../projects/configuration.md#the-terramate-config-generate-block) code generation feature
+    - `config.run`: [configure](../../projects/configuration.md#the-terramate-config-generate-block) the `terramate run` command or set environment variables for it
+    - `config.cloud`: [configure](../../projects/configuration.md#the-terramate-config-cloud-block) the default Terramate Cloud organization name
 
 ## Syntax
 

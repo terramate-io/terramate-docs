@@ -5,7 +5,7 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 
 # Run a Deployment in GitLab CI
 
-The following workflow is a blueprint and needs some adjustments to work for you.
+The following workflow is a blueprint and may require adjustments to fit your needs.
 
 ## Deployment Blueprint
 

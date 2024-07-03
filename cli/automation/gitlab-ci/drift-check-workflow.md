@@ -5,21 +5,21 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 
 # Run a Drift Check in GitLab CI
 
-The following workflow is a blueprint and needs some adjustments to work for you.
+The following workflow is a blueprint and may require adjustments to fit your needs.
 
-Drift Checks require action and protocolling the results, so Terramate Cloud support is required for those workflows at the moment.
+Terramate Cloud support is essential for workflows to perform Drift Checks, as it requires access to take action and record the results.
 
 The following workflow is configurable on a schedule. The schedule can be created by following the guide for [Scheduled Pipelines](https://docs.gitlab.com/ee/ci/pipelines/schedules.html).
 
 ## Terramate Cloud support
 
-When synchronizing drift checks to Terramate Cloud, the following features will support the team with handling drifts:
+When synchronizing drift checks with Terramate Cloud, the following features assist your team in handling drifts:
 
-- Get notified on new drifts via Slack notifications.
-- Highlight and identify drifted stacks in the Stacks List and Dashboard
-- See drift details without requiring your team to have elevated access to read the Terraform state or have access to read the cloud resources.
-- Identify the time when a drift happened and how long a stack stayed in a drifted state.
-- Create automation to reconcile a drift without human interaction using the `--status` filter in Terramate CLI.
+- Receive Slack notifications for new drifts.
+- Highlight and identify drifted stacks in the Stacks List and Dashboard.
+- View drift details without requiring the team to have elevated access to the Terraform state or cloud resources.
+- Identify when a drift occurred and how long a stack remained drifted.
+- Automate drift reconciliation without human intervention using the `--status` filter in the Terramate CLI.
 
 ## Deployment Blueprint
 

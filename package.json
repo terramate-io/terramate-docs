@@ -9,19 +9,19 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "dependencies": {
+    "medium-zoom": "^1.1.0"
+  },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.21.1",
-    "eslint": "^9.5.0",
-    "glob": "^10.4.2",
+    "@antfu/eslint-config": "^2.21.3",
+    "eslint": "^9.6.0",
+    "glob": "^10.4.3",
     "pnpm": "9.4.0",
-    "vitepress": "1.2.2"
+    "vitepress": "1.2.3"
   },
   "eslintConfig": {
     "extends": [
       "@antfu"
     ]
-  },
-  "dependencies": {
-    "medium-zoom": "^1.1.0"
   }
 }

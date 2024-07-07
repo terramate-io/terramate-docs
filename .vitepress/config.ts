@@ -190,6 +190,7 @@ export default defineConfig({
                 { text: 'Clone Stacks', link: '/cli/stacks/clone' },
                 { text: 'Manage Stacks', link: '/cli/stacks/manage' },
                 { text: 'Delete Stacks', link: '/cli/stacks/delete' },
+                // { text: 'Deployment Targets', link: '/cli/stacks/nesting' },
               ],
             },
             {
@@ -264,6 +265,14 @@ export default defineConfig({
                   ],
                 },
                 {
+                  text: 'Atlantis 🚧',
+                  // link: '/cli/automation/azure-devops'
+                },
+                {
+                  text: 'Digger 🚧',
+                  // link: '/cli/automation/bitbucket'
+                },
+                {
                   text: 'BitBucket Pipelines 🚧',
                   // link: '/cli/automation/bitbucket'
                 },
@@ -272,7 +281,23 @@ export default defineConfig({
                   // link: '/cli/automation/azure-devops'
                 },
                 {
-                  text: 'Atlantis 🚧',
+                  text: 'AWS CodeBuild 🚧',
+                  // link: '/cli/automation/azure-devops'
+                },
+                {
+                  text: 'BuildKite 🚧',
+                  // link: '/cli/automation/azure-devops'
+                },
+                {
+                  text: 'CircleCI 🚧',
+                  // link: '/cli/automation/azure-devops'
+                },
+                {
+                  text: 'Jenkins 🚧',
+                  // link: '/cli/automation/azure-devops'
+                },
+                {
+                  text: 'Teamcity 🚧',
                   // link: '/cli/automation/azure-devops'
                 },
               ],
@@ -454,50 +479,90 @@ export default defineConfig({
           ],
         },
 
-        // {
-        //   text: '👷 How-to Guides',
-        //   collapsed: false,
-        //   items: [
-        //     {
-        //       text: 'About Stacks',
-        //       collapsed: true,
-        //       items: [
-        //         { text: 'How to size Stacks', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
-        //         { text: 'Share Data between Stacks', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
-        //         { text: 'Manage environments with Stacks', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
-        //       ],
-        //     },
-        //     {
-        //       text: 'Manage Environments',
-        //       collapsed: true,
-        //       items: [
-        //         { text: 'Structuring Stacks', link: '/cli/stacks/create' },
-        //         { text: 'Using Directories', link: '/cli/stacks/create' },
-        //         { text: 'Using Workspaces', link: '/cli/stacks/clone' },
-        //         { text: 'Variables', link: '/cli/stacks/configuration' },
-        //       ],
-        //     },
-        //     {
-        //       text: 'Reference Architectures',
-        //       collapsed: true,
-        //       items: [
-        //         { text: 'AWS', link: 'https://github.com/terramate-io/terramate-quickstart-aws' },
-        //         { text: 'Microsoft Azure', link: 'https://github.com/terramate-io/terramate-quickstart-azure' },
-        //         // { text: 'Google Cloud', link: '/cli/guides/reference-architectures/aws' },
-        //         { text: 'Terragrunt', link: 'https://github.com/terramate-io/terramate-terragrunt-infrastructure-live-example' },
-        //       ],
-        //     },
-        //     {
-        //       text: 'Code Generation',
-        //       collapsed: true,
-        //       items: [
-        //         { text: 'Example Code Generation', link: 'https://github.com/terramate-io/terramate-example-code-generation' },
-        //         { text: 'Terraform Backend and Provider', link: 'https://github.com/terramate-io/terramate-examples/tree/main/01-keep-terraform-dry' },
-        //         { text: 'Dynamic Provider Generation', link: 'https://github.com/terramate-io/terramate-examples/tree/main/02-manage-providers-programmatically' },
-        //       ],
-        //     },
-        //   ],
-        // },
+        {
+          text: '👷 How-to Guides',
+          collapsed: false,
+          items: [
+            // {
+            //   text: 'About Stacks',
+            //   collapsed: true,
+            //   items: [
+            //     {
+            //       text: 'How to size Stacks 🚧',
+            //       // link: 'https://github.com/terramate-io/terramate-example-code-generation',
+            //     },
+            //     {
+            //       text: 'Share Data between Stacks 🚧',
+            //       // link: 'https://github.com/terramate-io/terramate-example-code-generation',
+            //     },
+            //     // {
+            //     //   text: 'Manage environments with Stacks',
+            //     //   link: 'https://github.com/terramate-io/terramate-example-code-generation',
+            //     // },
+            //   ],
+            // },
+            // {
+            //   text: 'Manage Environments',
+            //   collapsed: true,
+            //   items: [
+            //     {
+            //       text: 'Structuring Stacks 🚧',
+            //       // link: '/cli/stacks/create',
+            //     },
+            //     {
+            //       text: 'Using Directories',
+            //       link: '/cli/stacks/create',
+            //     },
+            //     {
+            //       text: 'Using Workspaces 🚧',
+            //       // link: '/cli/stacks/clone'
+            //     },
+            //     // {
+            //     //   text: 'Variables',
+            //     //   link: '/cli/stacks/configuration'
+            //     // },
+            //   ],
+            // },
+            {
+              text: 'Reference Architectures',
+              collapsed: true,
+              items: [
+                { text: 'AWS', link: 'https://github.com/terramate-io/terramate-quickstart-aws' },
+                { text: 'Microsoft Azure', link: 'https://github.com/terramate-io/terramate-quickstart-azure' },
+                {
+                  text: 'Google Cloud 🚧',
+                  link: '/cli/guides/reference-architectures/aws',
+                },
+                {
+                  text: 'Terragrunt',
+                  link: 'https://github.com/terramate-io/terramate-terragrunt-infrastructure-live-example',
+                },
+              ],
+            },
+            {
+              text: 'Code Generation',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Basic DRY Code Generation',
+                  link: 'https://github.com/terramate-io/terramate-example-code-generation',
+                },
+                {
+                  text: 'Terraform Backend and Provider Generation',
+                  link: 'https://github.com/terramate-io/terramate-examples/tree/main/01-keep-terraform-dry',
+                },
+                {
+                  text: 'Dynamic Provider Generation',
+                  link: 'https://github.com/terramate-io/terramate-examples/tree/main/02-manage-providers-programmatically',
+                },
+                // {
+                //   text: 'Load Globals from YAML 🚧',
+                //   // link: 'https://github.com/terramate-io/terramate-examples/tree/main/02-manage-providers-programmatically',
+                // },
+              ],
+            },
+          ],
+        },
         // {
         //   text: '🔌 Integrations',
         //   collapsed: true,

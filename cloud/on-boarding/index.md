@@ -19,6 +19,7 @@ Remember the organization's short name that you set for accessing the organizati
 ## Configure your repository
 
 After creating your organization configure your Terramate Repository to define which Terramate Cloud organization to synchronize data to.
+Create a new file called `terramate.tm.hcl` at the root of your repository and add the following content.
 
 ```hcl
 terramate {

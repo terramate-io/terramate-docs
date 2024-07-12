@@ -501,28 +501,28 @@ export default defineConfig({
             //     // },
             //   ],
             // },
-            // {
-            //   text: 'Manage Environments',
-            //   collapsed: true,
-            //   items: [
-            //     {
-            //       text: 'Structuring Stacks 🚧',
-            //       // link: '/cli/stacks/create',
-            //     },
-            //     {
-            //       text: 'Using Directories',
-            //       link: '/cli/stacks/create',
-            //     },
-            //     {
-            //       text: 'Using Workspaces 🚧',
-            //       // link: '/cli/stacks/clone'
-            //     },
-            //     // {
-            //     //   text: 'Variables',
-            //     //   link: '/cli/stacks/configuration'
-            //     // },
-            //   ],
-            // },
+            {
+              text: 'Manage Environments',
+              collapsed: true,
+              items: [
+                // {
+                //   text: 'Structuring Stacks 🚧',
+                //   // link: '/cli/stacks/create',
+                // },
+                {
+                  text: 'Using Directories',
+                  link: '/how-to/manage-environments/using-directories',
+                },
+                {
+                  text: 'Using Workspaces 🚧',
+                  link: '/how-to/manage-environments/using-workspaces',
+                },
+                // {
+                //   text: 'Variables',
+                //   link: '/cli/stacks/configuration'
+                // },
+              ],
+            },
             {
               text: 'Reference Architectures',
               collapsed: true,

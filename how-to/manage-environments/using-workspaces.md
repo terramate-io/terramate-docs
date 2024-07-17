@@ -1,6 +1,7 @@
 ---
-title: Using Workspaces
-description: Learn how to manage environments using Workspaces.
+title: Using Terraform CLI Workspaces | How-to Guide
+description: Learn how to manage environments using Terraform CLI Workspaces with Terramate.
+
 ---
 
 # Using Workspaces

@@ -7,6 +7,11 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 
 The following workflow is a blueprint and may require adjustments to fit your needs.
 
+## Terramate Cloud support
+
+When synchronizing deployments to Terramate Cloud it is recommended to run a drift check right after the deployment.
+This drift check will be used to judge the health of the deployment. Even if the deployment succeeded, it can show a drift right away.
+
 ## Deployment Blueprint
 
 Create the following GitLab CI workflow file at `gitlab-ci/.deploy.yml`
@@ -29,5 +34,7 @@ apply:
     - !reference [.auth, script]
     - terramate run --parallel 1 --changed -- terraform init -lock-timeout=5m
     - terramate run --parallel 5 --changed -- terraform validate
-    - terramate run --parallel 5 --changed -- terraform apply -input=false -auto-approve -lock-timeout=5m
+    - terramate run --changed -- terraform plan -lock-timeout=5m -out=out.tfplan
+    - terramate run --changed --sync-deployment --terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+    - terramate run --changed --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
 ```

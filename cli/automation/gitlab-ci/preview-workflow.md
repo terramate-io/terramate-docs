@@ -7,6 +7,10 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 
 The following workflow is a blueprint and may require adjustments to fit your needs.
 
+## Terramate Cloud support
+
+When synchronizing previews to Terramate Cloud, previews will be synchronized with a detailed status and can be reviewed on a stack level.
+
 ## Preview Blueprint
 
 Create the following GitLab CI workflow file at `gitlab-ci/.plan.yml`
@@ -29,5 +33,5 @@ plan:
     - !reference [.auth, script]
     - terramate run --parallel 1 --changed -- terraform init -lock-timeout=5m
     - terramate run --parallel 5 --changed -- terraform validate
-    - terramate run --parallel 5 --changed -- terraform plan -lock-timeout=5m -out=out.tfplan
+    - terramate run --parallel 5 --changed --sync-preview --terraform-plan-file=out.tfplan -- terraform plan -lock-timeout=5m -out=out.tfplan
 ```

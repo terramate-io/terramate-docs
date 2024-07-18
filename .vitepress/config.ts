@@ -257,11 +257,10 @@ export default defineConfig({
                       text: 'Deployment Workflow',
                       link: '/cli/automation/gitlab-ci/deployment-workflow',
                     },
-                    // The drift detection section will be added once support for Gitlab integration is released
-                    // {
-                    //   text: 'Drift Check Workflow',
-                    //   link: '/cli/automation/gitlab-ci/drift-check-workflow',
-                    // },
+                    {
+                      text: 'Drift Check Workflow',
+                      link: '/cli/automation/gitlab-ci/drift-check-workflow',
+                    },
                   ],
                 },
                 {

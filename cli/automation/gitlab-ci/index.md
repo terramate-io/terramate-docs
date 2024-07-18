@@ -16,9 +16,7 @@ This page explains the workflow setup and authentication flows common in the fol
 To jump directly to the Blueprints, follow the links below:
 
 - [Deployment Workflow Blueprints](./deployment-workflow.md)
-<!---
 - [Drift Check Workflow Blueprints](./drift-check-workflow.md)
--->
 - [Pull Request Preview Workflow Blueprints](./preview-workflow.md)
 
 Please read the following sections to understand the shared details among these workflows.
@@ -29,6 +27,8 @@ The workflows in these examples use the `google/cloud-sdk:alpine` docker image b
 
 In addition to installing Terraform and Terramate, you need other packages for the workflows to work.
 
+GitLab support in Terramate Cloud was introduced in [Terramate CLI version 0.9.1](https://github.com/terramate-io/terramate/releases/tag/v0.9.1), so it's the minimum version required.
+
 ```yaml
 .setup:
   script:
@@ -36,7 +36,7 @@ In addition to installing Terraform and Terramate, you need other packages for t
     - wget https://releases.hashicorp.com/terraform/1.9.0/terraform_1.9.0_linux_amd64.zip -O /tmp/terraform.zip
     - unzip /tmp/terraform.zip -d /tmp
     - mv /tmp/terraform /bin
-    - wget https://github.com/terramate-io/terramate/releases/download/v0.9.0/terramate_0.9.0_linux_x86_64.tar.gz -O /tmp/terramate.tar.gz
+    - wget https://github.com/terramate-io/terramate/releases/download/v0.9.1/terramate_0.9.1_linux_x86_64.tar.gz -O /tmp/terramate.tar.gz
     - tar xzf /tmp/terramate.tar.gz -C /tmp
     - mv /tmp/terramate /bin
 ```
@@ -52,6 +52,22 @@ Here is the code snippet that sets the required variables to make it happen:
   variables:
     GIT_STRATEGY: clone  # clone entire repo instead of using fetch
     GIT_DEPTH: 0  # avoid shallow clone to give terramate all the info it needs
+```
+
+## Terramate Cloud integration
+
+In order for all the Terramate Cloud features to work properly, a Gitlab [project access token](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) with `read_api` scope is needed. Terramate uses this token to pull information from the Gitlab API about Merge Requests, deployments, and other related details.
+
+Once a token is created, create a [masked CICD variable](https://docs.gitlab.com/ee/ci/variables/#mask-a-cicd-variable) called `GITLAB_TOKEN` with the token value.
+
+In addition to the token, Terramate needs an ID Token to authenticate to Terramate Cloud. This assumes you already added the required Gitlab trust in your Terramate Cloud organization settings.
+
+The ID Token can be created with the following code:
+```yaml
+.id_tokens:
+  id_tokens:
+    TM_GITLAB_ID_TOKEN:
+      aud: api.terramate.io
 ```
 
 ## OIDC Setup
@@ -115,7 +131,7 @@ The following is a file created under `gitlab-ci/.common.yml` containing all the
     - wget https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip -O /tmp/terraform.zip
     - unzip /tmp/terraform.zip -d /tmp
     - mv /tmp/terraform /bin
-    - wget https://github.com/terramate-io/terramate/releases/download/v0.9.0/terramate_0.9.0_linux_x86_64.tar.gz -O /tmp/terramate.tar.gz
+    - wget https://github.com/terramate-io/terramate/releases/download/v0.9.1/terramate_0.9.1_linux_x86_64.tar.gz -O /tmp/terramate.tar.gz
     - tar xzf /tmp/terramate.tar.gz -C /tmp
     - mv /tmp/terramate /bin
 
@@ -123,6 +139,8 @@ The following is a file created under `gitlab-ci/.common.yml` containing all the
   id_tokens:
     GITLAB_OIDC_TOKEN:
       aud: https://gitlab.com
+    TM_GITLAB_ID_TOKEN:
+      aud: api.terramate.io
 
 .auth:
   script:

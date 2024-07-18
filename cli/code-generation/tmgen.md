@@ -21,9 +21,24 @@ You can use Terramate data such as [globals](https://terramate.io/docs/cli/code-
 To use `globals` in a `.tmgen` file , create a separate `config.tm.hcl` file to define them first.
 :::
 
+::: tip VSCode Syntax Highlighting
+To enable syntax highlighting in VSCode, you need to associate the `.tmgen`
+filetype in your [settings](https://code.visualstudio.com/docs/getstarted/settings):
+
+```json
+{
+  "files.associations": {
+    "tf.tmgen": "tf",
+    "json.tmgen": "json",
+    ...
+  }
+}
+```
+:::
+
 ### Example
 
-1. Create a new repository: 
+1. Create a new repository:
 ```sh
 git init tmgen-guide
 ```
@@ -39,7 +54,7 @@ terramate {
   }
 }
 ```
-3. Create a new stack: 
+3. Create a new stack:
 ```sh
 terramate create example-stack
 ```
@@ -48,7 +63,7 @@ terramate create example-stack
 module "vpc" {
   source  = "cloudposse/vpc/aws"
   version = tm_try(global.terraform.modules.vpc.version, "2.0.0")
-  
+
   namespace = "eg"
   stage     = "test"
   name      = "app"

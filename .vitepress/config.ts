@@ -461,9 +461,10 @@ export default defineConfig({
             },
             {
               text: 'Profile',
-              collapsed: false,
+              collapsed: true,
+              link: '/cloud/profile/',
               items: [
-                // { text: 'Introduction', link: '/cli/introduction' },
+                { text: 'Account Linking', link: '/cloud/profile/account-linking' },
               ],
             },
             {

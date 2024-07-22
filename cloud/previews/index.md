@@ -13,6 +13,12 @@ Terramate enables effective collaboration among team members by providing Pull R
 to review and discuss proposed changes before merging a PR and triggering a deployment. This allows teams to keep track of changes,
 configure reviewers, set up acceptance criteria for merging, and much more.
 
+::: info
+For Terramate Cloud to associate Pull Requests on GitHub, GitLab, or any other VCS platform with your Terramate Cloud
+user, you must connect those platforms to your Terramate Cloud account. Learn more about how to link your accounts
+with Terramate Cloud in the [account linking](../profile/account-linking.md) documentation.
+:::
+
 ## Pull Request Integration
 
 Terramate provides native Pull Request integration for GitHub, GitLab, BitBucket and others

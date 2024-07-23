@@ -14,9 +14,7 @@ to review and discuss proposed changes before merging a PR and triggering a depl
 configure reviewers, set up acceptance criteria for merging, and much more.
 
 ::: info
-For Terramate Cloud to associate Pull Requests on GitHub, GitLab, or any other VCS platform with your Terramate Cloud
-user, you must connect those platforms to your Terramate Cloud account. Learn more about how to link your accounts
-with Terramate Cloud in the [account linking](../profile/account-linking.md) documentation.
+To associate Pull Requests on GitHub, GitLab, or any other VCS platform with your Terramate Cloud user, connect these platforms to your Terramate Cloud account. Learn to link your accounts in the [account linking](../profile/account-linking.md) documentation.
 :::
 
 ## Pull Request Integration

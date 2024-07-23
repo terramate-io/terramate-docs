@@ -10,9 +10,7 @@ GitLab CI adds continuous integration to GitLab repositories to automate your so
 Terramate integrates seamlessly with GitLab CI to automate and orchestrate IaC tools like Terraform and OpenTofu.
 
 ::: info
-For Terramate Cloud to associate deployments triggered in GitLab CI/CD with
-your Terramate Cloud user, you must connect your GitLab user to your Terramate Cloud account. Learn more about how to link your accounts with Terramate Cloud in the
-[account linking](../profile/account-linking.md) documentation.
+To associate deployments triggered in GitLab CI/CD with your Terramate Cloud user, connect your GitLab user to your Terramate Cloud account. Learn to link your accounts in the [account linking](../profile/account-linking.md) documentation.
 :::
 
 ## Terramate Blueprints
@@ -78,7 +76,7 @@ The ID Token can be created with the following code:
 
 ## OIDC Setup
 
-To enable the workflow to authenticate to the cloud provider (in this example, Google Cloud) using OIDC, configure the `id_tokens` attribute in the GitLab CI workflow.
+Configure the `id_tokens` attribute in the GitLab CI workflow to enable authentication to the cloud provider (in this example, Google Cloud) using OIDC.
 
 ```yaml
 .id_tokens:

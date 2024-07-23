@@ -5,12 +5,9 @@ description: Learn how to link your Google, GitHub, GitLab and Microsoft account
 
 # Account Linking
 
-Some Terramate Cloud features like [Pull Requests Previews](../previews/index.md), [Deployment Insights](../deployments/index.md),
-[Drift Detection](../drift/index.md) and [Alerts](../alerts/index.md) require you to link your GitLab, GitHub, Microsoft
-and Slack accounts to function properly.
+To utilize features like [Pull Requests Previews](../previews/index.md), [Deployment Insights](../deployments/index.md), [Drift Detection](../drift/index.md), and [Alerts](../alerts/index.md) in Terramate Cloud, you need to link your GitLab, GitHub, Microsoft, and Slack accounts.
 
-For example, for Terramate to understand what Pull Requests opened in GitHub are associated with your Terramate Cloud account,
-you need to establish an account mapping between your Terramate Cloud and your GitHub user.
+For instance, to associate Pull Requests opened in GitHub with your Terramate Cloud account, you must establish an account mapping between your Terramate Cloud and GitHub user.
 
 For that Terramate allows you to connect the following platforms to your Terramate Cloud account:
 
@@ -22,7 +19,6 @@ For that Terramate allows you to connect the following platforms to your Terrama
   [Slack App integration](../integrations/slack.md) can send you direct messages about failed deployments or detected
   drift that is owned by you.
 
-Account linking can be done in the [profile section](./index.md) of your Terramate Cloud account. It's recommended to link
-the accounts for all third-party platforms used with Terramate Cloud.
+You can link your accounts in the [profile section](./index.md) of your Terramate Cloud account. We recommend linking all third-party platforms you use with Terramate Cloud.
 
 ![Terramate Cloud Profile Account Linking](../assets/profile/terramate-cloud-profile-account-linking.png "Terramate Cloud Profile Account Linking")

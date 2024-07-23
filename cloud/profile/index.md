@@ -5,12 +5,11 @@ description: Learn how your Terramate Cloud user and profile.
 
 # Profile Section
 
-This section explains how to manage your Terramate Cloud user and profile.
+This section guides you on managing your Terramate Cloud user and profile.
 
-In the profile section, you can configure your profile and settings as well as
-[link additional accounts](./account-linking.md) such as your GitHub, GitLab, Microsoft and Google Accounts.
+In the profile section, you can configure your settings and [link additional accounts](./account-linking.md), such as GitHub, GitLab, Microsoft, and Google.
 
-To get to the profile section, you must click on your profile picture in the top right in the navbar and follow the profile link.
+To access the profile section, click on your profile picture in the top right corner of the navbar and follow the profile link.
 
 ![Terramate Cloud Profile](../assets/profile/terramate-cloud-profile.png "Terramate Cloud Profile")
 

@@ -15,9 +15,7 @@ at [terramate-quickstart-aws](https://github.com/terramate-io/terramate-quicksta
 :::
 
 ::: info
-For Terramate Cloud to associate deployments triggered in GitHub Actions with
-your Terramate Cloud user, you must connect your GitHub user to your Terramate Cloud account. Learn more about how to link your accounts with Terramate Cloud in the
-[account linking](../profile/account-linking.md) documentation.
+To associate deployments triggered in GitHub Actions with your Terramate Cloud user, connect your GitHub user to your Terramate Cloud account. Learn to link your accounts in the [account linking](../profile/account-linking.md) documentation.
 :::
 
 ## Terramate Blueprints

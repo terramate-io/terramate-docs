@@ -8,8 +8,7 @@ description: Learn how deployments in Terramate help you to deploy and observe c
 This section explains **deployments** as a core concept in Terramate.
 
 ::: info
-For Terramate Cloud to associate deployments triggered on GitHub Actions, GitLab CI/CD, or any other CI/CD platform with your Terramate Cloud user, you must connect those platforms to your Terramate Cloud account. Learn more about how to link your accounts
-with Terramate Cloud in the [account linking](../profile/account-linking.md) documentation.
+To associate deployments triggered on GitHub Actions, GitLab CI/CD, or other CI/CD platforms with your Terramate Cloud user, connect these platforms to your Terramate Cloud account. Learn to link your accounts in the [account linking](../profile/account-linking.md) documentation.
 :::
 
 ## Introduction

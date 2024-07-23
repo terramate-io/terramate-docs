@@ -9,15 +9,11 @@ To utilize features like [Pull Requests Previews](../previews/index.md), [Deploy
 
 For instance, to associate Pull Requests opened in GitHub with your Terramate Cloud account, you must establish an account mapping between your Terramate Cloud and GitHub user.
 
-For that Terramate allows you to connect the following platforms to your Terramate Cloud account:
+Terramate allows you to connect the following platforms to your Terramate Cloud account:
 
-- **GitHub:** Links your GitHub to your Terramate Cloud User so that Pull Request Previews, Deployments, and detected
-  Drift for repositories managed on GitHub can be associated with your Terramate Cloud User.
-- **GitLab:** Links your GitLab to your Terramate Cloud User so that Pull Request Previews, Deployments, and detected
-  Drift for repositories managed on GitHub can be associated with your Terramate Cloud User.
-- **Slack (***coming soon***)**: Links your Slack to your Terramate Cloud so that the Slack Bot provided by the
-  [Slack App integration](../integrations/slack.md) can send you direct messages about failed deployments or detected
-  drift that is owned by you.
+- **GitHub:** Links your GitHub account to your Terramate Cloud user, enabling association with Pull Request Previews, Deployments, and detected drift for repositories managed on GitHub.
+- **GitLab:** Links your GitLab account to your Terramate Cloud user, enabling association with Pull Request Previews, Deployments, and detected drift for repositories managed on GitLab.
+- **Slack (coming soon):** Links your Slack account to your Terramate Cloud user, allowing the Slack Bot provided by the [Slack App integration](../integrations/slack.md) to send direct messages about failed deployments or detected drift.
 
 You can link your accounts in the [profile section](./index.md) of your Terramate Cloud account. We recommend linking all third-party platforms you use with Terramate Cloud.
 

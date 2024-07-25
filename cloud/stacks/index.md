@@ -19,8 +19,7 @@ synchronize a state of all stacks when orchestrated with Terramate CLI and keep 
 deployments or drift runs.
 
 ::: tip
-The state of a stack is not to be confused with a Terraform state defined by the Terraform Backend Configuration.
-Still, the Terramate Cloud State of a stack includes this information and extends it with multiple status values and metadata.
+Do not confuse the state of a stack with the Terraform state defined by the Terraform Backend Configuration. The Terramate Cloud state of a stack includes the Terraform state and extends it with additional status values and metadata.
 :::
 
 In addition, the stack inventory is not limited to single stacks or single repositories but combines all stacks in all your

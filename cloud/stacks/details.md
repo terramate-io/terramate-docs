@@ -5,8 +5,7 @@ description: Learn how to see all detail such as metadata, status, last deployme
 
 # Stack Details
 
-In the stack details page, all stack metadata is displayed as configured in Terramate CLI and collected by Terramate Cloud.
-In addition to metadata, more information is displayed based on the stack status.
+The stack details page displays all stack metadata configured in Terramate CLI and collected by Terramate Cloud. Additionally, more information is shown based on the stack status.
 
 ![Stack Details](../assets/stack-details.png "Terramate Cloud Stacks Details")
 
@@ -14,20 +13,20 @@ In addition to metadata, more information is displayed based on the stack status
 
 On the details page, the following information is available
 
-- The **name** of the stack as set in the Terramate config via `stack.name`
-- The **description** of the stack as set in the Terramate config via `stack.description`
-- The **repository** the stack is contained in. When clicking on the repository name, a new ta will be opened, and you will be sent to the stack within the repository on GitHub.
+- The **name** of the stack, set in the Terramate config via `stack.name`
+- The **description** of the stack, set in the Terramate config via `stack.description`
+- The **repository** containing the stack. Clicking on the repository name opens a new tab and directs you to the stack within the repository on GitHub.
 - The **path** of the stack within the repository
-- The ID of the stack as set in the Terramate config via `stack.id`
-- The **created date and time** when the stack was created on Terramate Cloud
+- The **ID** of the stack, set in the Terramate config via `stack.id`
+- The **created date and time** when the stack was added to Terramate Cloud
 - The **updated date and time** when the stack status was last updated
-- The **tags** configured for a stack via `stack.tags`
+- The **tags** configured for the stack via `stack.tags`
 
 ## Stack Alerts
 
-For `failed` stacks deployment error logs are displayed showing details about the failed command and highlighting Errors. The error logs can be expanded to show the full context and all log lines of the deployment command. If an additional drift was detected, drift details in the form of a `terraform plan` are displayed, too.
+For `failed` stacks, the deployment error logs provide details about the failed command and highlight errors. You can expand these logs to see the full context and all lines from the deployment command. Any additional drift detected will be displayed as a `terraform plan`.
 
-For `drifted` stacks, drift details in the form of a `terraform plan` are displayed.
+For `drifted` stacks, the details of the drift are displayed as a `terraform plan`.
 
 ## Deployments
 

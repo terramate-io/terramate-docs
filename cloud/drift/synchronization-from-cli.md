@@ -5,18 +5,17 @@ description: Learn how to synchronize drift status with Terramate CLI to Terrama
 
 # Synchronize Drift Checks from CLI
 
-To display deployments on Terramate Cloud, we need to synchronize the status and details.
+To display deployments on Terramate Cloud, we need to synchronize their status and details.
 
-When already using [Terramate CLI](../../cli/installation.md) to orchestrate your stacks, the configuration needed to synchronize deployments is minimal.
+If you are already using [Terramate CLI](../../cli/installation.md) to orchestrate your stacks, the configuration needed to synchronize deployments is minimal.
 
-You can synchronize deployments using [`terramate run`](../../cli/reference/cmdline/run.md) or reduce the overhead on the caller side by using [Terramate Scripts](../../cli/orchestration/scripts.md), e.g. `terramate script run` where you can trigger deployment sync automatically.
+You can synchronize deployments using [`terramate run`](../../cli/reference/cmdline/run.md) or reduce the overhead on the caller side by using [Terramate Scripts](../../cli/orchestration/scripts.md), such as `terramate script run`, which triggers deployment sync automatically.
 
 ## Required Permission
 
-To run the command on the local machine `terramate cloud login` needs to be executed before.
-When run in CI/CD, Terramate CLI will pick up the OpenID Connect (OIDC) tokens and authenticate to the cloud.
+To run the command on a local machine, execute `terramate cloud login` first. In CI/CD environments, Terramate CLI will use OpenID Connect (OIDC) tokens to authenticate to the cloud.
 
-To gather metadata from GitHub about the pull request associated with the preview, a `GITHUB_TOKEN` needs to be exposed or a valid GitHub CLI configuration needs to be available.
+To gather metadata from GitHub about the pull request associated with the preview, expose a `GITHUB_TOKEN` or have a valid GitHub CLI configuration available.
 
 ## `terramate run`
 

@@ -15,6 +15,6 @@ The number of successful and failed deployments will be shown and links to deplo
 
 ## Deployment Grouping
 
-When a deployment is run via multiple workflows or within a matric (e.g. in GitHub Actions) Terramate Cloud will group the different flows with a best effort strategy. In rare cases, this can lead to postponed grouping and duplicated notifications.
+When a deployment runs through multiple workflows or within a matric (e.g., in GitHub Actions), Terramate Cloud uses a best-effort strategy to group the different flows. In rare cases, this may result in delayed grouping and duplicated notifications.
 
-When Deployment grouping does not succeed, multiple deployments will be shown in the Terramate cloud.
+If deployment grouping fails, multiple deployments will appear in Terramate Cloud.

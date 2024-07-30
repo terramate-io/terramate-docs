@@ -9,15 +9,14 @@ When the Slack WebHook URL is configured in the [General Organization settings](
 
 ## New Drift Notification
 
-A notification will be sent for every stack that newly drifts even
-when multiple stacks drift in the same drift check run.
+A notification will be sent for each stack that newly drifts, even if multiple stacks drift in the same drift check run.
 
-When a stack is already in a drifted state, no notification will be sent anymore until the drift is resolved and the stack newly drifts again.
+If a stack is already in a drifted state, no further notification will be sent until the drift is resolved and the stack drifts again.
 
-The notification will contain detailed information about the drifted stack and link to Terramate Cloud to see also the detailed drift as a Terraform Plan.
+The notification will include detailed information about the drifted stack and provide a link to Terramate Cloud to view the detailed drift as a Terraform Plan.
 
 ## Initial Drift Run
 
-When onboarding to Terramate Cloud it is recommended to run a drift run before setting up the notifications when the initial run is expected to detect a lot of drifted stacks.
+When onboarding to Terramate Cloud, we recommended running a drift check before setting up notifications, especially if the initial run is expected to detect many drifted stacks.
 
-After the initial drift check run, the Slack Webhook can be set up and only new drifts will notify the channel.
+After completing the initial drift check, you can set up the Slack Webhook to notify the channel only of new drifts.

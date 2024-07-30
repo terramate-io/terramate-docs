@@ -11,10 +11,9 @@ It guarantees that the drift status of each stack is always synchronized to Terr
 
 ## Required Permission
 
-To run the script on the local machine `terramate cloud login` needs to be executed before.
-When run in CI/CD, Terramate CLI will pick up the OpenID Connect (OIDC) tokens and authenticate to the cloud.
+To run the command on a local machine, execute `terramate cloud login` first. In CI/CD environments, Terramate CLI will use OpenID Connect (OIDC) tokens to authenticate to the cloud.
 
-To gather metadata from GitHub about the commit associated with the drift check, a `GITHUB_TOKEN` needs to be exposed or a valid GitHub CLI configuration needs to be available.
+To gather metadata from GitHub about the pull request associated with the preview, expose a `GITHUB_TOKEN` or have a valid GitHub CLI configuration available.
 
 ## Command Options
 

@@ -13,15 +13,11 @@ To learn more about stacks in Terramate, please read [an introduction to Stacks]
 
 ![Stacks Overview](../assets/stacks.png "Terramate Cloud Stacks Overview")
 
-Stacks can be created and configured with [Terramate CLI](../../cli/stacks/create.md), located in a _repository_ and synced
-to Terramate Cloud. As the stack within a _repository_ is only plain code and configuration, Terramate Cloud offers to
-synchronize a state of all stacks when orchestrated with Terramate CLI and keep track of this state over multiple
-deployments or drift runs.
-
-::: tip
-The state of a stack is not to be confused with a Terraform state defined by the Terraform Backend Configuration.
-Still, the Terramate Cloud State of a stack includes this information and extends it with multiple status values and metadata.
-:::
+Stacks can be created, configured and managed with [Terramate CLI](../../cli/stacks/create.md) and are located in a
+_repository_ on GitHub, GitLab, BitBucket or any other supported VCS provider. As a stack within a _repository_ is only
+plain code and configuration, you can use Terramate CLI to sync the status of your stacks to Terramate Cloud.
+This allows you to keep track of all orchestrated operations such as previews, deployments, and drift runs and also provides
+in-detail observability, such as resources managed in stacks, costs, policy violations and more!
 
 In addition, the stack inventory is not limited to single stacks or single repositories but combines all stacks in all your
 organization's repositories in a central place.

@@ -4,14 +4,12 @@ The top-level navigation `Stacks` will list all known stacks over multiple repos
 
 ![Stacks Overview](../assets/stacks.png "Terramate Cloud Stacks Overview")
 
-Each listed stack includes the name of the stack, the stack path and repository information.
+Each listed stack includes the stack's name, path, and repository information, along with its status.
 
-In addition, the Stack Status is displayed.
+By default, the list of stacks is sorted by the time of their last update, but you can choose other sorting options.
 
-Stacks are sorted by the time they have been last updated by default, but any other sorting can be applied.
+Filters allow you to select stacks from specific repositories or those with a particular status.
 
-Filters allow you to select stacks from specific repositories or stacks having a specific status.
-
-In addition, stacks can be searched for, including a search string in the `name` or the `path`.
+You can also search for stacks by including a search string in the name or path.
 
 Selecting a Stack will open a [Stack Details](./details.md) page.

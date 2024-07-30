@@ -10,7 +10,7 @@ GitLab CI adds continuous integration to GitLab repositories to automate your so
 Terramate integrates seamlessly with GitLab CI to automate and orchestrate IaC tools like Terraform and OpenTofu.
 
 ::: info
-To associate deployments triggered in GitLab CI/CD with your Terramate Cloud user, connect your GitLab user to your Terramate Cloud account. Learn to link your accounts in the [account linking](../profile/account-linking.md) documentation.
+To associate deployments triggered in GitLab CI/CD with your Terramate Cloud user, connect your GitLab user to your Terramate Cloud account. Learn to link your accounts in the [account linking](../../../cloud/profile/account-linking.md) documentation.
 :::
 
 ## Terramate Blueprints

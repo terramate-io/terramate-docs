@@ -7,6 +7,10 @@ description: Learn how deployments in Terramate help you to deploy and observe c
 
 This section explains **deployments** as a core concept in Terramate.
 
+::: info
+To associate deployments triggered on GitHub Actions, GitLab CI/CD, or other CI/CD platforms with your Terramate Cloud user, connect these platforms to your Terramate Cloud account. Learn to link your accounts in the [account linking](../profile/account-linking.md) documentation.
+:::
+
 ## Introduction
 
 Deployments in the context of Infrastructure as Code (IaC) are a process that groups various activities to provision

@@ -14,6 +14,11 @@ You can find a reference architecture to get started with Terramate, Terraform, 
 at [terramate-quickstart-aws](https://github.com/terramate-io/terramate-quickstart-aws).
 :::
 
+::: info
+To associate deployments triggered in GitHub Actions with your Terramate Cloud user, connect your GitHub user to your
+Terramate Cloud account. Learn to link your accounts in the [account linking](../../../cloud/profile/account-linking.md) documentation.
+:::
+
 ## Terramate Blueprints
 
 This page explains workflows, required permissions, and authentication flows that the following workflows have in common.

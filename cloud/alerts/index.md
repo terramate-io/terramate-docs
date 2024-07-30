@@ -22,6 +22,7 @@ profile section. Otherwise, Terramate cannot automatically assign alerts because
 GitHub and Slack users.
 
 Linking accounts can be done in the [user profile](../profile/index.md).
+Learn more about this in the [account linking](../profile/account-linking.md) documentation.
 :::
 
 ## Types of Alerts

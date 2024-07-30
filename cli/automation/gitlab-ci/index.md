@@ -9,6 +9,10 @@ GitLab CI adds continuous integration to GitLab repositories to automate your so
 
 Terramate integrates seamlessly with GitLab CI to automate and orchestrate IaC tools like Terraform and OpenTofu.
 
+::: info
+To associate deployments triggered in GitLab CI/CD with your Terramate Cloud user, connect your GitLab user to your Terramate Cloud account. Learn to link your accounts in the [account linking](../../../cloud/profile/account-linking.md) documentation.
+:::
+
 ## Terramate Blueprints
 
 This page explains the workflow setup and authentication flows common in the following workflows.
@@ -50,8 +54,8 @@ Here is the code snippet that sets the required variables to make it happen:
 ```yaml
 .common:
   variables:
-    GIT_STRATEGY: clone  # clone entire repo instead of using fetch
-    GIT_DEPTH: 0  # avoid shallow clone to give terramate all the info it needs
+    GIT_STRATEGY: clone # clone entire repo instead of using fetch
+    GIT_DEPTH: 0 # avoid shallow clone to give terramate all the info it needs
 ```
 
 ## Terramate Cloud integration
@@ -72,10 +76,9 @@ The ID Token can be created with the following code:
 
 ## OIDC Setup
 
-To enable the workflow to authenticate to the cloud provider (in this example, Google Cloud) using OIDC, configure the `id_tokens` attribute in the GitLab CI workflow.
+Configure the `id_tokens` attribute in the GitLab CI workflow to enable authentication to the cloud provider (in this example, Google Cloud) using OIDC.
 
 ```yaml
-
 .id_tokens:
   id_tokens:
     GITLAB_OIDC_TOKEN:
@@ -151,10 +154,9 @@ The following is a file created under `gitlab-ci/.common.yml` containing all the
       --credential-source-file=`pwd`/.ci_job_jwt_file
     - gcloud auth login --cred-file=`pwd`/.gcp_temp_cred.json
     - export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/.gcp_temp_cred.json
-    
 
 .common:
   variables:
-    GIT_STRATEGY: clone  # clone entire repo instead of using fetch
-    GIT_DEPTH: 0  # avoid shallow clone to give terramate all the info it needs
+    GIT_STRATEGY: clone # clone entire repo instead of using fetch
+    GIT_DEPTH: 0 # avoid shallow clone to give terramate all the info it needs
 ```

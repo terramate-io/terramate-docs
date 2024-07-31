@@ -264,15 +264,30 @@ export default defineConfig({
                   ],
                 },
                 {
+                  text: 'Bitbucket Pipelines',
+                  link: '/cli/automation/bitbucket-pipelines/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Preview Workflow',
+                      link: '/cli/automation/bitbucket-pipelines/preview-workflow',
+                    },
+                    {
+                      text: 'Deployment Workflow',
+                      link: '/cli/automation/bitbucket-pipelines/deployment-workflow',
+                    },
+                    // {
+                    //   text: 'Drift Check Workflow',
+                    //   link: '/cli/automation/bitbucket-pipelines/drift-check-workflow',
+                    // },
+                  ],
+                },
+                {
                   text: 'Atlantis 🚧',
                   // link: '/cli/automation/azure-devops'
                 },
                 {
                   text: 'Digger 🚧',
-                  // link: '/cli/automation/bitbucket'
-                },
-                {
-                  text: 'BitBucket Pipelines 🚧',
                   // link: '/cli/automation/bitbucket'
                 },
                 {

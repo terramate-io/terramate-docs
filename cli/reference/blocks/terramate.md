@@ -5,7 +5,7 @@ description: Learn how to configure a Terramate project using the terramate bloc
 
 # The `terramate` block
 
-Use the `terramate` block to define project-wide configurations in the project's root. The `terramate` block is defined in the `terramate.tm.hcl` file and overrides any defaults by Terramate.
+Use the `terramate` block to define project-wide configurations. The `terramate` block is usually defined in the `terramate.tm.hcl` file(or any file of your choice at the project's root) and overrides any defaults by Terramate.
 
 ## Arguments
 

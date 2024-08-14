@@ -235,6 +235,30 @@ generate_hcl "file.tf" {
 
 And if `global.values` is undefined the block is just ignored.
 
+- A single label is required to define the type of the block to be dynamically generated. If the block needs to specify
+any labels the `labels` argument can be used to populate any number of labels.
+- `labels` **(optional list of string)** Define any number of labels the block shall be generated with.
+Terramate Variables (`let`, `global`, and `terramate` namespaces) and all Terramate Functions are supported when defining labels.
+In addition, the `iterator` namespace is available which defaults to the label of the block being generated but can be renamed by using the `iterator` argument.
+- `content` **(optional block)** The `content` block is optional when `attributes` are defined. It supports the same features
+as the `generate_hcl.content` block. Terramate Variables (`let`, `global`, and `terramate` namespaces) and all
+Terramate Functions are supported when defining labels. In addition, the `iterator` namespace is available which
+defaults to the label of the block being generated but can be renamed by using the `iterator` argument.
+- `attributes` **(optional map)** The `attributes` argument specifies a map of attributes that shall be rendered inside the
+generated block. Those `attributes` are merged with attributes and blocks defined in the `content` block, but they can not
+conflict, meaning any given attribute can either defined in `attributes` or `content` but not in both.
+Terramate Variables (`let`, `global`, and `terramate` namespaces) and all Terramate Functions are supported when defining labels.
+In addition, the `iterator` namespace is available which defaults to the label of the block being generated but can be
+renamed by using the `iterator` argument.
+- `for_each` **(optional list or map of any type)** The `for_each` argument provides the complex list of values to iterate over.
+In each iteration, the `iterator` will be populated with a `value` of the current element. The element is accessible using
+the `iterator` namespace and defaults to the label of the block being generated. The value can be accessed with the `value` field.
+- `iterator` **(optional string)** The `iterator` sets the name of a temporary variable namespace that represents the current
+element of the complex value defined in `for_each`. If omitted, the name of the variable defaults to the label of the `dynamic` block.
+- `condition` **(optional boolean)** Instead of using the `for_each` the `condition` argument can be used for triggering
+generating the block based on an expression. Terramate Variables (`let`, `global`, and `terramate` namespaces) and
+all Terramate Functions are supported when defining labels.
+
 ## Filter-based Code Generation
 
 To only generate HCL code for stacks matching specific criteria, a `stack_filter`
@@ -307,30 +331,6 @@ Will only generate the file for stacks that the expression
 `tm_length(global.list) > 0` evaluates to true.
 
 When `condition` is false the `content` block won't be evaluated.
-
-- A single label is required to define the type of the block to be dynamically generated. If the block needs to specify
-any labels the `labels` argument can be used to populate any number of labels.
-- `labels` **(optional list of string)** Define any number of labels the block shall be generated with.
-Terramate Variables (`let`, `global`, and `terramate` namespaces) and all Terramate Functions are supported when defining labels.
-In addition, the `iterator` namespace is available which defaults to the label of the block being generated but can be renamed by using the `iterator` argument.
-- `content` **(optional block)** The `content` block is optional when `attributes` are defined. It supports the same features
-as the `generate_hcl.content` block. Terramate Variables (`let`, `global`, and `terramate` namespaces) and all
-Terramate Functions are supported when defining labels. In addition, the `iterator` namespace is available which
-defaults to the label of the block being generated but can be renamed by using the `iterator` argument.
-- `attributes` **(optional map)** The `attributes` argument specifies a map of attributes that shall be rendered inside the
-generated block. Those `attributes` are merged with attributes and blocks defined in the `content` block, but they can not
-conflict, meaning any given attribute can either defined in `attributes` or `content` but not in both.
-Terramate Variables (`let`, `global`, and `terramate` namespaces) and all Terramate Functions are supported when defining labels.
-In addition, the `iterator` namespace is available which defaults to the label of the block being generated but can be
-renamed by using the `iterator` argument.
-- `for_each` **(optional list or map of any type)** The `for_each` argument provides the complex list of values to iterate over.
-In each iteration, the `iterator` will be populated with a `value` of the current element. The element is accessible using
-the `iterator` namespace and defaults to the label of the block being generated. The value can be accessed with the `value` field.
-- `iterator` **(optional string)** The `iterator` sets the name of a temporary variable namespace that represents the current
-element of the complex value defined in `for_each`. If omitted, the name of the variable defaults to the label of the `dynamic` block.
-- `condition` **(optional boolean)** Instead of using the `for_each` the `condition` argument can be used for triggering
-generating the block based on an expression. Terramate Variables (`let`, `global`, and `terramate` namespaces) and
-all Terramate Functions are supported when defining labels.
 
 ## Partial Evaluation
 

@@ -36,7 +36,7 @@ The following filters can be used to select a subset of stacks to execute comman
 It is possible to execute Terramate in a subtree of your repository by either changing the working directory into the subdirectory or by temporarily changing the working directory during execution using the `--chdir <path>` command line option (short: `-C <path>`).
 
 ```hcl
-terramate --chdir path/to/tree -- echo "hello from subtree"
+terramate --chdir path/to/tree run -- echo "hello from subtree"
 ```
 
 ### Filter a specific stack
@@ -44,7 +44,7 @@ terramate --chdir path/to/tree -- echo "hello from subtree"
 When selecting a specific stack using the `--chdir` command line option the selected stack and all nested stacks will be selected. To only execute the parent stack, using the `--no-recursive` command line option will ensure, that no child stacks will be executed.
 
 ```hcl
-terramate --chdir path/to/parent-stack --no-recursive -- echo "hello from stack"
+terramate --chdir path/to/parent-stack run --no-recursive -- echo "hello from stack"
 ```
 
 ### Filter by tags
@@ -52,8 +52,8 @@ terramate --chdir path/to/parent-stack --no-recursive -- echo "hello from stack"
 When [tags are defined on stacks](../stacks/configuration#tags), this information can be used to execute commands in stacks with or without specific tags.
 
 ```hcl
-terramate --tags    k8s,kubernetes -- echo "hello from k8s stack"
-terramate --no-tags k8s,kubernetes -- echo "hello from non k8s stack"
+terramate --tags    k8s,kubernetes run -- echo "hello from k8s stack"
+terramate --no-tags k8s,kubernetes run -- echo "hello from non k8s stack"
 ```
 
 ### Filter for changed stacks

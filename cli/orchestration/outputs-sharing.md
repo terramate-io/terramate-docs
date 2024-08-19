@@ -5,7 +5,7 @@ description: Terramate supports connecting stacks inputs and outputs.
 
 # Introduction
 
-The _Outputs Sharing_  is an advanced feature that uses code generation and 
+_Outputs Sharing_  is an advanced feature that uses code generation and 
 orchestration to share the execution output of stacks as inputs to other stacks.
 This could be used as an alternative to Terraform data sources when they are too 
 cumbersome or too britle.

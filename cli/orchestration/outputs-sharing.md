@@ -140,7 +140,7 @@ During orchestration, if sharing outputs is turned on, Terramate will invoke the
 `sharing_backend.command` on demand to gather outputs of referenced stacks and,
 depending on the `sharing_backend.type`, supply the stack inputs.
 The feature can be turned on with `terramate run --enable-sharing ...` or in the
-case of scripts, by setting it as a command object, see example below:
+case of scripts, by setting it as a command object, see the example below:
 
 ```hcl
 script "terraform" "deploy" {

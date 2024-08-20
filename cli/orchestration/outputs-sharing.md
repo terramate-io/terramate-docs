@@ -64,8 +64,8 @@ The `sharing_backend` blocks needs a label name which must be referenced in the 
 
 It has the attributes below:
 - `type` _(required)_ - The type of backend (only `terraform` is currently supported).
-- `filename` _(required)_ - The filename used to generated the inputs and outputs accordingly to the given type.
-- `command` _(required)_ - The command to be invoked to extract the stacks outputs.
+- `filename` _(required)_ - The filename used to generate the inputs and outputs accordingly to the given type.
+- `command` _(required)_ - The command to be invoked to extract the stack outputs.
 
 The `command` is usually `["terraform", "output", "-json"]` for Terraform IaC but the
 user is free to provide any command. The command output **must** be a JSON object.

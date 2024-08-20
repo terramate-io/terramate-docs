@@ -35,8 +35,7 @@ terramate {
 
 1. The stacks that output values have Terramate `output` blocks declared in `.tm` files.
 2. The stacks that need inputs have Terramate `input` blocks declared in `.tm` files.
-3. Somewhere in a parent directory visible to the involved stacks, a 
-`sharing_backend` block is defined for configuring the [generate](../code-generation/index.md) and the [orchestration](./index.md) of the outputs sharing.
+3. A `sharing_backend` block is defined in a parent directory visible to the relevant stacks to configure the [generate](../code-generation/index.md) and [orchestration](./index.md) of output sharing.
   - `sharing_backend.type` defines the sharing type.
   - `sharing_backend.filename` defines the generated file name.
   - `sharing_backend.command` defines the command to export the outputs out of stacks.

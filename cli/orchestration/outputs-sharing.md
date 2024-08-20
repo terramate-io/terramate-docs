@@ -49,8 +49,8 @@ When you run `terramate run --enable-sharing`, the stacks that define outputs ha
 
 # Setup Outputs Sharing backends.
 
-The feature requires a `sharing_backend` configuration that bind the `input` and `output` blocks and sets up how they should communicate.
-The `sharing_backend` blocks has the following syntax:
+The feature requires a `sharing_backend` configuration that binds the `input` and `output` blocks and sets up how they should communicate.
+The `sharing_backend` blocks have the following syntax:
 
 ```
 sharing_backend "default" {

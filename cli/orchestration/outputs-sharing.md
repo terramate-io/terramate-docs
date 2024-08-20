@@ -45,9 +45,7 @@ accordingly to the `sharing_backend.type` chosen. If `type` is `terraform`, then
 `input` blocks are generated as Terraform `variable` blocks, and `output` blocks as
 Terraform `output` blocks.
 
-When running `terramate run --enable-sharing`, the stacks defining outputs have their 
-values collected by the user-supplied `sharing_backend.command` setting and if the `type` is Terraform then stacks defining `input` blocks have their variables 
-configured by exporting `TF_var_<name>` environment variables.
+When you run `terramate run --enable-sharing`, the stacks that define outputs have their values collected by the `sharing_backend.command` setting you provide. If the `type` is Terraform, the stacks that define `input` blocks have their variables configured by exporting `TF_var_<name>` environment variables.
 
 # Setup Outputs Sharing backends.
 

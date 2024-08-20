@@ -128,7 +128,7 @@ output "vpc_id" {
 ```
 
 The block label is required and it defines the name of the output.
-It has the attributes below:
+It has the following attributes:
 
 - `backend` _(required, string)_ - The name of the sharing backend that this input refers to.
 - `value` _(required, expression)_ - The expression that exports the stack's resource.

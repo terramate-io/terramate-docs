@@ -164,14 +164,7 @@ script "terraform" "deploy" {
 
 # Mocking
 
-If your team makes use of code review, very often both the dependendy and the 
-dependent stacks change in the same PR and in this case, the plan of the 
-dependent stack cannot retrieve the outputs of the dependency because
-they were not applied yet. For this case, the `input` block supports `mock`
-attribute and its value will be used in the case of the dependency stack fail
-to return the outputs, or the referenced output is not applied in the plan.
-The mock value is only used if `--mock-on-fail` is provided to `terramate run` or
-`mock_on_fail` option is provided to the script command.
+If your team uses code reviews, it's common for both the dependency and dependent stacks to change in the same PR. In such cases, the plan of the dependent stack may fail to retrieve the outputs from the dependency because they haven't been applied yet. To handle this, the `input` block supports a `mock` attribute, which provides a fallback value if the dependency stack fails to return the outputs or if the referenced output isn't applied in the plan. The mock value is used only when `--mock-on-fail` is provided to `terramate run` or when the `mock_on_fail` option is included in the script command.
 Example:
 ```
 terramate run --enable-sharing --mock-on-fail -- terraform plan -out out.plan

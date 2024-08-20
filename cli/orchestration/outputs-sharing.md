@@ -63,7 +63,7 @@ sharing_backend "default" {
 The `sharing_backend` blocks needs a label name which must be referenced in the `input` and `output` blocks (in the example above it's "default").
 
 It has the attributes below:
-- `type` _(required)_ - The type of backend (only `terraform` is supported at the moment).
+- `type` _(required)_ - The type of backend (only `terraform` is currently supported).
 - `filename` _(required)_ - The filename used to generated the inputs and outputs accordingly to the given type.
 - `command` _(required)_ - The command to be invoked to extract the stacks outputs.
 

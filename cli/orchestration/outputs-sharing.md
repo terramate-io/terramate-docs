@@ -8,7 +8,7 @@ description: Terramate supports connecting stacks inputs and outputs.
 _Outputs Sharing_  is an advanced feature that uses code generation and 
 orchestration to share the execution output of stacks as inputs to other stacks.
 This could be used as an alternative to Terraform data sources when they are too 
-cumbersome or too britle.
+cumbersome or too brittle.
 
 Example: Let's say you have a `vpc` stack and two subnets (`subnet-A` and `subnet-B`).
 This feature lets you reference `outputs.<any vpc output>.value` in both `subnet-A` 

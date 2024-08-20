@@ -90,7 +90,7 @@ It has the attributes below:
 - `mock` _(optional, any)_ - A mock value for the case when the dependent stack outputs are not applied (used for previewing the planned changes).
 
 When `terramate generate` is used with the example configuration above, it generates
-the code below:
+the following code:
 ```
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
 

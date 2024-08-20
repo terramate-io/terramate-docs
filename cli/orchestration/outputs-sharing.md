@@ -67,8 +67,7 @@ It has the attributes below:
 - `filename` _(required)_ - The filename used to generate the inputs and outputs accordingly to the given type.
 - `command` _(required)_ - The command to be invoked to extract the stack outputs.
 
-The `command` is usually `["terraform", "output", "-json"]` for Terraform IaC but the
-user is free to provide any command. The command output **must** be a JSON object.
+The `command` is usually `["terraform", "output", "-json"]` for Terraform IaC, but you can provide any command. The command output **must** be a JSON object.
 
 # Configure stack inputs.
 

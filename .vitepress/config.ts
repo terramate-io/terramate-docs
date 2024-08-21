@@ -524,12 +524,12 @@ export default defineConfig({
                 //   text: 'Structuring Stacks 🚧',
                 //   // link: '/cli/stacks/create',
                 // },
+                // {
+                //   text: 'Using Directories',
+                //   link: '/how-to/manage-environments/using-directories',
+                // },
                 {
-                  text: 'Using Directories',
-                  link: '/how-to/manage-environments/using-directories',
-                },
-                {
-                  text: 'Using Workspaces 🚧',
+                  text: 'Using Workspaces',
                   link: '/how-to/manage-environments/using-workspaces',
                 },
                 // {

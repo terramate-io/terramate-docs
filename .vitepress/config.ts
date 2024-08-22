@@ -216,6 +216,7 @@ export default defineConfig({
                   text: 'Order of Execution ',
                   link: '/cli/orchestration/order-of-execution',
                 },
+                { text: 'Outputs Sharing', link: '/cli/orchestration/outputs-sharing' },
                 { text: 'Environment Variables', link: '/cli/orchestration/runtime-configuration' },
                 { text: 'Disable Safeguards', link: '/cli/orchestration/safeguards' },
               ],

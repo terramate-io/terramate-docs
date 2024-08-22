@@ -1,17 +1,17 @@
 ---
-title: Configure stack inputs and outputs.
-description: Terramate supports connecting stacks inputs and outputs.
+title: Configure Stack Inputs and Outputs.
+description: Learn how to use outputs sharing in Terramate to share output data from one stack as dependencies in other stacks.
 ---
 
 # Introduction
 
-_Outputs Sharing_  is an advanced feature that uses code generation and 
+_Outputs Sharing_  is an advanced feature that uses code generation and
 orchestration to share the execution output of stacks as inputs to other stacks.
-This could be used as an alternative to Terraform data sources when they are too 
+This could be used as an alternative to Terraform data sources when they are too
 cumbersome or too brittle.
 
 Example: Let's say you have a `vpc` stack and two subnets (`subnet-A` and `subnet-B`).
-This feature lets you reference `outputs.<any vpc output>.value` in both `subnet-A` 
+This feature lets you reference `outputs.<any vpc output>.value` in both `subnet-A`
 and `subnet-B`.
 
 ::: info
@@ -52,7 +52,7 @@ When you run `terramate run --enable-sharing`, the stacks that define outputs ha
 The feature requires a `sharing_backend` configuration that binds the `input` and `output` blocks and sets up how they should communicate.
 The `sharing_backend` blocks have the following syntax:
 
-```
+```hcl
 sharing_backend "default" {
   type     = terraform
   filename = "sharing_generated.tf"
@@ -91,7 +91,7 @@ It has the attributes below:
 
 When `terramate generate` is used with the example configuration above, it generates
 the following code:
-```
+```hcl
 // TERRAMATE: GENERATED AUTOMATICALLY DO NOT EDIT
 
 variable "vpc_id" {
@@ -119,7 +119,7 @@ The `output` block defines what values are exported from the stack. Those values
 can be used by other stacks defining `input` blocks.
 See example below:
 
-```
+```hcl
 output "vpc_id" {
   backend   = "default"
   value     = module.vpc.id

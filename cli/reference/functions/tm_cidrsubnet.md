@@ -165,9 +165,7 @@ For more information on CIDR notation and subnetting, see
 
 ## Related Functions
 
-* [`tm_cidrhost`](./tm_cidrhost.md) calculates the IP address for a single host
-  within a given network address prefix.
-* [`tm_cidrnetmask`](./tm_cidrnetmask.md) converts an IPv4 network prefix in CIDR
-  notation into netmask notation.
-* [`tm_cidrsubnets`](./tm_cidrsubnets.md) can allocate multiple consecutive
-  addresses under a prefix at once, numbering them automatically.
+* [`tm_cidrhost`](./tm_cidrhost.md) calculates a full host IP address within a given IP network address prefix.
+* [`tm_cidrsubnets`](./tm_cidrsubnets.md) calculates a sequence of consecutive IP address ranges within a particular CIDR prefix.
+* [`tm_cidrnetmask`](./tm_cidrnetmask.md) converts an IPv4 address prefix given in CIDR notation into a subnet mask address.
+* [`tm_cidrcontains`](./tm_cidrcontains.md) determines whether a given IP address or an address prefix given in CIDR notation is within a given IP network address prefix.

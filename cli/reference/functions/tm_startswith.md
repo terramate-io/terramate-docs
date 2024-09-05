@@ -23,5 +23,5 @@ false
 
 ## Related Functions
 
-* [`tm_endswith`](./tm_endswith.md) takes two values: a string to check and a suffix string. The function returns true if the first string ends with that exact suffix.
+* The `tm_endswith` function checks if a given string ends with a specified suffix. It accepts two arguments: the string to evaluate and the suffix string. The function returns true if the string ends with the exact suffix provided.
 

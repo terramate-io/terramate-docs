@@ -54,3 +54,6 @@ fd00:fd12:3456:7890::22
 
 * [`tm_cidrsubnet`](./tm_cidrsubnet.md) calculates a subnet address under a given
   network address prefix.
+* [`tm_cidrsubnets`](./tm_cidrsubnets.md) calculates a sequence of consecutive IP address ranges within a particular CIDR prefix.
+* [`tm_cidrnetmask`](./tm_cidrnetmask.md) converts an IPv4 address prefix given in CIDR notation into a subnet mask address.
+* [`tm_cidrcontains`](./tm_cidrcontains.md) determines whether a given IP address or an address prefix given in CIDR notation is within a given IP network address prefix.

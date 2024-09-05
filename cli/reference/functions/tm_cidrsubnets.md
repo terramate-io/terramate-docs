@@ -92,9 +92,8 @@ tm_[for cidr_block in cidrsubnets("10.0.0.0/8", 8, 8, 8, 8) : cidrsubnets(cidr_b
 
 ## Related Functions
 
-* [`tm_cidrhost`](./tm_cidrhost.md) calculates the IP address for a single host
-  within a given network address prefix.
-* [`tm_cidrnetmask`](./tm_cidrnetmask.md) converts an IPv4 network prefix in CIDR
-  notation into netmask notation.
-* [`tm_cidrsubnet`](./tm_cidrsubnet.md) calculates a single subnet address, allowing
-  you to specify its network number.
+* [`tm_cidrhost`](./tm_cidrhost.md) calculates a full host IP address within a given IP network address prefix.
+* [`tm_cidrsubnet`](./tm_cidrsubnet.md) calculates a subnet address under a given
+  network address prefix.
+* [`tm_cidrnetmask`](./tm_cidrnetmask.md) converts an IPv4 address prefix given in CIDR notation into a subnet mask address.
+* [`tm_cidrcontains`](./tm_cidrcontains.md) determines whether a given IP address or an address prefix given in CIDR notation is within a given IP network address prefix.

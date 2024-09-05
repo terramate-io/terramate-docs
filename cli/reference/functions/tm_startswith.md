@@ -5,7 +5,7 @@ description: The `tm_startswith` function returns true if the string begins with
 
 # `tm_startswith` Function
 
-`tm_startswith` takes two values: a string to check and a prefix string. The function returns true if the string begins with that exact prefix.
+The `tm_startswith` function checks if a given string starts with a specified prefix. It accepts two arguments: the string to evaluate and the prefix string. The function returns true if the string begins with the exact prefix provided.
 
 ```hcl
 tm_startswith(string, prefix)

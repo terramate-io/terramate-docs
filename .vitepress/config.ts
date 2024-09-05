@@ -748,6 +748,14 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_split',
                     },
                     {
+                      text: 'tm_startswith',
+                      link: '/cli/reference/functions/tm_startswith',
+                    },
+                    {
+                      text: 'tm_endswith',
+                      link: '/cli/reference/functions/tm_endswith',
+                    },
+                    {
                       text: 'tm_strrev',
                       link: '/cli/reference/functions/tm_strrev',
                     },
@@ -1106,6 +1114,10 @@ export default defineConfig({
                     {
                       text: 'tm_cidrsubnets',
                       link: '/cli/reference/functions/tm_cidrsubnets',
+                    },
+                    {
+                      text: 'tm_cidrcontains',
+                      link: '/cli/reference/functions/tm_cidrcontains',
                     },
                   ],
                 },

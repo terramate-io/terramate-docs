@@ -36,3 +36,11 @@ for backward compatibility, but recommend against relying on this behavior.
 tm_cidrnetmask("172.16.0.0/12")
 255.240.0.0
 ```
+
+## Related Functions
+
+* [`tm_cidrhost`](./tm_cidrhost.md) calculates a full host IP address within a given IP network address prefix.
+* [`tm_cidrsubnet`](./tm_cidrsubnet.md) calculates a subnet address under a given
+  network address prefix.
+* [`tm_cidrsubnets`](./tm_cidrsubnets.md) calculates a sequence of consecutive IP address ranges within a particular CIDR prefix.
+* [`tm_cidrcontains`](./tm_cidrcontains.md) determines whether a given IP address or an address prefix given in CIDR notation is within a given IP network address prefix.

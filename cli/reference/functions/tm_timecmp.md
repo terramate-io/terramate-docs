@@ -5,7 +5,7 @@ description: The tm_timecmp compares two timestamps and returns a number that re
 
 # `tm_timecmp` Function
 
-The `tm_timecmp` compares two timestamps and returns a number that represents the ordering of the instants those timestamps represent.
+The `tm_timecmp` function compares two timestamps and returns a value that indicates whether one timestamp occurs before, at the same time, or after the other.
 
 ```
 tm_timecmp(timestamp_a, timestamp_b)

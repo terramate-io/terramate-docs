@@ -19,7 +19,7 @@ tm_timecmp(timestamp_a, timestamp_b)
 
 When comparing the timestamps, `tm_timecmp` takes into account the UTC offsets given in each timestamp. For example, `06:00:00+0200` and `04:00:00Z` are the same instant after taking into account the `+0200` offset on the first timestamp.
 
-In the Terramate language, timestamps are conventionally represented as strings using *RFC 3339* "Date and Time format" syntax. The `tm_timecmp` requires the its two arguments to both be strings conforming to this syntax.
+In Terramate, timestamps are represented as strings following the *RFC 3339* date and time format. The `tm_timecmp` function requires both of its arguments to be strings that adhere to this format.
 
 ## Examples
 

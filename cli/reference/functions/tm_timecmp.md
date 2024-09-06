@@ -39,7 +39,7 @@ tm_timecmp("2017-11-22T01:00:00Z", "2017-11-22T00:00:00-01:00")
 
 ## Related Functions
 
-* [`tm_formatdate`](./tm_formatdate.md) can convert the resulting timestamp to
+* [`tm_formatdate`](./tm_formatdate.md) converts the resulting timestamp to
   other date and time formats.
 * [`tm_timeadd`](./tm_timeadd.md) adds a duration to a timestamp, returning a new timestamp.
 * [`tm_timestamp`](./tm_timestamp.md) returns a string representation of the current date

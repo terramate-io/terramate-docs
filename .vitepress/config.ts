@@ -944,6 +944,14 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_jsonencode',
                     },
                     {
+                      text: 'tm_tomlencode',
+                      link: '/cli/reference/functions/tm_tomlencode',
+                    },
+                    {
+                      text: 'tm_tomldecode',
+                      link: '/cli/reference/functions/tm_tomldecode',
+                    },
+                    {
                       text: 'tm_textdecodebase64',
                       link: '/cli/reference/functions/tm_textdecodebase64',
                     },

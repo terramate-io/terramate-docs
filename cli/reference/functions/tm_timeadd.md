@@ -31,3 +31,11 @@ of adding the given direction to the given timestamp.
 tm_timeadd("2017-11-22T00:00:00Z", "10m")
 2017-11-22T00:10:00Z
 ```
+
+## Related Functions
+
+* [`tm_formatdate`](./tm_formatdate.md) can convert the resulting timestamp to
+  other date and time formats.
+* [`tm_timecmp`](./tm_timecmp.md) compares two timestamps and returns a number that represents the ordering of the instants those timestamps represent.
+* [`tm_timestamp`](./tm_timestamp.md) returns a string representation of the current date
+  and time.

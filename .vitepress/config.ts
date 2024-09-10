@@ -1032,6 +1032,10 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_timeadd',
                     },
                     {
+                      text: 'tm_timecmp',
+                      link: '/cli/reference/functions/tm_timecmp',
+                    },
+                    {
                       text: 'tm_timestamp',
                       link: '/cli/reference/functions/tm_timestamp',
                     },

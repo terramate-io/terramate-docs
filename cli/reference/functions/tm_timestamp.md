@@ -35,5 +35,8 @@ tm_timestamp()
 
 ## Related Functions
 
-* [`tm_formatdate`](./tm_formatdate.md) can convert the resulting timestamp to
+* [`tm_formatdate`](./tm_formatdate.md) converts the resulting timestamp to
   other date and time formats.
+* [`tm_timecmp`](./tm_timecmp.md) compares two timestamps and returns a number that represents the ordering of the instants those timestamps represent.
+* [`tm_timeadd`](./tm_timeadd.md) adds a duration to a timestamp, returning a new timestamp.
+

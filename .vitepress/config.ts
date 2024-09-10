@@ -748,6 +748,10 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_split',
                     },
                     {
+                      text: 'tm_strcontains',
+                      link: '/cli/reference/functions/tm_strcontains',
+                    },
+                    {
                       text: 'tm_startswith',
                       link: '/cli/reference/functions/tm_startswith',
                     },

@@ -23,5 +23,4 @@ EOF)
 
 ## Related Functions
 
-* [`tm_hclencode`](./tm_hclencode.md) performs the opposite operation, _encoding_
-  an object or map value as an HCL file content string.
+* [`tm_hclencode`](./tm_hclencode.md) performs the reverse operation, encoding an object or map into an HCL file content string.

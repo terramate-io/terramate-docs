@@ -11,7 +11,7 @@ The top-level object keys and values are encoded as HCL top-level attributes.
 The main use case for this function is generating the Terraform/Tofu [`.tfvars`](https://developer.hashicorp.com/terraform/language/values/variables#variable-definitions-tfvars-files) file.
 
 The top-level object key **MUST** be a [valid HCL identifier](https://github.com/terramate-io/hcl/blob/main/hclsyntax/spec.md#structural-elements) or else it fails.
-At this point, blocks **cannot be encoded**.
+Currently, blocks **cannot be encoded**.
 
 Example:
 ```

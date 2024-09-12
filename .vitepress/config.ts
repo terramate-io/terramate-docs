@@ -956,6 +956,14 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_tomldecode',
                     },
                     {
+                      text: 'tm_hclencode',
+                      link: '/cli/reference/functions/tm_hclencode',
+                    },
+                    {
+                      text: 'tm_hcldecode',
+                      link: '/cli/reference/functions/tm_hcldecode',
+                    },
+                    {
                       text: 'tm_textdecodebase64',
                       link: '/cli/reference/functions/tm_textdecodebase64',
                     },

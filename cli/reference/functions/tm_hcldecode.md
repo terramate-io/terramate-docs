@@ -6,8 +6,7 @@ description: |-
 
 # `tm_hcldecode` Function
 
-`tm_hcldecode` interprets a given string as HCL file content and returns a decoded Terramate value representation.
-At the moment, blocks **are not supported** and the decoding fails if they are present in input string.
+The `tm_hcldecode` function parses a given string as HCL file content and returns a decoded Terramate value. Currently, the function **does not support** blocks, and the decoding process will fail if blocks are present in the input string.
 
 ## Examples
 

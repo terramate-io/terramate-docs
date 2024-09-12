@@ -34,5 +34,5 @@ availability_zone_names = [
 
 ## Related Functions
 
-* [`tm_hcldecode`](./tm_hcldecode.md) performs the opposite operation, _decoding_
+* [`tm_hcldecode`](./tm_hcldecode.md) performs the reverse operation, _decoding_
   an HCL file content to obtain its corresponding Terramate value.

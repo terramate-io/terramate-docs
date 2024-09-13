@@ -10,6 +10,7 @@ The **Tag Filter** can be used in multiple Terramate features:
 - [stack.after](../stacks/configuration.md#stackafter-setstringoptional)
 - [stack.before](../stacks/configuration.md#stackbefore-setstringoptional)
 - `terramate <cmd> --tags <filter>`
+- `terramate <cmd> --no-tags <filter>`
 
 The filter returns a list of stacks containing `tags` that satisfy the filter
 query. The query language is best explained with some examples but a formal
@@ -35,6 +36,9 @@ Examples:
 - `app:k8s,app:nomad` selects only stacks containing the both the tags
 `app` **AND** `k8s` or stacks containing both the tags `app` **AND** `nomad`.
 
+To get an inverse filter, use the `--no-tags` flag. For example, `--no-tags abc` will select all stacks that do not contain the tags `abc`.
+Please note that the `--no-tags` flag does not support the grammar for `--tags` well. Therefore, it is recommended to use `--no-tags` with only one tag at a time
+
 ## Filter Grammar
 
 Below is the formal grammar definition:
@@ -53,3 +57,5 @@ lowercase     ::= 'a' | 'b' | ... | 'z'
 The `ident` definition is a simplification and you should refer to
 [stack.tags](../stacks/configuration.md#stacktags-setstringoptional) for the correct definition
 (in prose) for the expected declaration of tag names.
+
+

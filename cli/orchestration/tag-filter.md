@@ -12,7 +12,7 @@ The **Tag Filter** can be used in multiple Terramate features:
 - `terramate <cmd> --tags <filter>`
 - `terramate <cmd> --no-tags <filter>`
 
-Using the `tags` filter, you can list or run commands on stacks based on tag conditions. Use `--tags` to filter stacks having specific tags and `--no-tags` to filter those without the specified tags. The `--tags` filter support using AND (`:`) and OR (`,`) for more complex queries, while the `--no-tags` filter does not support complex queries.
+Using the `tags` filter, you can list or run commands on stacks based on tag conditions. Use `--tags` to filter stacks having specific tags and `--no-tags` to filter those without the specified tags. The `--tags` filter support using AND (`:`) and OR (`,`) for more complex queries, while the `--no-tags` filter supports using OR (`,`).
 The query language is best explained with some examples but a formal
 definition can be found [here](#filter-grammar).
 
@@ -36,7 +36,7 @@ Notes:
 
 - The `:` character defines the **AND** operation and the `,` character the **OR**
 operation. They can be freely combined but no explicit grouping is supported (yet).
-- `--no-tags` flag does not support the grammar for `--tags` (yet).
+- `--no-tags` flag does not support AND (`:`). In fact, it only supports OR (`,`). `terramate list --no-tags xyz,abc` will list stacks without the tag `xyz` **OR** `abc`.
 
 ## Filter Grammar
 

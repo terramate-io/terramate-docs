@@ -12,32 +12,31 @@ The **Tag Filter** can be used in multiple Terramate features:
 - `terramate <cmd> --tags <filter>`
 - `terramate <cmd> --no-tags <filter>`
 
-The filter returns a list of stacks containing `tags` that satisfy the filter
-query. The query language is best explained with some examples but a formal
+Using the `tags` filter, you can list or run commands on stacks based on tag conditions. Use `--tags` to filter stacks having specific tags and `--no-tags` to filter those without the specified tags. The `--tags` filter support using AND (`:`) and OR (`,`) for more complex queries, while the `--no-tags` filter does not support complex queries.
+The query language is best explained with some examples but a formal
 definition can be found [here](#filter-grammar).
 
-Let's say the project has multiple stacks and some of them having the tag `abc`,
-others having the tag `xyz` and some having of them having both.
+#### Examples of Commands with `--tags` and `--no-tags`
 
-Then:
+- **Listing stacks**:
+  - `terramate list --tags abc`: Lists stacks with the tag `abc`.
+  - `terramate list --no-tags xyz`: Lists stacks without the tag `xyz`.
+  - `terramate list --tags abc:xyz`: Lists stacks containing both `abc` **AND** `xyz`.
+  - `terramate list --tags app:k8s,app:nomad`: Lists stacks containing both `app` **AND** `k8s` or both `app` **AND** `nomad`.
 
-- `abc` selects the stacks containing the tag `abc`.
-- `xyz` selects the stacks containing the tag `xyz`.
-- `abc:xyz` selects the stacks containing both `abc` **and** `xyz` tags.
-- `abc,xyz` selects the stacks containing `abc` **or** `xyz` tags.
+- **Running commands in stacks**:
+  - `terramate run --tags abc -- echo "hi from stack with tag abc"`: Runs the command in stacks with the tag `abc`.
+  - `terramate run --no-tags xyz -- echo "hi from stack without tag xyz"`: Runs the command in stacks without the tag `xyz`.
 
-The `:` character defines the **AND** operation and the `,` character the **OR**
+- **Running Terramate scripts**:
+  - `terramate script run --tags abc myscript`: Runs `myscript` in stacks with the tag `abc`.
+  - `terramate script run --no-tags xyz myscript`: Runs `myscript` in stacks without the tag `xyz`.
+
+Notes:
+
+- The `:` character defines the **AND** operation and the `,` character the **OR**
 operation. They can be freely combined but no explicit grouping is supported (yet).
-
-Examples:
-
-- `tf,pulumi,cfn` selects the stacks containing the tags `tf` or `pulumi` or `cfn`.
-- `app:k8s:frontend` selects only stacks containing the three tags: `app` && `k8s` && `frontend`.
-- `app:k8s,app:nomad` selects only stacks containing the both the tags
-`app` **AND** `k8s` or stacks containing both the tags `app` **AND** `nomad`.
-
-To get an inverse filter, use the `--no-tags` flag. For example, `--no-tags abc` will select all stacks that do not contain the tags `abc`.
-Please note that the `--no-tags` flag does not support the grammar for `--tags` well. Therefore, it is recommended to use `--no-tags` with only one tag at a time
+- `--no-tags` flag does not support the grammar for `--tags` (yet).
 
 ## Filter Grammar
 
@@ -57,5 +56,3 @@ lowercase     ::= 'a' | 'b' | ... | 'z'
 The `ident` definition is a simplification and you should refer to
 [stack.tags](../stacks/configuration.md#stacktags-setstringoptional) for the correct definition
 (in prose) for the expected declaration of tag names.
-
-

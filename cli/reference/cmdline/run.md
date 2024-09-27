@@ -175,7 +175,7 @@ terramate run [options] -- <cmd ...>
 
   Run independent stacks in parallel.
 
-- `--disable-safeguards <types>`, `-`X` A comma-separated list of safeguards.
+- `--disable-safeguards <types>`, `-X` A comma-separated list of safeguards.
 
   This option can be used multiple times.
 

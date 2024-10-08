@@ -117,9 +117,23 @@ stacks with `before` and `after`.
 
 ### `after`
 
-`after` defines a list of stacks that this stack must run after.
-It accepts project absolute paths (like `/other/stack`), paths relative to
-the directory of this stack (e.g.: `../other/stack`) or a [Tag Filter](../orchestration/index.md#filter-by-tags).
+The `after` attribute ensures that a stack runs only after the specified stacks. You can specify a list of strings, where each string can be:
+- A stack path (e.g., /some/stack-1).
+- A [tag filter](../orchestration/index.md#filter-by-tags) to match multiple stacks.
+- A directory path (e.g., /some), which automatically includes all stacks within that directory. For example,
+  ```hcl
+  after = ["/some"]
+  ```
+  is the same as:
+
+  ```hcl
+  after = [
+  "/some/stack-1",
+  "/some/stack-2"
+  ]
+
+  ```
+You can use both project absolute paths (like `/other/stack`) and paths relative to the directory of the current stack (e.g., `../other/stack`)
 
 ```hcl
 after = [

@@ -120,7 +120,8 @@ stacks with `before` and `after`.
 The `after` attribute ensures that a stack runs only after the specified stacks. You can specify a list of strings, where each string can be:
 - A stack path (e.g., /some/stack-1).
 - A [tag filter](../orchestration/index.md#filter-by-tags) to match multiple stacks.
-- A directory path (e.g., /some), which automatically includes all stacks within that directory. For example,
+- A directory path (e.g., `/some`), which automatically includes all stacks within that directory. For example,
+
   ```hcl
   after = ["/some"]
   ```

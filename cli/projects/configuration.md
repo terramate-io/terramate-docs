@@ -56,7 +56,7 @@ terramate {
 
 ```hcl
 terramate {
-  # allow any Terramate v0.8.x version starting at v0.4.2
+  # allow any Terramate v0.8.x version starting at v0.8.2
   required_version = ">= 0.8.2, < 0.9.0"
 }
 ```

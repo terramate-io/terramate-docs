@@ -26,6 +26,6 @@ negotiated out-of-band.
 ## Examples
 
 ```sh
-tm_rsadecrypt(tm_filebase64("${path.module}/ciphertext"), tm_file("privatekey.pem"))
+tm_rsadecrypt(tm_filebase64("${terramate.stack.path.to_root}/ciphertext"), tm_file("privatekey.pem"))
 Hello, world!
 ```

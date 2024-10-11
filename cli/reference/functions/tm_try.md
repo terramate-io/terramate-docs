@@ -23,7 +23,7 @@ the configuration:
 
 ```hcl
 locals {
-  raw_value = yamldecode(file("${path.module}/example.yaml"))
+  raw_value = yamldecode(file("${terramate.stack.path.to_root}/example.yaml"))
   normalized_value = {
     name   = tostring(tm_try(local.raw_value.name, null))
     groups = tm_try(local.raw_value.groups, [])

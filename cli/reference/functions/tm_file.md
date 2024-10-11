@@ -30,7 +30,7 @@ to read files while respecting resource dependencies.
 ## Examples
 
 ```sh
-tm_file("${path.module}/hello.txt")
+tm_file("${terramate.stack.path.to_root}/hello.txt")
 Hello World
 ```
 

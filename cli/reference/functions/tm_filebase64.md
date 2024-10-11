@@ -32,7 +32,7 @@ files that are generated dynamically during a Terraform operation.
 ## Examples
 
 ```sh
-tm_filebase64("${path.module}/hello.txt")
+tm_filebase64("${terramate.stack.path.to_root}/hello.txt")
 SGVsbG8gV29ybGQ=
 ```
 

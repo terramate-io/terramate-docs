@@ -55,7 +55,7 @@ backend ${addr}:${port}
 The `tm_templatefile` function renders the template:
 
 ```sh
-tm_templatefile("${path.module}/backends.tmtpl", { port = 8080, ip_addrs = ["10.0.0.1", "10.0.0.2"] })
+tm_templatefile("${terramate.stack.path.to_root}/backends.tmtpl", { port = 8080, ip_addrs = ["10.0.0.1", "10.0.0.2"] })
 backend 10.0.0.1:8080
 backend 10.0.0.2:8080
 
@@ -75,7 +75,7 @@ The `tm_templatefile` function renders the template:
 
 ```
 tm_templatefile(
-               "${path.module}/config.tmtpl",
+               "${terramate.stack.path.to_root}/config.tmtpl",
                {
                  config = {
                    "x"   = "y"

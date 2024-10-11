@@ -51,13 +51,13 @@ tm_fileset(path.module, "files/{hello,world}.txt")
   "files/world.txt",
 ]
 
-tm_fileset("${path.module}/files", "*")
+tm_fileset("${terramate.stack.path.to_root}/files", "*")
 [
   "hello.txt",
   "world.txt",
 ]
 
-tm_fileset("${path.module}/files", "**")
+tm_fileset("${terramate.stack.path.to_root}/files", "**")
 [
   "hello.txt",
   "world.txt",

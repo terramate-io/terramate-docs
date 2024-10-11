@@ -21,7 +21,7 @@ or other special mode, it will return an error.
 ## Examples
 
 ```sh
-tm_fileexists("${path.module}/hello.txt")
+tm_fileexists("${terramate.stack.path.to_root}/hello.txt")
 true
 ```
 

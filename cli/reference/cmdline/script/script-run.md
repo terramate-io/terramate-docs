@@ -52,6 +52,12 @@ Run a script called "deploy" on all changed stacks where it is available:
 terramate script run --changed deploy
 ```
 
+Run a script called "deploy" on all changed stacks (not considering uncommitted files):
+
+```bash
+terramate script run --changed --disable-change-detection=git-uncommitted deploy
+```
+
 Run a script called "deploy" on all changed stacks and continue on error:
 
 ```bash

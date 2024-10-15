@@ -149,7 +149,7 @@ See the [orchestration docs](../orchestration/index.md#order-of-execution) for d
 
 ### `before`
 
-Defines the list of stacks that this stack must run `before`, following the same rules as `after`.
+Defines the list of stacks that this stack must run `before`, following the same rules as [`after`](./configuration.md#after).
 
 ```hcl
 before = [
@@ -183,7 +183,7 @@ Im most scenarios defining Order of Execution is sufficient to guarantee changes
 
 ### `wants`
 
-This attribute defines a list of stacks that will be run whenever this stack is run. Example:
+This attribute defines a list of stacks that will be run whenever this stack is run. You can specify a list of strings following the same rules as in [`after`](./configuration.md#after), example:
 
 ```hcl
 wants = [

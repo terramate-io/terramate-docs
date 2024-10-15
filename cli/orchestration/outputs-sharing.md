@@ -133,7 +133,7 @@ It has the following attributes:
 
 - `backend` _(required, string)_ - The name of the sharing backend that this input refers to.
 - `value` _(required, expression)_ - The expression that exports the stack's resource.
-- `sensitive` _(optional, boolean)_ - If the value is sensitive or not. The default is `true`.
+- `sensitive` _(optional, boolean)_ - Marks the value as sensitive. Defaults to `true`.
 
 # Orchestration
 

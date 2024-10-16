@@ -48,8 +48,8 @@ terramate list --changed --disable-change-detection=git-untracked
 - `-C, --chdir=<path>`: Set the working directory.
 - `-B, --git-change-base=<ref>`: Specify the Git base ref for computing changes.
 - `-c, --changed`: Filter stacks by changed infrastructure.
-- `--enable-change-detection=<options>`: Enable specific change detection features. Possible values are (multiple options supported): 'git-untracked', 'git-uncommitted'.
-- `--disable-change-detection=<options>`: Disable specific change detection features (multiple options supported): 'git-untracked', 'git-uncommitted'.
+- `--enable-change-detection=<options>`: Enable specific change detection features. Supported values include: 'git-untracked' and 'git-uncommitted' (multiple options allowed).
+- `--disable-change-detection=<options>`: Disable specific change detection features. Supported values include: 'git-untracked' and 'git-uncommitted' (multiple options allowed).
 - `--tags=<tags>`: Filter stacks by tags. Use ":" for logical AND and "," for logical OR. Examples:
   - `--tags=app:prod` filters stacks containing tag "app" AND "prod".
   - If multiple `--tags` options are provided, an OR expression is created. Example: `--tags=a --tags=b` is the same as `--tags=a,b`.

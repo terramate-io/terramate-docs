@@ -26,7 +26,7 @@ Since `v0.11.0` untracked and uncommitted files are also considered changes.
 ::: info
 _Untracked file_ is a file which isn't tracked by the Git index
 
-_Uncommitted file_ means Git knows about them but the latest changes in them are not committed to Git yet.
+_Uncommitted file_ is a file tracked by the Git index, but its latest changes are not committed to Git yet
 :::
 
 The change detection behavior can be customized in the configuration or by command-line flags.

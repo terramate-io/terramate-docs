@@ -47,8 +47,7 @@ terramate {
 }
 ```
 
-The `--enable-change-detection=<options>` and `--disable-change-detection=<options>` can be used to override
-the default and the configuration. These flags are supported in the commands below (check their documentation for usage):
+Use `--enable-change-detection=<options>` and `--disable-change-detection=<options>` to override the default settings and configuration. These flags are supported in the commands listed below (refer to their documentation for usage):
 
 - [`terramate list`](../reference/cmdline/list.md)
 - [`terramate run`](../reference/cmdline/run.md)

@@ -406,7 +406,7 @@ experience. Terramate Cloud is free for individual use, with features available 
 To start using the cloud, you need to sign up for a free cloud account and create an organization.
 
 - Sign in and Sign up to [cloud.terramate.io](https://cloud.terramate.io) and
-- Create your Organization
+- Create your Organization. You can edit GitHub Trust [settings](../../cloud/organization/settings.md#general-settings) to establish a trust relationship with GitHub Actions, which is required to sync data from GitHub, and specify whether to sync the entire organization or a specific repository with Terramate Cloud. Similarly, GitLab Trust settings can be configured to sync data from GitLab.
 
 Remember the organization's short name that you set for accessing the organization on Terramate Cloud to configure your Terramate CLI in the next steps.
 

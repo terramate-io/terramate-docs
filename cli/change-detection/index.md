@@ -24,7 +24,7 @@ terramate list --changed
 Since `v0.11.0` untracked and uncommitted files are also considered changes.
 
 ::: info
-_Untracked file_ means Git doesn't know about its existence.
+_Untracked file_ is a file which isn't tracked by the Git index
 
 _Uncommitted file_ means Git knows about them but the latest changes in them are not committed to Git yet.
 :::

@@ -87,8 +87,12 @@ It has the attributes below:
 - `backend` _(required, string)_ - The name of the sharing backend that this input refers to.
 - `from_stack_id` _(required, string)_ - The stack ID where the outputs will be loaded.
 - `value` _(required, expression)_ - The expression that computes this input at runtime.
-- `sensitive` _(optional, boolean)_ - Marks the value as sensitive. Defaults to `true`.
+- `sensitive` _(optional, boolean)_ - Marks the value as sensitive.
 - `mock` _(optional, any)_ - A mock value for the case when the dependent stack outputs are not applied (used for previewing the planned changes).
+
+::: info
+Since `v0.10.9` the `sensitive` field has no default value and is only generated when set in the config.
+:::
 
 When `terramate generate` is used with the example configuration above, it generates
 the following code:
@@ -133,7 +137,11 @@ It has the following attributes:
 
 - `backend` _(required, string)_ - The name of the sharing backend that this input refers to.
 - `value` _(required, expression)_ - The expression that exports the stack's resource.
-- `sensitive` _(optional, boolean)_ - Marks the value as sensitive. Defaults to `true`.
+- `sensitive` _(optional, boolean)_ - Marks the value as sensitive.
+
+::: info
+Since `v0.10.9` the `sensitive` field has no default value and is only generated when set in the config.
+:::
 
 # Orchestration
 

@@ -497,6 +497,17 @@ export default defineConfig({
         },
 
         {
+          text: '🔒 Security',
+          collapsed: false,
+          items: [
+            {
+              text: 'Security and Data Processing Overview',
+              link: '/security/index.md',
+            },
+
+          ],
+        },
+        {
           text: '👷 How-to Guides',
           collapsed: false,
           items: [

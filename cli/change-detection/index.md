@@ -21,6 +21,38 @@ E.g., to list all stacks that contain changes:
 terramate list --changed
 ```
 
+Since `v0.11.0` untracked and uncommitted files are also considered changes.
+
+::: info
+_Untracked file_ is a file which isn't tracked by the Git index
+
+_Uncommitted file_ is a file tracked by the Git index, but its latest changes are not committed to Git yet
+:::
+
+The change detection behavior can be customized in the configuration or by command-line flags.
+
+Example:
+
+```hcl
+terramate {
+  config {
+    change_detection {
+      git {
+        # valid options: true, "on", false, "off"
+        untracked   = "off"
+        uncommitted = "off"
+      }
+    }
+  }
+}
+```
+
+Use `--enable-change-detection=<options>` and `--disable-change-detection=<options>` to override the default settings and configuration. These flags are supported in the commands listed below (refer to their documentation for usage):
+
+- [`terramate list`](../reference/cmdline/list.md)
+- [`terramate run`](../reference/cmdline/run.md)
+- [`terramate script run`](../reference/cmdline/script/script-run.md)
+
 ## Integrations
 
 Detecting changed stacks that contain changes only is based on a [Git integration](./integrations/git.md).

@@ -214,6 +214,26 @@ terramate run [options] -- <cmd ...>
   terramate run --changed -- terraform init
   ```
 
+- `--enable-change-detection=<options>`
+
+Enable specific change detection features. Possible values are (multiple options supported): 'git-untracked', 'git-uncommitted'.
+
+  Example:
+
+  ```bash
+  terramate run --changed --enable-change-detection=git-untracked -- terraform init
+  ```
+
+- `--disable-change-detection=<options>`: 
+
+Disable specific change detection features (multiple options supported): 'git-untracked', 'git-uncommitted'.
+
+  Example:
+
+  ```bash
+  terramate run --changed --disable-change-detection=git-untracked -- terraform init
+  ```
+
 - `--git-change-base <ref>`, `-B <ref>`
 
   Set git base reference for computing changes.

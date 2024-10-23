@@ -75,7 +75,7 @@ Ensure that you are not using the `terraform` wrapper when using the Terraform S
 
 To install Terraform using the [`hashicorp/setup-terraform`](https://github.com/hashicorp/setup-terraform) GitHub Action, you must disable the included wrapper.
 
-The `terraform` wrapper script sets up outputs for follow-up GitHub Actions steps. The recommended method of using the [`terramate-io/terramate-action`](https://github.com/terramate-io/terramate-action) is through its supported wrapper, which shares outputs and exit codes for subsequent actions.
+The `terraform` wrapper script sets up outputs for follow-up GitHub Actions steps. The recommended method of using the [`terramate-io/terramate-action`](https://github.com/terramate-io/terramate-action) is through its own wrapper, which shares outputs and exit codes for subsequent actions.
 
 As of version 3 - the latest at the point of writing this document - the wrapper got fixed to use the new GitHub APIs, but it has a bug that hides the detailed exit code required to synchronize the drift status to Terramate Cloud or other tools.
 

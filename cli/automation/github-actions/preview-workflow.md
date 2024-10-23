@@ -8,8 +8,8 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 The following workflows are blueprints and need some adjustments to work for you.
 
 Note:
-<!-- insert a quick video or pictues describing PR-level -->
-<!-- plan sanitation -->
+<!-- insert a quick video or pictures describing PR-level -->
+<!-- plan sanitization -->
 <!-- how exactly does terramate cloud work -->
 <!-- what data Terramate Cloud has access to -->
 <!-- install GithUb App note -->

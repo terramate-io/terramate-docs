@@ -49,15 +49,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the code
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-
-      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -68,8 +64,6 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      # Configure cloud credentials
-
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         uses: aws-actions/configure-aws-credentials@v2
@@ -77,15 +71,20 @@ jobs:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      # Run Dift Check
-
       - name: Run Terraform init on all stacks
         id: init
-        run: terramate run -C stacks -- terraform init
+        run: terramate run -- terraform init
 
       - name: Run drift detection
         id: drift
-        run: terramate run -C stacks --sync-drift-status --terraform-plan-file=drift.tfplan --continue-on-error --parallel 5 -- terraform plan -out drift.tfplan -detailed-exitcode -lock=false
+        run: |
+          terramate run \
+          --sync-drift-status \
+          --terraform-plan-file=drift.tfplan \
+          --continue-on-error \
+          --parallel 5 \
+          -- \
+          terraform plan -out drift.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
@@ -110,15 +109,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the code
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-
-      # Install tooling
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
@@ -129,8 +124,6 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      # Configure cloud credentials
-
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -139,17 +132,21 @@ jobs:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      # Run Dift Check
-
       - name: Run Terraform init on all stacks
         id: init
         run: terramate run -C stacks -- terraform init
 
       - name: Run drift detection
         id: drift
-        run: terramate run -C stacks --sync-drift-status --terraform-plan-file=drift.tfplan --continue-on-error --parallel 5 -- terraform plan -out drift.tfplan -detailed-exitcode -lock=false
+        run: |
+          terramate run \
+          --sync-drift-status \
+          --terraform-plan-file=drift.tfplan \
+          --continue-on-error \
+          --parallel 5 \
+          -- \
+          terraform plan -out drift.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
-
 :::

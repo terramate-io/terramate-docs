@@ -15,9 +15,39 @@ at [terramate-quickstart-aws](https://github.com/terramate-io/terramate-quicksta
 :::
 
 ::: info
-To associate deployments triggered in GitHub Actions with your Terramate Cloud user, connect your GitHub user to your
-Terramate Cloud account. Learn to link your accounts in the [account linking](../../../cloud/profile/account-linking.md) documentation.
+Connect your GitHub user to your Terramate Cloud account to associate deployments triggered in GitHub Actions with your
+Terramate Cloud user. Learn to link your accounts in the [account linking](../../../cloud/profile/account-linking.md) documentation.
 :::
+
+## Prerequisites
+
+This part of the documentation focuses on setting up Terramate CLI with Terramate Cloud in GitHub Actions, which enables you to:
+
+- Provide better summaries of change previews inside Pull Requests
+- Provide details for each Pull Request in Terramate Cloud
+- Detect and prevent security and vulnerability misconfigurations in Pull Requests using the built-in CIS Benchmark policies in Terramate Cloud
+
+::: info
+Automating Terramate CLI in GitHub Actions is technically possible without using Terramate Cloud. However, you will lose the ability to use rendered plan previews, policies, and all other Terramate Cloud-related features and instead provide ASCII plan previews only, which are capped at 65536 characters (~65 KB) only due to [a limitation in the GitHub Pull Request Comments API](https://github.com/orgs/community/discussions/27190).
+Please see the CLI-only examples in the [blueprints](#terramate-blueprints) section for automating Terramate CLI without Terramate Cloud in GitHub Actions.
+:::
+
+### Install the Terramate GitHub App
+
+It's recommended to install the [Terramate GitHub App](../../../cloud/integrations/github.md) in your GitHub organization
+when automating GitHub in GitHub Actions. The app provides well-formatted previews of your IaC changes inside of Pull Requests
+that are easy to understand. You can install the app via the integrations section in your Terramate Cloud account,
+for details please see the [GitHub integration](../../../cloud/integrations/github.md) documentation.
+
+![GitHub App Pull Request Previews](../../assets/automation/pull-request-preview.png "GitHub App Pull Request Previews")
+
+### Configure GitHub Trust in your Terramate Cloud Organization
+
+To allow Terramate CLI to sync data from GitHub Actions to Terramate Cloud, setting up OpenID Connect (OIDC) is required.
+For that, you must configure the [GitHub Trust](../../../cloud/organization/settings.md#general-settings) in the settings
+page of your Terramate Cloud Organization. This allows you to establish a trust relationship with GitHub Actions, which is
+required to sync data from GitHub, and specify whether to sync the entire organization or a specific repository with
+Terramate Cloud.
 
 ## Terramate Blueprints
 
@@ -30,7 +60,7 @@ To jump directly into the Blueprints, follow the links below:
 
 Please read the following sections to understand the details all those workflows have in common.
 
-## Terraform Setup Action
+### Terraform Setup Action
 
 ::: warning
 
@@ -40,20 +70,18 @@ Ensure that you are not using the `terraform` wrapper when using the Terraform S
 - uses: hashicorp/setup-terraform@v3
   with:
     terraform_wrapper: false
-
 ```
-
 :::
 
 To install Terraform using the [`hashicorp/setup-terraform`](https://github.com/hashicorp/setup-terraform) GitHub Action, you must disable the included wrapper.
 
-The `terraform` wrapper script sets up outputs for follow-up GitHub Actions steps. The recommended method of using the [`terramate-io/terramate-action`](https://github.com/terramate-io/terramate-action) is through its supported wrapper, which shares outputs and exit codes for subsequent actions.
+The `terraform` wrapper script sets up outputs for follow-up GitHub Actions steps. The recommended method of using the [`terramate-io/terramate-action`](https://github.com/terramate-io/terramate-action) is through its own wrapper, which shares outputs and exit codes for subsequent actions.
 
 As of version 3 - the latest at the point of writing this document - the wrapper got fixed to use the new GitHub APIs, but it has a bug that hides the detailed exit code required to synchronize the drift status to Terramate Cloud or other tools.
 
-In addition, the outputs of the `terraform` wrapper will conflict for each execution of terraform when executing `terraform` in multiple stacks via `terramate run` or `terramate script run`.
+In addition, the outputs of the `terraform` wrapper will conflict for each execution of terraform when executing `terraform` in multiple stacks via `terramate run` or `terramate script run`.
 
-## Workflow Permissions
+### Workflow Permissions
 
 To use password-less authentication with cloud providers and Terramate Cloud, ensure the GitHub Token used for the workflow has the necessary permissions. Additionally, when synchronizing with Terramate Cloud, `terramate` syncs details about the GitHub environment. This process requires Terramate to have permission to read pull-request details and checks.
 
@@ -64,15 +92,15 @@ To use password-less authentication with cloud providers and Terramate Cloud, en
 
 Terramate Cloud synchronization provides visibility into deployment status and notifications via Slack for deployment failures or detected drifts during health checks. To enable this, expose the `GITHUB_TOKEN` environment variable to the commands synchronizing with Terramate Cloud.
 
-## Merge and Apply Strategy
+### Merge and Apply Strategy
 
 The GitHub Actions Workflow Blueprints use the merge+apply strategy, deploying changes when a pull request is merged into the `main` branch.
 
-## Code Checkout
+### Code Checkout
 
 To enable Change Detection, add `fetch-depth: 0` to the `actions/checkout@v4` GitHub Action to ensure the git history is available for comparing commits.
 
-## Cloud Authentication
+### Cloud Authentication
 
 Search for `CHANGEME` to update the required credential details for AWS and Google Cloud examples. The workflows use OpenID Connect (OIDC), a password-less method and the recommended way to authenticate to AWS and Google Cloud. Ensure the IAM Role on AWS or the Service Account on Google Cloud is configured for successful authentication.
 

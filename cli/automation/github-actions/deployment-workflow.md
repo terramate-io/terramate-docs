@@ -46,8 +46,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Install tooling
-
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
 
@@ -57,13 +55,9 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      # Check for changed stacks
-
       - name: List changed stacks
         id: list
         run: terramate list --changed
-
-      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
@@ -72,27 +66,43 @@ jobs:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      # Run the Terraform deployment via Terramate in each changed stack
-
-      - name: Run Terraform init on changed stacks
+      - name: Run Terraform init in each changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed -- terraform init
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform init
 
       - name: Create Terraform plan on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed -- terraform plan -lock-timeout=5m -out out.tfplan
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform plan -lock-timeout=5m -out out.tfplan
 
       - name: Apply planned changes on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed --sync-deployment --terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+        run: |
+          terramate run \
+            --changed \
+            --sync-deployment \
+            --terraform-plan-file=out.tfplan \
+            -- \
+            terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      # Run a health check
-
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
-        run: terramate run --changed --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
+        run: |
+          terramate run \
+            --changed \
+            --sync-drift-status \
+            --terraform-plan-file=drift.tfplan \
+            -- \
+            terraform plan -out drift.tfplan -detailed-exitcode
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
@@ -123,8 +133,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Install tooling
-
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
 
@@ -134,13 +142,9 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      # Check for changed stacks
-
       - name: List changed stacks
         id: list
         run: terramate list --changed
-
-      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
@@ -150,27 +154,43 @@ jobs:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      # Run the Terraform deployment via Terramate in each changed stack
-
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed -- terraform init
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform init
 
       - name: Create Terraform plan on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed -- terraform plan -lock-timeout=5m -out out.tfplan
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform plan -lock-timeout=5m -out out.tfplan
 
       - name: Apply planned changes on changed stacks
         if: steps.list.outputs.stdout
-        run: terramate run --changed --sync-deployment --terraform-plan-file=out.tfplan -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+        run: |
+          terramate run \
+            --changed \
+            --sync-deployment \
+            --terraform-plan-file=out.tfplan \
+            -- \
+            terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      # Run a health check
-
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
-        run: terramate run --changed --sync-drift-status --terraform-plan-file=drift.tfplan -- terraform plan -out drift.tfplan -detailed-exitcode
+        run: |
+          terramate run \
+            --changed \
+            --sync-drift-status \
+            --terraform-plan-file=drift.tfplan \
+            -- \
+            terraform plan -out drift.tfplan -detailed-exitcode
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
@@ -199,8 +219,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Install tooling
-
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
 
@@ -210,13 +228,9 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      # Check for changed stacks
-
       - name: List changed stacks
         id: list
         run: terramate list --changed
-
-      # Configure cloud credentials
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
@@ -225,17 +239,23 @@ jobs:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
-      # Run the Terraform deployment via Terramate in each changed stack
-
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout
         id: init
-        run: terramate run --changed -- terraform init
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform init
 
       - name: Apply changes on changed stacks
         id: apply
         if: steps.list.outputs.stdout
-        run: terramate run --changed -- terraform apply -input=false -auto-approve -lock-timeout=5m
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform apply -input=false -auto-approve -lock-timeout=5m
 ```
 
 ```yml [ GCP ]
@@ -262,8 +282,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Install tooling
-
       - name: Install Terramate
         uses: terramate-io/terramate-action@v1
 
@@ -272,13 +290,9 @@ jobs:
         with:
           terraform_version: 1.7.4
 
-      # Check for changed stacks
-
       - name: List changed stacks
         id: list
         run: terramate list --changed
-
-      # Configure cloud credentials
 
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
@@ -288,9 +302,7 @@ jobs:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
-      # Run the Terraform deployment via Terramate in each changed stack
-
-      - name: Run Terraform init on changed stacks
+      - name: Run terraform init in all changed stacks
         if: steps.list.outputs.stdout
         id: init
         run: terramate run --changed -- terraform init
@@ -298,7 +310,10 @@ jobs:
       - name: Apply changes on changed stacks
         id: apply
         if: steps.list.outputs.stdout
-        run: terramate run --changed -- terraform apply -input=false -auto-approve -lock-timeout=5m
+        run: |
+          terramate run \
+            --changed \
+            -- \
+            terraform apply -input=false -auto-approve -lock-timeout=5m
 ```
-
 :::

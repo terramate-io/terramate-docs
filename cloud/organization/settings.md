@@ -2,24 +2,34 @@
 
 ![Terramate Cloud Organization General Settings](../assets/organization-general-settings.png "Terramate Cloud Organization General Settings")
 
-### Edit organization settings as an admin
+Sync your complete GitHub/GitLab organization or specific repos with Terramate Cloud via. Organization. To collaborate with your team members on Terramate Cloud, you can create a new Organization or join an existing one.
 
-An `admin` of the organization can update general organization settings.
+## General Settings
 
-- **Short Name** - The short name can not be changed. Please get in touch with our support for more details.
+These settings give your new organization an identity to refer to and enable full features of the Terramate Cloud. You can change these fields only if you're an `admin`.
 
-- **Display Name** - The display name shows the organization's name in various places. It is also part of emails we send to newly invited teammates to help them recognize the organization they are invited to.
+- `Short Name`: The short name is the string which will be used in URLs (https://cloud.terramate.io/o/{short-name}) when visiting the organization or in Terramate CLI when selecting the organization to sync or receive data from. You can only set it when creating a new organization. You cannot change it afterwards. Please get in touch with our support for more details.
 
-- **GitHub Trust** - This field allows the specification of a trust relationship from GitHub Action workflows. The value of this field can be
+- `Display Name`: The Display name is the publicly visible name of your Terramate Organization, which will appear in different places, like in the invitation emails to your teammates to join the `display name` organization.
 
-  - a GitHub Organization/Owner to trust all repositories within a GitHub Organization of the form `owner`
-  - a comma-separated list of GitHub Organizations/Owners of the form `ownerA,ownerB,ownerC`
-  - a GitHub Repository to trust a single repository within a GitHub Organization of the form `owner/repository`
+- `GitHub Trust`: Set up OpenID Connect(OIDC), which allows Terramate CLI to sync data from GitHub Actions to Terramate Cloud. You can do this by entering one of the following types of values in this field: 
+    - a GitHub Organization/Owner to trust all repositories within a GitHub Organization of the form `owner`
+    - a comma-separated list of GitHub Organizations/Owners of the form `ownerA`, `ownerB`, `ownerC`
+    - a GitHub Repository to trust a single repository within a GitHub Organization of the form `owner/repository`
 
-- **Slack WebHook URL** - This field is written only and will not display the currently set value. It can be used to set a new WebHook URL.
-  To generate a Slack WebHook URL, please follow the instructions in the [Slack WebHook Documentation](https://opentffoundation.slack.com/apps/A0F7XDUAZ-incoming-webhooks).
-  _This integration will be replaced with a Slack App._
+- `GitLab Trust`: Similar to the `GitHub Trust` field, you can enter a value which will set up OIDC to sync data from GitLab CI to Terramate Cloud. You can visit this [page](https://terramate.io/docs/cli/automation/gitlab-ci/#terramate-cloud-integration) to see more details about connecting Terramate Cloud to GitLab CI.
 
-### View organization settings as a member
 
-A `member` of the organization can only read the organization settings but not change any settings.
+- `Slack Webhook`: 
+Terramate Cloud can send alerts to notify you about important events, such as failed deployments or detected drift. Terramate can automatically deliver such alerts directly to individuals and teams on Slack. You can follow the below-mentioned steps to integrate Terramate Cloud with your Slack workspace:
+
+  1. Create a new app from the [Slack API page](https://api.slack.com/apps) by clicking **Create New App** and selecting **From Scratch**.
+  2. Enter a name for your Slack App in the **App Name** field.
+  3. Choose your Slack workspace in the **Pick a Workspace** field, then click **Create App**.
+  4. The new app page opens. Click on **Incoming Webhooks** in the left navigation pane.
+  5. Toggle the **Activate Incoming Webhooks** button to **On**.
+  6. Click the **Add New Webhook to Workspace** button.
+  7. Select a channel where you want the webhook to post notifications.
+  8. Click **Allow** to grant permissions.
+  9. Copy the generated webhook URL.
+  10. Paste the copied webhook URL into the Slack Webhook field in the General Settings page of Terramate Cloud.

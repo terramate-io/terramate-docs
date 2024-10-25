@@ -31,3 +31,9 @@ Use the `--detailed-exit-code` flag to check when files were modified on disk.
 ```bash
 terramate generate --detailed-exit-code
 ```
+
+By default, Terramate generates files in parallel (if the machine has more than 1 CPU cores available). You can control the parallelism with `--parallel <n>` flag (or `-j <n>` for short).
+
+```bash
+terramate generate --parallel 16
+```

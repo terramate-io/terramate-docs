@@ -33,7 +33,7 @@ terramate generate
 
 The above command generates files for all configurations within the current directory and its subdirectories. To generate files targeting configurations in a specific subdirectory, use the `-C` (or `--chdir`) flag followed by the desired directory path. Alternatively, navigate to the subdirectory using `cd` and run the command there.
 
-Terramate runs the `generate` command in parallel by default, using the machine's logical cores for optimized performance. You can adjust concurrency with the `--parallel <n>` or `-j` flag, like `terramate generate -j 10`, to specify the number of parallel units. This feature speeds up code generation, especially for larger projects.
+Terramate runs the `generate` command in parallel, by default using the amount of available logical CPU cores for optimized performance. You can adjust concurrency with the `--parallel <n>` or `-j` flag, like `terramate generate -j 10`, to specify the number of parallel units. This feature speeds up code generation, especially for larger projects.
 
 ## Hierarchical Code Generation
 

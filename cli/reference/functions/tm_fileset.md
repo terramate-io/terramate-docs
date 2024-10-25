@@ -39,13 +39,13 @@ before Terraform takes any actions.
 ## Examples
 
 ```sh
-tm_fileset(path.module, "files/*.txt")
+tm_fileset(terramate.stack.path.absolute, "files/*.txt")
 [
   "files/hello.txt",
   "files/world.txt",
 ]
 
-tm_fileset(path.module, "files/{hello,world}.txt")
+tm_fileset(terramate.stack.path.absolute, "files/{hello,world}.txt")
 [
   "files/hello.txt",
   "files/world.txt",

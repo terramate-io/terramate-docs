@@ -12,15 +12,30 @@ These settings give your new organization an identity to refer to and enable ful
 
 - `Display Name`: The Display name is the publicly visible name of your Terramate Organization, which will appear in different places, like in the invitation emails to your teammates to join the `display name` organization.
 
-- `GitHub Trust`: Set up OpenID Connect(OIDC), which allows Terramate CLI to sync data from GitHub Actions to Terramate Cloud. You can do this by entering one of the following types of values in this field: 
+## Setup VCS Open ID Connect (OIDC)
+
+When syncing data with Terramate CLI from your VCS such as GitHub Actions and GitLab CI/CD, we recommend you use Open ID Connect (OIDC)
+instead of api keys. For that you can establish trust relationship between your VCS provider and Terramate Cloud.
+
+- `GitHub Trust`: Set up OpenID Connect(OIDC), which allows Terramate CLI to sync data from GitHub Actions to Terramate Cloud. You can do this by entering one of the following types of values in this field:
     - a GitHub Organization/Owner to trust all repositories within a GitHub Organization of the form `owner`
     - a comma-separated list of GitHub Organizations/Owners of the form `ownerA`, `ownerB`, `ownerC`
-    - a GitHub Repository to trust a single repository within a GitHub Organization of the form `owner/repository`
+    - a GitHub repository to trust a single repository within a GitHub Organization of the form `owner/repository`
+    - a comma-separated list of GitHub repositories ofthe form `organizationA/repository`, `organizationB/repository`
 
-- `GitLab Trust`: Similar to the `GitHub Trust` field, you can enter a value which will set up OIDC to sync data from GitLab CI to Terramate Cloud. You can visit this [page](https://terramate.io/docs/cli/automation/gitlab-ci/#terramate-cloud-integration) to see more details about connecting Terramate Cloud to GitLab CI.
+- `GitLab Trust`: Similar to the `GitHub Trust` field, you can enter a value which will set up OIDC to sync data from GitLab CI to Terramate Cloud. You can visit this [page](https://terramate.io/docs/cli/automation/gitlab-ci/#terramate-cloud-integration) to see more details about connecting Terramate Cloud to GitLab CI. The following values are supported:
+    - a GitLab Organization/Owner to trust all repositories within a GitLab Organization of the form `owner`
+    - a comma-separated list of GitLab Organizations/Owners of the form `ownerA`, `ownerB`, `ownerC`
+    - a GitLab Repository to trust a single repository within a GitHub Organization of the form `owner/repository`
+    - a comma-separated list of GitLab repositories ofthe form `organizationA/repository`, `organizationB/repository`
 
+## Slack Webhook (deprecated)
 
-- `Slack Webhook`: 
+::: info
+Slack Webhook in Terramate Cloud are deprecated and will soon be replaced with the [Terramate Slack App](../integrations/slack.md).
+:::
+
+- `Slack Webhook`:
 Terramate Cloud can send alerts to notify you about important events, such as failed deployments or detected drift. Terramate can automatically deliver such alerts directly to individuals and teams on Slack. You can follow the below-mentioned steps to integrate Terramate Cloud with your Slack workspace:
 
   1. Create a new app from the [Slack API page](https://api.slack.com/apps) by clicking **Create New App** and selecting **From Scratch**.

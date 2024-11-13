@@ -256,6 +256,18 @@ Disable specific change detection features (multiple options supported): 'git-un
 
   Filter stacks by tags not being set.
 
+### Enable Output Sharing
+
+- `--enable-sharing`
+  
+  Running `terramate run --enable-sharing` collects output values from stacks with defined outputs, passing them to the command specified in `sharing_backend.command`. If the backend type is `Terraform`, it configures variables in stacks with `input` blocks by exporting them as `TF_var_` environment variables. It enables the smooth sharing of values across stacks.
+
+### Use Mocks on Failure
+
+- `--mock-on-fail`
+
+    Activates mock values if output sharing fails, allowing the process to continue by substituting mock data to prevent downstream actions from being blocked by unavailable shared outputs.
+
 ## Terramate Cloud Options
 
 ### TMC: Advanced filters

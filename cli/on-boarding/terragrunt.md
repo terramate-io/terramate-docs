@@ -5,6 +5,12 @@ description: Import your existing Terragrunt Setup to Terramate
 
 # Start with existing Terragrunt Projects
 
+::: info
+If you are looking for an actionable and quick guide explaining how to
+supercharge any existing Terragrunt project with Terramate in just 5 minutes,
+take a look at our most recent [Terramate and Terragrunt guide](https://terramate.io/rethinking-iac/how-terramate-adds-superpowers-to-terragrunt-in-just-5-minutes/).
+:::
+
 ## Import Existing Terragrunt Stacks
 
 To create Terramate Stacks from existing Terragrunt Modules run the following command.

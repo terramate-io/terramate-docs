@@ -31,12 +31,8 @@ The following keys are available in the `terramate.stack` object and can be acce
     - `basename` (string) The base name of the stack path.
     - `relative` (string) The relative path of the stack from the repository root.
     - `to_root` (string) The relative path from the stack to the repository root (upwards).
-
-  ### Parent Stack Metadata
-
-  Terramate provides access to the immediate parent stack in the hierarchy through the `terramate.stack.parent` object. This enables dynamic referencing of attributes from the parent stack during code generation, avoiding hard-coded values.
-  The following keys are available in the `terramate.stack.parent` object and can be accessed with `terramate.stack.parent.<key>`, e.g., `terramate.stack.parent.id`:
-  `id` (string): The unique ID of the immediate parent stack.
+  - `parent` (object): An object defining metadata for the immediate parent stack (if it exists):
+    - `id` (string): The unique ID of the immediate parent stack.
 
 ## Repository Metadata
 

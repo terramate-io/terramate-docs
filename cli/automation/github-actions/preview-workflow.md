@@ -53,7 +53,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -73,13 +73,15 @@ jobs:
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
-        uses: aws-actions/configure-aws-credentials@v2
+        id: auth
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
            --parallel 1 \
@@ -89,6 +91,7 @@ jobs:
 
       - name: Validate Terraform configuration in changed stacks
         if: steps.list.outputs.stdout
+        id: validate
         run: |
           terramate run \
             --parallel 5 \
@@ -98,6 +101,7 @@ jobs:
 
       - name: Plan Terraform changes in changed stacks
         if: steps.list.outputs.stdout
+        id: plan
         run: |
           terramate run \
             --parallel 5 \
@@ -138,7 +142,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -159,13 +163,14 @@ jobs:
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
             --parallel 1 \
@@ -175,6 +180,7 @@ jobs:
 
       - name: Validate Terraform configuration in changed stacks
         if: steps.list.outputs.stdout
+        id: validate
         run: |
           terramate run \
             --parallel 5 \
@@ -184,6 +190,7 @@ jobs:
 
       - name: Plan Terraform changes in changed stacks
         if: steps.list.outputs.stdout
+        id: plan
         run: |
           terramate run \
             --parallel 5 \
@@ -235,7 +242,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -255,13 +262,15 @@ jobs:
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
-        uses: aws-actions/configure-aws-credentials@v2
+        id: auth
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
             --parallel 1 \
@@ -271,6 +280,7 @@ jobs:
 
       - name: Validate Terraform configuration in changed stacks
         if: steps.list.outputs.stdout
+        id: validate
         run: |
           terramate run \
             --parallel 5 \
@@ -280,6 +290,7 @@ jobs:
 
       - name: Plan Terraform changes in changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
             --parallel 5 \
@@ -379,7 +390,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -400,13 +411,14 @@ jobs:
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
       - name: Initialize Terraform in changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
             --parallel 1 \
@@ -416,6 +428,7 @@ jobs:
 
       - name: Validate Terraform configuration in changed stacks
         if: steps.list.outputs.stdout
+        id: validate
         run: |
           terramate run \
             --parallel 5 \
@@ -425,6 +438,7 @@ jobs:
 
       - name: Plan Terraform changes in changed stacks
         if: steps.list.outputs.stdout
+        id: plan
         run: |
           terramate run \
             --parallel 5 \

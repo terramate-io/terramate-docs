@@ -56,7 +56,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -65,8 +65,8 @@ jobs:
           terraform_wrapper: false
 
       - name: Configure AWS credentials via OIDC
-        if: steps.list.outputs.stdout
-        uses: aws-actions/configure-aws-credentials@v2
+        id: auth
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
@@ -116,7 +116,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -125,9 +125,8 @@ jobs:
           terraform_wrapper: false
 
       - name: Authenticate to Google Cloud via OIDC
-        if: steps.list.outputs.stdout
         id: auth
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'

@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -61,13 +61,15 @@ jobs:
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
-        uses: aws-actions/configure-aws-credentials@v2
+        id: auth
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
 
       - name: Run Terraform init in each changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
             --changed \
@@ -76,6 +78,7 @@ jobs:
 
       - name: Create Terraform plan on changed stacks
         if: steps.list.outputs.stdout
+        id: plan
         run: |
           terramate run \
             --changed \
@@ -84,6 +87,7 @@ jobs:
 
       - name: Apply planned changes on changed stacks
         if: steps.list.outputs.stdout
+        id: apply
         run: |
           terramate run \
             --changed \
@@ -96,6 +100,7 @@ jobs:
 
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
+        id: drift
         run: |
           terramate run \
             --changed \
@@ -134,7 +139,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -149,13 +154,14 @@ jobs:
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'
 
       - name: Run Terraform init on changed stacks
         if: steps.list.outputs.stdout
+        id: init
         run: |
           terramate run \
             --changed \
@@ -164,6 +170,7 @@ jobs:
 
       - name: Create Terraform plan on changed stacks
         if: steps.list.outputs.stdout
+        id: plan
         run: |
           terramate run \
             --changed \
@@ -172,6 +179,7 @@ jobs:
 
       - name: Apply planned changes on changed stacks
         if: steps.list.outputs.stdout
+        id: apply
         run: |
           terramate run \
             --changed \
@@ -184,6 +192,7 @@ jobs:
 
       - name: Run drift detection
         if: steps.list.outputs.stdout && ! cancelled() && steps.apply.outcome != 'skipped'
+        id: drift
         run: |
           terramate run \
             --changed \
@@ -220,7 +229,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -234,7 +243,8 @@ jobs:
 
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
-        uses: aws-actions/configure-aws-credentials@v2
+        id: auth
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: 'CHANGEME: AWS REGION'
           role-to-assume: 'CHANGEME: IAM ROLE ARN'
@@ -283,7 +293,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v1
+        uses: terramate-io/terramate-action@v2
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -297,7 +307,7 @@ jobs:
       - name: Authenticate to Google Cloud via OIDC
         if: steps.list.outputs.stdout
         id: auth
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: 'CHANGEME: WORKLOAD IDENTITY PROVIDER ID'
           service_account: 'CHANGEME: SERVICE ACCOUNT EMAIL'

@@ -36,7 +36,7 @@ terramate {
 1. The stacks that output values have Terramate `output` blocks declared in `.tm` files.
 2. The stacks that need inputs have Terramate `input` blocks declared in `.tm` files.
 3. A `sharing_backend` block is defined in a parent directory visible to the relevant stacks to configure the [generate](../code-generation/index.md) and [orchestration](./index.md) of output sharing.
-  - `sharing_backend.type` defines the sharing type.
+  - `sharing_backend.type` defines the sharing type (use `terraform` for both Terraform and Tofu projects).
   - `sharing_backend.filename` defines the generated file name.
   - `sharing_backend.command` defines the command to export the outputs out of stacks.
 
@@ -63,7 +63,7 @@ sharing_backend "default" {
 The `sharing_backend` blocks needs a label name which must be referenced in the `input` and `output` blocks (in the example above it's "default").
 
 It has the attributes below:
-- `type` _(required)_ - The type of backend (only `terraform` is currently supported).
+- `type` _(required)_ - The type of backend (only `terraform` is currently supported, which also works with Tofu).
 - `filename` _(required)_ - The filename used to generate the inputs and outputs accordingly to the given type.
 - `command` _(required)_ - The command to be invoked to extract the stack outputs.
 

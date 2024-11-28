@@ -5,85 +5,100 @@ description: Execute a Terramate Script in all stacks or in a filtered subset of
 
 # Script Run
 
-**Note:** This is an upcoming experimental feature that is subject to change in the future. To use it now, you must enable the project config option `terramate.config.experiments = ["scripts"]`
+::: info Note
+This is an upcoming experimental feature that is subject to change in the future. To use it now, you must enable the project config option `terramate.config.experiments = ["scripts"]`
+:::
 
-The `terramate script run` command will run a Terramate script over a set of stacks. `CMD` needs to exactly match the label defined in the `script` block. For example:
 
-```
-script "mycommand" {
-  ...
-}
-```
+### Overview
 
-The above script could therefore be run with `script run mycommand`.
+A [script](../../../orchestration/scripts.md#introduction) is a collection of different commands which are part of a workflow.
+You can run a single `script run` command to run all the commands of the script block as one single executable unit, without having to run them one by one.
 
-The script will run on all stacks under the current working directory where:
 
-- the script is available (scripts follow the same inheritance rules as globals)
-- any filters match. `script run` currently supports `--changed` and `--tags` filters.
-
-It's also possible to define commands that consist of multiple keywords to create a multi-level command structure, i.e. `command subcommand ...`:
-
-```
-script "command" "subcommand" {
-  ...
-}
-```
-
-The above can be run with `script run command subcommand`.
-
-If the experimental deployment targets option is enabled, `--target` is required (see [run](../run#tmc-deployment-targets)).
-
-## Usage
+### Usage
 
 `terramate script run [options] CMD...`
 
-## Examples
+`CMD` needs to match the label defined in the script block exactly. For example:
 
-Run a script called "deploy" on all stacks where it is available:
+```
+script "mycommand" {
+...
+}
+```
+The above script can be run with `script run mycommand`.
 
+Scripts follow the same inheritance rules as globals and will only run where:
+
+- The script is defined or inherited.
+- The specified filters (`--changed`, `--tags`, etc.) match.
+
+### Options
+
+- **`--changed`**
+Runs the script on stacks with changes.
+
+- **`--tags=tags`**
+Runs the script on stacks with specific tags.
+
+- **`--disable-change-detection=mode`**
+Disables change detection for uncommitted files or other modes.
+
+- **`--continue-on-error`**
+Continues executing the script even if errors occur.
+
+- **`--dry-run`**
+Shows what would happen without executing the script.
+
+- **`--no-recursive`**
+Runs the script only in the current stack without traversing subdirectories.
+
+- **`--status=status`**
+Filters stacks based on Terramate Cloud status (e.g., `unhealthy`).
+
+- **`--reverse`**
+Runs the script in reverse order across stacks.
+
+
+### Examples
+
+**Run a script called `deploy` on all stacks where it is available:**
 ```bash
 terramate script run deploy
 ```
 
-Run a script called "deploy" on all changed stacks where it is available:
-
+**Run the `deploy` script on all changed stacks:**
 ```bash
 terramate script run --changed deploy
 ```
 
-Run a script called "deploy" on all changed stacks (not considering uncommitted files):
-
+**Run the `deploy` script on all changed stacks, ignoring uncommitted files:**
 ```bash
 terramate script run --changed --disable-change-detection=git-uncommitted deploy
 ```
 
-Run a script called "deploy" on all changed stacks and continue on error:
-
+**Run the `deploy` script on all changed stacks and continue on error:**
 ```bash
 terramate script run --changed --continue-on-error deploy
 ```
 
-Do a dry run of running the deploy script:
-
+**Perform a dry run of the `deploy` script:**
 ```bash
 terramate script run --dry-run deploy
 ```
 
-Run a script called "deploy" in a specific stack without recursing into subdirectories:
-
+**Run the `deploy` script in a specific stack without recursing into subdirectories:**
 ```bash
 terramate -C path/to/stack script run --no-recursive deploy
 ```
 
-Run a script in all stacks with an specific Terramate Cloud status:
-
+**Run a script in all stacks with a specific Terramate Cloud status (`unhealthy`):**
 ```bash
 terramate script run --status=unhealthy deploy
 ```
 
-Run a script called "destroy" on all stacks in the reverse order:
-
+**Run the `destroy` script on all stacks in reverse order:**
 ```bash
 terramate script run --reverse destroy
 ```

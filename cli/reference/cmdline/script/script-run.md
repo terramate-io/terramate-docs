@@ -16,7 +16,7 @@ A [script](../../../orchestration/scripts.md#introduction) is a collection of di
 You can run a single `script run` command to run all the commands of the script block as one single executable unit without having to run them one by one.
 
 
-### Usage
+## Usage
 
 `terramate script run [options] CMD...`
 

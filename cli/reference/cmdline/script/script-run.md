@@ -6,7 +6,7 @@ description: Execute a Terramate Script in all stacks or in a filtered subset of
 # Script Run
 
 ::: info Note
-This is an upcoming experimental feature that is subject to change in the future. To use it now, you must enable the project config option `terramate.config.experiments = ["scripts"]`
+This is an experimental feature that might be subject to change in the future. To use it now, you must enable the project config option `terramate.config.experiments = ["scripts"]`
 :::
 
 

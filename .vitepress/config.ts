@@ -469,7 +469,15 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Slack', link: '/cloud/integrations/slack' },
-                { text: 'GitHub', link: '/cloud/integrations/github' },
+                { 
+                  text: 'GitHub', 
+                  link: '/cloud/integrations/github',
+                  collapsed: true, 
+                  items: [
+                    {text: 'Conflict Detection', link: '/cloud/integrations/github/conflict-detection'}
+                  ] 
+                },
+                
                 {
                   text: 'GitLab 🚧',
                   // link: '/cloud/integrations/gitlab/',

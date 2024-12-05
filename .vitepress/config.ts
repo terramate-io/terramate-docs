@@ -1282,6 +1282,10 @@ export default defineConfig({
               text: 'Configuration Reference',
               link: '/cli/reference/configuration/',
             },
+            {
+              text: 'Telemetry',
+              link: '/cli/reference/telemetry/',
+            }
           ],
         },
         {

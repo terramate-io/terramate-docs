@@ -23,6 +23,11 @@ concatenation of all of them in a single file, forming a single **configuration*
 The configuration blocks can be defined multiple times and their values are merged
 whenever possible. See [Config Merging](#config-merging) for details.
 
+::: info
+Windows users: Terramate works best if you configure your editor to use Unix-style line endings (`LN` or `\n`).
+You may also consider configuring git to avoid line ending conversions: `git config core.autocrlf input`
+:::
+
 ## Importing configurations
 
 Each configuration can import other configurations using the `import` block.

@@ -13,11 +13,13 @@ The following information is collected during Terramate usage:
 - Command: For example, `run`.
 - Command Sub-Features: Tracks whether a feature or flag, like `parallel`, was used. No additional details are collected.
 - CI/CD Platform: If applicable, identify platforms like GitHub or GitLab.
+- CI/CD Platform Repository Owner: Identifies the organization that owns the repository, such as terramate-io for https://github.com/terramate-io/terramate.
 - Cloud Authentication Method: If used, identify methods like IDP or OIDC.
 - Operating System: Captures the user’s OS.
 - Terramate Version: Tracks the version in use.
 - Session Signature: A randomly generated signature helps correlate metrics over time.
 - Terramate Cloud Organization: Collected only if the user is logged in.
+- Terramate Cloud User ID: Collected only if the user is logged in.
 
 ## Data Transmission
 

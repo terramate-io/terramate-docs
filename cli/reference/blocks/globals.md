@@ -5,7 +5,7 @@ description: Learn how to define Globals using the globals block.
 
 # The `globals` block
 
-Use the `globals` block to define [global variables](../variables/globals.md) and access them in the `global` namespace via `global.<variable-name>`. You can define globals at any level of your project hierarchy and set different globals for various configurations (a set of Terramate files specific to a directory). 
+Use the `globals` block to define [global variables](../variables/globals.md) and access them in the `global` namespace via `global.<variable-name>`. You can define globals at any level of your project hierarchy and set different globals for various configurations (a set of Terramate files specific to a directory).
 Follow these rules when defining `globals`:
 
 - Redefining a `globals` identifier in the same directory causes a conflict/error.

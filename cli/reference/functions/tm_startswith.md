@@ -24,4 +24,3 @@ false
 ## Related Functions
 
 * The `tm_endswith` function checks if a given string ends with a specified suffix. It accepts two arguments: the string to evaluate and the suffix string. The function returns true if the string ends with the exact suffix provided.
-

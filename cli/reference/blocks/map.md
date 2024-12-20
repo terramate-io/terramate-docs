@@ -6,7 +6,7 @@ description: Learn how to define complex maps and objects inside globals and let
 # The `map` block
 
 Use the `map` block to convert a list into a map (key-value pair) or a nested map within a `globals` or `lets` block.
-You can use the `map` block to store configuration data in variables and pass them between different parts of the infrastructure code. 
+You can use the `map` block to store configuration data in variables and pass them between different parts of the infrastructure code.
 If you have multiple objects in a list with one or more identical keys, you can merge values corresponding to the identical keys while iterating over them.
 For each object in the list, you can access the previous or the current value of any of its keys.
 In the `for-each` iteration, the iterator (default name `element`) is an object with the following properties:
@@ -93,7 +93,7 @@ globals {
 }
 ```
 
-It will result in the below object: 
+It will result in the below object:
 
 ```hcl
 obj = {

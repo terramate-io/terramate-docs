@@ -352,7 +352,7 @@ Before using this feature, enable targets for your project by setting the config
 - `--from-target <target-identifier>`
 
   Attempt to migrate stacks from `--from-target <old-target>` to `--target <new-target>`.
-  
+
   The rules for this migration are applied per stack as follows:
 	- Skip the migration if the stack already exists in `new-target`.
 	- Skip the migration if the stack doesn't exist in `old-target`.

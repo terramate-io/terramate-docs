@@ -24,4 +24,3 @@ false
 ## Related Functions
 
 * The [tm_startswith](./tm_startswith.md) function checks if a given string starts with a specified prefix. It accepts two arguments: the string to evaluate and the prefix string. The function returns true if the string begins with the exact prefix provided.
-

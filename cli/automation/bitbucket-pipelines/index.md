@@ -115,7 +115,7 @@ echo >>pr-comment.txt '```'
 
 PR_COMMENTS=$(curl -s --request GET --url "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/pullrequests/${BITBUCKET_PR_ID}/comments?q=deleted=false&pagelen=100" --user "${BB_USER}:${BB_APP_KEY}" |jq '.values[] | select(.content.raw |startswith("## Preview of changes in")) | .id')
 
-for COMMENT_ID in $PR_COMMENTS; do 
+for COMMENT_ID in $PR_COMMENTS; do
   curl -s --request DELETE \
   "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/pullrequests/${BITBUCKET_PR_ID}/comments/${COMMENT_ID}" \
   --user "${BB_USER}:${BB_APP_KEY}"

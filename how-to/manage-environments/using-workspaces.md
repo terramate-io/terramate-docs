@@ -1,7 +1,6 @@
 ---
 title: Using Terraform CLI Workspaces | How-to Guide
-description: Learn how to manage environments using Terraform CLI Workspaces with Terramate.
-
+description: Learn how to manage environments using Terraform CLI and OpenTofu Workspaces with Terramate.
 ---
 
 # Using Workspaces
@@ -31,7 +30,7 @@ terraform workspace list
 
 Sync the default workspace as the default target to Terramate Cloud:
 
-terramate run \               
+terramate run \
   --sync-drift-status \
   --terraform-plan-file deploy.tfplan \
   --target default \
@@ -43,13 +42,13 @@ terramate run \
 
  ```bash
  terraform workspace new prod
- ``` 
+ ```
 
 5. Sync the Workspace as the `prd` target:
 
-    - It doesn't recognize the null resource created earlier in the default workspace as the state files are isolated.
+  - It doesn't recognize the null resource created earlier in the default workspace as the state files are isolated.
 
-    - target name (`prd`) can be different from workspace name (`prod`).
+  - target name (`prd`) can be different from workspace name (`prod`).
 
 ```bash
 terramate run \
@@ -72,7 +71,6 @@ terramate run \
 
 7. Verify Successful Deployment:
 
-    - A successful deployment is shown in the Terramate Cloud dashboard.
+  - A successful deployment is shown in the Terramate Cloud dashboard.
 
-    - Note that the target is `prd` for the `bob` stack in the stacks pane.
-
+  - Note that the target is `prd` for the `bob` stack in the stacks pane.

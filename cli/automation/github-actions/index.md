@@ -39,7 +39,7 @@ when automating GitHub in GitHub Actions. The app provides well-formatted previe
 that are easy to understand. You can install the app via the integrations section in your Terramate Cloud account,
 for details please see the [GitHub integration](../../../cloud/integrations/github/index.md) documentation.
 
-![GitHub App Pull Request Previews](../../assets/automation/pull-request-preview.png "GitHub App Pull Request Previews")
+![GitHub App Pull Request Previews](../../assets/automation/pull-request-preview.png)
 
 ### Configure GitHub Trust in your Terramate Cloud Organization
 

@@ -158,7 +158,7 @@ export default defineConfig({
             { text: 'About Terramate', link: '/' },
             { text: 'How it works', link: '/how-it-works' },
             { text: 'Why Terramate', link: '/why-terramate' },
-            { text: 'Product Roadmap', link: 'https://terramate.io/roadmap' },
+            { text: 'Product Roadmap', link: 'https://roadmap.terramate.io/' },
             { text: 'Discord Community', link: 'https://terramate.io/discord' },
           ],
         },
@@ -167,8 +167,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Install Terramate CLI', link: '/cli/installation' },
-            { text: 'Quickstart', link: '/cli/getting-started/' },
-            { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
             { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
             { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
             { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },

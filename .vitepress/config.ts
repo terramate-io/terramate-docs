@@ -499,6 +499,7 @@ export default defineConfig({
                 { text: 'VCS OpenID Setup', link: '/cloud/organization/settings#setup-vcs-open-id-connect-oidc' },
                 { text: 'Slack Webhook', link: '/cloud/organization/settings#slack-webhook-deprecated' },
                 { text: 'User Management', link: '/cloud/organization/user-management' },
+                { text: 'Api Keys', link: '/cloud/organization/api-keys.md' },
               ],
             },
           ],

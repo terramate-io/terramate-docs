@@ -14,6 +14,10 @@ When you create an API key, Terramate Cloud will only display the key only once 
 Creating a new key is required if lost.
 :::
 
+::: info
+To create and manage API keys for an organization, you have to be an `admin` of that organization.
+:::
+
 To create an API key:
 1. Navigate to the **API Keys** section in the sidebar of the **Settings** page of your Terramate Cloud dashboard.
 2. Click on the **Create API Key** button.
@@ -23,7 +27,6 @@ To create an API key:
 3. Provide a name or label for the key to identify its purpose.
 
 ![Api Key Name](../assets/api-key/api-key-name.png)
-
 
 4. Confirm the action. The API key will be generated and displayed.
 
@@ -35,7 +38,7 @@ To create an API key:
 
 ![Manage Api Keys](../assets/api-key/api-keys-manage.png)
 
-Only organization admins have the ability to manage API keys. This includes actions such as:
-- Viewing a list of active API keys.
-- Deleting API keys no longer in use( click on the delete icon adjacent to an api key ).
-- Generating new keys when needed( click on **Create Api Key** ).
+Managing API keys includes actions such as:
+- Viewing a list of active API keys
+- Deleting API keys no longer in use (click on the delete icon adjacent to an api key)
+- Generating new keys when needed (click on **Create Api Key**)

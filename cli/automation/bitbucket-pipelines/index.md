@@ -7,6 +7,11 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 Bitbucket Pipelines add continuous integration to Bitbucket repositories to automate your software builds, tests, and deployments. Automating Terraform with CI/CD enforces configuration best practices, promotes collaboration, and automates the Terraform workflow.
 
 Terramate integrates seamlessly with Bitbucket Pipelines to automate and orchestrate IaC tools like Terraform and OpenTofu.
+This page demonstrates how to use BitBucket Pipelines with Terramate CLI and Terramate Cloud.
+
+::: info
+To use Terramate CLI in BitBucket version, the minimum required installed version is Terramate CLI `v0.11.5`.
+:::
 
 ## Terramate Blueprints
 
@@ -16,7 +21,7 @@ To jump directly to the Blueprints, follow the links below:
 
 - [Pull Request Preview Workflow Blueprints](./preview-workflow.md)
 - [Deployment Workflow Blueprints](./deployment-workflow.md)
-<!-- - [Drift Check Workflow Blueprints](./drift-check-workflow.md) -->
+- [Drift Check Workflow Blueprints](./drift-check-workflow.md)
 
 The pipelines in these examples rely on a few Shell scripts to run different parts of the workflow. All these scripts are created inside a folder called `bitbucket-scripts`. The following sections describe how each of these scripts work.
 
@@ -42,8 +47,44 @@ asdf install
 And `.tool-versions`
 ```
 terraform 1.9.3
-terramate 0.9.3
+terramate 0.11.5
 ```
+
+## Authenticating to Terramate Cloud
+
+To allow Terramate CLI to push data to your Terramate Cloud account, you must create a repository access token for your
+BitBucket repository as well as an API key for your Terramate Cloud organization.
+
+### BitBucket Repository Access Token
+
+A repository access token is required for Terramate CLI to read metadata such as information about Pull Requests from
+your repository.
+
+Create a repository access token in the settings page of your repository (e.g. `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/access-tokens`). Required scopes are `Repositories: read` and `Pullrequests: read`.
+
+![BitBucket Create Repository Access Token](./../../assets/automation/bitbucket/bitbucket-create-repo-access-token.png "BitBucket Create Repository Access Token")
+
+After creating the access token, go to **Repository variables** in the repo settings
+(e.g. `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/pipelines/repository-variables`)
+and create a variable with name `BITBUCKET_TOKEN` and value of the generated access token. Make sure to check the `Secured`
+checkbox to create the variable as a secret.
+
+![BitBucket Create Repository Variable](./../../assets/automation/bitbucket/bitbucket-create-repository-variable.png "BitBucket Create Repository Variable")
+
+### Terramate Cloud API Key
+
+A [Terramate Cloud API key](../../../cloud/organization/api-keys.md) is required to allow Terramate CLI to push data to
+your Terramate Cloud organization from inside BitBucket Pipelines.
+
+First, go to the settings page of your Terramate Cloud organization and create a new API key.
+
+![Terramate Cloud API Key for BitBucket Pipelines](./../../assets/automation/bitbucket/bitbucket-pipelines-api-key-creation.png "Terramate Cloud API Key for BitBucket Pipelines")
+
+Next, go to **Repository variables** in the repo settings (e.g. `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/pipelines/repository-variables`)
+and create a variable with name `TMC_TOKEN` and value of the generated access token. Make sure to check the `Secured`
+checkbox to create the variable as a secret.
+
+![Terramate Cloud API Key for BitBucket Pipelines](./../../assets/automation/bitbucket/bitbucket-terramate-cloud-api-key-repository-variable.png "Terramate Cloud API Key for BitBucket Pipelines")
 
 ## Authenticating to Google Cloud
 
@@ -71,7 +112,12 @@ Create the following file at `bitbucket-scripts/terraform-plan.sh`
 #!/bin/bash
 
 terramate run --changed -- terraform init -lock-timeout=5m
-terramate run --changed -- terraform plan -lock-timeout=5m -out out.tfplan
+terramate run \
+  --changed \
+  --sync-preview \
+  --terraform-plan-file=out.tfplan \
+  -- \
+  terraform plan -lock-timeout=5m -detailed-exitcode -out out.tfplan
 ```
 
 ## Terraform apply
@@ -83,8 +129,40 @@ Create the following file at `bitbucket-scripts/terraform-apply.sh`
 
 terramate run --changed -- terraform init -lock-timeout=5m
 terramate run --changed -- terraform plan -lock-timeout=5m -out out.tfplan
-terramate run --changed -- terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+# Deploy changed stacks
+terramate run \
+  --changed \
+  --sync-deployment \
+  --terraform-plan-file=out.tfplan \
+  -- \
+  terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+# Check deployed stacks for drift
+terramate run \
+  --changed \
+  --sync-drift-status \
+  --terraform-plan-file=out.tfplan \
+  -- \
+  terraform plan -lock-timeout=5m -detailed-exitcode -out out.tfplan
 ```
+
+## Scheduled Drift Detection
+
+Create the following file at `bitbucket-scripts/drift.sh`
+
+```bash
+#!/bin/bash
+
+terramate run -- terraform init -lock-timeout=5m
+terramate run \
+  --sync-drift-status \
+  --terraform-plan-file=out.tfplan \
+  -- \
+  terraform plan -lock-timeout=5m -detailed-exitcode -out out.tfplan
+```
+
+::: info
+To make drift detection run on a schedule, please follow the instructions in the Bitbucket documentation: https://support.atlassian.com/bitbucket-cloud/docs/pipeline-triggers/
+:::
 
 ## Pull Request comment
 
@@ -150,7 +228,7 @@ clone:
 
 ## OIDC Setup
 
-To enable the workflow to authenticate to the cloud provider (in this example, Google Cloud) using OIDC, configure the `oidc` attribute in each step of the workflow.
+To enable the workflow to authenticate to the cloud provider such as Google Cloud or AWS using OIDC, configure the `oidc` attribute in each step of the workflow.
 
 ```yaml
 oidc: true
@@ -165,23 +243,7 @@ For more info about OIDC configuration between Bitbucket and Google Cloud, see t
 
 Create the `bitbucket-pipelines.yml` file at the root of your project with the following content:
 
-```yaml
-include:
-  - local: 'gitlab-ci/*.yml'
-
-default:
-  image: google/cloud-sdk:alpine
-
-stages:
-  - plan
-  - apply
-```
-
-The following is a file created under `gitlab-ci/.common.yml` containing all the components described above.
-
-Make sure to replace the values between `<>` with the correct values from your account, such as `<WIP_NAME>` and `<SERVICE_ACCOUNT_EMAIL>`.
-
-```yaml
+```yml
 image: google/cloud-sdk:latest
 
 clone:
@@ -198,10 +260,11 @@ pipelines:
             - CHANGED_STACKS=$(terramate -C stacks/$STACKS_PATH list --changed)
             - if [[ -z "$CHANGED_STACKS" ]]; then echo "No changed stacks. Exiting."; exit 0; fi
             - echo -e "List of changed stacks:\n$CHANGED_STACKS"
-            - export WIP=projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<WIP_NAME>/providers/<WIPP_NAME>
-            - export SA=<SERVICE_ACCOUNT_EMAIL>
+            - export WIP=<WORKLOAD_IDENTITY_PROVIDER>
+            - export SA=<SERVICE_ACCOUNT>
             - . ./bitbucket-scripts/gcp-oidc-auth.sh $WIP $SA
             - . ./bitbucket-scripts/terraform-plan.sh
+            - export BB_USER=<BITBUCKET_USER>
             - . ./bitbucket-scripts/pr-comment.sh
 
   branches:
@@ -214,8 +277,20 @@ pipelines:
             - CHANGED_STACKS=$(terramate -C stacks/$STACKS_PATH list --changed)
             - if [[ -z "$CHANGED_STACKS" ]]; then echo "No changed stacks. Exiting."; exit 0; fi
             - echo -e "List of changed stacks:\n$CHANGED_STACKS"
-            - export WIP=projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<WIP_NAME>/providers/<WIPP_NAME>
-            - export SA=<SERVICE_ACCOUNT_EMAIL>
+            - export WIP=<WORKLOAD_IDENTITY_PROVIDER>
+            - export SA=<SERVICE_ACCOUNT>
             - . ./bitbucket-scripts/gcp-oidc-auth.sh $WIP $SA
-            - . ./bitbucket-scripts/terraform-apply.sh
+            - . ./bitbucket-scripts/terraform-apply.sh $STACKS_PATH
+
+  custom:
+    drift:
+      - step:
+          name: Drift Detection
+          oidc: true
+          script:
+            - . ./bitbucket-scripts/install.sh
+            - export WIP=<WORKLOAD_IDENTITY_PROVIDER>
+            - export SA=<SERVICE_ACCOUNT>
+            - . ./bitbucket-scripts/gcp-oidc-auth.sh $WIP $SA
+            - . ./bitbucket-scripts/drift.sh
 ```

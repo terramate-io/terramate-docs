@@ -9,7 +9,7 @@ The following workflow is a blueprint and may require adjustments to fit your ne
 
 ## Preview Blueprint
 
-This is the snippet from `bitbucket-pipelines.yml` that runs on pull requests and executes the terraform plan on changed stacks, then posts the resulting plan as a pull request comment.
+This is the snippet from [`bitbucket-pipelines.yml`](./index.md#main-pipelines-file) that runs on pull requests and executes the terraform plan on changed stacks, then posts the resulting plan as a pull request comment.
 
 ```yaml
 pipelines:

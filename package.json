@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@9.15.2",
   "scripts": {
     "start": "pnpm docs:dev",
     "docs:dev": "vitepress dev",
@@ -13,10 +13,10 @@
     "medium-zoom": "^1.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.0",
+    "@antfu/eslint-config": "^3.12.1",
     "eslint": "^9.17.0",
     "glob": "^11.0.0",
-    "pnpm": "9.12.3",
+    "pnpm": "9.15.2",
     "vitepress": "1.5.0"
   },
   "eslintConfig": {

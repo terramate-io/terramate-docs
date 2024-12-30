@@ -276,10 +276,10 @@ export default defineConfig({
                       text: 'Deployment Workflow',
                       link: '/cli/automation/bitbucket-pipelines/deployment-workflow',
                     },
-                    // {
-                    //   text: 'Drift Check Workflow',
-                    //   link: '/cli/automation/bitbucket-pipelines/drift-check-workflow',
-                    // },
+                    {
+                      text: 'Drift Check Workflow',
+                      link: '/cli/automation/bitbucket-pipelines/drift-check-workflow',
+                    },
                   ],
                 },
                 {
@@ -467,15 +467,15 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Slack', link: '/cloud/integrations/slack' },
-                { 
-                  text: 'GitHub', 
+                {
+                  text: 'GitHub',
                   link: '/cloud/integrations/github',
-                  collapsed: true, 
+                  collapsed: true,
                   items: [
-                    {text: 'Conflict Detection', link: '/cloud/integrations/github/conflict-detection'}
-                  ] 
+                    { text: 'Conflict Detection', link: '/cloud/integrations/github/conflict-detection' },
+                  ],
                 },
-                
+
                 {
                   text: 'GitLab 🚧',
                   // link: '/cloud/integrations/gitlab/',
@@ -499,7 +499,7 @@ export default defineConfig({
                 { text: 'VCS OpenID Setup', link: '/cloud/organization/settings#setup-vcs-open-id-connect-oidc' },
                 { text: 'Slack Webhook', link: '/cloud/organization/settings#slack-webhook-deprecated' },
                 { text: 'User Management', link: '/cloud/organization/user-management' },
-                { text: 'Api Keys', link: '/cloud/organization/api-keys.md' },
+                { text: 'API Keys', link: '/cloud/organization/api-keys' },
               ],
             },
           ],
@@ -1284,7 +1284,7 @@ export default defineConfig({
             {
               text: 'Telemetry',
               link: '/cli/reference/telemetry/',
-            }
+            },
           ],
         },
         {

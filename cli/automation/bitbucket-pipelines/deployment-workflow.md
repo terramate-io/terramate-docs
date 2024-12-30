@@ -9,7 +9,7 @@ The following workflow is a blueprint and may require adjustments to fit your ne
 
 ## Deployment Blueprint
 
-This is the snippet from `bitbucket-pipelines.yml` that runs on "push to main" events (usually when a PR is merged) and executes the terraform apply on changed stacks.
+This is the snippet from [`bitbucket-pipelines.yml`](./index.md#main-pipelines-file) that runs on "push to main" events (usually when a PR is merged) and executes the terraform apply on changed stacks.
 
 ```yaml
 branches:

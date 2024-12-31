@@ -4,10 +4,9 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 ---
 # Automating Terramate in BitBucket Pipelines
 
-Bitbucket Pipelines add continuous integration to Bitbucket repositories to automate your software builds, tests, and deployments. Automating Terraform with CI/CD enforces configuration best practices, promotes collaboration, and automates the Terraform workflow.
+Your Bitbucket repositories can use CI/CD using the Bitbucket Pipelines to automate software builds, tests, and deployments. You can do GitOps in Bitbucket, automating the IaC workflow with CI/CD.
 
 Terramate integrates seamlessly with Bitbucket Pipelines to automate and orchestrate IaC tools like Terraform and OpenTofu.
-This page demonstrates how to use BitBucket Pipelines with Terramate CLI and Terramate Cloud.
 
 ::: info
 To use Terramate CLI in BitBucket version, the minimum required installed version is Terramate CLI `v0.11.5`.
@@ -23,13 +22,13 @@ To jump directly to the Blueprints, follow the links below:
 - [Deployment Workflow Blueprints](./deployment-workflow.md)
 - [Drift Check Workflow Blueprints](./drift-check-workflow.md)
 
-The pipelines in these examples rely on a few Shell scripts to run different parts of the workflow. All these scripts are created inside a folder called `bitbucket-scripts`. The following sections describe how each of these scripts work.
+The pipelines in these examples rely on a few Shell scripts to run different parts of the workflow. All these scripts are created inside a folder called `bitbucket-scripts`. The following sections describe how each of these scripts works.
 
 ## Installing the necessary packages
 
 The workflows in these examples use the `google/cloud-sdk` docker image based on a minimal image and include the `gcloud` packages.
 
-In addition to installing Terraform and Terramate, you need other packages for the workflows to work. The installation is done using `asdf` which requires another file called `.tool-versions`.
+With Terraform and Terramate already installed, you still need additional packages for the workflows to function. Use `asdf` for installation, which depends on the `.tool-versions` file.
 
 Create the following at `bitbucket-scripts/install.sh`
 ```bash
@@ -52,37 +51,34 @@ terramate 0.11.5
 
 ## Authenticating to Terramate Cloud
 
-To allow Terramate CLI to push data to your Terramate Cloud account, you must create a repository access token for your
-BitBucket repository as well as an API key for your Terramate Cloud organization.
+To enable the Terramate CLI to push data to your Terramate Cloud account, create a repository access token for your Bitbucket repository and an API key for your Terramate Cloud organization.
 
 ### BitBucket Repository Access Token
 
-A repository access token is required for Terramate CLI to read metadata such as information about Pull Requests from
+A repository access token is required for Terramate CLI to read metadata, such as information about Pull Requests from
 your repository.
 
-Create a repository access token in the settings page of your repository (e.g. `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/access-tokens`). Required scopes are `Repositories: read` and `Pullrequests: read`.
+1. In your repository settings (e.g., `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/access-tokens`), create a repository access token with the required scopes: `Repositories: read` and `Pullrequests: read`.
 
 ![BitBucket Create Repository Access Token](./../../assets/automation/bitbucket/bitbucket-create-repo-access-token.png "BitBucket Create Repository Access Token")
 
-After creating the access token, go to **Repository variables** in the repo settings
-(e.g. `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/pipelines/repository-variables`)
-and create a variable with name `BITBUCKET_TOKEN` and value of the generated access token. Make sure to check the `Secured`
-checkbox to create the variable as a secret.
+2. After generating the access token, navigate to **Repository variables** in the repository settings (e.g., `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/pipelines/repository-variables`).
+
+3. Create a variable named `BITBUCKET_TOKEN` with the generated access token as its value. Check the `Secured` checkbox to store it as a secret.
 
 ![BitBucket Create Repository Variable](./../../assets/automation/bitbucket/bitbucket-create-repository-variable.png "BitBucket Create Repository Variable")
 
 ### Terramate Cloud API Key
 
-A [Terramate Cloud API key](../../../cloud/organization/api-keys.md) is required to allow Terramate CLI to push data to
-your Terramate Cloud organization from inside BitBucket Pipelines.
+To enable the Terramate CLI to push data to your Terramate Cloud organization from Bitbucket Pipelines, you need a [Terramate Cloud API key](../../../cloud/organization/api-keys.md).
 
-First, go to the settings page of your Terramate Cloud organization and create a new API key.
+1. Go to the settings page of your Terramate Cloud organization and create a new API key.
 
 ![Terramate Cloud API Key for BitBucket Pipelines](./../../assets/automation/bitbucket/bitbucket-pipelines-api-key-creation.png "Terramate Cloud API Key for BitBucket Pipelines")
 
-Next, go to **Repository variables** in the repo settings (e.g. `https://bitbucket.org/WORKSPACE/REPO_NAME/admin/pipelines/repository-variables`)
-and create a variable with name `TMC_TOKEN` and value of the generated access token. Make sure to check the `Secured`
-checkbox to create the variable as a secret.
+2. Navigate to Repository variables in the repository settings (e.g., https://bitbucket.org/WORKSPACE/REPO_NAME/admin/pipelines/repository-variables).
+
+3. Create a variable named TMC_TOKEN with the API key as its value. Check the Secured checkbox to store it as a secret.
 
 ![Terramate Cloud API Key for BitBucket Pipelines](./../../assets/automation/bitbucket/bitbucket-terramate-cloud-api-key-repository-variable.png "Terramate Cloud API Key for BitBucket Pipelines")
 

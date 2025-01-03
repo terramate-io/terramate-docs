@@ -4,9 +4,7 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 ---
 # Automating Terramate in BitBucket Pipelines
 
-Your Bitbucket repositories can use CI/CD using the Bitbucket Pipelines to automate software builds, tests, and deployments. You can do GitOps in Bitbucket, automating the IaC workflow with CI/CD.
-
-Terramate integrates seamlessly with Bitbucket Pipelines to automate and orchestrate IaC tools like Terraform and OpenTofu.
+Terramate integrates seamlessly with Bitbucket Pipelines to automate and orchestrate IaC tools like Terraform and OpenTofu using GitOps workflows.
 
 ::: info
 To use Terramate CLI in BitBucket version, the minimum required installed version is Terramate CLI `v0.11.5`.

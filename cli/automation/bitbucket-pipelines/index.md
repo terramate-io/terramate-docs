@@ -7,7 +7,7 @@ description: Learn how to use Terramate to configure custom GitOps workflows to 
 Terramate integrates seamlessly with Bitbucket Pipelines to automate and orchestrate IaC tools like Terraform and OpenTofu using GitOps workflows.
 
 ::: info
-To use Terramate CLI in BitBucket version, the minimum required installed version is Terramate CLI `v0.11.5`.
+To use Terramate CLI in Bitbucket Pipelines, the minimum required version is Terramate CLI `v0.11.5`.
 :::
 
 ## Terramate Blueprints
@@ -20,7 +20,7 @@ To jump directly to the Blueprints, follow the links below:
 - [Deployment Workflow Blueprints](./deployment-workflow.md)
 - [Drift Check Workflow Blueprints](./drift-check-workflow.md)
 
-The pipelines in these examples rely on a few Shell scripts to run different parts of the workflow. All these scripts are created inside a folder called `bitbucket-scripts`. The following sections describe how each of these scripts works.
+The pipelines in these examples rely on a few shell scripts to run different parts of the workflow. All these scripts are created inside a folder called `bitbucket-scripts`. The following sections describe how each of these scripts works.
 
 ## Installing the necessary packages
 

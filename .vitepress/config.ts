@@ -167,6 +167,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Install Terramate CLI', link: '/cli/installation' },
+            { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
             { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
             { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
             { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },

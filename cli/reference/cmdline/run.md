@@ -13,7 +13,7 @@ the defined [order of execution](../../orchestration/index.md). Commands can be 
 When running commands you can filter for a specific subset of stacks such as:
 
 - Stacks that have changed in the current branch or since the last merge (git-based filtering).
-- Stacks with or without specific tags are set in configuration.
+- Stacks with or without specific tags set in the stack configuration.
 - Stacks in a subtree of the repository.
 - Stacks with a specific health status as known by Terramate Cloud, e.g. `drifted` or `failed` stacks.
 
@@ -256,14 +256,24 @@ Disable specific change detection features (multiple options supported): 'git-un
 
   Filter stacks by tags not being set.
 
-### Enable Output Sharing
+### [Outputs Sharing](../../orchestration/outputs-sharing.md)
 
 - `--enable-sharing`
   
   Running `terramate run --enable-sharing` collects output values from stacks with defined outputs, passing them to the command specified in `sharing_backend.command`. If the backend type is `Terraform`, it configures variables in stacks with `input` blocks by exporting them as `TF_var_` environment variables. It enables the smooth sharing of values across stacks.
   More info about [Outputs Sharing](https://terramate.io/docs/cli/orchestration/outputs-sharing)
 
-### Enable Mocking for Output Sharing
+- `--include-output-dependencies`
+
+  If the selected stacks have dependency to outputs from other stacks not included in the current run, then this flag will include the dependencies in the run.
+  
+  Note: this is useful because [Outputs Sharing](../../orchestration/outputs-sharing.md) feature requires the dependencies to be initialized (`terraform init`) before the run.
+
+- `--only-output-dependencies`
+
+  If the selected stacks have dependency to outputs from other stacks not included in the current run, then this flag will only only execute the dependencies.
+
+  Note: this is useful because [Outputs Sharing](../../orchestration/outputs-sharing.md) feature requires the dependencies to be initialized (`terraform init`) before the run.
 
 - `--mock-on-fail`
 

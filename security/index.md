@@ -91,6 +91,13 @@ Terrmate CLI will sync the following data:
 | Merge Request API | ID / IID, Project, Title, Body, Labels, Author, Target branch, Source branch, Draft, HEAD Commit, URL |
 | CI/CD Info        | Pipeline Information (ID, Source, URL, etc), Job Information (ID, Name, Started At, etc)              |
 
+- **Bitbucket metadata** (user has granular control of the token permissions)
+
+| Scope             | Access / Data Processed                                                                               |
+|-------------------|-------------------------------------------------------------------------------------------------------|
+| Pull Request API | ID, Title, State, Author, Source/Destination branch, Reviewers, Participants |
+| Pipelines Info   | Pipeline Information (UUID, Build Number, Step UUID, etc), Workspace and Project (Name, UUID, Slug name, etc) |
+
 ### Plan Sanitization
 
 Whenever syncing plans to Terramate Cloud, Terramate CLI first sanitizes plans locally by using an

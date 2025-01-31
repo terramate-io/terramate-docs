@@ -20,7 +20,7 @@ terramate create --ensure-stack-ids
 
 The list command lists all Terramate stacks in the current directory recursively.
 These can be additionally filtered based on Terramate Cloud status with the `--status=<status>`
-filter (valid statuses are documented on the [trigger page](../reference/cmdline/experimental/experimental-trigger.md)).
+filter (valid statuses are documented on the [trigger page](../reference/cmdline/trigger.md)).
 
 ### Examples
 
@@ -58,11 +58,11 @@ terramate list -C subdir/ --tags terraform,kubernetes --changed
 
 ## Manually mark stacks as changed
 
-The [`trigger`](../reference/cmdline/experimental/experimental-trigger.md) command forcibly marks a stack as "changed" even if it doesn't contain any code
+The [`trigger`](../reference/cmdline/trigger.md) command forcibly marks a stack as "changed" even if it doesn't contain any code
 changes according to the [change detection](../change-detection/index.md).
 
 ```sh
-terramate experimental trigger <stack>
+terramate trigger <stack>
 ```
 
-For details, please see the [`trigger`](../reference/cmdline/experimental/experimental-trigger.md) documentation.
+For details, please see the [`trigger`](../reference/cmdline/trigger.md) documentation.

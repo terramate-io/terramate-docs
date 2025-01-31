@@ -1,16 +1,12 @@
 ---
-title: terramate experimental trigger - Command
-description: Mark a stacks as changed so they will be triggered in Change Detection by using the `terramate experimental trigger` command.
+title: terramate trigger - Command
+description: Mark a stacks as changed so they will be triggered in Change Detection by using the `terramate trigger` command.
 ---
 
 # Trigger
 
-::: warning
-This is an experimental command and is likely subject to change in the future.
-:::
-
-The `terramate experimental trigger` command forcibly marks a stack as "changed" even if it doesn't contain any code changes according to the
-[change detection](../../../change-detection/index.md). It does this by creating a file (by default in `/.tmtriggers`)
+The `terramate trigger` command forcibly marks a stack as "changed" even if it doesn't contain any code changes according to the
+[change detection](../../change-detection/index.md). It does this by creating a file (by default in `/.tmtriggers`)
 which should then be committed. `terramate run` will then execute commands against any stacks that have been triggered
 in the last commit (as well as any other changed stacks).
 
@@ -27,7 +23,7 @@ The trigger mechanism has various use cases. It may be that a previous CI/CD run
 ## Usage
 
 ```sh
-terramate experimental trigger [options] <stack-path>
+terramate trigger [options] <stack-path>
 ```
 
 ## Examples
@@ -35,19 +31,19 @@ terramate experimental trigger [options] <stack-path>
 ### Trigger a stack as changed
 
 ```bash
-terramate experimental trigger /path/to/stack
+terramate trigger /path/to/stack
 ```
 
 ### Trigger all drifted stacks as changed
 
 ```bash
-terramate experimental trigger --status=drifted
+terramate trigger --status=drifted
 ```
 
 ### Recursively trigger stacks to ignore them.
 
 ```bash
-terramate experimental trigger some/path --recursive --ignore-change
+terramate trigger some/path --recursive --ignore-change
 ```
 
 ## Ignore Trigger
@@ -56,7 +52,7 @@ When you make cosmetic changes to one or more stacks that don't affect the manag
 This flag configures the change detection to ignore these stacks in the next Pull Request and deployment.
 
 ```bash
-terramate experimental trigger /path/to/stack --ignore-change
+terramate trigger /path/to/stack --ignore-change
 ```
 
 ## Options

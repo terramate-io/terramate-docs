@@ -430,7 +430,7 @@ can be used:
 terramate run --status=drifted -- terraform apply
 ```
 
-Valid statuses are documented on the [trigger page](./experimental/experimental-trigger.md).
+Valid statuses are documented on the [trigger page](./trigger.md).
 
 ### Sending deployment data to Terramate Cloud
 

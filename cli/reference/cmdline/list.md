@@ -5,7 +5,7 @@ description: List all stacks or apply filters to selectively list stacks in the 
 
 # List
 
-The `terramate list` command lists all Terramate stacks in the current directory recursively. These can be additionally filtered based on Terramate Cloud status with the `--status=<status>` filter (valid statuses are documented on the [trigger page](./experimental/experimental-trigger.md))
+The `terramate list` command lists all Terramate stacks in the current directory recursively. These can be additionally filtered based on Terramate Cloud status with the `--status=<status>` filter (valid statuses are documented on the [trigger page](./trigger.md))
 
 ## Usage
 

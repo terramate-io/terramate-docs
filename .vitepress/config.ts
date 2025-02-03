@@ -1219,9 +1219,9 @@ export default defineConfig({
                     { text: 'create', link: '/cli/reference/cmdline/create' },
                     { text: 'list', link: '/cli/reference/cmdline/list' },
                     { text: 'run', link: '/cli/reference/cmdline/run' },
+                    { text: 'trigger', link: '/cli/reference/cmdline/trigger' },
                     { text: 'debug show runtime-env', link: '/cli/reference/cmdline/debug/show/debug-show-runtime-env' },
                     { text: 'experimental clone', link: '/cli/reference/cmdline/experimental/experimental-clone' },
-                    { text: 'experimental trigger', link: '/cli/reference/cmdline/experimental/experimental-trigger' },
                   ],
                 },
                 {

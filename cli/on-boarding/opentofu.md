@@ -59,5 +59,5 @@ terramate run --parallel 5 -- tofu plan -out plan.otplan
 ### Apply a OpenTofu Plan in Changed Stacks
 
 ```bash
-terramate run --changed -- tofu apply -out plan.otplan -auto-approve
+terramate run --changed -- tofu apply -auto-approve plan.otplan
 ```

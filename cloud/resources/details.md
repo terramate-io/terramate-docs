@@ -14,5 +14,6 @@ On the Resource Details page, you can view the following details about the selec
 - `Repository`: The repository that contains the stack associated with the selected resource.
 - `Target`: The environment or module where the resource is deployed.
 - `Policy Checks`: The policy validations executed against the resource.
+- `Current State of resource`: Displays the resource's attributes, combining those set by the infrastructure (e.g., a Google Cloud bucket's self_link) with those defined in your code (e.g., the bucket's name).
 
 ![Resource details](../assets/resource_details.png)

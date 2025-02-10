@@ -232,16 +232,16 @@ export default defineConfig({
                   collapsed: true,
                   items: [
                     {
+                      text: 'Preview Workflow',
+                      link: '/cli/automation/github-actions/preview-workflow',
+                    },
+                    {
                       text: 'Deployment Workflow',
                       link: '/cli/automation/github-actions/deployment-workflow',
                     },
                     {
                       text: 'Drift Check Workflow',
                       link: '/cli/automation/github-actions/drift-check-workflow',
-                    },
-                    {
-                      text: 'Preview Workflow',
-                      link: '/cli/automation/github-actions/preview-workflow',
                     },
                   ],
                 },

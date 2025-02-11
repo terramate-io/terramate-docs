@@ -14,6 +14,9 @@ On the Resource Details page, you can view key metadata that helps you track, ma
 - `Repository`: Displays the repository containing the resource, connecting it to its source code and history.
 - `Target`: Specifies the environment where the resource is deployed, clarifying its role.
 - `Policy Checks`: Lists the policy checks applied to the resource to ensure it meets your organization’s standards.
+- `Current drift`: Displays any differences between the deployed state and the desired configuration.
+- `Last Deployment`: Displays the most recent deployment details, including the user who initiated it and whether it was triggered manually.
+- `Outdated Tag`: Flags the resource if its metadata is not current, indicating that a new deployment or drift check may be needed.
 
 
 ![Resource details](../assets/resource_details.png)

@@ -15,10 +15,10 @@ The Resources page displays all known resources across multiple repositories. Ea
 
 - **Status**: Filter resources by their current state:
     - `Healthy`: The resource is deployed successfully, and its current state matches the expected configuration.
-    - `Drifted`: The resource’s actual state has deviated from its declared configuration due to changes or misconfigurations.
-    - `Pending`: The resource is awaiting evaluation, with its status still being determined through ongoing deployment or drift checks.
+    - `Drifted`: The resource is marked as drifted when its actual cloud state doesn't match the desired configuration. This discrepancy may result from manual changes, conflicting settings, provider issues, or similar events.
+    - `Pending`: The resource is deploying for the first time, so its configuration is still being finalized. Some fields remain unpopulated until after the deployment (they are only known after `apply`). A subsequent drift check will fill in these fields and confirm that the configuration matches the cloud state.
 - **Technology**: Filter resources based on the technology used, such as Terraform or OpenTofu.
-- **Type**: Filter resources by their specific type.
+- **Type**: Filter resources by category (e.g., compute instance, storage bucket, database) for quick identification.
 - **Repository**: Filter resources by the repository that contains the resource.
 - **Provider**: Filter resources by the cloud provider associated with them.
 - **Target**: Filter resources by the target environment or module where they are deployed.

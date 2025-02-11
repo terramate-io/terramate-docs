@@ -5,15 +5,15 @@ description: Learn about details of a resource in Terramate Cloud.
 
 # Resource Details
 
-On the Resource Details page, you can view the following details about the selected resource:
-- `Resource ID`: The unique identifier for the resource in Terramate Cloud.
-- `Terraform Address`: a string that uniquely identifies a specific resource instance within your Terraform configuration
-- `Created`: The date and time the resource was added to Terramate Cloud.
-- `Updated`: The date and time the resource was last updated.
-- `Stack`: The stack that includes this resource. Clicking this section directs you to its details on the Stacks Details page.
-- `Repository`: The repository that contains the stack associated with the selected resource.
-- `Target`: The environment or module where the resource is deployed.
-- `Policy Checks`: The policy validations executed against the resource.
-- `Current State of resource`: Displays the resource's attributes, combining those set by the infrastructure (e.g., a Google Cloud bucket's self_link) with those defined in your code (e.g., the bucket's name).
+On the Resource Details page, you can view key metadata that helps you track, manage, and troubleshoot your infrastructure. Each data point provides actionable insights:
+- `Resource ID`: A unique identifier consistently tracks the resource across Terramate Cloud.
+- `Terraform Address`: Links the resource to its Terraform configuration, making it easy to locate and manage in your code.
+- `Created Time`: The timestamp when the resource was added, useful for auditing its lifecycle.
+- `Updated Time`: The timestamp of the last status update helps you monitor recent changes.
+- `Stack`: Identifies the stack that includes this resource; clicking it navigates to the stack details page.
+- `Repository`: Displays the repository containing the resource, connecting it to its source code and history.
+- `Target`: Specifies the environment where the resource is deployed, clarifying its role.
+- `Policy Checks`: Lists the policy checks applied to the resource to ensure it meets your organization’s standards.
+
 
 ![Resource details](../assets/resource_details.png)

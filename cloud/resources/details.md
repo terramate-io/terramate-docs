@@ -19,4 +19,4 @@ On the Resource Details page, you can view key metadata that helps you track, ma
 - `Outdated Tag`: Flags the resource if its metadata is not current, indicating that a new deployment or drift check may be needed.
 
 
-![Resource details](../assets/resource_details.png)
+![Resource details](../assets/resource-details.png)

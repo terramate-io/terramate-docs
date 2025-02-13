@@ -24,14 +24,3 @@ organization's repositories in a central place.
 
 Each stack can be `healthy` or `unhealthy` (e.g. `failed` or `drifted`) depending on the result of [deployments](../deployments/index.md)
 or [drift runs](../drift/index.md).
-
-## Filter Options:
-
-- Status: Filter stacks by their current state:
-    - [Healthy](./status.md#healthy): The stack is deployed successfully, and does not have any detected drifts.
-    - [Failed](./status.md#failed): The stack has failed to deploy the planned changes.
-    - [Drifted](./status.md#drifted): The stack has differences between the desired configuration(code) and applied configuration(cloud).
-- Repository: Filter stacks by the repository that contains them.
-- Tag: Filter stacks by their [tags](../../cli/stacks/configuration.md#tags)
-- Target: Filter stacks by the target environment where they are deployed.
-- Checks: Filter stacks by the result of policy checks executed against them.

@@ -7,7 +7,7 @@ description: Learn about the different stack statuses such as healthy, unhealthy
 
 Each stack can be `healthy` or `unhealthy` (e.g. `failed` or `drifted`) depending on the result of deployments or drift runs.
 
-![Stacks List](../assets/stacks-list.png "Terramate Cloud Stacks LIst")
+![Stacks List](../assets/stacks-index.png "Terramate Cloud Stacks LIst")
 
 ## Healthy
 
@@ -39,3 +39,33 @@ the desired configuration (Code) and applied configuration (Cloud) on a `healthy
 If a drift is detected in a `failed` stack, the status will NOT be updated to `drifted` as the drift is expected.
 
 When no drift is detected for a `failed` stack, the stack status will be set to `healthy` again. This change is considered to be auto-healing as no user interaction in form of a new deployment is required.
+
+## Orchestrate Stacks by Status
+
+ You can run commands on stacks filtered by their cloud status using the `terramate run` command. A stack comprises multiple configuration files that work together as a unit, so this feature lets you manage the entire stack collectively. With a Terramate Cloud login, you can filter stacks by status—such as drifted, unhealthy, or failed—and then run commands across all matching stacks. For example, to apply changes to all stacks with a drifted status, use:
+`terramate run --status=drifted -- terraform apply`
+For more details, refer to the [terramate run](https://terramate.io/docs/cli/reference/cmdline/run#running-a-command-on-stacks-with-specific-cloud-status) command.
+
+### Usage 
+`terramate run --status=drifted|unhealhty|failed`
+
+### Example
+
+For applying all stacks with the drifted status, the command below can be used:
+
+`terramate run --status=drifted -- terraform apply`
+
+## Trigger Stacks by Status
+
+Use the `terramate trigger` command to force a stack to be marked as changed—even without code modifications. Once you commit the trigger file, `terramate run` executes commands on the affected stacks. For Terramate Cloud users, the `--status=<status>` flag lets you target stacks in a specific state.
+For more details, refer to the [terramate trigger](https://terramate.io/docs/cli/reference/cmdline/trigger#trigger) command.
+
+### Usage
+
+`terramate trigger --status <stack-path>`
+
+### Example
+
+Trigger all drifted stacks as changed:
+
+`terramate trigger --status=drifted`

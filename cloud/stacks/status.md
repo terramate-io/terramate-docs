@@ -44,7 +44,7 @@ When no drift is detected for a `failed` stack, the stack status will be set to 
 
  You can run commands on stacks filtered by their cloud status using the `terramate run` command. A stack comprises multiple configuration files that work together as a unit, so this feature lets you manage the entire stack collectively. With a Terramate Cloud login, you can filter stacks by status—such as drifted, unhealthy, or failed—and then run commands across all matching stacks. For example, to apply changes to all stacks with a drifted status, use:
 `terramate run --status=drifted -- terraform apply`
-For more details, refer to the [terramate run](https://terramate.io/docs/cli/reference/cmdline/run#running-a-command-on-stacks-with-specific-cloud-status) command.
+For more details, refer to the [terramate run](../../cli/reference/cmdline/run.md#running-a-command-on-stacks-with-specific-cloud-status) command.
 
 ### Usage 
 `terramate run --status=drifted|unhealhty|failed`
@@ -58,7 +58,7 @@ For applying all stacks with the drifted status, the command below can be used:
 ## Trigger Stacks by Status
 
 Use the `terramate trigger` command to force a stack to be marked as changed—even without code modifications. Once you commit the trigger file, `terramate run` executes commands on the affected stacks. For Terramate Cloud users, the `--status=<status>` flag lets you target stacks in a specific state.
-For more details, refer to the [terramate trigger](https://terramate.io/docs/cli/reference/cmdline/trigger#trigger) command.
+For more details, refer to the [terramate trigger](../../cli/reference/cmdline/trigger.md#trigger) command.
 
 ### Usage
 

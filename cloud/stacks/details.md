@@ -21,12 +21,14 @@ On the details page, the following information is available
 - The **created date and time** when the stack was added to Terramate Cloud
 - The **updated date and time** when the stack status was last updated
 - The **tags** configured for the stack via `stack.tags`
+- The **Policy Checks** applied to the stack to ensure it meets your organization’s standards.
+- The **Alerts** associated with the stack
 
 ## Stack Alerts
 
-For `failed` stacks, the deployment error logs provide details about the failed command and highlight errors. You can expand these logs to see the full context and all lines from the deployment command. Any additional drift detected will be displayed as a `terraform plan`.
+For [`failed`](../alerts/index.md#failed-deployment) stacks, the deployment error logs provide details about the failed command and highlight errors. You can expand these logs to see the full context and all lines from the deployment command. Any additional drift detected will be displayed as a `terraform plan`.
 
-For `drifted` stacks, the details of the drift are displayed as a `terraform plan`.
+For [`drifted`](../alerts/index.md#detected-drift) stacks, the details of the drift are displayed as a `terraform plan`.
 
 ## Deployments
 

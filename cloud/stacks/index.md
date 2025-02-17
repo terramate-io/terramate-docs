@@ -11,10 +11,10 @@ The stack inventory helps you to keep an overview of all stacks managed with Ter
 To learn more about stacks in Terramate, please read [an introduction to Stacks](../../cli/stacks/index.md).
 :::
 
-![Stacks Overview](../assets/stacks.png "Terramate Cloud Stacks Overview")
+![Stacks Overview](../assets/stacks-index.png "Terramate Cloud Stacks Overview")
 
 Stacks can be created, configured and managed with [Terramate CLI](../../cli/stacks/create.md) and are located in a
-_repository_ on GitHub, GitLab, BitBucket or any other supported VCS provider. As a stack within a _repository_ is only
+_repository_ on [GitHub](../../cli/automation/github-actions/index.md), [GitLab](../../cli/automation/gitlab-ci/index.md), [BitBucket](../../cli/automation/bitbucket-pipelines/index.md) or any other supported VCS provider. As a stack within a _repository_ is only
 plain code and configuration, you can use Terramate CLI to sync the status of your stacks to Terramate Cloud.
 This allows you to keep track of all orchestrated operations such as previews, deployments, and drift runs and also provides
 in-detail observability, such as resources managed in stacks, costs, policy violations and more!

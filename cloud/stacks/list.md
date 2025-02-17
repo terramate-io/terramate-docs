@@ -1,15 +1,16 @@
 # Stacks List
 
-The top-level navigation `Stacks` will list all known stacks over multiple repositories.
+The Stacks page displays all known stacks across multiple repositories. Each stack highlights its essential metadata. You can sort the list—by default, stacks are arranged by the time of their last update—and use filters to narrow results by repository or status. Additionally, you can search for stacks by entering a search string in the name or path. Clicking on any stack opens its [Stack Details](./details.md) page.
 
-![Stacks Overview](../assets/stacks.png "Terramate Cloud Stacks Overview")
+![Stacks Overview](../assets/stacks-index.png "Terramate Cloud Stacks Overview")
 
-Each listed stack includes the stack's name, path, and repository information, along with its status.
+## Filter Options:
 
-By default, the list of stacks is sorted by the time of their last update, but you can choose other sorting options.
-
-Filters allow you to select stacks from specific repositories or those with a particular status.
-
-You can also search for stacks by including a search string in the name or path.
-
-Selecting a Stack will open a [Stack Details](./details.md) page.
+- **Status**: Filter stacks by their current state:
+    - [Healthy](./status.md#healthy): The stack is deployed successfully, and does not have any detected drifts.
+    - [Failed](./status.md#failed): The stack has failed to deploy the planned changes.
+    - [Drifted](./status.md#drifted): The stack has differences between the desired configuration(code) and applied configuration(cloud).
+- **Repository**: Filter stacks by the repository that contains them.
+- **Tag**: Filter stacks by their [tags](../../cli/stacks/configuration.md#tags)
+- **Target**: Filter stacks by the target environment where they are deployed.
+- **Checks**: Filter stacks by the result of policy checks executed against them.

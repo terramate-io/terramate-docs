@@ -21,6 +21,6 @@ The Resources page displays all known resources across multiple repositories. Ea
 - **Type**: Filter resources by category (e.g., compute instance, storage bucket, database) for quick identification.
 - **Repository**: Filter resources by the repository that contains the resource.
 - **Provider**: Filter resources by the cloud provider associated with them.
-- **Target**: Filter resources by the target environment or module where they are deployed.
+- **Target**: Specifies the environment where the resource is deployed.
 - **Checks**: Filter resources by the policy checks executed against them.
 - **Account**: Filter resources based on the associated account.

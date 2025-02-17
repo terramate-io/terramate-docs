@@ -351,6 +351,17 @@ export default defineConfig({
               link: '/cloud/dashboard/',
             },
             {
+              text: 'Resources',
+              link: '/cloud/resources/',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Resource Details',
+                  link: '/cloud/resources/details'
+                }
+              ]
+            },
+            {
               text: 'Alerts',
               link: '/cloud/alerts/',
             },

@@ -1,2 +1,3 @@
-* @soerenmartius @AnnuCode
-/cli @terramate-io/cli-tooling @soerenmartius @AnnuCode
+* @soerenmartius @AnnuCode @mariux
+/cli @terramate-io/cli-tooling @soerenmartius @AnnuCode @mariux
+/cloud @terramate-io/tmc-frontend @terramate-io/tmc-backend @soerenmartius @AnnuCode @mariux

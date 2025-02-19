@@ -5,14 +5,14 @@ description: Learn how to detect and prevent misconfigurations of your infrastru
 
 # Terramate Cloud Policies
 
-Policies in Terramate Cloud help secure your infrastructure by detecting misconfigurations on a per-resource level. They leverage the industry-standard [CIS Benchmarks](./index.md#introducing-the-cis-benchmarks) to automatically analyze your infrastructure as code (IaC) changes and deployed resources.
+Policies in Terramate Cloud help secure your infrastructure by detecting misconfigurations on a per-resource level. They leverage the industry-standard [CIS Benchmarks](./index.md#the-cis-benchmarks) to automatically analyze your infrastructure as code (IaC) changes and deployed resources.
 
 ## What Do Policies Do?
 
 - **Misconfiguration Detection:** Policies inspect each resource for potential security misconfigurations. This precise, per-resource analysis helps you catch vulnerabilities early.
 - **Automated Analysis:** When you deploy changes or run scheduled [drift detection](../drift/index.md), policies automatically verify that your configurations meet the prescribed security standards.
 
-## Introducing the CIS Benchmarks
+## The CIS Benchmarks
 
 The **Center for Internet Security (CIS)** is a nonprofit organization that promotes best security practices. CIS develops, validates, and publishes security benchmarks with prescriptive instructions for implementing industry-standard controls. These benchmarks cover:
 - Major cloud providers like AWS, Google Cloud, and Microsoft Azure

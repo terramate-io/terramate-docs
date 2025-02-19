@@ -475,6 +475,11 @@ export default defineConfig({
             },
 
             {
+              text: 'Policies',
+              link: '/cloud/policies/',
+            },
+
+            {
               text: 'Integrations',
               collapsed: true,
               items: [

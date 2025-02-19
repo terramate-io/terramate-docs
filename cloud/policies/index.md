@@ -1,0 +1,41 @@
+---
+title: Policies in Terramate Cloud
+description: Learn how Terramate Cloud uses policies to manage your infrastructure reliably
+---
+
+# Terramate Cloud Policies
+
+Terramate Cloud policies help secure your infrastructure by detecting misconfigurations on a per-resource level. They leverage the industry-standard CIS Benchmarks to automatically analyze your infrastructure as code (IaC) changes and deployed resources.
+
+## What Do Policies Do?
+
+- **Misconfiguration Detection:** Policies inspect each resource for potential security misconfigurations. This precise, per-resource analysis helps you catch vulnerabilities early.
+- **Automated Analysis:** When you deploy changes or run scheduled [drift detection](../drift/synchronization-in-automation.md), policies automatically verify that your configurations meet the prescribed security standards.
+
+## Introducing the CIS Benchmarks
+
+The **Center for Internet Security (CIS)** is a nonprofit organization that promotes best security practices. CIS develops, validates, and publishes security benchmarks with prescriptive instructions for implementing industry-standard controls. These benchmarks cover:
+- Major cloud providers like AWS, Google Cloud, and Microsoft Azure
+- Platforms such as Kubernetes and various operating systems
+
+Using the CIS Benchmarks helps you secure your IT environment, reduce risk, and ensure compliance with best practices. They are widely recognized as the industry standard for securely configuring cloud infrastructure.
+
+## How Policies Work
+
+Terramate Cloud integrates more than 500 built-in policies based on the CIS Benchmarks. These policies function as follows:
+
+- **Pull Request Analysis:** Every time a developer opens a Pull Request to modify your IaC, Terramate Cloud automatically [scans](../previews/index.md) the changes. It checks for misconfigurations or vulnerabilities before the code is merged and deployed.
+- **Scheduled Drift Detection:** Besides the deployment checks, policies run during scheduled drift detection [workflows](../drift/synchronization-in-automation.md). This continuous monitoring ensures that the entire deployed infrastructure remains compliant over time.
+
+## Integration with the Resource Browser
+
+Policies are tightly integrated with the [Resource Browser](../resources/index.md) in Terramate Cloud. This integration provides you with a comprehensive view of:
+- Current misconfigurations across all your resources
+- The severity of each detected issue
+- Clear guidance on how to remediate vulnerabilities
+
+This centralized dashboard is handy when multiple teams manage IaC across various repositories, allowing you to maintain a strong security posture throughout your organization.
+
+---
+
+By incorporating these policies, Terramate Cloud helps you deploy and manage your infrastructure securely, ensuring that every change is vetted against robust security standards.

@@ -32,6 +32,5 @@ Terramate Cloud integrates more than 500 built-in policies based on the CIS Benc
 Policies are tightly integrated with the [Resource Browser](../resources/index.md) in Terramate Cloud. This integration provides you with a comprehensive view of:
 - Current misconfigurations across all your resources
 - The severity of each detected issue
-- Clear guidance on how to remediate vulnerabilities
 
 This centralized dashboard is handy when multiple teams manage IaC across various repositories, allowing you to maintain a strong security posture throughout your organization.

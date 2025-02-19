@@ -18,7 +18,7 @@ The **Center for Internet Security (CIS)** is a nonprofit organization that prom
 - Major cloud providers like AWS, Google Cloud, and Microsoft Azure
 - Platforms such as Kubernetes and various operating systems
 
-Using the CIS Benchmarks helps you secure your IT environment, reduce risk, and ensure compliance with best practices. They are widely recognized as the industry standard for securely configuring cloud infrastructure.
+Using the CIS Benchmarks within Terramate Cloud helps you secure your IT environment, reduce risk, and ensure compliance with best practices. They are widely recognized as the industry standard for securely configuring cloud infrastructure.
 
 ## How Policies Work
 

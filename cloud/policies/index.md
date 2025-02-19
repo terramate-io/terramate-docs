@@ -22,10 +22,7 @@ Using the CIS Benchmarks within Terramate Cloud helps you secure your IT environ
 
 ## How Policies Work
 
-Terramate Cloud integrates more than 500 built-in policies based on the CIS Benchmarks. These policies function as follows:
-
-<!-- - **Pull Request Analysis:** Every time a developer opens a Pull Request to modify your IaC, Terramate Cloud automatically [scans](../previews/index.md) the changes. It checks for misconfigurations or vulnerabilities before the code is merged and deployed. -->
-- **Scheduled Drift Detection:** Besides the deployment checks, policies run during scheduled drift detection [workflows](../drift/synchronization-in-automation.md). This continuous monitoring ensures that the entire deployed infrastructure remains compliant over time.
+Terramate Cloud integrates more than 500 built-in policies based on the CIS Benchmarks. These policies run during scheduled drift detection workflows, continuously monitoring the deployed infrastructure to ensure that all resources remain compliant with defined security standards. This process regularly identifies any misconfigurations or deviations, helping you maintain a secure and compliant environment over time.
 
 ## Integration with the Resource Browser
 

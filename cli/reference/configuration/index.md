@@ -203,7 +203,7 @@ attributes. Each attribute **must** evaluate to a string.
 
 More details can be found [here](../../projects/configuration.md#the-terramateconfigrunenv-block).
 
-## terramate.config.cloud.location 
+## terramate.config.cloud
 
 The `terramate.config.cloud.location` block has no labels and is used to set the Terramate Cloud region with the following schema:
 

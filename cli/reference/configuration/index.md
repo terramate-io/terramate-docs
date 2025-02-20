@@ -209,7 +209,7 @@ The `terramate.config.cloud` block has no labels and is used to set the Terramat
 
 | name             |      type      | description | default |
 |------------------|----------------|-------------|---------|
-| us | string | "us" or "eu" | "eu"
+| location | string | "us" or "eu" | "eu"
 
 ## stack block schema
 

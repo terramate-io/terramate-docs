@@ -205,7 +205,7 @@ More details can be found [here](../../projects/configuration.md#the-terramateco
 
 ## terramate.config.cloud
 
-The `terramate.config.cloud.location` block has no labels and is used to set the Terramate Cloud region with the following schema:
+The `terramate.config.cloud` block has no labels and is used to set the Terramate Cloud configuration with the following schema:
 
 | name             |      type      | description | default |
 |------------------|----------------|-------------|---------|

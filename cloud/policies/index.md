@@ -26,6 +26,9 @@ Terramate Cloud integrates more than 500 built-in policies based on the CIS Benc
 
 ## Integration with the Resource Browser
 
+![Policy Checks in Terramate Cloud](../assets/policy-check.png)
+
+
 Policies are tightly integrated with the [Resource Browser](../resources/index.md) in Terramate Cloud. This integration provides you with a comprehensive view of:
 - Current misconfigurations across all your resources
 - The severity of each detected issue

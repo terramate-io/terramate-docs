@@ -1,6 +1,6 @@
 ---
 title: Data Residency
-description: Learn about the required data access for Terramate CLI and Terramate Cloud.
+description: Learn about different locations you can configure to host the Terramate Cloud data.
 ---
 # Data Residency
 

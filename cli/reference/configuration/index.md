@@ -210,6 +210,7 @@ The `terramate.config.cloud` block has no labels and is used to set the Terramat
 | name             |      type      | description | default |
 |------------------|----------------|-------------|---------|
 | location | string | "us" or "eu" | "eu"
+| organization | string | default organization name to sync with Terramate Cloud |  |
 
 ## stack block schema
 

@@ -357,9 +357,9 @@ export default defineConfig({
               items: [
                 {
                   text: 'Resource Details',
-                  link: '/cloud/resources/details'
-                }
-              ]
+                  link: '/cloud/resources/details',
+                },
+              ],
             },
             {
               text: 'Alerts',
@@ -527,8 +527,12 @@ export default defineConfig({
           collapsed: false,
           items: [
             {
-              text: 'Security and Data Processing Overview',
+              text: 'Security and Data Processing',
               link: '/security/index.md',
+            },
+            {
+              text: 'Locations and Data Residency',
+              link: '/security/data-residency.md',
             },
 
           ],

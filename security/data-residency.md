@@ -12,15 +12,15 @@ We ensure that all your accounts' organizations and data are stored in the locat
 all of the information that you sync with Terramate Cloud, such as stacks, previews and deployments, are stored exclusively in data centers
 within EU member countries.
 
-You cannot have Terramate Cloud account with organizations in different locations. All data in your account, and all of
-your organizations resides within the location you select when you set up your account.
+You cannot have a Terramate Cloud account with organizations in different locations. All data in your account and all
+of your organizations reside within the location you selected when you set up your account.
 
 ## Available locations
 
-| Location                               | Code | Platform              | API                 | Reference Region    |
+| Location                               | Code | Platform              | API                 | Reference Location    |
 | -------------------------------------- | ---- | --------------------- | ------------------- | --------------------- |
-| Europe  | eu   | cloud.terramate.io    | api.terramate.io    | St. Ghislain, Belgium |
-| United States                          | us   | us.cloud.terramate.io | us.api.terramate.io | Council Bluffs, IA, USA     |
+| Europe                                 | `eu`   | [cloud.terramate.io](https://cloud.terramate.io)    | [api.terramate.io](https://api.terramate.io)    | St. Ghislain, Belgium |
+| United States                          | `us`   | [us.cloud.terramate.io](https://us.cloud.terramate.io) | [us.api.terramate.io](https://us.api.terramate.io) | Columbus, OH, USA     |
 
 ## Configure the location in Terramate CLI
 
@@ -29,8 +29,8 @@ using the [`terramate.config.cloud` block](../cli/reference/configuration/index.
 
 ## Does my location affect feature availability?
 
-Your location does not affect feature availability for our products.
-The only difference between location is where your data resides. We release new features to both our US and EU locations simultaneously.
+Your location does not affect the availability of features for our products. The only difference between locations is
+where your data resides. We release new features to both our US and EU locations simultaneously.
 
 ## Can I migrate my account to another location?
 

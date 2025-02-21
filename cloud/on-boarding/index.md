@@ -113,8 +113,8 @@ It is recommended to set up automation for scheduled drift runs, and deployments
 Terramate CLI Drift Checks can run in any CI/CD and we provide Blueprints for various CI/CD platforms:
 
 - [GitHub Actions Blueprints](../../cli/automation/github-actions/drift-check-workflow.md)
-- GitLab CI Blueprints 🚧
-- Bitbucket Pipelines Blueprints 🚧
+- [GitLab CI Blueprints](../../cli/automation/gitlab-ci/drift-check-workflow.md)
+- [Bitbucket Pipelines Blueprints](../../cli/automation/bitbucket-pipelines/drift-check-workflow.md)
 - Azure DevOps Blueprints 🚧
 
 Recommendations when synchronizing drift checks:
@@ -129,8 +129,8 @@ Recommendations when synchronizing drift checks:
 Terramate CLI Deployments can run in any CI/CD and we provide Blueprints for various CI/CD platforms:
 
 - [GitHub Actions Blueprints](../../cli/automation/github-actions/deployment-workflow.md)
-- GitLab CI Blueprints 🚧
-- Bitbucket Pipelines Blueprints 🚧
+- [GitLab CI Blueprints](../../cli/automation/gitlab-ci/deployment-workflow.md)
+- [Bitbucket Pipelines Blueprints](../../cli/automation/bitbucket-pipelines/deployment-workflow.md)
 - Azure DevOps Blueprints 🚧
 
 Recommendations when synchronizing deployments:
@@ -144,8 +144,8 @@ Recommendations when synchronizing deployments:
 Terramate CLI Previews can run in any CI/CD and we provide Blueprints for various CI/CD platforms:
 
 - [GitHub Actions Blueprints](../../cli/automation/github-actions/preview-workflow.md)
-- GitLab CI Blueprints 🚧
-- Bitbucket Pipelines Blueprints 🚧
+- [GitLab CI Blueprints](../../cli/automation/gitlab-ci/preview-workflow.md)
+- [Bitbucket Pipelines Blueprints](../../cli/automation/bitbucket-pipelines/preview-workflow.md)
 - Azure DevOps Blueprints 🚧
 
 ## Next Steps

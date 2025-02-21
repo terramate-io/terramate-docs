@@ -17,10 +17,10 @@ your organizations resides within the location you select when you set up your a
 
 ## Available locations
 
-| Location                               | Code | Platform              | API                 | Reference Location    |
+| Location                               | Code | Platform              | API                 | Reference Region    |
 | -------------------------------------- | ---- | --------------------- | ------------------- | --------------------- |
 | Europe  | eu   | cloud.terramate.io    | api.terramate.io    | St. Ghislain, Belgium |
-| United States                          | us   | us.cloud.terramate.io | us.api.terramate.io | Columbus, OH, USA     |
+| United States                          | us   | us.cloud.terramate.io | us.api.terramate.io | Council Bluffs, IA, USA     |
 
 ## Configure the location in Terramate CLI
 
@@ -30,7 +30,7 @@ using the [`terramate.config.cloud` block](../cli/reference/configuration/index.
 ## Does my location affect feature availability?
 
 Your location does not affect feature availability for our products.
-The only difference between location is where your data resides.We release new features to both our US and EU location simultaneously.
+The only difference between location is where your data resides. We release new features to both our US and EU locations simultaneously.
 
 ## Can I migrate my account to another location?
 

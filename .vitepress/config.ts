@@ -530,6 +530,10 @@ export default defineConfig({
               text: 'Security and Data Processing Overview',
               link: '/security/index.md',
             },
+            {
+              text: 'Data Residency',
+              link: '/security/data-residency'
+            }
 
           ],
         },

@@ -203,7 +203,7 @@ attributes. Each attribute **must** evaluate to a string.
 
 More details can be found [here](../../projects/configuration.md#the-terramateconfigrunenv-block).
 
-## terramate.config.cloud
+## terramate.config.cloud block schema
 
 The `terramate.config.cloud` block has no labels and is used to set the Terramate Cloud configuration with the following schema:
 

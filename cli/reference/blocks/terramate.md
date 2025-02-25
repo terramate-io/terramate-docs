@@ -20,30 +20,45 @@ Use the `terramate` block to define project-wide configurations. The `terramate`
 
 ```hcl
 terramate {
-  required_version = "terramate-version"
-  config {
-    git {
-      # Git configuration
-      default_remote = "origin"
-      default_branch = "main"
+  required_version = ">= 0.12.0"
+  # required_version_allow_prereleases = true
 
-      # Safeguard
-      check_untracked   = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)
-      check_uncommitted = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)
-      check_remote      = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)
-    }
-    generate {
-        hcl_magic_header_comment_style = "#"
-    }
+  config {
+    # git {
+    #   # Git configuration
+    #   default_remote = "origin"
+    #   default_branch = "main"
+    # }
+
+    # Optionally disable safe guards
+    # Learn more: https://terramate.io/docs/cli/orchestration/safeguards
+    # disable_safeguards = [
+    #   "git-untracked",
+    #   "git-uncommitted",
+    #   "git-out-of-sync",
+    #   "outdated-code",
+    # ]
+
+    # generate {
+    #   hcl_magic_header_comment_style = "#"
+    # }
+
     run {
-         check_gen_code = false # Deprecated as of v0.4.5 (use terramate.config.disable_safeguards instead)
-         env {
-            TF_PLUGIN_CACHE_DIR = "/some/path/etc"
-         }
+      env {
+        TF_PLUGIN_CACHE_DIR = "${terramate.root.path.fs.absolute}/.tf_plugin_cache_dir"
+      }
     }
+
     cloud {
       organization = "cloud-org-name"
     }
+
+    # Enable Terramate Scripts
+    experiments = [
+      "scripts",
+      "outputs-sharing",
+      "tmgen"
+    ]
   }
 }
 ```

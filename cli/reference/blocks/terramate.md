@@ -51,6 +51,7 @@ terramate {
 
     cloud {
       organization = "cloud-org-name"
+      # location = "us" # default is "eu"
     }
 
     # Enable Terramate Scripts

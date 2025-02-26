@@ -18,7 +18,7 @@ If none of the methods below are successful then the cloud features are disabled
 
 If the Github Actions workflow has the `id_token: write` permission then Terramate can automatically issue short-lived OIDC tokens to communicate with Terramate Cloud.
 
-```
+```yaml
 jobs:
   my_job:
     permissions:

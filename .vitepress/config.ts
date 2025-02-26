@@ -1299,6 +1299,10 @@ export default defineConfig({
               ],
             },
             {
+              text: 'CLI Authentication',
+              link: '/cli/reference/cmdline/cloud/',
+            },
+            {
               text: 'Configuration Reference',
               link: '/cli/reference/configuration/',
             },

@@ -1267,6 +1267,7 @@ export default defineConfig({
                 },
                 {
                   text: 'Terramate Cloud',
+                  link: '/cli/reference/cmdline/cloud',
                   items: [
                     { text: 'cloud login', link: '/cli/reference/cmdline/cloud/cloud-login' },
                     { text: 'cloud info', link: '/cli/reference/cmdline/cloud/cloud-info' },

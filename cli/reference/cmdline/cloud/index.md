@@ -1,16 +1,19 @@
 ---
-title: terramate cloud - Command
-description: Cloud related commands and concepts.
+title: Authenticating Terramate CLI with Terramate Cloud
+description: Learn about the different options such as OIDC and API Keys to authenticate Terramate CLI with Terramate Cloud
 ---
 
 # CLI Authentication
 
 The Terramate CLI is able to automatically detect the Terramate Cloud credentials from the environment using the order of precedence below:
 
-1. [API Keys](#api-keys)
-2. [Github OIDC](#github-oidc)
-3. [Gitlab OIDC](#gitlab-oidc)
-4. [User credential](#user-credential)
+- [CLI Authentication](#cli-authentication)
+  - [API Keys](#api-keys)
+    - [API Keys in GHA](#api-keys-in-gha)
+  - [Github OIDC](#github-oidc)
+  - [Gitlab OIDC](#gitlab-oidc)
+    - [API keys locally](#api-keys-locally)
+  - [User credential](#user-credential)
 
 If none of the methods below are successful then the cloud features are disabled.
 
@@ -94,4 +97,3 @@ It should never be used in CI/CD automations unless you know what you are doing.
 
 Once you authenticate with either `terramate cloud login --google` or `terramate cloud login --github`, a file is created at `~/.terramate.d/credentials.tmrc.json` (this is the default location unless you have `user_terramate_dir` set in your [CLI configuration file](../../../reference/cmdline/index.md#cli-configuration)).
 If the file is present, Terramate will use the `id_token` stored in it and automatically refresh token as needed.
-

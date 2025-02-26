@@ -17,30 +17,6 @@ The Terramate CLI is able to automatically detect the Terramate Cloud credential
 
 If none of the methods below are successful then the cloud features are disabled.
 
-## API Keys
-
-The API key method is the only authentication strategy that works in all possible environments and CI/CD vendors. It can be used as a fallback if you need to run Terramate from a non-conventional CI runner.
-
-For configuring it you just need to export the `TMC_TOKEN` environment variable with the value obtained from the Terramate Cloud settings page. Check the [API keys](../../../../cloud/organization/api-keys.md) page for detailed instructions for creating them.
-
-Examples:
-
-### API Keys in GHA
-
-**Note:** The [Github OIDC](#github-oidc) is a safer way of authenticating from Github Actions but the example below shows how to use API Key if you need. This method is needed in GHA if you run Terramate in a container isolated from the runner environment (eg.: Dagger).
-
-```yaml
-jobs:
-  cloud-info:
-    name: check Terramate Cloud info
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check if Terramate detects credentials
-        run: terramate cloud info
-        env:
-          TMC_TOKEN: ${{ secrets.TMC_TOKEN }}
-```
-
 ## Github OIDC
 
 If the Github Actions workflow has the `id_token: write` permission then Terramate can automatically issue short-lived OIDC tokens to communicate with Terramate Cloud.
@@ -80,6 +56,14 @@ Example:
       aud: us.api.terramate.io
 ```
 
+## API Keys
+
+The API key method is the only authentication strategy that works in all possible environments and CI/CD vendors. It can be used as a fallback if you need to run Terramate from a non-conventional CI runner.
+
+For configuring it you just need to export the `TMC_TOKEN` environment variable with the value obtained from the Terramate Cloud settings page. Check the [API keys](../../../../cloud/organization/api-keys.md) page for detailed instructions for creating them.
+
+Examples:
+
 ### API keys locally
 
 ```bash
@@ -88,6 +72,22 @@ $ terramate cloud info
 status: signed in
 provider: API Key
 organizations: my-org
+```
+
+### API Keys in GHA
+
+**Note:** The [Github OIDC](#github-oidc) is a safer way of authenticating from Github Actions but the example below shows how to use API Key if you need. This method is needed in GHA if you run Terramate in a container isolated from the runner environment (eg.: Dagger).
+
+```yaml
+jobs:
+  cloud-info:
+    name: check Terramate Cloud info
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if Terramate detects credentials
+        run: terramate cloud info
+        env:
+          TMC_TOKEN: ${{ secrets.TMC_TOKEN }}
 ```
 
 ## User credential

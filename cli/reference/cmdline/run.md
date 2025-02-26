@@ -22,6 +22,9 @@ For details on how the change detection and order of execution works in Terramat
 - [Change Detection](../../change-detection/index.md)
 - [Orchestration](../../orchestration/index.md)
 
+For using the Terramate Cloud features, check the [TMC Getting Started](../../../cloud/signup/index.md) page and 
+the [CLI authentication](./cloud/index.md#cli-authentication) page for details.
+
 ## Examples
 
 ### Run in all stacks

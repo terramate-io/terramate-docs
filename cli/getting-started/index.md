@@ -9,16 +9,17 @@ In this guide, you will learn how to get started with Terramate from scratch by 
 project that manages Terraform or OpenTofu in stacks using the most essential Terramate features, such as **stacks**,
 **code generation**, **orchestration**, and **change detection**.
 
-<!-- NOTE: Add more tutorials over time -->
-
-<!-- If you want to get an overview of what Terramate CLI is and how it works, please read the [introduction guide](../../index.md). -->
+::: tip Onboard Terramate to existing project
+If, instead, you want to learn how to use Terramate in an existing project, go here:
+- [Start with existing Terraform project](../on-boarding/terraform.md)
+- [Start with existing OpenTofu project](../on-boarding/opentofu.md)
+- [Start with existing Terragrunt project](../on-boarding/terragrunt.md)
+:::
 
 ::: tip Terramate Community Discord Server
 Join the ***[Terramate Community](https://terramate.io/discord)*** on Discord, the best place to ask questions and get
 answers about Terramate and its ecosystem. Come aboard ⛵️🏴‍☠️
 :::
-
-<!-- If instead you want to learn how to use Terramate in an existing Terraform project, go here instead: -->
 
 ## Introduction
 

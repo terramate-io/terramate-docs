@@ -114,6 +114,9 @@ In a nutshell, the command above runs a `terraform plan` in all your stacks and 
 
 ![TMC Signup](../assets/tmc-stacks.png)
 
-## 8: Next Steps:
+## 8: Next Steps
 
-work in progress...
+- [Setup CI/CD:](../automation/index.md) Manage your infrastructure using the recommended GitOps approach.
+- [Slack Integration:](../../cloud/integrations/slack.md) Receive alerts in your Slack workspace by connecting it with Terramate Cloud.
+- [Link Accounts:](../../cloud/profile/account-linking.md) Link different accounts with your Terramate Cloud profile for seamless infrastructure management
+- [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.

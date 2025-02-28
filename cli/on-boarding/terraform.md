@@ -5,7 +5,13 @@ description: Learn how to onboard Terramate to any existing Terraform project wi
 
 # Get started with Terramate and Terraform
 
-In this guide, You will learn how to add Terramate to an existing Terraform project without changing any configuration.
+This guide will teach you how to onboard Terramate to any existing Terraform repository in less than 5 minutes.
+
+Here's what you will learn:
+- Install Terramate CLI
+- Onboard Terramate CLI to any Terraform repository
+- Sign up for a free Terramate Cloud account
+- Sync your stacks to Terramate Cloud
 
 ## 1: Install Terramate
 

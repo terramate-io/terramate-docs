@@ -15,7 +15,42 @@ Here's what you will learn:
 
 ## 1: Install Terramate
 
- Install the [Terramate cli](../installation.md).
+Install the Terramate cli:
+
+ ::: code-group
+```sh [macOS]
+brew install terramate
+```
+
+```sh [Ubuntu & Debian]
+# Add the Terramate repo to your sources
+echo "deb [trusted=yes] https://repo.terramate.io/apt/ /" \
+  | sudo tee /etc/apt/sources.list.d/terramate.list
+
+apt update
+apt install terramate
+```
+
+```sh [Fedora & CentOS]
+# Add the Terramate repo to your sources
+sudo tee /etc/yum.repos.d/terramate.repo <<EOF
+[terramate]
+name=Terramate Repository
+baseurl=https://repo.terramate.io/yum/
+enabled=1
+gpgcheck=0
+EOF
+
+dnf install terramate
+```
+
+```txt [Windows]
+Download the binary from
+https://github.com/terramate-io/terramate/releases
+```
+:::
+
+For other installation methods, please see the [installation page](../installation.md).
 
 ## 2: Import Terraform root modules to Terramate
 

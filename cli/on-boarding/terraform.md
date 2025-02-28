@@ -54,22 +54,22 @@ For other installation methods, please see the [installation page](../installati
 
 ## 2: Import Terraform root modules to Terramate
 
-Mark your Terraform root modules as Terramate stacks:
+To enable Terramate CLI to interact with your Terraform configurations, you first need to import existing Terraform root modules (modules with a state backend configuration) as [Terramate stacks](../stacks/index.md), which can be done with the following command:
 
 ```bash
 terramate create --all-terraform
 ```
-This command creates a `stack.tm.hcl` file in every existing Terraform root module, enabling Terramate to consider the Terraform root modules as [stacks](../stacks/index.md). 
+This command creates a `stack.tm.hcl` file in every existing Terraform root module, enabling Terramate to consider the Terraform root modules as stacks. Those files are used to [configure](../stacks/configuration.md) the metadata such as `name`, `description`, `tags`, and optionally the [orchestration behavior](../../concepts/orchestration.md) of a stack.
 
 For example, an existing Terraform project repo with two root modules:
 ```bash
 .
 ├── alice
 │   ├── main.tf
-│   └── terraform.tfstate
+│   └── backend.tf
 ├── bob
 │   ├── main.tf
-│   └── terraform.tfstate
+│   └── backend.tf
 
 ``` 
 After running the command, a `stack.tm.hcl` file is created in both root modules marking them as Terramate stacks:
@@ -79,11 +79,11 @@ After running the command, a `stack.tm.hcl` file is created in both root modules
 ├── alice
 │   ├── main.tf
 │   ├── stack.tm.hcl
-│   └── terraform.tfstate
+│   └── backend.tf
 ├── bob
 │   ├── main.tf
 │   ├── stack.tm.hcl
-│   └── terraform.tfstate
+│   └── backend.tf
 
 ```
 ## 3: Sign-up on Terramate Cloud:

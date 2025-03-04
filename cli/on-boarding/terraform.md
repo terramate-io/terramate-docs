@@ -9,13 +9,19 @@ This guide will teach you how to onboard Terramate to any existing Terraform rep
 
 Here's what you will learn:
 - Install Terramate CLI
-- Onboard Terramate CLI to any Terraform repository
+- Onboard Terramate CLI to your Terraform repository
 - Sign up for a free Terramate Cloud account
 - Sync your stacks to Terramate Cloud
 
-## 1: Install Terramate
+Let's get started!
 
-Install the Terramate cli:
+::: info
+If you have any questions you can get in touch with our team by joining our [Discord community](https://terramate.io/discord).
+:::
+
+## 1: Install Terramate CLI
+
+Install the Terramate CLI:
 
  ::: code-group
 ```sh [macOS]
@@ -52,16 +58,20 @@ https://github.com/terramate-io/terramate/releases
 
 For other installation methods, please see the [installation page](../installation.md).
 
-## 2: Import Terraform root modules to Terramate
+## 2: Import Terraform Root Modules
 
-To enable Terramate CLI to interact with your Terraform configurations, you first need to import existing Terraform root modules (modules with a state backend configuration) as [Terramate stacks](../stacks/index.md), which can be done with the following command:
+To enable Terramate CLI to interact with your Terraform configurations, you first need to import existing Terraform root
+modules (modules with a state backend configuration) as Terramate stacks, which can be done with the following command:
 
 ```bash
 terramate create --all-terraform
 ```
-This command creates a `stack.tm.hcl` file in every existing Terraform root module, enabling Terramate to consider the Terraform root modules as stacks. Those files are used to [configure](../stacks/configuration.md) the metadata such as `name`, `description`, `tags`, and optionally the [orchestration behavior](../../concepts/orchestration.md) of a stack.
+This command creates a `stack.tm.hcl` file in every existing Terraform root module, enabling Terramate to consider the
+Terraform root modules as stacks.
 
-For example, an existing Terraform project repo with two root modules:
+Those files are used to configure the metadata such as `name`, `description`, `tags`, and optionally the orchestration behavior of a stack.
+
+For example, an existing Terraform repository with two root modules:
 ```bash
 .
 ├── alice
@@ -71,7 +81,7 @@ For example, an existing Terraform project repo with two root modules:
 │   ├── main.tf
 │   └── backend.tf
 
-``` 
+```
 After running the command, a `stack.tm.hcl` file is created in both root modules marking them as Terramate stacks:
 
 ```bash
@@ -84,9 +94,42 @@ After running the command, a `stack.tm.hcl` file is created in both root modules
 │   ├── main.tf
 │   ├── stack.tm.hcl
 │   └── backend.tf
-
 ```
+
+Now that you successfully onboarded Terramate CLI to your repository, you can using the CLI to orchestrate yours stacks.
+
+**List all stacks in a repository**
+
+```sh
+terramate list
+```
+
+**Initialize all stacks in a repository**
+
+```sh
+terramate run -- terraform init
+```
+
+**Create a plan for all stacks in parallel**
+
+```sh
+terramate run --parallel 5 -- terraform plan -out plan.tfplan
+```
+
+**Run an apply in all stacks that contain changes**
+
+```sh
+terramate run --changed -- terraform apply -auto-approve plan.tfplan
+```
+
+Those are some of the most important examples of orchestrating commands with Terramate CLI. If you want to learn more
+about how the orchestration engine in Terramate CLI works, please take a look at the [orchestration](../orchestration/index.md) docs.
+
 ## 3: Sign-up on Terramate Cloud:
+
+Next, we'll sign up for a free Terramate Cloud account. You can use Terramate CLI to sync your stacks to Terramate Cloud
+which provides an additional dashboard that adds features observability, insights, asset management, stateful orchestration,
+drift detection, alerts, and more to your Terramate projects.
 
 When signing up to the platform at [cloud.terramate.io](https://cloud.terramate.io/), you are asked to choose a social login provider to sign in with.
 
@@ -100,9 +143,12 @@ Terramate Cloud offers to sign in using:
 
 ## 4: Create your Organization
 
- After you set up your profile, join an organization you were invited to or create your own. To create an organization, choose a display name and a short name. The short name appears in URLs (https://cloud.terramate.io/o/{short-name}) and in the Terramate CLI when you select an organization to sync or retrieve data from.
+After you set up your profile, join an organization you were invited to or create your own. To create an organization,
+choose a display name and a short name. The short name appears in URLs (https://cloud.terramate.io/o/{short-name}) and
+in the Terramate CLI when you select an organization to sync or retrieve data from.
 
- You can belong to multiple organizations and teams. Click the “join” button to become an active member, then click “visit” to view your organization.
+You can belong to multiple organizations and teams. Click the “join” button to become an active member, then click
+“visit” to view your organization.
 
 ![TMC Signup](../assets/tmc-create-org.png)
 
@@ -127,7 +173,8 @@ git commit -m "Add Terramate Cloud configuration"
 
 ## 6: Login from CLI
 
-To synchronize data from your local machine, you will need to login to Terramate Cloud from the CLI. Terramate CLI will store a session on your machine after a successful login.
+To synchronize data from your local machine, you will need to login to Terramate Cloud from the CLI.
+Terramate CLI will store a session on your machine after a successful login.
 
 Use the following command to initiate the login.
 
@@ -141,7 +188,8 @@ terramate cloud login --github
 ```
 ## 7: Sync stacks to Terramate Cloud
 
-After setting up your Terramate Cloud organization, let's sync the stacks configured in your Terraform project to Terramate Cloud. The easiest to sync your stacks is to run a drift detection workflow in all stacks and sync the result to Terramate Cloud:
+After setting up your Terramate Cloud organization, let's sync the stacks configured in your repository to Terramate Cloud.
+The easiest to sync your stacks is to run a drift detection workflow in all stacks and sync the result to Terramate Cloud:
 
 ```bash
 terramate run \
@@ -151,13 +199,27 @@ terramate run \
   -- \
   terraform plan -detailed-exitcode -out drift.tfplan
 ```
-In a nutshell, the command above runs a `terraform plan` in all your stacks and sends the result to Terramate Cloud. Since the plans don't detect any changes, Terramate Cloud won't mark those stacks as drifted but only adds them to your inventory of stacks.
+
+In a nutshell, the command above runs a `terraform plan` in all your stacks and sends the result to Terramate Cloud.
+
+::: info
+This works because Terramate CLI extracts data such as metadata, resources, Git metadata, and more from the created plans
+and the environment in which it's running, sanitizes it locally and syncs the result to Terramate Cloud. This makes
+Terramate extremely secure since no sensitive information, such as credentials or certificates, will ever be synced to
+Terramate Cloud.
+:::
+
+If the plans don't contain any changes, Terramate will simply create an inventory of all infrastructure configured in
+Terramate Cloud. If the plans changes, Terramate will additionally create drift alerts.
 
 ![TMC Signup](../assets/tmc-stacks.png)
 
+And that's it. You just learned to how to onboard Terramate to your Terraform repository in less than 5 minutes.
+Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](../automation/index.md).
+
 ## 8: Next Steps
 
-- [Setup CI/CD:](../automation/index.md) Manage your infrastructure using the recommended GitOps approach.
-- [Slack Integration:](../../cloud/integrations/slack.md) Receive alerts in your Slack workspace by connecting it with Terramate Cloud.
-- [Link Accounts:](../../cloud/profile/account-linking.md) Link different accounts with your Terramate Cloud profile for seamless infrastructure management
+- [Setup CI/CD:](../automation/index.md) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
+- [Slack Integration:](../../cloud/integrations/slack.md) Receive alerts and notifications in Slack.
+- [Link Accounts:](../../cloud/profile/account-linking.md) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
 - [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.

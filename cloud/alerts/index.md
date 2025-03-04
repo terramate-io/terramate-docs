@@ -5,15 +5,9 @@ description: Learn how Terramate helps you to manage failed deployments, drift a
 
 # Managing Incidents with Alerts
 
-Alerts in Terramate Cloud help manage attention-demanding events such as ***failed deployments*** or ***detected drift***.
+Terramate Cloud alerts help manage critical events, such as failed deployments and detected drift. Alerts are automatically generated for these events and assigned to the appropriate individuals or teams (for example, the author of a commit or Pull Request).
 
-Terramate automatically creates alerts for those events and assigns them to the right individuals and teams, such as the
-author of a commit or Pull Request.
-
-Alerts also integrate well with Slack via the [Slack App](../integrations/slack.md)
-integration, which sends direct messages to individuals and teams assigned to alerts whenever alerts are created or updated.
-
-![Alerts in Terramate Cloud](../assets/alerts/alerts.png)
+Alerts seamlessly integrate with Slack via the [Slack App](../integrations/slack.md) integration, sending direct messages to assigned recipients whenever alerts are created or updated.
 
 ::: info
 Unless a member of your Terramate Cloud organization uses the same email address among all their third-party accounts
@@ -24,6 +18,33 @@ GitHub and Slack users.
 Linking accounts can be done in the [user profile](../profile/index.md).
 Learn more about this in the [account linking](../profile/account-linking.md) documentation.
 :::
+
+## Alert List
+
+The Alert Dashboard displays all alerts—both resolved and unresolved—across the organization. In the list view, each alert includes:
+
+- **Alert Type**: The alert's [category](./index.md#types-of-alerts)
+- **Stack Name**: The stack name and commit ID that triggered the drift.
+- **Status**: The current state of the alert (`open` or `resolved`).
+- **Assignees**: Team members assigned to the alert.
+- **Last Updated**: Timestamp of the most recent action.
+- **Action Buttons**: Direct controls for each alert:
+  - **Take Ownership**: Assign the alert to yourself (triggers a Slack notification for assignees).
+  - **Share Link**: Share the alert with your team.
+  - **Resolve**: Mark the alert as resolved (triggers a Slack notification for assignees).
+
+![Alerts in Terramate Cloud](../assets/alerts/alert-list.png)
+
+
+## Alert Details
+
+This view allows you to inspect detailed alert information and take the following actions:
+
+- **Assignees**: Add or remove assignees beyond the default auto-assignees.
+- **Resolve Alert**: Mark the alert as resolved (assignees receive a Slack notification). Alerts automatically resolve when the corresponding stack becomes [healthy](../stacks/status.md#healthy).
+- **Visit Stack Details**: Access detailed information about the associated stack.
+
+![Slack alert notification](../assets/alerts/alert-details.png)
 
 ## Types of Alerts
 
@@ -54,24 +75,10 @@ Alerts for drifted stacks will be automatically assigned to several individuals:
 
 - The person who triggered the last deployment (merging the latest Pull Requests or triggering a local deployment).
 
-## Manually assigning Alerts
-
-In addition to the auto assignees, alerts can be manually assigned and unassigned to and from any user in your
-Terramate Cloud organization in the details view of an alert.
-
-![Assign and unassign alerts](../assets/alerts/assign-alerts.png)
-
-## Resolving Alerts
-
-Alerts are automatically marked as resolved whenever all stacks included in an alert are marked as healthy.
-Stacks can be marked as healthy by running scheduled drift detection workflows or successful deployments.
-
-Additionally, you can manually resolve alerts in the detail view of an alert by hitting the ***Resolve Alert*** button.
-
 ## Integrating Alerts with Slack
 
 To integrate alerts with your Slack workspace, [install the Slack App](../integrations/slack.md). Once installed, the
 Slack App will send notifications for all newly created and updated alerts to all assigned users. Users will be able to
 open alerts and affected stacks directly from Slack.
 
-![Slack alert notification](../assets/alerts/alert-slack-notification.png)
+![Slack alert notification](../assets/alerts/slack-notification.png)

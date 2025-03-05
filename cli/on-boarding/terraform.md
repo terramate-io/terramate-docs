@@ -96,7 +96,7 @@ After running the command, a `stack.tm.hcl` file is created in both root modules
 │   └── backend.tf
 ```
 
-Now that you successfully onboarded Terramate CLI to your repository, you can using the CLI to orchestrate yours stacks.
+Now that you successfully onboarded Terramate CLI to your repository, you can start using the CLI to orchestrate yours stacks.
 
 **List all stacks in a repository**
 
@@ -128,7 +128,7 @@ about how the orchestration engine in Terramate CLI works, please take a look at
 ## 3: Sign-up on Terramate Cloud:
 
 Next, we'll sign up for a free Terramate Cloud account. You can use Terramate CLI to sync your stacks to Terramate Cloud
-which provides an additional dashboard that adds features observability, insights, asset management, stateful orchestration,
+which provides an additional dashboard that adds features like observability, insights, asset management, stateful orchestration,
 drift detection, alerts, and more to your Terramate projects.
 
 When signing up to the platform at [cloud.terramate.io](https://cloud.terramate.io/), you are asked to choose a social login provider to sign in with.
@@ -189,7 +189,7 @@ terramate cloud login --github
 ## 7: Sync stacks to Terramate Cloud
 
 After setting up your Terramate Cloud organization, let's sync the stacks configured in your repository to Terramate Cloud.
-The easiest to sync your stacks is to run a drift detection workflow in all stacks and sync the result to Terramate Cloud:
+The easiest way to sync your stacks is to run a drift detection workflow in all stacks and sync the result to Terramate Cloud:
 
 ```bash
 terramate run \
@@ -214,7 +214,7 @@ Terramate Cloud. If the plans changes, Terramate will additionally create drift 
 
 ![TMC Signup](../assets/tmc-stacks.png)
 
-And that's it. You just learned to how to onboard Terramate to your Terraform repository in less than 5 minutes.
+And that's it. You just learned how to onboard Terramate to your Terraform repository in less than 5 minutes.
 Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](../automation/index.md).
 
 ## 8: Next Steps

@@ -1,6 +1,6 @@
 # General Settings
 
-![Terramate Cloud Organization General Settings](../assets/organization-general-settings.png "Terramate Cloud Organization General Settings")
+![Terramate Cloud Organization General Settings](../assets/general-settings.png "Terramate Cloud Organization General Settings")
 
 Sync your complete GitHub/GitLab organization or specific repos with Terramate Cloud via. Organization. To collaborate with your team members on Terramate Cloud, you can create a new Organization or join an existing one.
 
@@ -29,11 +29,11 @@ instead of api keys. For that you can establish trust relationship between your 
     - a GitLab Repository to trust a single repository within a GitHub Organization of the form `owner/repository`
     - a comma-separated list of GitLab repositories ofthe form `organizationA/repository`, `organizationB/repository`
 
-## Slack Webhook (deprecated)
+## Slack Notifications
 
-::: info
-Slack Webhook in Terramate Cloud are deprecated and will soon be replaced with the [Terramate Slack App](../integrations/slack.md).
-:::
+[Integrate your Slack workspace](../alerts/index.md#integrating-alerts-with-slack) to recieve real-time alerts.
+
+## Slack Webhook (deprecated)
 
 - `Slack Webhook`:
 Terramate Cloud can send alerts to notify you about important events, such as failed deployments or detected drift. Terramate can automatically deliver such alerts directly to individuals and teams on Slack. You can follow the below-mentioned steps to integrate Terramate Cloud with your Slack workspace:

@@ -1,5 +1,5 @@
 ---
-title: Manage Alerts | Terramate Cloud
+title: Manage Incidents with Alerts | Terramate Cloud
 description: Learn how Terramate helps you to manage failed deployments, drift and more with actionable alerts that seamlessly integrate with Slack.
 ---
 
@@ -35,7 +35,6 @@ The Alert Dashboard displays all alerts—both resolved and unresolved—across 
 
 ![Alerts in Terramate Cloud](../assets/alerts/alert-list.png)
 
-
 ## Alert Details
 
 This view allows you to inspect detailed alert information and take the following actions:
@@ -65,6 +64,13 @@ A detected drift in Terramate describes a stack that has drifted.
 Alerts for drifted stacks will be automatically assigned to several individuals:
 
 - The person who triggered the last deployment (merging the latest Pull Requests or triggering a local deployment).
+
+## Auto Resolving of Alerts
+
+Whenever the underlying root issue that causes an alert in the first place gets resolved, alerts are resolved automatically.
+For example, let's assume that drift has been introduced for a stack and an alert has been created during a scheduled
+drift detection run. If the drift is resolved (e.g., by someone logging in to the AWS console and remediating the drift)
+during the next scheduled drift detection run, the alert will be resolved automatically.
 
 ## Integrating Alerts with Slack
 

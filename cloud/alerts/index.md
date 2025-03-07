@@ -59,15 +59,6 @@ Alerts for failed deployments will be automatically assigned to several individu
 - All reviewers of the Pull Requests from which the failed deployment originated.
 - The person who triggered the deployment by merging the origin Pull Requests or triggering a local deployment.
 
-### Unhealthy Deployment
-
-An unhealthy deployment in Terramate describes a deployment that has a failed health check.
-Alerts for unhealthy deployments will be automatically assigned to several individuals:
-
-- Author of the Pull Requests from which the failed deployment originated.
-- All reviewers of the Pull Requests from which the failed deployment originated.
-- The person who triggered the deployment by merging the origin Pull Requests or triggering a local deployment.
-
 ### Detected Drift
 
 A detected drift in Terramate describes a stack that has drifted.

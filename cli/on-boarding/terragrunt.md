@@ -16,7 +16,7 @@ Here's what you will learn:
 Let's get started!
 
 ::: info
-If you have any questions you can get in touch with our team by joining our [Discord community](https://terramate.io/discord).
+To understand how Terramate can help supercharge existing Terragrunt projects with orchestration, change detection, drift detection, observability and more, take a look at our [Terramate and Terragrunt](https://terramate.io/rethinking-iac/how-terramate-adds-superpowers-to-terragrunt-in-just-5-minutes/) guide. To ask any questions, you can join our [Discord community](https://terramate.io/discord).
 :::
 
 ## 1: Install Terramate CLI
@@ -58,7 +58,7 @@ https://github.com/terramate-io/terramate/releases
 
 For other installation methods, please see the [installation page](../installation.md).
 
-## 2: Import Terraform Root Modules
+## 2: Import Terragrunt Modules
 
 To enable Terramate CLI to interact with your Terragrunt configurations, you first need to import existing Terragrunt modules (modules with a state backend configuration) as Terramate stacks, which can be done with the following command:
 
@@ -71,13 +71,11 @@ This command detects your existing Terragrunt modules, creates a stack configura
 
 All Terramate features are now available for your team, giving you the best of both worlds. Some of the key benefits include:
 
-- **Change Detection:** Reduce run times of Terragrunt commands by leveraging Terramate Change Detection.
-- **Flexible Command Execution:** Execute any command within stacks imported from Terragrunt configurations.
-- **CI/CD Integration:** Run Terragrunt in any CI/CD pipeline following Terramate Automation Blueprints and examples.
-- **Advanced Code Generation:** Use Terramate’s advanced Code Generation and Globals to share data more easily.
-- **Dual Workflow Support:** Operate Terragrunt and plain Terraform side-by-side.
-- **Cloud Synchronization:** Synchronize deployments, drift runs, and previews to Terramate Cloud to gain visibility into the health of all Terragrunt modules across multiple repositories.
+- **Orchestration with Change Detection:** run commands such as `terragrunt plan` and `terragrunt apply` in changed Terragrunt modules only, reducing run-times and blast radius and enabling parallelism.
+- **GitOps automation workflows in GitHub Actions:** (or any other CI/CD) to automate Terragrunt with plan previews in Pull Requests in your CI/CD without requiring any additional tooling such as Atlantis.
+- **Drift detection and reconciliation:** to keep your Terragrunt modules drift-free with scheduled workflows in GitHub actions.
 - **Enhanced Monitoring:** Benefit from drift detection in all stacks, pull request previews for actual changes, notifications on deployment failures or new drifts, and advanced collaboration with alert routing.
+- **Dual Workflow Support:** Operate Terragrunt and plain Terraform side-by-side.
 
 ## 4: Configure Change Detection Options
 
@@ -193,12 +191,11 @@ The easiest way to sync your stacks is to run a drift detection workflow in all 
 
 ```bash
 terramate run \
-  --sync-drift-status \
-  --terraform-plan-file=drift.tfplan \
   --continue-on-error \
+  --cloud-sync-drift-status \
+  --terraform-plan-file=drift.tfplan \
   --terragrunt \
-  -- \
-  terragrunt plan -detailed-exitcode -out drift.tfplan
+  -- terragrunt plan -out drift.tfplan -detailed-exitcode -lock=false
 ```
 
 In a nutshell, the command above runs a `terragrunt plan` in all your stacks and sends the result to Terramate Cloud.

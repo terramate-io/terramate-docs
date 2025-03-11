@@ -58,7 +58,7 @@ https://github.com/terramate-io/terramate/releases
 
 For other installation methods, please see the [installation page](../installation.md).
 
-## 2: Import Terraform Root Modules
+## 2: Import OpenTofu Root Modules
 
 To enable Terramate CLI to interact with your OpenTofu configurations, you first need to import existing OpenTofu root
 modules (modules with a state backend configuration) as Terramate stacks, which can be done with the following command:

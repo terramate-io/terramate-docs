@@ -347,6 +347,10 @@ export default defineConfig({
           collapsed: false,
           items: [
             {
+              text: 'Home',
+              link: '/cloud/home/'
+            },
+            {
               text: 'Dashboard',
               link: '/cloud/dashboard/',
             },

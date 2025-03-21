@@ -69,7 +69,7 @@ jobs:
           terraform_version: 1.7.4
           terraform_wrapper: false
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         id: auth
         uses: aws-actions/configure-aws-credentials@v4
@@ -77,7 +77,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   id: auth
       #   uses: google-github-actions/auth@v2
@@ -85,7 +85,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   id: auth
       #   uses: azure/login@v2
@@ -115,15 +115,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ## Optional step to reconcile (apply) the drifted stacks
-      ## This only applies to stack with a `reconcile` tag by default
-      ## Uncomment if desired
+      # # Optional step to reconcile (apply) the drifted stacks
+      # # This only applies to stack with a `reconcile` tag by default
+      # # Uncomment if desired
       # - name: Drift reconciliation
       #   id: drift-reconcile
       #   run: |
       #     terramate run \
       #       --status=drifted \
-      #       --tags reconcile
+      #       --tags reconcile \
       #       --parallel 5 \
       #       --sync-deployment \
       #       --terraform-plan-file=drift.tfplan \
@@ -168,7 +168,7 @@ jobs:
           tofu_version: 1.9.0
           tofu_wrapper: false
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         id: auth
         uses: aws-actions/configure-aws-credentials@v4
@@ -176,7 +176,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   id: auth
       #   uses: google-github-actions/auth@v2
@@ -184,7 +184,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   id: auth
       #   uses: azure/login@v2
@@ -214,15 +214,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      ## Optional step to reconcile (apply) the drifted stacks
-      ## This only applies to stack with a `reconcile` tag by default
-      ## Uncomment if desired
+      # # Optional step to reconcile (apply) the drifted stacks
+      # # This only applies to stack with a `reconcile` tag by default
+      # # Uncomment if desired
       # - name: Drift reconciliation
       #   id: drift-reconcile
       #   run: |
       #     terramate run \
       #       --status=drifted \
-      #       --tags reconcile
+      #       --tags reconcile \
       #       --parallel 5 \
       #       --sync-deployment \
       #       --tofu-plan-file=drift.otplan \
@@ -267,7 +267,7 @@ jobs:
           terragrunt-version: 0.72.6
           token: ${{ github.token }}
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         id: auth
         uses: aws-actions/configure-aws-credentials@v4
@@ -275,7 +275,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   id: auth
       #   uses: google-github-actions/auth@v2
@@ -283,7 +283,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   id: auth
       #   uses: azure/login@v2
@@ -313,16 +313,16 @@ jobs:
             terragrunt plan -out drift.tfplan -detailed-exitcode -lock=false
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      
-      ## Optional step to reconcile (apply) the drifted stacks
-      ## This only applies to stack with a `reconcile` tag by default
-      ## Uncomment if desired
+
+      # # Optional step to reconcile (apply) the drifted stacks
+      # # This only applies to stack with a `reconcile` tag by default
+      # # Uncomment if desired
       # - name: Drift reconciliation
       #   id: drift-reconcile
       #   run: |
       #     terramate run \
       #       --status=drifted \
-      #       --tags reconcile
+      #       --tags reconcile \
       #       --parallel 5 \
       #       --sync-deployment \
       #       --terraform-plan-file=drift.tfplan \
@@ -331,7 +331,6 @@ jobs:
       #       terragrunt apply -input=false -auto-approve -lock-timeout=5m drift.tfplan
       #   env:
       #     GITHUB_TOKEN: ${{ github.token }}
-
 ````
 
 :::

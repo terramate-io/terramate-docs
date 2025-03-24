@@ -26,7 +26,7 @@ The Pull Requests list shows [pull requests](../previews/index.md) you authored 
 
 ## Deployments You Collaborated On
 
-The Deployments list shows deployments where you were involved—whether by creating or reviewing the associated pull request or by triggering the deployment.
+The list shows deployments where you were involved—whether by creating or reviewing the associated pull request or by triggering the deployment.
 - **Status**: The current state of each deployment.
 - **Triggering Pull Request**: Shows the pull request that initiated the deployment, including its title, the triggering user, and the merge branch.
 - **Associated Stack**: The stack linked to the deployment.

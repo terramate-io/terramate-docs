@@ -33,4 +33,4 @@ The Deployments list presents deployments where you contributed by pushing commi
 - **Associated Stack**: The stack linked to the deployment.
 - **Associated Repository**: The repository containing the deployment's code.
 - **Finished At**: A timestamp indicating how long ago the deployment completed.
-- **Duration**: The total runtime of the deployment.
+- **Duration**: The total run time of the deployment.

@@ -589,7 +589,6 @@ export default defineConfig({
                 { text: 'Microsoft Azure', link: 'https://github.com/terramate-io/terramate-quickstart-azure' },
                 {
                   text: 'Google Cloud 🚧',
-                  link: '/cli/guides/reference-architectures/aws',
                 },
                 {
                   text: 'Terragrunt',

@@ -136,7 +136,7 @@ export default defineConfig({
     nav: [
       { text: 'Docs', link: '/' },
       { text: 'Blog', link: 'https://terramate.io/rethinking-iac' },
-      { text: 'We are hiring!', link: 'https://jobs.ashbyhq.com/terramate' },
+      // { text: 'We are hiring!', link: 'https://jobs.ashbyhq.com/terramate' },
       {
         text: 'Releases',
         link: 'https://github.com/terramate-io/terramate/releases',

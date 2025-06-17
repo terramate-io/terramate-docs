@@ -118,8 +118,16 @@ jobs:
       # # Optional step to reconcile (apply) the drifted stacks
       # # This only applies to stack with a `reconcile` tag by default
       # # Uncomment if desired
+      # - name: Check for auto reconcile
+      #   id: find-drifted
+      #   run: |
+      #     terramate list \
+      #       --status=drifted \
+      #       --tags reconcile
+      #
       # - name: Drift reconciliation
       #   id: drift-reconcile
+      #   if: steps.find-drifted.outputs.stdout
       #   run: |
       #     terramate run \
       #       --status=drifted \
@@ -217,8 +225,16 @@ jobs:
       # # Optional step to reconcile (apply) the drifted stacks
       # # This only applies to stack with a `reconcile` tag by default
       # # Uncomment if desired
+      # - name: Check for auto reconcile
+      #   id: find-drifted
+      #   run: |
+      #     terramate list \
+      #       --status=drifted \
+      #       --tags reconcile
+      #
       # - name: Drift reconciliation
       #   id: drift-reconcile
+      #   if: steps.find-drifted.outputs.stdout
       #   run: |
       #     terramate run \
       #       --status=drifted \
@@ -317,8 +333,16 @@ jobs:
       # # Optional step to reconcile (apply) the drifted stacks
       # # This only applies to stack with a `reconcile` tag by default
       # # Uncomment if desired
+      # - name: Check for auto reconcile
+      #   id: find-drifted
+      #   run: |
+      #     terramate list \
+      #       --status=drifted \
+      #       --tags reconcile
+      #
       # - name: Drift reconciliation
       #   id: drift-reconcile
+      #   if: steps.find-drifted.outputs.stdout
       #   run: |
       #     terramate run \
       #       --status=drifted \

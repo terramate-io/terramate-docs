@@ -36,7 +36,7 @@ will create a stack with the following configuration:
 ```hcl
 # ./stacks/vpc/stack.tm.hcl
 stack {
-  name        = "My first stack"
+  name        = "Main VPC"
   description = "Stack to manage the main VPC"
   id          = "3271f37c-0e08-4b59-b205-1ee61082ff26"
 }

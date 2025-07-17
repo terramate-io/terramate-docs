@@ -120,5 +120,5 @@ configuration is since it is all merged into a single set of globals before eval
 
 ## Debugging Globals
 
-To see all globals available in each stack, the `terramate debug globals` command can be used. For details, please see the
+To see all globals available in each stack, the `terramate debug show globals` command can be used. For details, please see the
 [debug globals](../../reference/cmdline/debug/show/debug-show-globals.md) command.

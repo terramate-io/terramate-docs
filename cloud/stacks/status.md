@@ -46,7 +46,7 @@ When no drift is detected for a `failed` stack, the stack status will be set to 
 `terramate run --status=drifted -- terraform apply`
 For more details, refer to the [terramate run](../../cli/reference/cmdline/run.md#running-a-command-on-stacks-with-specific-cloud-status) command.
 
-### Usage 
+### Usage
 `terramate run --status=drifted|unhealhty|failed`
 
 ### Example

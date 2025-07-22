@@ -78,7 +78,7 @@ When defining values in the `terramate.config.run.env` block, Terramate follows 
 - Redefining variables at the same level results in conflict.
 - Redefining variables at lower levels to replace previous values for precise customization.
 - Terramate evaluates values only at the stack level, optimizing performance.
-- Using `null` as a value for any variable signifies it is unset, preventing its export.
+- Using `null` as a value for any variable signifies it is unset, preventing its export.
 - To unset a variable at lower levels, assign them to be `unset` or `null` .
 
 ## Using the `env` Namespace

@@ -9,12 +9,10 @@ description: Execute a Terramate Script in all stacks or in a filtered subset of
 This is an experimental feature that might be subject to change in the future. To use it now, you must enable the project config option `terramate.config.experiments = ["scripts"]`
 :::
 
-
 ## Overview
 
 A [script](../../../orchestration/scripts.md#introduction) is a collection of different commands which are part of a workflow.
 You can run a single `script run` command to run all the commands of the script block as one single executable unit without having to run them one by one.
-
 
 ## Usage
 
@@ -59,7 +57,6 @@ Filters stacks based on Terramate Cloud status (e.g., `unhealthy`).
 
 - **`--reverse`**
 Runs the script in reverse order across stacks.
-
 
 ### Examples
 

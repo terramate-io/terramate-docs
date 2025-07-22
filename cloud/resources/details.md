@@ -18,5 +18,4 @@ On the Resource Details page, you can view key metadata that helps you track, ma
 - `Current drift`: Displays any differences between the deployed state and the desired configuration. It is marked as `Outdated` if there is a newer deployment.
 - `Last Deployment`: Displays the most recent deployment details, including the user who initiated it and whether it was triggered manually. It is marked as `Outdated` if the current state is newer.
 
-
 ![Resource details](../assets/resource-details.png)

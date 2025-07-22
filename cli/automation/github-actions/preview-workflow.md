@@ -77,7 +77,7 @@ jobs:
         id: list
         run: terramate list --changed
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -86,7 +86,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -95,7 +95,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -184,7 +184,7 @@ jobs:
         id: list
         run: terramate list --changed
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -193,7 +193,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -202,7 +202,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -291,7 +291,7 @@ jobs:
         id: list
         run: terramate list --changed
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -300,7 +300,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -309,7 +309,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -410,7 +410,7 @@ jobs:
         id: list
         run: terramate list --changed
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -419,7 +419,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -428,7 +428,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -469,8 +469,8 @@ jobs:
             -- \
             terraform plan -out out.tfplan -lock=false
 
-      ## Note: Due to a limitation in the size of a GitHub PR comment (65,536 characters), we are truncating the output if it's too long. For better and complete previews or changes consider Terramate Cloud.
-      ## Note: Depending on the setup, you may need to add pr-comment.txt to your .gitignore to avoid any failures
+      # # Note: Due to a limitation in the size of a GitHub PR comment (65,536 characters), we are truncating the output if it's too long. For better and complete previews or changes consider Terramate Cloud.
+      # # Note: Depending on the setup, you may need to add pr-comment.txt to your .gitignore to avoid any failures
       - name: Generate preview details
         if: steps.list.outputs.stdout
         id: comment
@@ -576,7 +576,7 @@ jobs:
         id: list
         run: terramate list --changed
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -585,7 +585,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -594,7 +594,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -635,8 +635,8 @@ jobs:
             -- \
             tofu plan -out out.otplan -lock=false
 
-      ## Note: Due to a limitation in the size of a GitHub PR comment (65,536 characters), we are truncating the output if it's too long. For better and complete previews or changes consider Terramate Cloud.
-      ## Note: Depending on the setup, you may need to add pr-comment.txt to your .gitignore to avoid any failures
+      # # Note: Due to a limitation in the size of a GitHub PR comment (65,536 characters), we are truncating the output if it's too long. For better and complete previews or changes consider Terramate Cloud.
+      # # Note: Depending on the setup, you may need to add pr-comment.txt to your .gitignore to avoid any failures
       - name: Generate preview details
         if: steps.list.outputs.stdout
         id: comment
@@ -742,7 +742,7 @@ jobs:
         id: list
         run: terramate list --changed
 
-      ## Comment this step out if not using AWS
+      # # Comment this step out if not using AWS
       - name: Configure AWS credentials via OIDC
         if: steps.list.outputs.stdout
         id: auth
@@ -751,7 +751,7 @@ jobs:
           aws-region: CHANGEME_AWS_REGION
           role-to-assume: CHANGEME_IAM_ROLE_ARN
 
-      ## Uncomment this if using Google Cloud
+      # # Uncomment this if using Google Cloud
       # - name: Authenticate to Google Cloud
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -760,7 +760,7 @@ jobs:
       #     workload_identity_provider: CHANGEME_WORKLOAD_IDENTITY_PROVIDER
       #     service_account: CHANGEME_SERVICE_ACCOUNT_EMAIL
 
-      ## Uncomment this if using Microsoft Azure
+      # # Uncomment this if using Microsoft Azure
       # - name: Configure Azure credentials
       #   if: steps.list.outputs.stdout
       #   id: auth
@@ -801,8 +801,8 @@ jobs:
             -- \
             terragrunt plan -out out.tfplan -lock=false
 
-      ## Note: Due to a limitation in the size of a GitHub PR comment (65,536 characters), we are truncating the output if it's too long. For better and complete previews or changes consider Terramate Cloud.
-      ## Note: Depending on the setup, you may need to add pr-comment.txt to your .gitignore to avoid any failures
+      # # Note: Due to a limitation in the size of a GitHub PR comment (65,536 characters), we are truncating the output if it's too long. For better and complete previews or changes consider Terramate Cloud.
+      # # Note: Depending on the setup, you may need to add pr-comment.txt to your .gitignore to avoid any failures
       - name: Generate preview details
         if: steps.list.outputs.stdout
         id: comment

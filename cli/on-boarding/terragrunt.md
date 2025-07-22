@@ -154,8 +154,9 @@ You can belong to multiple organizations and teams. Click the “join” button 
 
 Configure your Terramate project to sync data to your Terramate Cloud organization after creating it.
 
-```bash
-cat <<EOF >terramate.tm.hcl
+::: code-group
+```sh [Terramate EU]
+$ cat <<EOF >terramate.tm.hcl
 terramate {
   config {
     cloud {
@@ -165,9 +166,26 @@ terramate {
 }
 EOF
 
-git add terramate.tm.hcl
-git commit -m "Add Terramate Cloud configuration"
+$ git add terramate.tm.hcl
+$ git commit -m "Add Terramate Cloud configuration"
 ```
+
+```sh{6} [Terramate US]
+$ cat <<EOF >terramate.tm.hcl
+terramate {
+  config {
+    cloud {
+      organization = "organization-short-name" # TODO: fill in your org short name
+      location     = "us"
+    }
+  }
+}
+EOF
+
+$ git add terramate.tm.hcl
+$ git commit -m "Add Terramate Cloud configuration"
+```
+:::
 
 ## 9: Login from CLI
 

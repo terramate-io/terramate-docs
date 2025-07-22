@@ -22,7 +22,7 @@ For details on how the change detection and order of execution works in Terramat
 - [Change Detection](../../change-detection/index.md)
 - [Orchestration](../../orchestration/index.md)
 
-For using the Terramate Cloud features, check the [TMC Getting Started](../../../cloud/signup/index.md) page and 
+For using the Terramate Cloud features, check the [TMC Getting Started](../../../cloud/signup/index.md) page and
 the [CLI authentication](./cloud/index.md#cli-authentication) page for details.
 
 ## Examples
@@ -227,7 +227,7 @@ Enable specific change detection features. Possible values are (multiple options
   terramate run --changed --enable-change-detection=git-untracked -- terraform init
   ```
 
-- `--disable-change-detection=<options>`: 
+- `--disable-change-detection=<options>`:
 
 Disable specific change detection features (multiple options supported): 'git-untracked', 'git-uncommitted'.
 
@@ -262,14 +262,14 @@ Disable specific change detection features (multiple options supported): 'git-un
 ### [Outputs Sharing](../../orchestration/outputs-sharing.md)
 
 - `--enable-sharing`
-  
+
   Running `terramate run --enable-sharing` collects output values from stacks with defined outputs, passing them to the command specified in `sharing_backend.command`. If the backend type is `Terraform`, it configures variables in stacks with `input` blocks by exporting them as `TF_var_` environment variables. It enables the smooth sharing of values across stacks.
   More info about [Outputs Sharing](https://terramate.io/docs/cli/orchestration/outputs-sharing)
 
 - `--include-output-dependencies`
 
   If the selected stacks have dependency to outputs from other stacks not included in the current run, then this flag will include the dependencies in the run.
-  
+
   Note: this is useful because [Outputs Sharing](../../orchestration/outputs-sharing.md) feature requires the dependencies to be initialized (`terraform init`) before the run.
 
 - `--only-output-dependencies`
@@ -367,10 +367,10 @@ Before using this feature, enable targets for your project by setting the config
   Attempt to migrate stacks from `--from-target <old-target>` to `--target <new-target>`.
 
   The rules for this migration are applied per stack as follows:
-	- Skip the migration if the stack already exists in `new-target`.
-	- Skip the migration if the stack doesn't exist in `old-target`.
-	- Skip the migration if used with `--sync-preview`.
-	- Otherwise, move/rename the stack from `old-target` to `new-target`.
+  - Skip the migration if the stack already exists in `new-target`.
+  - Skip the migration if the stack doesn't exist in `old-target`.
+  - - Skip the migration if used with `--sync-preview`.
+  - Otherwise, move/rename the stack from `old-target` to `new-target`.
 
   After the migration, all subsequent operations are applied to the `new-target` as usual.
 

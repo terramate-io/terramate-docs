@@ -223,4 +223,3 @@ Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows
 - [Slack Integration:](../../cloud/integrations/slack.md) Receive alerts and notifications in Slack.
 - [Link Accounts:](../../cloud/profile/account-linking.md) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
 - [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.
-

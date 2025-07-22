@@ -29,8 +29,7 @@ filetype in your [settings](https://code.visualstudio.com/docs/getstarted/settin
 {
   "files.associations": {
     "*.tf.tmgen": "tf",
-    "*.json.tmgen": "json",
-    ...
+    "*.json.tmgen": "json"
   }
 }
 ```

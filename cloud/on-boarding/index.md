@@ -21,15 +21,29 @@ Remember the organization's short name that you set for accessing the organizati
 After creating your organization configure your Terramate Repository to define which Terramate Cloud organization to synchronize data to.
 Create a new file called `terramate.tm.hcl` at the root of your repository and add the following content.
 
-```hcl
+::: code-group
+```hcl [Terramate US]
 terramate {
   config {
     cloud {
       organization = "{organization-short-name}"
+      location     = "us" # set to 'eu' or 'us' depending of if you signed up for cloud.terramate.io or us.cloud.terramate.io
     }
   }
 }
 ```
+
+```hcl [Terramate EU]
+terramate {
+  config {
+    cloud {
+      organization = "{organization-short-name}"
+      location     = "eu" # set to 'eu' or 'us' depending of if you signed up for cloud.terramate.io or us.cloud.terramate.io
+    }
+  }
+}
+```
+:::
 
 ## Login from CLI
 

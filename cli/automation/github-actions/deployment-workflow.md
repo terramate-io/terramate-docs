@@ -58,7 +58,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -176,7 +176,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
@@ -294,7 +294,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
@@ -412,7 +412,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -499,7 +499,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
@@ -586,7 +586,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3

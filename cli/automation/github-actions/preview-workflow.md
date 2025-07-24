@@ -171,7 +171,7 @@ jobs:
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: 1.9.0
+          tofu_version: 1.10.3
           tofu_wrapper: false
 
       - name: Check Terramate formatting
@@ -563,7 +563,7 @@ jobs:
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: 1.9.0
+          tofu_version: 1.10.3
           tofu_wrapper: false
 
       - name: Check Terramate formatting

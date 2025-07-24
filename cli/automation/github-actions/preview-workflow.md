@@ -59,12 +59,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.7.4
+          terraform_version: 1.12.2
           terraform_wrapper: false
 
       - name: Check Terramate formatting
@@ -166,12 +166,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: 1.9.0
+          tofu_version: 1.10.3
           tofu_wrapper: false
 
       - name: Check Terramate formatting
@@ -273,12 +273,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:
-          terragrunt-version: 0.72.6
+          terragrunt-version: 0.83.2
           token: ${{ github.token }}
 
       - name: Check Terramate formatting
@@ -392,12 +392,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.7.4
+          terraform_version: 1.12.2
           terraform_wrapper: false
 
       - name: Check Terramate formatting
@@ -558,12 +558,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: 1.9.0
+          tofu_version: 1.10.3
           tofu_wrapper: false
 
       - name: Check Terramate formatting
@@ -724,12 +724,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install Terramate
-        uses: terramate-io/terramate-action@v2
+        uses: terramate-io/terramate-action@v3
 
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:
-          terragrunt-version: 0.72.6
+          terragrunt-version: 0.83.2
           token: ${{ github.token }}
 
       - name: Check Terramate formatting

@@ -299,7 +299,7 @@ jobs:
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:
-          terragrunt-version: 0.72.6
+          terragrunt-version: 0.83.2
           token: ${{ github.token }}
 
       - name: List changed stacks
@@ -591,7 +591,7 @@ jobs:
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:
-          terragrunt-version: 0.72.6
+          terragrunt-version: 0.83.2
           token: ${{ github.token }}
 
       - name: List changed stacks

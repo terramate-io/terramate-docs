@@ -66,7 +66,7 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.7.4
+          terraform_version: 1.12.2
           terraform_wrapper: false
 
       # # Comment this step out if not using AWS

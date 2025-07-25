@@ -62,6 +62,8 @@ jobs:
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v3
+        with:
+          version: "0.14.0"
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -169,6 +171,8 @@ jobs:
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v3
+        with:
+          version: "0.14.0"
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@v1
@@ -276,6 +280,8 @@ jobs:
 
       - name: Install Terramate
         uses: terramate-io/terramate-action@v3
+        with:
+          version: "0.14.0"
 
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3

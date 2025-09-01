@@ -29,17 +29,17 @@ instead of api keys. For that you can establish trust relationship between your 
     - a GitLab Repository to trust a single repository within a GitHub Organization of the form `owner/repository`
     - a comma-separated list of GitLab repositories ofthe form `organizationA/repository`, `organizationB/repository`
 
-## Slack Webhook (deprecated)
+## Webhook for Slack (deprecated)
 
 ::: info
-Slack Webhook in Terramate Cloud are deprecated and will soon be replaced with the [Terramate Slack App](../integrations/slack.md).
+Webhook for Slack in Terramate Cloud are deprecated and will soon be replaced with the [Terramate App for Slack](../integrations/slack.md).
 :::
 
-- `Slack Webhook`:
+- `Webhook for Slack`:
 Terramate Cloud can send alerts to notify you about important events, such as failed deployments or detected drift. Terramate can automatically deliver such alerts directly to individuals and teams on Slack. You can follow the below-mentioned steps to integrate Terramate Cloud with your Slack workspace:
 
   1. Create a new app from the [Slack API page](https://api.slack.com/apps) by clicking **Create New App** and selecting **From Scratch**.
-  2. Enter a name for your Slack App in the **App Name** field.
+  2. Enter a name for your App for Slack in the **App Name** field.
   3. Choose your Slack workspace in the **Pick a Workspace** field, then click **Create App**.
   4. The new app page opens. Click on **Incoming Webhooks** in the left navigation pane.
   5. Toggle the **Activate Incoming Webhooks** button to **On**.
@@ -47,4 +47,4 @@ Terramate Cloud can send alerts to notify you about important events, such as fa
   7. Select a channel where you want the webhook to post notifications.
   8. Click **Allow** to grant permissions.
   9. Copy the generated webhook URL.
-  10. Paste the copied webhook URL into the Slack Webhook field in the General Settings page of Terramate Cloud.
+  10. Paste the copied webhook URL into the Webhook for Slack field in the General Settings page of Terramate Cloud.

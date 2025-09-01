@@ -236,6 +236,6 @@ Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows
 ## 11: Next Steps
 
 - [Setup CI/CD:](../automation/index.md) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
-- [Slack Integration:](../../cloud/integrations/slack.md) Receive alerts and notifications in Slack.
+- [Terramate App for Slack:](../../cloud/integrations/slack.md) Receive alerts and notifications in Slack.
 - [Link Accounts:](../../cloud/profile/account-linking.md) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
 - [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.

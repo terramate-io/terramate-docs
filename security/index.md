@@ -150,22 +150,22 @@ You can login to Terramate Cloud using various SSO providers. Below is an overvi
 
 The following section explains the access scopes required by the individual integrations available in Terramate Cloud.
 
-#### GitHub App
+#### App for GitHub
 
 ::: info
-The GitHub App doesn't require any access to your source code.
+The App for GitHub doesn't require any access to your source code.
 :::
 
-The [Terramate Cloud GitHub App](https://github.com/apps/terramate-cloud) is required to provide Previews inside of [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and to integrate
+The [Terramate App for GitHub](https://github.com/apps/terramate-cloud) is required to provide Previews inside of [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and to integrate
 policy checks with the [GitHub Checks API](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks).
 
-The following scopes are required when installing the GitHub App.
+The following scopes are required when installing the App for GitHub.
 
 - **Read** access to metadata
 - **Read** and **write** access to actions, commit statuses, environments, and pull requests
 - **Read** access to email addresses
 
-![GitHub App Required Scopes](./assets/github-app-scopes.png "GitHub App Required Scopes")
+![App for GitHub Required Scopes](./assets/github-app-scopes.png "App for GitHub Required Scopes")
 
 #### GitLab
 
@@ -175,12 +175,12 @@ The following scopes are required when installing the GitHub App.
 
 When integrating [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), the following scopes of permissions are required:
 
-#### Slack App
+#### App for Slack
 
-The Slack App is used to integrate notifications such as [Alerts](../cloud/alerts/index.md) with your Slack Workspace
+The App for Slack is used to integrate notifications such as [Alerts](../cloud/alerts/index.md) with your Slack Workspace
 by providing a Slack Bot.
 
-The following scopes of permissions are required to install the Slack App in your workspace:
+The following scopes of permissions are required to install the App for Slack in your workspace:
 
 - View basic information about public channels in your workspace
 - View people in your workspace
@@ -188,11 +188,11 @@ The following scopes of permissions are required to install the Slack App in you
 - Send messages as @terramate
 - Send messages to channels @terramate isn't a member of
 
-![Slack App Required Scopes](./assets/slack-app-scopes.png "Slack App Required Scopes")
+![App for Slack Required Scopes](./assets/slack-app-scopes.png "App for Slack Required Scopes")
 
 #### Slack Webhook
 
-In addition to the Slack App, Terramate Cloud also allows you to configure a webhook used for sending notifications about
+In addition to the App for Slack, Terramate Cloud also allows you to configure a webhook used for sending notifications about
 failed deployments, detected drifts, etc. to a centralize Slack channel.
 
 This requires you to [configure a webhook](https://api.slack.com/messaging/webhooks) in your Slack Workspace authorized to

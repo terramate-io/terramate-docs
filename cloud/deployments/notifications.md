@@ -5,7 +5,7 @@ description: Learn how to get notified about new deployments via Terramate Cloud
 
 # Deployment Notifications
 
-When the Slack WebHook URL is configured in the [General Organization settings](../organization/settings.md), notifications will be sent to the corresponding Slack Channel.
+When the WebHook URL for Slack is configured in the [General Organization settings](../organization/settings.md), notifications will be sent to the corresponding Slack Channel.
 
 ## Deployment Notifications
 

@@ -7,5 +7,5 @@ The following settings are available:
 
 - [General Settings](./settings.md#general-settings)
 - [VCS Open ID Connect (OIDC)](./settings.md#setup-vcs-open-id-connect-oidc)
-- [Slack Webhook (deprecated)](./settings.md#slack-webhook-deprecated)
+- [Webhook for Slack (deprecated)](./settings.md#slack-webhook-deprecated)
 - [User and Team Management](./user-management.md)

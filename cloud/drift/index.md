@@ -30,7 +30,7 @@ detection workflows for specific environments and services.
 ## Alerts
 
 Terramate can create actionable alerts for drifted stacks that notify an owner or a group of owners of stacks.
-In addition, notifications can be sent to a centralized Slack channel or directly to Slack users by using our Slack app.
+In addition, notifications can be sent to a centralized Slack channel or directly to Slack users by using our Terramate App for Slack.
 
 ## Drift Reconciliation
 

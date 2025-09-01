@@ -32,14 +32,14 @@ Automating Terramate CLI in GitHub Actions is technically possible without using
 Please see the CLI-only examples in the [blueprints](#terramate-blueprints) section for automating Terramate CLI without Terramate Cloud in GitHub Actions.
 :::
 
-### Install the Terramate GitHub App
+### Install the Terramate App for GitHub
 
-It's recommended to install the [Terramate GitHub App](../../../cloud/integrations/github/index.md) in your GitHub organization
+It's recommended to install the [Terramate App for GitHub](../../../cloud/integrations/github/index.md) in your GitHub organization
 when automating GitHub in GitHub Actions. The app provides well-formatted previews of your IaC changes inside of Pull Requests
 that are easy to understand. You can install the app via the integrations section in your Terramate Cloud account,
-for details please see the [GitHub integration](../../../cloud/integrations/github/index.md) documentation.
+for details please see the [integration with GitHub](../../../cloud/integrations/github/index.md) documentation.
 
-![GitHub App Pull Request Previews](../../assets/automation/pull-request-preview.png)
+![App for GitHub Pull Request Previews](../../assets/automation/pull-request-preview.png)
 
 ### Configure GitHub Trust in your Terramate Cloud Organization
 

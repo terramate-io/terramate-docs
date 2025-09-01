@@ -5,7 +5,7 @@ description: Learn how to configure Slack notifications for drift detection in T
 
 # Drift Notifications
 
-When the Slack WebHook URL is configured in the [General Organization settings](../organization/settings.md), notifications will be sent to the corresponding Slack Channel.
+When the Webhook URL for Slack is configured in the [General Organization settings](../organization/settings.md), notifications will be sent to the corresponding Slack Channel.
 
 ## New Drift Notification
 
@@ -19,4 +19,4 @@ The notification will include detailed information about the drifted stack and p
 
 When onboarding to Terramate Cloud, we recommended running a drift check before setting up notifications, especially if the initial run is expected to detect many drifted stacks.
 
-After completing the initial drift check, you can set up the Slack Webhook to notify the channel only of new drifts.
+After completing the initial drift check, you can set up the Webhook for Slack to notify the channel only of new drifts.

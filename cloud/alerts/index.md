@@ -7,7 +7,7 @@ description: Learn how Terramate helps you to manage failed deployments, drift a
 
 Terramate Cloud alerts help manage critical events, such as failed deployments and detected drift. Alerts are automatically generated for these events and assigned to the appropriate individuals or teams (for example, the author of a commit or Pull Request).
 
-Alerts seamlessly integrate with Slack via the [Slack App](../integrations/slack.md) integration, sending direct messages to assigned recipients whenever alerts are created or updated.
+Alerts seamlessly integrate with Slack via the [Terramate App for Slack](../integrations/slack.md) integration, sending direct messages to assigned recipients whenever alerts are created or updated.
 
 ::: info
 Unless a member of your Terramate Cloud organization uses the same email address among all their third-party accounts
@@ -74,8 +74,8 @@ during the next scheduled drift detection run, the alert will be resolved automa
 
 ## Integrating Alerts with Slack
 
-To integrate alerts with your Slack workspace, [install the Slack App](../integrations/slack.md). Once installed, the
-Slack App will send notifications for all newly created and updated alerts to all assigned users. Users will be able to
+To integrate alerts with your Slack workspace, [install the Terramate App for Slack](../integrations/slack.md). Once installed, the
+App for Slack will send notifications for all newly created and updated alerts to all assigned users. Users will be able to
 open alerts and affected stacks directly from Slack.
 
 ![Slack alert notification](../assets/alerts/slack-notification.png)

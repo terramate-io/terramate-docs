@@ -42,7 +42,7 @@ You can select any number of e-mail addresses to invite, or you can skip this st
 
 ### Configure Slack alerts
 
-In the general settings of your organization you can configure your Slack webhook to receive notifications related to
+In the general settings of your organization you can configure your webhook for Slack to receive notifications related to
 deployments, drift detection, pull requests, and more.
 
 ### The dashboard

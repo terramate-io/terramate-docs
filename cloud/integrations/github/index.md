@@ -1,22 +1,22 @@
 ---
-title: GitHub App | Integrations | Terramate Cloud
-description: Learn how to install and use the Terramate Cloud GitHub App to integrate your GitHub and Terramate Cloud Organizations.
+title: App for GitHub | Integrations | Terramate Cloud
+description: Learn how to install and use the Terramate App for GitHub to integrate your GitHub and Terramate Cloud Organizations.
 ---
 
-# GitHub Integration
+# Integration with GitHub
 
-Terramate Cloud integrates with GitHub by providing a [GitHub App](https://github.com/apps/terramate-cloud) that
-can be installed in your personal GitHub account or your GitHub organization. Installing our GitHub App allows you to
+Terramate Cloud integrates with GitHub by providing an [App for GitHub](https://github.com/apps/terramate-cloud) that
+can be installed in your personal GitHub account or your GitHub organization. Installing our App for GitHub allows you to
 use features such as **rendered plan previews** in Pull Requests, automated **Pull Request approvals**,
 **status checks**, **policies**, and more.
 
 ## Features
 
-Using the GitHub App to integrate Terramate Cloud and GitHub enables several features:
+Using the App for GitHub to integrate Terramate Cloud and GitHub enables several features:
 
 ### Rendered Plans
 
-For every new plan preview created with Terramate CLI, the GitHub App will provide a rendered version of each plan
+For every new plan preview created with Terramate CLI, the App for GitHub will provide a rendered version of each plan
 inside Pull Requests, clearly highlighting destructive changes. This allows your team to better understand changes introduced
 in Pull Requests without having to understand complex Terraform and OpenTofu plans.
 
@@ -29,29 +29,29 @@ from GitHub Actions and more.
 
 ## Setting up the integration
 
-To install the GitHub App, please navigate to the integrations page of your Terramate Cloud organization and click on
-the ***GitHub App*** in the ***available integrations*** section to start the installation process.
+To install the App for GitHub, please navigate to the integrations page of your Terramate Cloud organization and click on
+the ***App for GitHub*** in the ***available integrations*** section to start the installation process.
 
 ![Integrations Page](../../assets/integrations/overview.png "Integrations Page")
 
-Next, you will be able to see the details of the GitHub App integration.
+Next, you will be able to see the details of the App for GitHub.
 
-![GitHub App Integration Details](../../assets/integrations/github-app-details.png "GitHub App Integration Details")
+![App for GitHub Details](../../assets/integrations/github-app-details.png "App for GitHub Details")
 
 By pressing the ***Connect Integration*** button, you will be forwarded to GitHub.
 Please choose your GitHub Organization or personal account to connect Terramate Cloud to and select whether to connect
 Terramate Cloud to all or a selected range of repositories.
 
-![GitHub App Integration Choose Repositories](../../assets/integrations/github-app-choose-repositories.png "GitHub App Integration Choose Repositories")
+![App for GitHub Choose Repositories](../../assets/integrations/github-app-choose-repositories.png "App for GitHub Choose Repositories")
 
 That's it! Terramate Cloud will now listen to incoming events from GitHub and enrich your Pull Requests with rendered plans,
 status checks and more.
 
-## Uninstall the GitHub App Integration
+## Uninstall the App for GitHub
 
-To uninstall the GitHub App, navigate to the integration page in your Terramate Cloud account and open the GitHub App
+To uninstall the App for GitHub, navigate to the integration page in your Terramate Cloud account and open the App for GitHub
 integration page.
 
-![Installed GitHub App Integration Details](../../assets/integrations/installed-github-app-details.png "Installed GitHub App Integration Details")
+![Installed App for GitHub Details](../../assets/integrations/installed-github-app-details.png "Installed App for GitHub Details")
 
-Pressing the ***Disconnect Integration*** will forward you to the app settings page of your personal or organizational GitHub account. Press ***Uninstall*** to remove the Terramate Cloud GitHub App and to unlink GitHub and Terramate Cloud.
+Pressing the ***Disconnect Integration*** will forward you to the app settings page of your personal or organizational GitHub account. Press ***Uninstall*** to remove the Terramate Cloud App for GitHub and to unlink GitHub and Terramate Cloud.

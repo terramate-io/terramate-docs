@@ -12,7 +12,7 @@ Note:
 <!-- plan sanitization -->
 <!-- how exactly does terramate cloud work -->
 <!-- what data Terramate Cloud has access to -->
-<!-- install GithUb App note -->
+<!-- install App for GitHub note -->
 
 Search for `CHANGEME` to adjust needed credentials details for AWS, Google Cloud, and Azure examples.
 

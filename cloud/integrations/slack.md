@@ -37,3 +37,5 @@ from within Slack.
 ![App for Slack Workspace](../assets/integrations/slack/slack-workspace.png "App for Slack Workspace")
 
 <!-- ## Uninstalling the integration -->
+
+The integration with Slack is covered by our [Privacy Policy](https://terramate.io/legal/privacy-policy). If you have any questions, please [contact our support](https://terramate.io/support/).

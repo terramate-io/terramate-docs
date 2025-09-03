@@ -887,6 +887,10 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_index',
                     },
                     {
+                      text: 'tm_joinlist',
+                      link: '/cli/reference/functions/tm_joinlist',
+                    },
+                    {
                       text: 'tm_keys',
                       link: '/cli/reference/functions/tm_keys',
                     },
@@ -949,6 +953,10 @@ export default defineConfig({
                     {
                       text: 'tm_transpose',
                       link: '/cli/reference/functions/tm_transpose',
+                    },
+                    {
+                      text: 'tm_tree',
+                      link: '/cli/reference/functions/tm_tree',
                     },
                     {
                       text: 'tm_values',

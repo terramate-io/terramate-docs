@@ -829,6 +829,10 @@ export default defineConfig({
                       link: '/cli/reference/functions/tm_trimspace',
                     },
                     {
+                      text: 'tm_unslug',
+                      link: '/cli/reference/functions/tm_unslug',
+                    },
+                    {
                       text: 'tm_upper',
                       link: '/cli/reference/functions/tm_upper',
                     },

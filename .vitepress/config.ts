@@ -1,5 +1,13 @@
 import type { HeadConfig } from 'vitepress'
 import { defineConfig } from 'vitepress'
+import { useSidebar } from 'vitepress-openapi'
+import spec from './theme/openapi.json' with { type: 'json' }
+
+const sidebar = useSidebar({
+  spec,
+  // Optionally, you can specify a link prefix for all generated sidebar items.
+  linkPrefix: '/api/',
+})
 
 function getPath(path: string) {
   const uri = path.replace(/(?:(^|\/)index)?\.md$/, '$1')
@@ -519,7 +527,16 @@ export default defineConfig({
                 { text: 'API Keys', link: '/cloud/organization/api-keys' },
               ],
             },
+            {
+              text: 'API Reference',
+              collapsed: true,
+              items: [
+                // ...sidebar.itemsByTags(),
+                ...sidebar.generateSidebarGroups(),
+              ],
+            },
           ],
+
         },
 
         {

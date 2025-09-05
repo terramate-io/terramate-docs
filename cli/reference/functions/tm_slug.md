@@ -2,7 +2,7 @@
 title: tm_slug | Functions | Configuration Language
 description: |-
   The tm_slug function converts strings into URL-friendly slugs by replacing
-  special characters with hyphens. Now supports both single strings and lists.
+  special characters with hyphens. It supports both single strings and lists.
 ---
 
 # `tm_slug` Function

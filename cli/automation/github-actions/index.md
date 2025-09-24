@@ -64,12 +64,20 @@ Please read the following sections to understand the details all those workflows
 
 ::: warning
 
-Ensure that you are not using the `terraform` wrapper when using the Terraform Setup GitHub Action provided by HashiCorp!
+Ensure that you are explicitly disabling the `wrapper` option when using the Terraform or OpenTofu Setup GitHub Action!
 
-```
+::: code-group
+
+```yml [ Terraform ]
 - uses: hashicorp/setup-terraform@v3
   with:
     terraform_wrapper: false
+```
+
+```yml [ OpenTofu ]
+- uses: opentofu/setup-opentofu@v1
+  with:
+    tofu_wrapper: false
 ```
 :::
 

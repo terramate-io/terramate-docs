@@ -203,12 +203,13 @@ files, but variable names **cannot** be defined twice.
 ### The `terramate.config.cloud` block
 
 Properties related to Terramate Cloud can be defined inside the `terramate.config.cloud` block.
-Currently, this block is only used to set the default cloud organization name:
+Currently, this block supports two attributes: the default cloud organization name, and the location (EU or US). For example:
 ```hcl
 terramate {
   config {
     cloud {
       organization = "my-org-name"
+      location     = "eu"
     }
   }
 }
@@ -220,3 +221,5 @@ Setting a cloud organization name is required when
 The specified name will be used to select which of the user's organizations to use in the scope of the project.
 
 It's also possible to select a cloud organization by setting the environment variable `TM_CLOUD_ORGANIZATION` to the organization name. If set, the value from the environment variable will override the configuration setting.
+
+The `location` attribute is optional, and it must match the location where you signed up for Terramate Cloud. It can be set to either `"eu"` (default) or `"us"`.

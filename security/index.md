@@ -182,11 +182,13 @@ by providing a Slack Bot.
 
 The following scopes of permissions are required to install the App for Slack in your workspace:
 
-- View basic information about public channels in your workspace
-- View people in your workspace
-- View email addresses of people in your workspace
-- Send messages as @terramate
-- Send messages to channels @terramate isn't a member of
+- For sending messages in public channels in your Workspace:
+  - View basic information about public channels in your workspace
+  - Send messages as @terramate
+  - Send messages to channels @terramate isn't a member of
+- For mapping users with their Terramate Cloud profiles:
+  - View people in your workspace
+  - View email addresses of people in your workspace
 
 ![App for Slack Required Scopes](./assets/slack-app-scopes.png "App for Slack Required Scopes")
 

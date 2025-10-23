@@ -48,7 +48,7 @@ or_term       ::= and_term {':' and_term}
 and_term      ::= tagname
 tagname       ::= ident
 ident         ::= allowedchars { allowedchars } | allowedchars
-allowedchars  ::= lowercase | digit | '-' | '_'
+allowedchars  ::= lowercase | digit | '-' | '_' | '.' | '/'
 digit         ::= '0' ... '9'
 lowercase     ::= 'a' | 'b' | ... | 'z'
 ```

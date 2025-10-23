@@ -75,7 +75,8 @@ The description is available as `terramate.stack.description` variable in Code G
 
 ### `tags`
 
-The tags list is a set of strings and each tag needs to be a lowercase alphanumeric string that can also contain dashes and underscores.
+The tags list is a set of strings and each tag needs to be a lowercase
+alphanumeric string that can also contain dashes, dots, slashes and underscores.
 
 Tags can be used to target/filter stacks in various commands and shall be used when defining order of execution of a stack.
 

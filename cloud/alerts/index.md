@@ -62,7 +62,7 @@ Alerts for failed deployments will be automatically assigned to several individu
 A detected drift in Terramate describes a stack that has drifted.
 Alerts for drifted stacks will be automatically assigned to several individuals:
 
-- The person who triggered the last deployment if the trigger was local
+- The person who triggered the last deployment if the trigger was local.
 - The author of the latest Pull Request that was deployed for that stack.
 
 ## Auto Resolving of Alerts

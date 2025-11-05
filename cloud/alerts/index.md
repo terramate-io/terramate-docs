@@ -54,16 +54,16 @@ Currently, Terramate Cloud automatically creates, assigns and resolves alerts fo
 A failed deployment in Terramate describes a deployment that contains one or multiple failed stacks.
 Alerts for failed deployments will be automatically assigned to several individuals:
 
-- Author of the Pull Requests from which the failed deployment originated.
-- All reviewers of the Pull Requests from which the failed deployment originated.
-- The person who triggered the deployment by merging the origin Pull Requests or triggering a local deployment.
+- Author of the Pull Request from which the failed deployment originated.
+- All reviewers that approved the Pull Request from which the failed deployment originated.
 
 ### Detected Drift
 
 A detected drift in Terramate describes a stack that has drifted.
 Alerts for drifted stacks will be automatically assigned to several individuals:
 
-- The person who triggered the last deployment (merging the latest Pull Requests or triggering a local deployment).
+- The person who triggered the last deployment if the trigger was local
+- The author of the latest Pull Request that was deployed for that stack.
 
 ## Auto Resolving of Alerts
 

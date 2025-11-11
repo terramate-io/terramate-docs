@@ -10,7 +10,7 @@ capabilities such as custom approval workflows, role-based security policies, an
 to turn your existing CI/CD into a powerful vending machine for self-service infrastructure with IaC in less than 5 minutes.
 
 Terramate allows you to visualize, navigate, and observe your provisioned and deployed infrastructure resources and more.
-With a UI, ChatOps Slack Bot for notifications and actionable observability, Terramate enables self-service infrastructure
+With a UI, ChatOps Bot for Slack for notifications and actionable observability, Terramate enables self-service infrastructure
 that provides everything teams need for continuous delivery of their infrastructure with automated workflows that help
 everyone understand the impact of proposed infrastructure changes.
 

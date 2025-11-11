@@ -8,7 +8,7 @@ description: Learn how to install and use the Terramate App for Slack to integra
 Terramate Cloud integrates with Slack by providing an App for Slack that can be installed in your Slack workspace.
 Installing our App for Slack allows you to use:
 
-- Use the Terramate Slack bot to interact with Terramate Cloud directly from your Slack Workspace.
+- Use the Terramate bot for Slack to interact with Terramate Cloud directly from your Slack Workspace.
 - Integrate [alerts](../alerts/index.md) with your Slack Workspace.
 - Send notifications to individuals and teams directly in Slack instead of just sharing notifications in a single Slack
   channel for more actionable notifications.

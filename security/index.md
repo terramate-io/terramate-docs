@@ -178,7 +178,7 @@ When integrating [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), the following s
 #### App for Slack
 
 The App for Slack is used to integrate notifications such as [Alerts](../cloud/alerts/index.md) with your Slack Workspace
-by providing a Slack Bot.
+by providing a bot for Slack.
 
 The following scopes of permissions are required to install the App for Slack in your workspace:
 
@@ -192,7 +192,7 @@ The following scopes of permissions are required to install the App for Slack in
 
 ![App for Slack Required Scopes](./assets/slack-app-scopes.png "App for Slack Required Scopes")
 
-#### Slack Webhook
+#### Webhook for Slack
 
 In addition to the App for Slack, Terramate Cloud also allows you to configure a webhook used for sending notifications about
 failed deployments, detected drifts, etc. to a centralize Slack channel.

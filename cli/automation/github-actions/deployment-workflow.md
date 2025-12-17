@@ -302,6 +302,20 @@ jobs:
         with:
           version: "0.14.0"
 
+      # Comment this out if not using Terraform
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.12.2
+          terraform_wrapper: false
+      
+      # Uncomment this if using OpenTofu
+      # - name: Install OpenTofu
+      #   uses: opentofu/setup-opentofu@v1
+      #   with:
+      #     tofu_version: 1.10.3
+      #     tofu_wrapper: false
+      
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:
@@ -600,6 +614,20 @@ jobs:
         with:
           version: "0.14.0"
 
+      # Comment this out if not using Terraform
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.12.2
+          terraform_wrapper: false
+      
+      # Uncomment this if using OpenTofu
+      # - name: Install OpenTofu
+      #   uses: opentofu/setup-opentofu@v1
+      #   with:
+      #     tofu_version: 1.10.3
+      #     tofu_wrapper: false
+      
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:

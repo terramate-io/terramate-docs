@@ -27,6 +27,25 @@ When synchronizing drift checks to Terramate Cloud, the following features will 
 
 Create the following GitHub Actions configuration at `.github/workflows/drift.yml`
 
+::: warning
+
+Ensure that you are explicitly disabling the `wrapper` option when using the Terraform or OpenTofu Setup GitHub Action!
+
+::: code-group
+
+```yml [ Terraform ]
+- uses: hashicorp/setup-terraform@v3
+  with:
+    terraform_wrapper: false
+```
+
+```yml [ OpenTofu ]
+- uses: opentofu/setup-opentofu@v1
+  with:
+    tofu_wrapper: false
+```
+:::
+
 Please select the tab that fits your use case. Currently available use cases are:
 - Terraform + Terramate Cloud
 - OpenTofu + Terramate Cloud
@@ -283,20 +302,13 @@ jobs:
         with:
           version: "0.14.0"
 
-      # Comment this out if not using Terraform
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.12.2
-          terraform_wrapper: false
-      
-      # Uncomment this if using OpenTofu
+      # # Uncomment this if using OpenTofu
       # - name: Install OpenTofu
       #   uses: opentofu/setup-opentofu@v1
       #   with:
       #     tofu_version: 1.10.3
       #     tofu_wrapper: false
-      
+
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v3
         with:

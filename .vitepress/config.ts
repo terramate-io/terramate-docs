@@ -522,6 +522,21 @@ export default defineConfig({
           ],
         },
 
+        // {
+        //   text: "Terramate Catalyst", 
+        //   collapsed: false,
+        //   items: [
+        //     {
+        //       text: "Overview",
+        //       link: "/catalyst/overview",
+        //     },
+        //     {
+        //       text: "Installation",
+        //       link: "/catalyst/installation",
+        //     },
+        //   ],
+        // },
+
         {
           text: '🔒 Security',
           collapsed: false,
@@ -1328,6 +1343,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { text: 'VSCode Extension', link: 'https://marketplace.visualstudio.com/items?itemName=Mineiros.terramate' },
+            { text: 'JetBrains IDEs Plugin', link: 'https://plugins.jetbrains.com/plugin/28890-terramate' },
             { text: 'VIM Plugin', link: 'https://github.com/terramate-io/vim-terramate' },
             { text: 'Language Server', link: '/cli/editor-plugins/language-server' },
           ],

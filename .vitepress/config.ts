@@ -526,12 +526,12 @@ export default defineConfig({
           text: "🤖 Terramate Catalyst",
           collapsed: false,
           items: [
-            // {
-            //   text: "Overview",
-            //   link: "/catalyst/overview",
-            // },
             {
-              text: "Installation",
+              text: "What is Terramate Catalyst",
+              link: "/catalyst/overview",
+            },
+            {
+              text: "Install Terramate Catalyst CLI",
               link: "/catalyst/installation",
             },
           ],

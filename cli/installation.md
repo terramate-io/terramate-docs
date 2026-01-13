@@ -58,6 +58,7 @@ For the best developer experience, we recommend you install an IDE plugin of you
 language server and syntax highlighting into your IDE:
 
 - Install the [VSCode extension](https://marketplace.visualstudio.com/items?itemName=Mineiros.terramate#review-details)
+- Install the [JetBrains IDEs Plugin](https://plugins.jetbrains.com/plugin/28890-terramate)
 - Install the [VIM plugin](https://terramate.io/rethinking-iac/announcing-terramate-vim-plugin/)
 
 ### Auto completion

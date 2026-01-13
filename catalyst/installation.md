@@ -6,6 +6,9 @@ outline: [2, 4]
 
 # How to install Terramate Catalyst
 
+> [!NOTE]
+> Terramate Catalyst is a special distribution of Terramate CLI supporting all the same base features but adding additional capabilities to make it scalable for any size of teams.
+
 This page explains how to install and configure Terramate Catalyst.
 
 ## Install the CLI

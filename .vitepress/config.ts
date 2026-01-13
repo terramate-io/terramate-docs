@@ -522,20 +522,20 @@ export default defineConfig({
           ],
         },
 
-        // {
-        //   text: "Terramate Catalyst", 
-        //   collapsed: false,
-        //   items: [
-        //     {
-        //       text: "Overview",
-        //       link: "/catalyst/overview",
-        //     },
-        //     {
-        //       text: "Installation",
-        //       link: "/catalyst/installation",
-        //     },
-        //   ],
-        // },
+        {
+          text: "🤖 Terramate Catalyst",
+          collapsed: false,
+          items: [
+            // {
+            //   text: "Overview",
+            //   link: "/catalyst/overview",
+            // },
+            {
+              text: "Installation",
+              link: "/catalyst/installation",
+            },
+          ],
+        },
 
         {
           text: '🔒 Security',

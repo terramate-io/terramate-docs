@@ -1,5 +1,6 @@
 import type { HeadConfig } from 'vitepress'
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 function getPath(path: string) {
   const uri = path.replace(/(?:(^|\/)index)?\.md$/, '$1')
@@ -8,10 +9,11 @@ function getPath(path: string) {
 }
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: 'Terramate Docs',
   // titleTemplate: ':title - Terramate',
   description: 'Terramate CLI is an open-source Infrastructure as Code (IaC) orchestration tool for Terraform, OpenTofu and Terragrunt.',
+  // Mermaid enabled via vitepress-plugin-mermaid
   sitemap: {
     hostname: 'https://terramate.io/docs/',
   },
@@ -533,6 +535,46 @@ export default defineConfig({
             {
               text: "Install Terramate Catalyst CLI",
               link: "/catalyst/installation",
+            },
+            {
+              text: "Concepts",
+              collapsed: true,
+              items: [
+                { text: "Bundles", link: "/catalyst/concepts/bundles" },
+                { text: "Components", link: "/catalyst/concepts/components" },
+                { text: "Collections", link: "/catalyst/concepts/collections" },
+                { text: "Scaffolding & Generation", link: "/catalyst/concepts/scaffolding-and-generation" },
+              ],
+            },
+            {
+              text: "Tutorials",
+              collapsed: true,
+              items: [
+                { text: "Instantiate Your First Bundle", link: "/catalyst/tutorials/instantiate-your-first-bundle" },
+                { text: "Create a Component and Bundle", link: "/catalyst/tutorials/create-a-component-and-bundle" },
+              ],
+            },
+            {
+              text: "How‑to Guides",
+              collapsed: true,
+              items: [
+                { text: "Instantiate a Bundle via CLI", link: "/catalyst/how-to/instantiate-bundle-cli" },
+                { text: "Reconfigure a Bundle", link: "/catalyst/how-to/reconfigure-bundle" },
+                { text: "Use a Remote Catalog", link: "/catalyst/how-to/use-remote-catalog" },
+                { text: "Convert Module to Component", link: "/catalyst/how-to/convert-module-to-component" },
+                { text: "Reference Bundle Values in Codegen", link: "/catalyst/how-to/reference-bundle-values-in-codegen" },
+              ],
+            },
+            {
+              text: "Reference",
+              collapsed: true,
+              items: [
+                { text: "Bundle Instantiation", link: "/catalyst/reference/bundle-instantiation" },
+                { text: "Bundle Definition", link: "/catalyst/reference/bundle-definition" },
+                { text: "Component Definition", link: "/catalyst/reference/component-definition" },
+                { text: "Functions", link: "/catalyst/reference/functions" },
+                { text: "Variables", link: "/catalyst/reference/variables" },
+              ],
             },
           ],
         },
@@ -1292,6 +1334,15 @@ export default defineConfig({
                   ],
                 },
                 {
+                  text: 'Catalyst',
+                  collapsed: false,
+                  items: [
+                    { text: 'scaffold', link: '/cli/reference/cmdline/scaffold' },
+                    { text: 'component create', link: '/cli/reference/cmdline/component/component-create' },
+                    { text: 'package create', link: '/cli/reference/cmdline/package/package-create' },
+                  ],
+                },
+                {
                   text: 'Terramate Cloud',
                   items: [
                     { text: 'cloud login', link: '/cli/reference/cmdline/cloud/cloud-login' },
@@ -1372,4 +1423,4 @@ export default defineConfig({
       { icon: 'linkedin', link: 'https://www.linkedin.com/company/terramate-io/' },
     ],
   },
-})
+}))

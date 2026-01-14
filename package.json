@@ -16,8 +16,10 @@
     "@antfu/eslint-config": "^4.17.0",
     "eslint": "^9.31.0",
     "glob": "^11.0.3",
+    "mermaid": "10.9.1",
     "pnpm": "10.13.1",
-    "vitepress": "1.6.3"
+    "vitepress": "1.6.3",
+    "vitepress-plugin-mermaid": "^2.0.17"
   },
   "eslintConfig": {
     "extends": [

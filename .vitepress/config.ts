@@ -143,7 +143,7 @@ export default withMermaid(defineConfig({
         text: 'Releases',
         link: 'https://github.com/terramate-io/terramate/releases',
       },
-      { text: 'Playground', link: 'https://play.terramate.io/' },
+      // { text: 'Playground', link: 'https://play.terramate.io/' },
       { text: 'Terramate Cloud', link: 'https://cloud.terramate.io/' },
     ],
 
@@ -160,7 +160,7 @@ export default withMermaid(defineConfig({
             { text: 'About Terramate', link: '/' },
             { text: 'How it works', link: '/how-it-works' },
             { text: 'Why Terramate', link: '/why-terramate' },
-            { text: 'Product Roadmap', link: 'https://roadmap.terramate.io/' },
+            // { text: 'Product Roadmap', link: 'https://roadmap.terramate.io/' },
             { text: 'Discord Community', link: 'https://terramate.io/discord' },
           ],
         },

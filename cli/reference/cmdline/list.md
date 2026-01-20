@@ -43,6 +43,18 @@ terramate list --status=drifted
 terramate list --changed --disable-change-detection=git-untracked
 ```
 
+### List changed stacks and their dependencies
+
+```bash
+terramate list --changed --include-all-dependencies
+```
+
+### List only stacks that depend on changed stacks
+
+```bash
+terramate list --changed --only-all-dependents
+```
+
 ## Options
 
 - `-C, --chdir=<path>`: Set the working directory.
@@ -62,4 +74,40 @@ terramate list --changed --disable-change-detection=git-untracked
 - `--why`: Show the reason why a stack has changed.
 - `--status=<status>`: Filter by status on Terramate Cloud.
   - If the experimental deployment targets option is enabled, `--target` is required (see [run](./run#tmc-deployment-targets)).
-- `--run-order`: Sort stacks by order of execution.****
+- `--run-order`: Sort stacks by order of execution.
+
+### Dependency Filters
+
+These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id`) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](../../change-detection/index.md#dependency-filters) documentation for details.
+
+#### Include Dependencies
+
+- `--include-all-dependencies`: Add all stacks that the selected stacks depend on (direct + transitive) to the selection
+- `--include-direct-dependencies`: Add stacks that the selected stacks directly depend on to the selection
+
+#### Replace with Dependencies
+
+- `--only-all-dependencies`: Replace selection with only all stacks that the selected stacks depend on (direct + transitive)
+- `--only-direct-dependencies`: Replace selection with only stacks that the selected stacks directly depend on
+
+#### Exclude Dependencies
+
+- `--exclude-all-dependencies`: Remove all stacks that the selected stacks depend on from the selection
+
+#### Include Dependents
+
+- `--include-all-dependents`: Add all stacks that depend on the selected stacks (direct + transitive) to the selection
+- `--include-direct-dependents`: Add stacks that directly depend on the selected stacks to the selection
+
+#### Replace with Dependents
+
+- `--only-all-dependents`: Replace selection with only all stacks that depend on the selected stacks (direct + transitive)
+- `--only-direct-dependents`: Replace selection with only stacks that directly depend on the selected stacks
+
+#### Exclude Dependents
+
+- `--exclude-all-dependents`: Remove all dependent stacks from the selection
+
+::: info
+Only one of `--only-all-dependencies`, `--only-direct-dependencies`, `--only-direct-dependents`, or `--only-all-dependents` can be used at a time, as they replace the selection.
+:::

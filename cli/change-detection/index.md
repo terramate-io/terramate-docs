@@ -55,7 +55,7 @@ Use `--enable-change-detection=<options>` and `--disable-change-detection=<optio
 
 ## Dependency Filters
 
-When using change detection, you can expand or narrow the selection of stacks by including or excluding their dependencies and dependents. This is particularly useful when working with stacks that have data dependencies (e.g., via [outputs sharing](../../orchestration/outputs-sharing.md) or Terragrunt dependency blocks).
+When using change detection, you can expand or narrow the selection of stacks by including or excluding their dependencies and dependents. This is particularly useful when working with stacks that have data dependencies (e.g., via [outputs sharing](../orchestration/outputs-sharing.md) or Terragrunt dependency blocks).
 
 Dependency filters work with both:
 - **Terramate dependencies**: Stacks that provide outputs consumed by other stacks via `input.from_stack_id`
@@ -68,7 +68,25 @@ Dependency filters work with both:
 - **Direct**: Only immediate dependencies/dependents
 - **All (Transitive)**: Direct dependencies/dependents plus all their dependencies/dependents recursively
 
+::: warning Important: What Counts as a Dependency?
+
+Dependency filters only consider **data dependencies**—stacks that actually share data with each other. They do **not** consider ordering-only relationships.
+
+**What IS included:**
+- **Terramate output sharing**: Stacks that provide outputs consumed by other stacks via `input.from_stack_id`
+- **Terragrunt data dependencies**: Stacks referenced in Terragrunt `dependency` blocks that share data
+
+**What is NOT included:**
+- **Forced execution relationships**: Stacks defined in `stack.wants` and `stack.wanted_by` (used to force stacks to run together) are not considered dependencies for filtering
+- **Execution order relationships**: Stacks defined in `stack.before` and `stack.after` attributes are used only for controlling execution order, not for dependency filtering
+- **Terragrunt ordering-only dependencies**: Terragrunt `dependencies.paths` (used for ordering) are not considered dependencies for filtering purposes
+
+This distinction ensures that dependency filters only widen the scope to stacks that actually need to be included due to data dependencies, not execution order or forced-execution requirements.
+:::
+
 ### Dependency Filter Flags
+
+**Default behavior:** When no dependency filter flags are used, the selection is left unchanged—only the stacks that match your other filters (e.g. `--changed`, `--tags`) are selected. Dependencies and dependents are neither automatically included nor excluded. You must pass one of the flags below to expand or narrow the selection based on dependencies.
 
 The following flags are supported by [`terramate list`](../reference/cmdline/list.md), [`terramate run`](../reference/cmdline/run.md), and [`terramate script run`](../reference/cmdline/script/script-run.md):
 

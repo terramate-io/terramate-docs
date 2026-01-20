@@ -80,6 +80,10 @@ terramate list --changed --only-all-dependents
 
 These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id`) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](../../change-detection/index.md#dependency-filters) documentation for details.
 
+::: warning
+Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](../../change-detection/index.md#understanding-dependencies-and-dependents) for details.
+:::
+
 #### Include Dependencies
 
 - `--include-all-dependencies`: Add all stacks that the selected stacks depend on (direct + transitive) to the selection

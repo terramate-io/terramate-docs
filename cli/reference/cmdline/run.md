@@ -274,6 +274,10 @@ Disable specific change detection features (multiple options supported): 'git-un
 
 These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id` for [outputs sharing](../../orchestration/outputs-sharing.md)) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](../../change-detection/index.md#dependency-filters) documentation for details.
 
+::: warning
+Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](../../change-detection/index.md#understanding-dependencies-and-dependents) for details.
+:::
+
 #### Include Dependencies
 
 - `--include-all-dependencies`

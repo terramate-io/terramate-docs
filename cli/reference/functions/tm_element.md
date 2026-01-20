@@ -37,7 +37,7 @@ the size of the list (minus 1 as the list is zero-based) and then pick the
 last element:
 
 ```sh
-tm_element(["a", "b", "c"], length(["a", "b", "c"])-1)
+tm_element(["a", "b", "c"], tm_length(["a", "b", "c"])-1)
 c
 ```
 

@@ -29,6 +29,12 @@ terramate cloud login --google
 terramate cloud login --github
 ```
 
+### Authenticate using SSO
+
+```sh
+terramate cloud login --sso
+```
+
 ### Authenticate using Microsoft Social Login
 
 ::: warning

@@ -31,4 +31,4 @@ tm_bundle("example.com/my-bundle/v1", "main").exports.my_export.value
 
 ### Related guides and references
 
-- Reference: [Catalyst Functions](/catalyst/reference/functions)
+- Reference: [Catalyst Functions](/catalyst/reference/functions/)

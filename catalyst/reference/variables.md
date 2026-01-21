@@ -38,4 +38,4 @@ allowed_values = tm_concat(
 
 ### See also
 
-- Reference: [Catalyst Functions](/catalyst/reference/functions)
+- Reference: [Catalyst Functions](/catalyst/reference/functions/)

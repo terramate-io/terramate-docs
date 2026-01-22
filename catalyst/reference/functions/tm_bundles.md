@@ -26,8 +26,8 @@ Returns a list of bundle objects. Each bundle object has the following schema:
   class   = string
   alias   = string
   uuid    = string
-  inputs  = map(object)  # access value as .inputs.<name>.value
-  exports = map(object)  # access value as .exports.<name>.value
+  input  = map(object)  # access value as .input.<name>.value
+  export = map(object)  # access value as .export.<name>.value
 }
 ```
 
@@ -40,8 +40,8 @@ dynamic "module" {
   for_each = tm_bundles("example.com/my-bundle/v1")
 
   content {
-    source = module.value.inputs.source.value
-    name   = module.value.inputs.name.value
+    source = module.value.input.source.value
+    name   = module.value.input.name.value
   }
 }
 ```
@@ -52,7 +52,7 @@ dynamic "module" {
 locals {
   all_endpoints = [
     for bundle in tm_bundles("example.com/api-service/v1") :
-    bundle.exports.endpoint_url.value
+    bundle.export.endpoint_url.value
   ]
 }
 ```

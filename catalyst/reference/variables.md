@@ -15,8 +15,8 @@ Note: Prefer the functions `tm_bundles()` and `tm_bundle()` for new usage. The v
 Shape: map‑of‑maps keyed by `class` and `alias`:
 
 ```hcl
-terramate.bundles[{class}][{alias}].inputs
-terramate.bundles[{class}][{alias}].exports
+terramate.bundles[{class}][{alias}].input
+terramate.bundles[{class}][{alias}].export
 ```
 
 ### Example usage
@@ -27,7 +27,7 @@ allowed_values = tm_concat(
   [for parent in tm_try(
     tm_joinlist("/",
       tm_tree(tm_values(
-        terramate.bundles["terramate.io/tf-github-team"])[*].exports.team_tuple.value
+        terramate.bundles["terramate.io/tf-github-team"])[*].export.team_tuple.value
       )
     ),
     []) :

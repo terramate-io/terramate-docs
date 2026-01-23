@@ -14,7 +14,7 @@ You can reference data from instantiated bundles in code generation logic using 
 
 ```hcl
 # Example: access an export value
-tm_bundle("example.com/my-bundle/v1", "main").exports.my_export.value
+tm_bundle("example.com/my-bundle/v1", "main").export.my_export.value
 ```
 
 ## Access all bundles of a class

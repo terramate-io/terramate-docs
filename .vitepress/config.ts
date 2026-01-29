@@ -607,6 +607,14 @@ export default withMermaid(defineConfig({
           text: '👷 How-to Guides',
           collapsed: false,
           items: [
+            {
+              text: 'Change Detection',
+              collapsed: true,
+              items: [
+                { text: 'Rerun Stacks using Stack Triggers', link: '/how-to/change-detection/stack-triggers' },
+              ],
+            },
+
             // {
             //   text: 'About Stacks',
             //   collapsed: true,

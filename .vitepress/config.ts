@@ -609,7 +609,7 @@ export default withMermaid(defineConfig({
           items: [
             {
               text: 'Change Detection',
-              collapsed: true,
+              collapsed: false,
               items: [
                 { text: 'Rerun Stacks using Stack Triggers', link: '/how-to/change-detection/stack-triggers' },
               ],
@@ -635,7 +635,7 @@ export default withMermaid(defineConfig({
             // },
             {
               text: 'Manage Environments',
-              collapsed: true,
+              collapsed: false,
               items: [
                 // {
                 //   text: 'Structuring Stacks 🚧',

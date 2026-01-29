@@ -5,6 +5,10 @@ type: how-to
 product: cli
 outline: [2, 4]
 ---
+
+
+# Fix failed deployments or reconcile drift by rerunning stacks with Terramate Triggers
+
 Stack Triggers let you explicitly control Terramate Change Detection by marking stacks as changed even when the stack’s code did not change.
 
 A trigger marks a stack as changed even though no direct or indirect code changes have been made to it.

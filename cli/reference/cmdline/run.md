@@ -266,21 +266,127 @@ Disable specific change detection features (multiple options supported): 'git-un
   Running `terramate run --enable-sharing` collects output values from stacks with defined outputs, passing them to the command specified in `sharing_backend.command`. If the backend type is `Terraform`, it configures variables in stacks with `input` blocks by exporting them as `TF_var_` environment variables. It enables the smooth sharing of values across stacks.
   More info about [Outputs Sharing](https://terramate.io/docs/cli/orchestration/outputs-sharing)
 
-- `--include-output-dependencies`
-
-  If the selected stacks have dependency to outputs from other stacks not included in the current run, then this flag will include the dependencies in the run.
-
-  Note: this is useful because [Outputs Sharing](../../orchestration/outputs-sharing.md) feature requires the dependencies to be initialized (`terraform init`) before the run.
-
-- `--only-output-dependencies`
-
-  If the selected stacks have dependency to outputs from other stacks not included in the current run, then this flag will only only execute the dependencies.
-
-  Note: this is useful because [Outputs Sharing](../../orchestration/outputs-sharing.md) feature requires the dependencies to be initialized (`terraform init`) before the run.
-
 - `--mock-on-fail`
 
     Activates mock values if output sharing fails, allowing the process to continue by substituting mock data to prevent downstream actions from being blocked by unavailable shared outputs.
+
+### Dependency Filters
+
+These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id` for [outputs sharing](../../orchestration/outputs-sharing.md)) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](../../change-detection/index.md#dependency-filters) documentation for details.
+
+::: warning
+Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](../../change-detection/index.md#understanding-dependencies-and-dependents) for details.
+:::
+
+#### Include Dependencies
+
+- `--include-all-dependencies`
+
+  Add all stacks that the selected stacks depend on (direct + transitive) to the selection.
+
+  Example: Run commands on changed stacks and all their dependencies:
+  ```bash
+  terramate run --changed --include-all-dependencies -- terraform init
+  ```
+
+- `--include-direct-dependencies`
+
+  Add stacks that the selected stacks directly depend on to the selection.
+
+  Example: Run commands on changed stacks and their direct dependencies:
+  ```bash
+  terramate run --changed --include-direct-dependencies -- terraform plan
+  ```
+
+#### Replace with Dependencies
+
+- `--only-all-dependencies`
+
+  Replace selection with only all stacks that the selected stacks depend on (direct + transitive).
+
+  Example: Run commands only on dependencies of changed stacks:
+  ```bash
+  terramate run --changed --only-all-dependencies -- terraform init
+  ```
+
+- `--only-direct-dependencies`
+
+  Replace selection with only stacks that the selected stacks directly depend on.
+
+  Example: Run commands only on direct dependencies of changed stacks:
+  ```bash
+  terramate run --changed --only-direct-dependencies -- terraform plan
+  ```
+
+#### Exclude Dependencies
+
+- `--exclude-all-dependencies`
+
+  Remove all stacks that the selected stacks depend on from the selection.
+
+  Example: Run commands on changed stacks but exclude their dependencies:
+  ```bash
+  terramate run --changed --exclude-all-dependencies -- terraform apply
+  ```
+
+#### Include Dependents
+
+- `--include-all-dependents`
+
+  Add all stacks that depend on the selected stacks (direct + transitive) to the selection.
+
+  Example: Run commands on changed stacks and all stacks that depend on them:
+  ```bash
+  terramate run --changed --include-all-dependents -- terraform plan
+  ```
+
+- `--include-direct-dependents`
+
+  Add stacks that directly depend on the selected stacks to the selection.
+
+  Example: Run commands on changed stacks and stacks that directly depend on them:
+  ```bash
+  terramate run --changed --include-direct-dependents -- terraform plan
+  ```
+
+#### Replace with Dependents
+
+- `--only-all-dependents`
+
+  Replace selection with only all stacks that depend on the selected stacks (direct + transitive).
+
+  Example: Run commands only on stacks that depend on changed stacks:
+  ```bash
+  terramate run --changed --only-all-dependents -- terraform plan
+  ```
+
+- `--only-direct-dependents`
+
+  Replace selection with only stacks that directly depend on the selected stacks.
+
+  Example: Run commands only on stacks that directly depend on changed stacks:
+  ```bash
+  terramate run --changed --only-direct-dependents -- terraform plan
+  ```
+
+#### Exclude Dependents
+
+- `--exclude-all-dependents`
+
+  Remove all dependent stacks from the selection.
+
+  Example: Run commands on changed stacks but exclude stacks that depend on them:
+  ```bash
+  terramate run --changed --exclude-all-dependents -- terraform apply
+  ```
+
+::: info
+Only one of `--only-all-dependencies`, `--only-direct-dependencies`, `--only-direct-dependents`, or `--only-all-dependents` can be used at a time, as they replace the selection.
+:::
+
+::: tip
+These flags are particularly useful when working with change detection. For example, if a stack that provides outputs changes, you may want to also run commands on stacks that consume those outputs (dependents). Similarly, if a stack that consumes outputs changes, you may need to ensure its dependencies are initialized first.
+:::
 
 ## Terramate Cloud Options
 

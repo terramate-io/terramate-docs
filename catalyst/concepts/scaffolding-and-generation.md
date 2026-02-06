@@ -22,6 +22,9 @@ Catalyst enables a guided flow:
   - Preserve existing stack metadata (stack configuration is not changed)
   - Remove generated code if the bundle instantiation is removed, without deleting stacks
 
+> [!TIP]
+> Use `terramate scaffold --generate` to combine steps 1 and 2 into a single command.
+
 3) Plan/apply with your normal tooling
 - The generated code is plain Terraform/OpenTofu and works with your existing pipelines and policy engines.
 

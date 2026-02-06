@@ -34,6 +34,14 @@ terramate generate
 - Creates missing stacks defined by the bundle
 - Generates Terraform/OpenTofu code into those stacks
 
+### Single-command alternative
+
+```sh
+terramate scaffold --generate
+```
+
+This scaffolds the bundle and runs `terramate generate` in one step.
+
 ## Expected result
 
 - New bundle instantiation file (HCL/YAML)

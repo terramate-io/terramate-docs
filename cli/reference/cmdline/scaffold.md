@@ -13,10 +13,11 @@ Interactively instantiate a Bundle by selecting from local or remote collections
 ## Usage
 
 ```sh
-terramate scaffold [--output-format yaml|hcl]
+terramate scaffold [--output-format yaml|hcl] [--generate]
 ```
 
 - --output-format: Output format for the created instantiation file. Defaults to yaml. Supported: yaml, hcl.
+- --generate: Run `terramate generate` automatically after creating the bundle instance. Defaults to false.
 
 ## Behavior
 

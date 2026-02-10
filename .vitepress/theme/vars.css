@@ -1,12 +1,105 @@
 :root {
-  --vp-c-brand-1: #DC5C72;
-  --vp-c-brand-2: #9F4FDA;
-  --vp-c-brand-3: #DC5C72;
-  --vp-button-brand-hover-border: #9F4FDA;
+  /*
+   * Terramate.io-aligned semantic palette (light mode)
+   * Source tokens are mirrored from terramate.io stylesheet semantics.
+   */
+  --tm-color-purple: #9f50da;
+  --tm-color-pink: #dc5c72;
+  --tm-bg: hsl(0, 0%, 100%);
+  --tm-bg-soft: hsl(240, 4.8%, 95.9%);
+  --tm-bg-elevated: hsl(0, 0%, 100%);
+  --tm-fg: hsl(240, 10%, 3.9%);
+  --tm-fg-muted: hsl(240, 3.8%, 46.1%);
+  --tm-border: hsl(240, 5.9%, 90%);
+  --tm-link: hsl(199, 89%, 48%);
+  --tm-link-hover: hsl(221, 83%, 53%);
 
+  /* Brand */
+  --vp-c-brand-1: var(--tm-color-purple);
+  --vp-c-brand-2: #b46be8;
+  --vp-c-brand-3: #7f39c7;
+  --vp-c-brand-soft: rgb(159 80 218 / 16%);
+
+  /* Base text/surfaces */
+  --vp-c-bg: var(--tm-bg);
+  --vp-c-bg-alt: hsl(240, 4.8%, 98%);
+  --vp-c-bg-elv: var(--tm-bg-elevated);
+  --vp-c-bg-soft: var(--tm-bg-soft);
+
+  --vp-c-text-1: var(--tm-fg);
+  --vp-c-text-2: hsl(240, 5.9%, 20%);
+  --vp-c-text-3: var(--tm-fg-muted);
+
+  --vp-c-divider: var(--tm-border);
+  --vp-c-gutter: var(--tm-border);
+
+  /* Links */
+  --vp-c-link-1: var(--tm-link);
+  --vp-c-link-2: var(--tm-link-hover);
+  --vp-c-link-3: var(--tm-link-hover);
+
+  /* Default buttons and controls */
+  --vp-c-default-1: hsl(240, 4.8%, 96%);
+  --vp-c-default-2: hsl(240, 4.8%, 92%);
+  --vp-c-default-3: hsl(240, 4.8%, 88%);
+  --vp-c-default-soft: hsl(240, 4.8%, 96%);
+
+  /* Brand button */
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-border: var(--vp-c-brand-1);
+  --vp-button-brand-text: hsl(0, 0%, 100%);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-border: var(--vp-c-brand-2);
+  --vp-button-brand-hover-text: hsl(0, 0%, 100%);
+  --vp-button-brand-active-bg: var(--vp-c-brand-3);
+  --vp-button-brand-active-border: var(--vp-c-brand-3);
+
+  /* Home/hero */
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(292.7deg, #DC5C72 14.54%, #9F4FDA 84.59%);
+  --vp-home-hero-name-background: linear-gradient(292.7deg, var(--tm-color-pink) 14.54%, var(--tm-color-purple) 84.59%);
   --vp-home-hero-image-filter: blur(72px);
+}
+
+.dark {
+  /*
+   * Terramate.io-aligned semantic palette (dark mode)
+   */
+  --tm-color-purple: #9f50da;
+  --tm-color-pink: #dc5c72;
+  --tm-bg: hsl(0, 0%, 0%);
+  --tm-bg-soft: hsl(0, 0%, 4%);
+  --tm-bg-elevated: hsl(240, 3.7%, 15.9%);
+  --tm-fg: hsl(0, 0%, 98%);
+  --tm-fg-muted: hsl(0, 0%, 63%);
+  --tm-border: hsl(0, 0%, 12%);
+  --tm-link: hsl(199, 89%, 58%);
+  --tm-link-hover: hsl(199, 89%, 66%);
+
+  --vp-c-brand-1: var(--tm-color-purple);
+  --vp-c-brand-2: #b46be8;
+  --vp-c-brand-3: #cf77f1;
+  --vp-c-brand-soft: rgb(159 80 218 / 22%);
+
+  --vp-c-bg: var(--tm-bg);
+  --vp-c-bg-alt: hsl(0, 0%, 2%);
+  --vp-c-bg-elv: var(--tm-bg-elevated);
+  --vp-c-bg-soft: var(--tm-bg-soft);
+
+  --vp-c-text-1: var(--tm-fg);
+  --vp-c-text-2: hsl(0, 0%, 88%);
+  --vp-c-text-3: var(--tm-fg-muted);
+
+  --vp-c-divider: var(--tm-border);
+  --vp-c-gutter: var(--tm-border);
+
+  --vp-c-link-1: var(--tm-link);
+  --vp-c-link-2: var(--tm-link-hover);
+  --vp-c-link-3: var(--tm-link-hover);
+
+  --vp-c-default-1: hsl(240, 3.7%, 15.9%);
+  --vp-c-default-2: hsl(240, 3.7%, 20%);
+  --vp-c-default-3: hsl(240, 3.7%, 24%);
+  --vp-c-default-soft: hsl(240, 3.7%, 15.9%);
 }
 
 /**

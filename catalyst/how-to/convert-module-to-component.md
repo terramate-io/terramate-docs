@@ -25,6 +25,12 @@ outline: [2, 4]
 terramate component create
 ```
 
+Alternatively, pass the module path directly:
+
+```sh
+terramate component create path/to/module      # relative to working directory
+```
+
 2) Review generated files
 - Inputs are inferred from module variables
 - Initial metadata for the component is created

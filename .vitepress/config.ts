@@ -116,7 +116,7 @@ export default withMermaid(defineConfig({
     return head
   },
   // https://vitepress.dev/reference/site-config#appearance
-  appearance: 'dark',
+  appearance: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config#sitetitle
     // siteTitle: '🦄 Terramate',

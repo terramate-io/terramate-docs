@@ -5,3 +5,302 @@
 .medium-zoom-image--opened {
   z-index: 31;
 }
+
+/* Shared docs theming aligned with terramate.io palette */
+
+.VPDoc a {
+  color: var(--vp-c-link-1);
+}
+
+.VPDoc a:hover {
+  color: var(--vp-c-link-2);
+  text-decoration-color: var(--vp-c-link-2);
+}
+
+.VPDoc code {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 0.15em 0.4em;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-weight: 500;
+}
+
+.VPDoc pre code {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  font-weight: 400;
+}
+
+.VPDoc div[class*='language-'],
+.VPDoc pre {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  box-shadow: none;
+}
+
+.VPDoc div[class*='language-'] pre {
+  background: transparent;
+}
+
+.VPDoc div[class*='language-'] .lang {
+  color: var(--vp-c-text-3);
+}
+
+.VPDoc div[class*='language-'] .line {
+  line-height: 1.6;
+}
+
+.VPDoc div[class*='language-'] .line.highlighted {
+  background: color-mix(in srgb, var(--vp-c-brand-1) 12%, transparent);
+}
+
+.VPDoc div[class*='language-'] .line.diff.add {
+  background: color-mix(in srgb, #22c55e 14%, transparent);
+}
+
+.VPDoc div[class*='language-'] .line.diff.remove {
+  background: color-mix(in srgb, #ef4444 14%, transparent);
+}
+
+.VPDoc div[class*='language-'] .copy {
+  border-color: var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+}
+
+.VPDoc div[class*='language-'] button.copy {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2) !important;
+}
+
+.VPDoc div[class*='language-'] button.copy:hover {
+  border-color: var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPDoc div[class*='language-'] button.copy.copied,
+.VPDoc div[class*='language-'] button.copy.copied:hover {
+  color: #16a34a !important;
+}
+
+/* Force visible copy icon with theme-aware color */
+.vp-doc [class*='language-'] > button.copy {
+  background-image: none !important;
+}
+
+.vp-doc [class*='language-'] > button.copy::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: auto;
+  background-color: var(--vp-c-text-2);
+  -webkit-mask-image: var(--vp-icon-copy);
+  mask-image: var(--vp-icon-copy);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 18px 18px;
+  mask-size: 18px 18px;
+}
+
+.vp-doc [class*='language-'] > button.copy:hover::after {
+  background-color: var(--vp-c-text-1);
+}
+
+.vp-doc [class*='language-'] > button.copy.copied::after,
+.vp-doc [class*='language-'] > button.copy:hover.copied::after {
+  background-color: #16a34a;
+  -webkit-mask-image: var(--vp-icon-copied);
+  mask-image: var(--vp-icon-copied);
+}
+
+.VPDoc table {
+  border-color: var(--vp-c-divider);
+}
+
+.VPDoc tr:nth-child(2n) {
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 70%, transparent);
+}
+
+.VPDoc th,
+.VPDoc td {
+  border-color: var(--vp-c-divider);
+}
+
+/* Admonitions/callouts */
+.VPDoc .custom-block {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+
+.VPDoc .custom-block.tip {
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 45%, var(--vp-c-divider));
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 55%, transparent);
+}
+
+.VPDoc .custom-block.warning {
+  border-color: #c68a1f;
+  background: color-mix(in srgb, #c68a1f 18%, transparent);
+}
+
+.VPDoc .custom-block.danger {
+  border-color: #c2415a;
+  background: color-mix(in srgb, #c2415a 18%, transparent);
+}
+
+/* Sidebar and nav accents */
+.VPSidebarItem .item .link > .text,
+.VPSidebarItem .item .text {
+  color: var(--vp-c-text-3);
+}
+
+.VPSidebarItem.is-active > .item .link > .text,
+.VPSidebarItem.is-active > .item .text {
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPSidebarItem .item:hover .text {
+  color: var(--vp-c-text-2);
+}
+
+.VPSidebar .link:hover .text,
+.VPSidebar .link:hover .link-text-value,
+.VPSidebarItem .item .link:hover .text,
+.VPSidebarItem .item:hover .link .text {
+  color: var(--vp-c-text-2) !important;
+}
+
+.VPSidebarItem.is-active > .item .indicator {
+  background-color: var(--vp-c-text-1) !important;
+}
+
+.VPNavBarMenuLink {
+  color: var(--vp-c-text-3) !important;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-text-2) !important;
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPDocAsideOutline .outline-link {
+  color: var(--vp-c-text-3);
+}
+
+.VPDocAsideOutline .outline-link:hover {
+  color: var(--vp-c-text-2);
+}
+
+.VPDocAsideOutline .outline-link.active {
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Reusable homepage blocks */
+.tm-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+
+.tm-overview-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--vp-c-bg-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tm-overview-card,
+.tm-overview-card:hover,
+.tm-overview-card:visited,
+.tm-overview-card:focus-visible,
+.tm-overview-card h3,
+.tm-overview-card p {
+  text-decoration: none !important;
+}
+
+.tm-overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 14%);
+  border-color: var(--vp-c-brand-1);
+}
+
+.tm-overview-card h3,
+.tm-value-card h3 {
+  margin: 0 0 8px;
+  color: var(--vp-c-text-1);
+}
+
+.tm-overview-card p,
+.tm-value-card p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+}
+
+.tm-overview-card .tm-persona {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tm-overview-card .tm-capabilities {
+  color: var(--vp-c-text-2);
+}
+
+.tm-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+  padding: 1px 7px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font-size: 0.67em;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.tm-value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+
+.tm-value-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 14px;
+  background: var(--vp-c-bg-soft);
+}
+
+.tm-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.tm-video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

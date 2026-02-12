@@ -74,8 +74,38 @@ define bundle {
 ### Notes
 
 - Supported types: `string`, `number`, `any`, `list(...)`, `map(...)`. (Terraform‑style `object` is not supported.)
-- `prompt`, `allowed_values`, `multiselect`, `multiline`, `required_for_scaffold` are used by `terramate scaffold`.
+- `prompt`, `allowed_values`, `multiselect`, `multiline`, `required_for_scaffold` are used by `terramate scaffold` and `terramate bundle reconfigure`.
 - `required_for_scaffold` (boolean): include this input in the interactive scaffold flow and require a value.
+
+### Immutable inputs
+
+Mark an input as `immutable = true` to prevent it from being changed via `terramate bundle reconfigure`. Immutable inputs are displayed as read-only notes in the reconfigure TUI, showing their current value but not allowing edits.
+
+This is useful for inputs that should not change after initial scaffolding — for example, the target environment or a resource identifier used in naming conventions.
+
+```hcl
+define bundle {
+  input "env" {
+    type        = string
+    description = "Target environment"
+    prompt      = "Environment"
+    immutable   = true
+    allowed_values = [
+      { name = "Development", value = "dev" },
+      { name = "Production", value = "prod" },
+    ]
+  }
+}
+```
+
+During `bundle reconfigure`, immutable inputs appear as:
+
+```
+  Environment (immutable)
+
+  Target environment
+  Current value: "dev"
+```
 
 ## Scaffolding
 

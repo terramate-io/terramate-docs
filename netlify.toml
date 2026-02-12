@@ -9,3 +9,343 @@ command = "pnpm docs:build"
 
 [context.production]
 command = "pnpm docs:build --base='/docs/'"
+
+[[redirects]]
+from = "/catalyst/overview"
+to = "/self-service/"
+status = 301
+
+[[redirects]]
+from = "/catalyst/installation"
+to = "/cli/installation"
+status = 301
+
+[[redirects]]
+from = "/catalyst/concepts/scaffolding-and-generation"
+to = "/self-service/scaffolding-and-generation"
+status = 301
+
+[[redirects]]
+from = "/catalyst/concepts/collections"
+to = "/self-service/collections"
+status = 301
+
+[[redirects]]
+from = "/catalyst/tutorials/instantiate-your-first-bundle"
+to = "/self-service/instantiate-your-first-bundle"
+status = 301
+
+[[redirects]]
+from = "/catalyst/how-to/instantiate-bundle-cli"
+to = "/self-service/instantiate-bundle-cli"
+status = 301
+
+[[redirects]]
+from = "/catalyst/how-to/reconfigure-bundle"
+to = "/self-service/reconfigure-bundle"
+status = 301
+
+[[redirects]]
+from = "/catalyst/how-to/use-remote-catalog"
+to = "/self-service/use-remote-catalog"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/bundle-instantiation"
+to = "/self-service/reference/bundle-instantiation"
+status = 301
+
+[[redirects]]
+from = "/catalyst/concepts/bundles"
+to = "/environments/bundles"
+status = 301
+
+[[redirects]]
+from = "/catalyst/concepts/components"
+to = "/environments/components"
+status = 301
+
+[[redirects]]
+from = "/catalyst/tutorials/create-a-component-and-bundle"
+to = "/environments/create-a-component-and-bundle"
+status = 301
+
+[[redirects]]
+from = "/catalyst/how-to/convert-module-to-component"
+to = "/environments/convert-module-to-component"
+status = 301
+
+[[redirects]]
+from = "/catalyst/how-to/reference-bundle-values-in-codegen"
+to = "/environments/reference-bundle-values-in-codegen"
+status = 301
+
+[[redirects]]
+from = "/catalyst/how-to/package-catalog"
+to = "/environments/package-catalog"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/bundle-definition"
+to = "/environments/reference/bundle-definition"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/component-definition"
+to = "/environments/reference/component-definition"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/functions"
+to = "/environments/reference/functions/"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/functions/tm_bundles"
+to = "/environments/reference/functions/tm_bundles"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/functions/tm_bundle"
+to = "/environments/reference/functions/tm_bundle"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/functions/tm_source"
+to = "/environments/reference/functions/tm_source"
+status = 301
+
+[[redirects]]
+from = "/catalyst/reference/variables"
+to = "/environments/reference/variables"
+status = 301
+
+[[redirects]]
+from = "/cli/self-service/*"
+to = "/self-service/:splat"
+status = 301
+
+[[redirects]]
+from = "/cli/environments/*"
+to = "/environments/:splat"
+status = 301
+
+[[redirects]]
+from = "/cli/stacks/*"
+to = "/stacks/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/stacks/*"
+to = "/stacks/:splat"
+status = 301
+
+[[redirects]]
+from = "/cli/orchestration/*"
+to = "/orchestration/:splat"
+status = 301
+
+[[redirects]]
+from = "/cli/change-detection/*"
+to = "/orchestration/change-detection/:splat"
+status = 301
+
+[[redirects]]
+from = "/cli/code-generation/*"
+to = "/code-generation/:splat"
+status = 301
+
+[[redirects]]
+from = "/cli/automation/*"
+to = "/ci-cd/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/deployments/*"
+to = "/deployments/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/drift/*"
+to = "/drift/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/previews/*"
+to = "/previews/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/dashboard/*"
+to = "/dashboard/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/resources/*"
+to = "/dashboard/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/alerts/*"
+to = "/alerts/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/policies/*"
+to = "/policies/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/integrations/*"
+to = "/integrations/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/organization/*"
+to = "/settings/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/profile/*"
+to = "/settings/:splat"
+status = 301
+
+[[redirects]]
+from = "/how-to/orchestration/*"
+to = "/orchestration/:splat"
+status = 301
+
+[[redirects]]
+from = "/how-to/change-detection/*"
+to = "/orchestration/change-detection/:splat"
+status = 301
+
+[[redirects]]
+from = "/how-to/code-generation/*"
+to = "/code-generation/:splat"
+status = 301
+
+[[redirects]]
+from = "/how-to/manage-environments/using-workspaces"
+to = "/stacks/using-workspaces"
+status = 301
+
+[[redirects]]
+from = "/how-to/cloud/sync-deployments-from-cicd"
+to = "/deployments/sync-deployments-from-cicd"
+status = 301
+
+[[redirects]]
+from = "/how-to/cloud/set-up-drift-alerts-in-slack"
+to = "/drift/set-up-drift-alerts-in-slack"
+status = 301
+
+[[redirects]]
+from = "/self-service/concepts/*"
+to = "/self-service/:splat"
+status = 301
+
+[[redirects]]
+from = "/self-service/tutorials/*"
+to = "/self-service/:splat"
+status = 301
+
+[[redirects]]
+from = "/self-service/how-to/*"
+to = "/self-service/:splat"
+status = 301
+
+[[redirects]]
+from = "/environments/concepts/*"
+to = "/environments/:splat"
+status = 301
+
+[[redirects]]
+from = "/environments/tutorials/*"
+to = "/environments/:splat"
+status = 301
+
+[[redirects]]
+from = "/environments/how-to/*"
+to = "/environments/:splat"
+status = 301
+
+[[redirects]]
+from = "/cloud/tutorials/sync-your-first-deployment"
+to = "/deployments/sync-your-first-deployment"
+status = 301
+
+[[redirects]]
+from = "/cloud/tutorials/set-up-drift-detection"
+to = "/drift/set-up-drift-detection"
+status = 301
+
+[[redirects]]
+from = "/cloud/tutorials/review-your-first-preview"
+to = "/previews/review-your-first-preview"
+status = 301
+
+[[redirects]]
+from = "/concepts/stacks"
+to = "/stacks/"
+status = 301
+
+[[redirects]]
+from = "/concepts/orchestration"
+to = "/orchestration/"
+status = 301
+
+[[redirects]]
+from = "/concepts/change-detection"
+to = "/orchestration/change-detection/"
+status = 301
+
+[[redirects]]
+from = "/concepts/code-generation"
+to = "/code-generation/"
+status = 301
+
+[[redirects]]
+from = "/concepts/configuration"
+to = "/cli/reference/configuration/"
+status = 301
+
+[[redirects]]
+from = "/cloud/on-boarding"
+to = "/guides/set-up-terramate-cloud"
+status = 301
+
+[[redirects]]
+from = "/cloud/on-boarding/"
+to = "/guides/set-up-terramate-cloud"
+status = 301
+
+[[redirects]]
+from = "/cli/on-boarding/terraform"
+to = "/get-started/terraform"
+status = 301
+
+[[redirects]]
+from = "/cli/on-boarding/terraform/"
+to = "/get-started/terraform"
+status = 301
+
+[[redirects]]
+from = "/cli/on-boarding/opentofu"
+to = "/get-started/opentofu"
+status = 301
+
+[[redirects]]
+from = "/cli/on-boarding/opentofu/"
+to = "/get-started/opentofu"
+status = 301
+
+[[redirects]]
+from = "/cli/on-boarding/terragrunt"
+to = "/get-started/terragrunt"
+status = 301
+
+[[redirects]]
+from = "/cli/on-boarding/terragrunt/"
+to = "/get-started/terragrunt"
+status = 301

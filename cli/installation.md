@@ -1,6 +1,7 @@
 ---
 title: How to Install Terramate CLI
 description: Learn how to install Terramate CLI and how to connect the CLI to Terramate Cloud.
+type: how-to
 outline: [2, 4]
 ---
 
@@ -93,7 +94,7 @@ terramate list --status=drifted
 ```
 
 For more details about how to initially sync your data to Terramate Cloud, please see
-[getting started with Terramate Cloud](../cloud/on-boarding/index.md#connect-terramate-cli-to-terramate-cloud)
+[Set up Terramate Cloud](/guides/set-up-terramate-cloud)
 
 ## Alternative installation methods
 

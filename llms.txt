@@ -1,0 +1,49 @@
+# Terramate Docs LLM Index
+
+This file helps AI assistants navigate Terramate documentation quickly.
+
+## Start here
+
+- /get-started/
+- /guides/
+- /glossary
+- /changelog
+
+## Core product areas
+
+- /stacks/
+- /environments/
+- /self-service/
+- /orchestration/
+- /orchestration/change-detection/
+- /code-generation/
+- /ci-cd/
+
+## Cloud operations
+
+- /previews/
+- /deployments/
+- /drift/
+- /dashboard/
+- /alerts/
+- /policies/
+- /integrations/
+- /settings/
+- /security/
+
+## References
+
+- /reference/cloud-api/
+- /cli/reference/cmdline/
+- /cli/reference/functions/
+- /cli/reference/blocks/terramate
+- /cli/reference/variables/
+- /cli/reference/configuration/
+- /cli/reference/telemetry/
+
+## Guide pages
+
+- /guides/manage-terraform-at-scale
+- /guides/set-up-drift-detection
+- /guides/migrate-from-terragrunt
+- /guides/migrate-from-plain-terraform

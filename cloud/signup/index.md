@@ -63,12 +63,12 @@ To solve it, click the Send verification link button, and you will receive an em
 
 ## Connecting the CLI
 
-You can use [`terramate cloud login`](../../cli/reference/cmdline/cloud/cloud-login.md) to log in to Terramate Cloud. A browser window
+You can use [`terramate cloud login`](/cli/reference/cmdline/cloud/cloud-login.md) to log in to Terramate Cloud. A browser window
 will allow you to select a sign-in method of your choice.
 
 You need to select the same account you just signed up with to use Terramate CLI with your Terramate Cloud Organization.
 
-You can validate you are connected to the correct Terramate Cloud Organization using [`terramate cloud info`](../../cli/reference/cmdline/cloud/cloud-info.md):
+You can validate you are connected to the correct Terramate Cloud Organization using [`terramate cloud info`](/cli/reference/cmdline/cloud/cloud-info.md):
 
 ::: code-group
 

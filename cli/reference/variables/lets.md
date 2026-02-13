@@ -13,7 +13,7 @@ Available contexts are:
 
 - within [`generate_hcl`](../blocks/generate-hcl.md) blocks
 - within [`generate_file`](../blocks/generate-file.md) blocks
-- within [`script`](../../orchestration/scripts.md] blocks
+- within [`script`](/orchestration/scripts.md] blocks
 
 They are defined the same way as [Global Variables](./globals.md) and support similar features.
 

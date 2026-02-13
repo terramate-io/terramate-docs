@@ -304,3 +304,38 @@
   width: 100%;
   height: 100%;
 }
+
+/* Last updated label (Vercel-style, below h1) */
+.tm-last-updated {
+  margin: -8px 0 24px;
+  color: var(--vp-c-text-3);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Hide VitePress default last-updated in footer */
+.VPDoc .VPDocFooter .VPLastUpdated {
+  display: none;
+}
+
+.tm-copy-page-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.tm-copy-page-btn {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.tm-copy-page-btn:hover {
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-brand-1);
+}

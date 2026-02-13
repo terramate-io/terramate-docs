@@ -7,7 +7,7 @@ description: Learn how you can use Global Variables in Terramate to define data 
 
 Globals allow you to define data that can be reused across multiple stacks, using hierarchical merge semantics.
 This ensures consistent and easy data sharing within your Terramate project. Globals are often used in
-[code generation](../../code-generation/index.md) to e.g. configure the Terraform version used in stacks programmatically.
+[code generation](/code-generation/index.md) to e.g. configure the Terraform version used in stacks programmatically.
 
 ## Define Globals
 
@@ -121,4 +121,4 @@ configuration is since it is all merged into a single set of globals before eval
 ## Debugging Globals
 
 To see all globals available in each stack, the `terramate debug show globals` command can be used. For details, please see the
-[debug globals](../../reference/cmdline/debug/show/debug-show-globals.md) command.
+[debug globals](/cli/reference/cmdline/debug/show/debug-show-globals.md) command.

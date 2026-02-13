@@ -9,6 +9,11 @@ The `terramate create` command creates a new stack in a given directory aka stac
 If the stack-path does not yet exist, it will be created.
 Code Generation will be triggered by default to initialize the newly created stack.
 
+For conceptual background, see:
+
+- [Explanation: Stacks Model](/explanations/stacks)
+- [Explanation: Code Generation Model](/explanations/code-generation)
+
 Stack metadata can be set upon creation of the stack.
 
 This metadata will also be synchronized to Terramate Cloud if enabled and can help you and your team to browse through stacks better.
@@ -48,7 +53,7 @@ terramate create --all-terragrunt
 If the Terragrunt module declare dependencies then the created stack will have its ordering
 attributes automatically set.
 
-Terramate also has experimental support for Terragrunt in the change detection, check the [Terragrunt integration](../../change-detection/integrations/terragrunt.md) page for more information.
+Terramate also has experimental support for Terragrunt in the change detection, check the [Terragrunt integration](/orchestration/change-detection/integrations/terragrunt.md) page for more information.
 
 # Usage
 
@@ -229,4 +234,4 @@ In the basic use case `[options]` can be one or multiple of:
 
   A stack ID for every stack is required in order to synchronize stacks to Terramate Cloud.
 
-[order of execution]: ../orchestration/index.md#explicit-order-of-execution
+[order of execution]: /orchestration/index.md#explicit-order-of-execution

@@ -1,6 +1,6 @@
 ---
 title: Bundle Instantiation Reference
-description: Syntax for bundle instantiation in YAML and HCL.
+description: Syntax for instantiating a bundle in HCL or YAML to drive scaffolding and generation.
 type: reference
 product: capability
 outline: [2, 4]
@@ -8,22 +8,68 @@ outline: [2, 4]
 
 # Bundle Instantiation
 
-```yaml
+Instantiate a bundle by creating a YAML or HCL configuration file. Scaffolding can create this file for you, or you may author it directly.
+
+:::: code-group
+
+```yaml [YAML]
+# file: bundle.tm.yml or bundle.tm.yaml
 apiVersion: terramate.io/cli/v1
 kind: BundleInstance
 metadata:
-  name: my-service
+  name: {name}
+  # Optional unique identifier for this instance
+  uuid: {uuid}
 spec:
-  source: /bundles/example.com/my-bundle
+  source: {bundle-source}
   inputs:
-    name: my-service
+    attribute: value
 ```
 
-```hcl
-bundle "my-service" {
-  source = "/bundles/example.com/my-bundle"
+```hcl [HCL]
+# file: bundle.tm.hcl or bundle.tm
+bundle "{name}" {
+  # Optional unique identifier for this instance
+  uuid    = "{uuid}"
+
+  source  = "{bundle-source}"
+  version = "{bundle-version}" # optional (not yet supported)
+
   inputs {
-    name = "my-service"
+    attribute = value
   }
 }
 ```
+
+::::
+
+### Notes
+
+- Default: `terramate scaffold` generates YAML by default. Use `--output-format hcl` to emit HCL instead.
+- YAML: `metadata.name` mirrors the HCL label; `spec` mirrors the HCL body.
+- YAML: values may embed HCL expressions via `!hcl {expression}`.
+- YAML: bundle instances are auto-loaded at startup; no additional import is required.
+
+### Rules
+
+- `{name}` (HCL label) should be a slug:
+  - ≤ 255 ASCII characters
+  - lowercase alphanumeric, '-' or '_' in the middle
+  - starts with `[a-z]`, ends with `[a-z0-9]`
+- `{bundle-source}` may be:
+  - local dir relative to this file
+  - absolute path from repo root
+  - remote reference (e.g., `github.com/org/repo//bundles/my-bundle?ref=v1.0.0` or `https://host/releases/v1.zip//bundles/my-bundle?ref=v1.0.0`)
+- `version` is reserved for future support.
+
+### Supported attributes and blocks
+
+- `bundle.{name}.source` (required): bundle definition location.
+- `bundle.{name}.version` (optional): bundle version (not yet supported).
+- `bundle.{name}.inputs` (attribute): map of inputs; unknown keys are ignored.
+- `bundle.{name}.inputs` (block): inputs by block; takes precedence over the map for same key.
+
+## Related
+
+- [Bundles](/environments/bundles)
+- [Bundle Definition](/environments/reference/bundle-definition)

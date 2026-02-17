@@ -6,7 +6,7 @@ description: Learn how to use the assert block to configure assertions for Terra
 # The `assert` block
 
 Use the `assert` block to allow code generation when a condition is `true`. It helps to catch mistakes in your configuration.
-You can use the `assert` block only when the [generation context](/code-generation/index.md#generation-context) is of type stack.
+You can use the `assert` block only when the [generation context](../../code-generation/index.md#generation-context) is of type stack.
 The `assert` block behaves hierarchically, meaning any `assert` blocks defined in a parent directory will apply to all stacks within that directory. For example, an `assert` block defined at the root of a project will apply to all stacks.
 
 You can define `assert` blocks inside `generate_hcl` and `generate_file` blocks, where the `assert` block can access locally scoped data like the `let` namespace.

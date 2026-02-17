@@ -5,11 +5,7 @@ description: Run the Code Generation for your project by using `terramate genera
 
 # Generate
 
-The `terramate generate` command generates files for all code generation strategies. For an overview of code generation strategies available please see the [code generation documentation](/code-generation/index.md).
-
-For conceptual background, see:
-
-- [Explanation: Code Generation Model](/explanations/code-generation)
+The `terramate generate` command generates files for all code generation strategies. For an overview of code generation strategies available please see the [code generation documentation](../../code-generation/index.md).
 
 ## Usage
 

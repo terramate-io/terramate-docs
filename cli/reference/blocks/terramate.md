@@ -9,12 +9,12 @@ Use the `terramate` block to define project-wide configurations. The `terramate`
 
 ## Arguments
 
-- `required_version`: specify the Terramate version to be used inside a project. More details about this attribute are [here](/cli/projects/configuration.md#the-terramate-required_version-attribute).
+- `required_version`: specify the Terramate version to be used inside a project. More details about this attribute are [here](../../projects/configuration.md#the-terramate-required_version-attribute).
 - `config`: define project-wide configurations in this block.
-    - `config.git`: [configure](/cli/projects/configuration.md#the-terramate-config-git-block) git integration
-    - `config.generate`: [configure](/cli/projects/configuration.md#the-terramate-config-generate-block) code generation feature
-    - `config.run`: [configure](/cli/projects/configuration.md#the-terramate-config-generate-block) the `terramate run` command or set environment variables for it
-    - `config.cloud`: [configure](/cli/projects/configuration.md#the-terramate-config-cloud-block) the default Terramate Cloud organization name
+    - `config.git`: [configure](../../projects/configuration.md#the-terramate-config-git-block) git integration
+    - `config.generate`: [configure](../../projects/configuration.md#the-terramate-config-generate-block) code generation feature
+    - `config.run`: [configure](../../projects/configuration.md#the-terramate-config-generate-block) the `terramate run` command or set environment variables for it
+    - `config.cloud`: [configure](../../projects/configuration.md#the-terramate-config-cloud-block) the default Terramate Cloud organization name
 
 ## Syntax
 
@@ -31,7 +31,7 @@ terramate {
     # }
 
     # Optionally disable safe guards
-    # Learn more: https://terramate.io/docs/orchestration/safeguards
+    # Learn more: https://terramate.io/docs/cli/orchestration/safeguards
     # disable_safeguards = [
     #   "git-untracked",
     #   "git-uncommitted",

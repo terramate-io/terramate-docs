@@ -309,88 +309,88 @@ export default withMermaid(defineConfig({
               },
             ],
           },
-        {
-          text: 'Orchestration & Automation',
-          collapsed: true,
-          items: [
-            {
-              text: 'Orchestration',
-              collapsed: true,
-              items: [
-                { text: 'Overview', link: '/orchestration/' },
-                { text: 'Run Commands in Stacks', link: '/orchestration/run-commands-in-stacks' },
-                { text: 'Order of Execution', link: '/orchestration/order-of-execution' },
-                { text: 'Configure Order of Execution', link: '/orchestration/configure-order-of-execution' },
-                { text: 'Parallel Execution', link: '/orchestration/parallel-execution' },
-                { text: 'Set Up Parallel Execution', link: '/orchestration/set-up-parallel-execution' },
-                { text: 'Tag Filter', link: '/orchestration/tag-filter' },
-                { text: 'Scripts', link: '/orchestration/scripts' },
-                { text: 'Safeguards', link: '/orchestration/safeguards' },
-                { text: 'Runtime Configuration', link: '/orchestration/runtime-configuration' },
-                { text: 'Outputs Sharing', link: '/orchestration/outputs-sharing' },
-                { text: 'Share Outputs Between Stacks', link: '/orchestration/share-outputs-between-stacks' },
-              ],
-            },
-            {
-              text: 'Change Detection',
-              collapsed: true,
-              items: [
-                { text: 'Overview', link: '/orchestration/change-detection/' },
-                { text: 'Run Commands Across Changed Stacks', link: '/orchestration/change-detection/run-commands-across-changed-stacks' },
-                { text: 'File Watchers', link: '/orchestration/change-detection/file-watchers' },
-                { text: 'Stack Triggers', link: '/orchestration/change-detection/stack-triggers' },
-                { text: 'Troubleshoot Change Detection', link: '/orchestration/change-detection/troubleshoot-change-detection' },
-                {
-                  text: 'Integrations',
-                  collapsed: true,
-                  items: [
-                    { text: 'Git', link: '/orchestration/change-detection/integrations/git' },
-                    { text: 'Terraform', link: '/orchestration/change-detection/integrations/terraform' },
-                    { text: 'OpenTofu', link: '/orchestration/change-detection/integrations/opentofu' },
-                    { text: 'Terragrunt', link: '/orchestration/change-detection/integrations/terragrunt' },
-                  ],
-                },
-              ],
-            },
-            {
-              text: 'CI/CD',
-              collapsed: true,
-              items: [
-                { text: 'Overview', link: '/ci-cd/' },
-                {
-                  text: 'GitHub Actions',
-                  collapsed: true,
-                  items: [
-                    { text: 'Overview', link: '/ci-cd/github-actions/' },
-                    { text: 'Deployment Workflow', link: '/ci-cd/github-actions/deployment-workflow' },
-                    { text: 'Drift Check Workflow', link: '/ci-cd/github-actions/drift-check-workflow' },
-                    { text: 'Preview Workflow', link: '/ci-cd/github-actions/preview-workflow' },
-                  ],
-                },
-                {
-                  text: 'GitLab CI',
-                  collapsed: true,
-                  items: [
-                    { text: 'Overview', link: '/ci-cd/gitlab-ci/' },
-                    { text: 'Deployment Workflow', link: '/ci-cd/gitlab-ci/deployment-workflow' },
-                    { text: 'Drift Check Workflow', link: '/ci-cd/gitlab-ci/drift-check-workflow' },
-                    { text: 'Preview Workflow', link: '/ci-cd/gitlab-ci/preview-workflow' },
-                  ],
-                },
-                {
-                  text: 'Bitbucket Pipelines',
-                  collapsed: true,
-                  items: [
-                    { text: 'Overview', link: '/ci-cd/bitbucket-pipelines/' },
-                    { text: 'Deployment Workflow', link: '/ci-cd/bitbucket-pipelines/deployment-workflow' },
-                    { text: 'Drift Check Workflow', link: '/ci-cd/bitbucket-pipelines/drift-check-workflow' },
-                    { text: 'Preview Workflow', link: '/ci-cd/bitbucket-pipelines/preview-workflow' },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
+          {
+            text: 'Orchestration & Automation',
+            collapsed: true,
+            items: [
+              {
+                text: 'Orchestration',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: '/orchestration/' },
+                  { text: 'Run Commands in Stacks', link: '/orchestration/run-commands-in-stacks' },
+                  { text: 'Order of Execution', link: '/orchestration/order-of-execution' },
+                  { text: 'Configure Order of Execution', link: '/orchestration/configure-order-of-execution' },
+                  { text: 'Parallel Execution', link: '/orchestration/parallel-execution' },
+                  { text: 'Set Up Parallel Execution', link: '/orchestration/set-up-parallel-execution' },
+                  { text: 'Tag Filter', link: '/orchestration/tag-filter' },
+                  { text: 'Scripts', link: '/orchestration/scripts' },
+                  { text: 'Safeguards', link: '/orchestration/safeguards' },
+                  { text: 'Runtime Configuration', link: '/orchestration/runtime-configuration' },
+                  { text: 'Outputs Sharing', link: '/orchestration/outputs-sharing' },
+                  { text: 'Share Outputs Between Stacks', link: '/orchestration/share-outputs-between-stacks' },
+                ],
+              },
+              {
+                text: 'Change Detection',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: '/orchestration/change-detection/' },
+                  { text: 'Run Commands Across Changed Stacks', link: '/orchestration/change-detection/run-commands-across-changed-stacks' },
+                  { text: 'File Watchers', link: '/orchestration/change-detection/file-watchers' },
+                  { text: 'Stack Triggers', link: '/orchestration/change-detection/stack-triggers' },
+                  { text: 'Troubleshoot Change Detection', link: '/orchestration/change-detection/troubleshoot-change-detection' },
+                  {
+                    text: 'Integrations',
+                    collapsed: true,
+                    items: [
+                      { text: 'Git', link: '/orchestration/change-detection/integrations/git' },
+                      { text: 'Terraform', link: '/orchestration/change-detection/integrations/terraform' },
+                      { text: 'OpenTofu', link: '/orchestration/change-detection/integrations/opentofu' },
+                      { text: 'Terragrunt', link: '/orchestration/change-detection/integrations/terragrunt' },
+                    ],
+                  },
+                ],
+              },
+              {
+                text: 'CI/CD',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: '/ci-cd/' },
+                  {
+                    text: 'GitHub Actions',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/ci-cd/github-actions/' },
+                      { text: 'Deployment Workflow', link: '/ci-cd/github-actions/deployment-workflow' },
+                      { text: 'Drift Check Workflow', link: '/ci-cd/github-actions/drift-check-workflow' },
+                      { text: 'Preview Workflow', link: '/ci-cd/github-actions/preview-workflow' },
+                    ],
+                  },
+                  {
+                    text: 'GitLab CI',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/ci-cd/gitlab-ci/' },
+                      { text: 'Deployment Workflow', link: '/ci-cd/gitlab-ci/deployment-workflow' },
+                      { text: 'Drift Check Workflow', link: '/ci-cd/gitlab-ci/drift-check-workflow' },
+                      { text: 'Preview Workflow', link: '/ci-cd/gitlab-ci/preview-workflow' },
+                    ],
+                  },
+                  {
+                    text: 'Bitbucket Pipelines',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/ci-cd/bitbucket-pipelines/' },
+                      { text: 'Deployment Workflow', link: '/ci-cd/bitbucket-pipelines/deployment-workflow' },
+                      { text: 'Drift Check Workflow', link: '/ci-cd/bitbucket-pipelines/drift-check-workflow' },
+                      { text: 'Preview Workflow', link: '/ci-cd/bitbucket-pipelines/preview-workflow' },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
           {
             text: 'Operations & Governance',
             collapsed: true,
@@ -423,7 +423,6 @@ export default withMermaid(defineConfig({
             collapsed: true,
             items: [
               { text: 'Settings & Admin', link: '/settings/' },
-              { text: 'Security', link: '/security/' },
             ],
           },
         ],
@@ -434,6 +433,14 @@ export default withMermaid(defineConfig({
         collapsed: true,
         items: [
           { text: 'Glossary', link: '/glossary' },
+          {
+            text: 'Security',
+            collapsed: true,
+            items: [
+              { text: 'Security and Data Access Overview', link: '/security/' },
+              { text: 'Data Residency', link: '/security/data-residency' },
+            ],
+          },
           {
             text: 'Cloud API',
             collapsed: true,

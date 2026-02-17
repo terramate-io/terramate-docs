@@ -154,25 +154,21 @@ export default withMermaid(defineConfig({
       // is on `cli` directory.
       '/': [
         {
-          text: '👋 Introduction',
+          text: 'Get Started',
           collapsed: false,
           items: [
-            { text: 'About Terramate', link: '/' },
-            { text: 'How it works', link: '/how-it-works' },
-            { text: 'Why Terramate', link: '/why-terramate' },
-            // { text: 'Product Roadmap', link: 'https://roadmap.terramate.io/' },
-            { text: 'Discord Community', link: 'https://terramate.io/discord' },
+            { text: 'Welcome', link: '/' },
+            { text: 'Install Terramate CLI', link: '/cli/installation' },
+            { text: 'Onboard Terraform', link: '/get-started/terraform' },
+            { text: 'Onboard OpenTofu', link: '/get-started/opentofu' },
+            { text: 'Onboard Terragrunt', link: '/get-started/terragrunt' },
           ],
         },
         {
-          text: '🚀 Getting Started',
-          collapsed: false,
+          text: 'Overview',
           items: [
-            { text: 'Install Terramate CLI', link: '/cli/installation' },
-            { text: 'Start with Terraform', link: '/cli/on-boarding/terraform' },
-            { text: 'Start with OpenTofu', link: '/cli/on-boarding/opentofu' },
-            { text: 'Start with Terragrunt', link: '/cli/on-boarding/terragrunt' },
-            { text: 'Start using the Cloud', link: '/cloud/on-boarding/' },
+            { text: 'How Terramate Works', link: '/how-it-works' },
+            { text: 'Why Terramate', link: '/why-terramate' },
           ],
         },
 

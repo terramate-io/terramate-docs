@@ -1,5 +1,5 @@
 ---
-title: "On-boarding: Terragrunt On-boarding"
+title: Get Started with Terramate and Terragrunt
 description: Import your existing Terragrunt Setup to Terramate
 ---
 
@@ -56,7 +56,7 @@ https://github.com/terramate-io/terramate/releases
 ```
 :::
 
-For other installation methods, please see the [installation page](../installation.md).
+For other installation methods, please see the [installation page](/cli/installation).
 
 ## 2: Import Terragrunt Modules
 
@@ -123,7 +123,7 @@ terramate run --parallel 5 -- terragrunt plan -out plan.tfplan
 terramate run --changed -- terragrunt apply -auto-approve plan.tfplan
 ```
 
-## 6: Sign-up on Terramate Cloud:
+## 6: Sign up for Terramate Cloud
 
 Next, we'll sign up for a free Terramate Cloud account. You can use Terramate CLI to sync your stacks to Terramate Cloud
 which provides an additional dashboard that adds features like observability, insights, asset management, stateful orchestration,
@@ -137,8 +137,6 @@ Terramate Cloud offers to sign in using:
 - A GitHub Account
 - A Microsoft Entra ID Account
 
-![TMC Signup](../assets/tmc-signup.png)
-
 ## 7: Create your Organization
 
 After you set up your profile, join an organization you were invited to or create your own. To create an organization,
@@ -147,8 +145,6 @@ in the Terramate CLI when you select an organization to sync or retrieve data fr
 
 You can belong to multiple organizations and teams. Click the “join” button to become an active member, then click
 “visit” to view your organization.
-
-![TMC Signup](../assets/tmc-create-org.png)
 
 ## 8: Configure your repository
 
@@ -228,14 +224,13 @@ Terramate Cloud.
 If the plans don't contain any changes, Terramate will simply create an inventory of all infrastructure configured in
 Terramate Cloud. If the plans changes, Terramate will additionally create drift alerts.
 
-![TMC Signup](../assets/tmc-stacks.png)
-
 And that's it. You just learned how to onboard Terramate to your Terragrunt repository in less than 5 minutes.
-Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](../automation/index.md).
+Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](/ci-cd/index.md).
 
 ## 11: Next Steps
 
-- [Setup CI/CD:](../automation/index.md) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
-- [Terramate App for Slack:](../../cloud/integrations/slack.md) Receive alerts and notifications in Slack.
-- [Link Accounts:](../../cloud/profile/account-linking.md) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
+- [Setup CI/CD:](/ci-cd/index.md) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
+- [Terramate App for Slack:](/integrations/slack) Receive alerts and notifications in Slack.
+- [Link Accounts:](/settings/account-linking) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
+- [Manage Environments](/environments/) Standardize multi-environment delivery with components, bundles, and environments.
 - [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.

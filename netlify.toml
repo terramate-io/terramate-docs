@@ -9,3 +9,18 @@ command = "pnpm docs:build"
 
 [context.production]
 command = "pnpm docs:build --base='/docs/'"
+
+[[redirects]]
+  from = "/cli/on-boarding/terraform"
+  to = "/get-started/terraform"
+  status = 301
+
+[[redirects]]
+  from = "/cli/on-boarding/opentofu"
+  to = "/get-started/opentofu"
+  status = 301
+
+[[redirects]]
+  from = "/cli/on-boarding/terragrunt"
+  to = "/get-started/terragrunt"
+  status = 301

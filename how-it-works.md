@@ -124,7 +124,7 @@ Terramate Cloud does not require direct access to your source code, Terraform st
 
 - [Install Terramate CLI](/cli/installation)
 - Onboard an existing project: [Terraform](/get-started/terraform), [OpenTofu](/get-started/opentofu), [Terragrunt](/get-started/terragrunt)
-- [Set up Terramate Cloud](/guides/set-up-terramate-cloud)
+- [Set up Terramate Cloud](/cloud/on-boarding/)
 
 ## Learn more
 

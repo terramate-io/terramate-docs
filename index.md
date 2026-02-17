@@ -23,29 +23,29 @@ With Terramate, you can:
    [OpenTofu](/get-started/opentofu) |
    [Terragrunt](/get-started/terragrunt)
 3. Or alternatively: [Start from scratch]()
-3. [Connect Terramate Cloud](/guides/set-up-terramate-cloud)
+3. [Connect Terramate Cloud](/cloud/on-boarding/)
 
 ## Explore Terramate
 
 ### Define & structure your IaC
 
 - **[Manage Environments](/)**: Standardize multi-environment delivery with components and bundles, and promote changes between environments with ease.
-- **[Self-Service](/self-service/)**: Developers can self-serve deployments of even complex infrastructure without needing to learn Terraform or OpenTofu internals.
-- **[Code Generation](/code-generation/)**: Keep IaC DRY while preserving native Terraform/OpenTofu output.
+- **[Self-Service]()**: Developers can self-serve deployments of even complex infrastructure without needing to learn Terraform or OpenTofu internals.
+- **[Code Generation](/cli/code-generation/)**: Keep IaC DRY while preserving native Terraform/OpenTofu output.
 
 ### Orchestrate & deliver
 
-- **[Orchestration](/orchestration/)**: Blazingly fast dependency-aware execution with change detection, parallel runs, and state-aware retries -- re-run only failed or drifted stacks instead of everything.
-- **[CI/CD & GitOps](/ci-cd/)**: Automate delivery pipelines in GitHub Actions, GitLab CI, or Bitbucket Pipelines.
-- **[Pull Request Previews](/)**: Review proposed infrastructure changes, understand risk, and automatically merge low-risk pull requests before production.
-- **[Deployments](/deployments/)**: Track delivery outcomes across repositories and teams.
+- **[Orchestration](/cli/orchestration/)**: Blazingly fast dependency-aware execution with change detection, parallel runs, and state-aware retries -- re-run only failed or drifted stacks instead of everything.
+- **[CI/CD & GitOps](/cli/automation/)**: Automate delivery pipelines in GitHub Actions, GitLab CI, or Bitbucket Pipelines.
+- **[Pull Request Previews](/cloud/previews/)**: Review proposed infrastructure changes, understand risk, and automatically merge low-risk pull requests before production.
+- **[Deployments](/cloud/deployments/)**: Track delivery outcomes across repositories and teams.
 
 ### Collaborate, operate & observe
 
 - **[Agents]()**: Use AI agents to provision infrastructure, remediate failures, and reduce day-2 effort.
 - **[MCP Server & Agent Skills]()**: Use MCP servers and agent skills to bring Terramate Cloud context into your IDE and accelerate development workflows.
 - **[Dashboard](/)**: Track deployments, drift, and infrastructure changes across environments in one control plane.
-- **[Drift Management](/drift/)**: Detect and act on configuration drift before it becomes risk.
+- **[Drift Management](/cloud/drift/)**: Detect and act on configuration drift before it becomes risk.
 - **[Alerts](/)**: Get notified about drift, failures, and other critical events in real time.
 - **[Policy Controls](/)**: Enforce governance and reduce misconfigurations before they reach production.
 - **[DORA Insights](/)**: Measure and improve delivery performance across teams.
@@ -71,5 +71,4 @@ Learn more about Terramate in this 10-minute product walkthrough video.
 
 - [How Terramate works](/how-it-works)
 - [Why Terramate](/why-terramate)
-- [Manage environments with components and bundles](/environments/)
-- [Guides](/guides/)
+- [Guides](/cli/guides/)

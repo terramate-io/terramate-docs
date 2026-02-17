@@ -225,12 +225,11 @@ If the plans don't contain any changes, Terramate will simply create an inventor
 Terramate Cloud. If the plans changes, Terramate will additionally create drift alerts.
 
 And that's it. You just learned how to onboard Terramate to your Terragrunt repository in less than 5 minutes.
-Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](/ci-cd/index.md).
+Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](/cli/automation/).
 
 ## 11: Next Steps
 
-- [Setup CI/CD:](/ci-cd/index.md) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
-- [Terramate App for Slack:](/integrations/slack) Receive alerts and notifications in Slack.
-- [Link Accounts:](/settings/account-linking) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
-- [Manage Environments](/environments/) Standardize multi-environment delivery with components, bundles, and environments.
+- [Setup CI/CD:](/cli/automation/) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
+- [Terramate App for Slack:](/cloud/integrations/slack) Receive alerts and notifications in Slack.
+- [Link Accounts:](/cloud/profile/account-linking) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
 - [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.

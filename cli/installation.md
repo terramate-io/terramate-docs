@@ -108,7 +108,7 @@ terramate list --status=drifted
 ```
 
 For more details about how to initially sync your data to Terramate Cloud, please see
-[Set up Terramate Cloud](/guides/set-up-terramate-cloud)
+[Set up Terramate Cloud](/cloud/on-boarding/)
 
 ## Alternative installation methods
 

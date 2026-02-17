@@ -123,7 +123,7 @@ terramate run --changed -- tofu apply -auto-approve plan.tfplan
 ```
 
 Those are some of the most important examples of orchestrating commands with Terramate CLI. If you want to learn more
-about how the orchestration engine in Terramate CLI works, please take a look at the [orchestration](/orchestration/) docs.
+about how the orchestration engine in Terramate CLI works, please take a look at the [orchestration](/cli/orchestration/) docs.
 
 ## 3: Sign up for Terramate Cloud
 
@@ -230,12 +230,11 @@ Terramate Cloud. If the plans changes, Terramate will additionally create drift 
 
 
 And that's it. You just learned how to onboard Terramate to your OpenTofu repository in less than 5 minutes.
-Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](/ci-cd/index.md).
+Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](/cli/automation/).
 
 ## 8: Next Steps
 
-- [Setup CI/CD:](/ci-cd/index.md) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
-- [Terramate App for Slack:](/integrations/slack) Receive alerts and notifications in Slack.
-- [Link Accounts:](/settings/account-linking) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
-- [Manage Environments](/environments/) Standardize multi-environment delivery with components, bundles, and environments.
+- [Setup CI/CD:](/cli/automation/) Configure your CI/CD to sync pull requests previews, deployments and automated drift detection workflows.
+- [Terramate App for Slack:](/cloud/integrations/slack) Receive alerts and notifications in Slack.
+- [Link Accounts:](/cloud/profile/account-linking) Link different accounts such as GitHub or GitLab with your Terramate Cloud profile to enable auto-assignment for alerts.
 - [Terramate Community](https://terramate.io/discord): Join the Terramate Community on Discord to receive or contribute any help.

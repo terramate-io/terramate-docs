@@ -8,31 +8,31 @@ outline: [2, 4]
 
 This page provides an overview of what data [Terramate CLI](https://github.com/terramate-io/terramate) and
 [Terramate Cloud](https://cloud.terramate.io/) access and process through the various integrations.
-Terramate follows a unique approach by shifting all orchestration capabilities to the client site via
+Terramate follows a unique approach by shifting all orchestration capabilities to the client side via
 [Terramate CLI](https://github.com/terramate-io/terramate).
 
-Because of that, Terramate CLI and Terramate Cloud are designed to be highly secure, meaning that:
+As a result, Terramate CLI and Terramate Cloud are designed to be highly secure:
 
-- Terramate doesn't require any access to your cloud accounts.
-- Terramate doesn't require any access to your state files.
-- Terramate doesn't require any access to your source code.
+- Terramate does not require any access to your cloud accounts.
+- Terramate does not require any access to your state files.
+- Terramate does not require any access to your source code.
 
-This differentiates Terramate highly from other solutions such purpose-built CI/CD
-platforms for IaC in the market, since those mostly require broad access to your
-state and cloud accounts in order to deploy changes.
+This differentiates Terramate from other solutions such as purpose-built CI/CD
+platforms for IaC, which typically require broad access to your state and cloud
+accounts in order to deploy changes.
 
-For details, please consider the following sections on this page.
+For details, see the following sections on this page.
 
 ## Terramate CLI
 
-Per default, Terramate CLI does not process or sync any data to Terramate Cloud.
+By default, Terramate CLI does not process or sync any data to Terramate Cloud.
 
 When authenticating Terramate CLI with Terramate Cloud via the
 [`terramate cloud login`](https://terramate.io/docs/cli/reference/cmdline/cloud/cloud-login)
 command, plan files such as Terraform plans and metadata such as Git metadata can be synced **optionally** for
-[Pull Requests](../cloud/previews/index.md), [Deployments](../cloud/deployments/index.md), and [Drift Detection Checks](../cloud/drift/index.md).
+[Pull Requests](../previews/index.md), [Deployments](../deployments/index.md), and [Drift Detection Checks](../drift/index.md).
 
-For details, please consider the [Cloud Sync](#cloud-sync) section.
+For details, see the [Cloud Sync](#cloud-sync) section.
 
 ### Cloud Sync
 
@@ -43,9 +43,9 @@ Drift Detection, Asset Management, Policies, and more.
 Syncing data to Terramate Cloud requires explicit **opt-in**, and is available for
 the following operations:
 
-- Syncing Pull Requests to Terramate Cloud via [`terramate run`](../cli/reference/cmdline/run.md) or custom workflows configured with [Terramate Scripts](https://terramate.io/docs/cli/orchestration/scripts#command-options).
-- Syncing Deployments to Terramate Cloud via [`terramate run`](../cli/reference/cmdline/run.md) or custom workflows configured with [Terramate Scripts](https://terramate.io/docs/cli/orchestration/scripts#command-options).
-- Syncing Health Checks such as Drift Checks to Terramate Cloud via [`terramate run`](../cli/reference/cmdline/run.md) or custom workflows configured with [Terramate Scripts](https://terramate.io/docs/cli/orchestration/scripts#command-options).
+- Syncing Pull Requests to Terramate Cloud via [`terramate run`](../cli/reference/cmdline/run.md) or custom workflows configured with [Terramate Scripts](https://terramate.io/docs/orchestration/scripts#command-options).
+- Syncing Deployments to Terramate Cloud via [`terramate run`](../cli/reference/cmdline/run.md) or custom workflows configured with [Terramate Scripts](https://terramate.io/docs/orchestration/scripts#command-options).
+- Syncing Health Checks such as Drift Checks to Terramate Cloud via [`terramate run`](../cli/reference/cmdline/run.md) or custom workflows configured with [Terramate Scripts](https://terramate.io/docs/orchestration/scripts#command-options).
 
 For example, the following command creates a plan file `preview.tfplan` in all stacks, and syncs those as Pull Request Previews to Terramate Cloud:
 
@@ -58,25 +58,25 @@ terramate run \
 ```
 
 This will:
-1. Run the command `terraform plan -out preview.tfplan -detailed-exitcode` in each stack, which will run `terraform plan` and safe the plan to a file `preview.tfplan` in each stack.
-2. Terramate will then sanitize those plans to redact all sensitive values.
-3. Once sanitized, Terramate will sync all plan files to Terramate Cloud and bundle them as a new Pull Requests Preview.
+1. Run the command `terraform plan -out preview.tfplan -detailed-exitcode` in each stack, which runs `terraform plan` and saves the plan to a file `preview.tfplan` in each stack.
+2. Terramate then sanitizes those plans locally to redact all sensitive values.
+3. Once sanitized, Terramate syncs all plan files to Terramate Cloud and bundles them as a new Pull Request Preview.
 
-Sanitizing the plans guarantees that no sensitive data such as secrets, certificates or any other form of sensitive data
-will be sent to Terramate Cloud. To learn more about how plan sanitization works, please see the
-[Plan sanitization section](#plan-sanitization) in this page.
+Sanitizing the plans guarantees that no sensitive data such as secrets, certificates, or any other form of sensitive data
+is sent to Terramate Cloud. To learn more about how plan sanitization works, see the
+[Plan Sanitization](#plan-sanitization) section on this page.
 
-Once finished, Terramate Cloud will summarize of all plans inside the Pull Request in your VCS.
+Once finished, Terramate Cloud summarizes all plans inside the pull request in your VCS.
 
 ![Pull Request Preview](./assets/pull-request-preview.png "Pull Request Preview")
 
 ### Which Data gets synced from Terramate CLI to Terramate Cloud
 
-Whenever syncing operation such as Pull Request Previews, Deployments and Drift Checks from Terramate CLI to Terramate Cloud,
-Terrmate CLI will sync the following data:
+When syncing operations such as Pull Request Previews, Deployments, and Drift Checks from Terramate CLI to Terramate Cloud,
+Terramate CLI syncs the following data:
 
 - **[Extracted and sanitized data from plans](#plan-sanitization)**
-- **Github metadata** (user has granular control of the token permissions)
+- **GitHub metadata** (user has granular control of the token permissions)
 
 | Scope              | Access / Data Processed                                                                                                                                                                                   |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -84,7 +84,7 @@ Terrmate CLI will sync the following data:
 | Checks API         | Successful / failed / pending jobs                                                                                                                                                                        |
 | Github Actions API | Deployment Actor (`GITHUB_ACTOR` env), Triggered By Actor (`GITHUB_TRIGGERING_ACTOR` env), Run ID (`GITHUB_RUN_ID` env) and Run Attempt (`GITHUB_RUN_ATTEMPT` env), Workflow name (`GITHUB_WORKFLOW` env) |
 
-- **Gitlab metadata** (user has granular control of the token permissions)
+- **GitLab metadata** (user has granular control of the token permissions)
 
 | Scope             | Access / Data Processed                                                                               |
 |-------------------|-------------------------------------------------------------------------------------------------------|
@@ -100,8 +100,8 @@ Terrmate CLI will sync the following data:
 
 ### Plan Sanitization
 
-Whenever syncing plans to Terramate Cloud, Terramate CLI first sanitizes plans locally by using an
-[open-source library](https://github.com/terramate-io/tfjson) we maintain which we welcome you to audit.
+When syncing plans to Terramate Cloud, Terramate CLI first sanitizes plans locally using an
+[open-source library](https://github.com/terramate-io/tfjson) that we maintain and welcome you to audit.
 
 The following data is extracted from all JSON plan files and synced to Terramate Cloud if cloud sync is explicitly enabled via
 opt-in:
@@ -126,7 +126,7 @@ opt-in:
 
 ### Data processed when authenticating with SSO
 
-You can login to Terramate Cloud using various SSO providers. Below is an overview of data access requested for each provider.
+You can log in to Terramate Cloud using various SSO providers. Below is an overview of the data access requested for each provider.
 
 #### Google SSO
 
@@ -153,10 +153,10 @@ The following section explains the access scopes required by the individual inte
 #### App for GitHub
 
 ::: info
-The App for GitHub doesn't require any access to your source code.
+The App for GitHub does not require any access to your source code.
 :::
 
-The [Terramate App for GitHub](https://github.com/apps/terramate-cloud) is required to provide Previews inside of [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and to integrate
+The [Terramate App for GitHub](https://github.com/apps/terramate-cloud) is required to provide previews inside [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and to integrate
 policy checks with the [GitHub Checks API](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks).
 
 The following scopes are required when installing the App for GitHub.
@@ -177,7 +177,7 @@ When integrating [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), the following s
 
 #### App for Slack
 
-The App for Slack is used to integrate notifications such as [Alerts](../cloud/alerts/index.md) with your Slack Workspace
+The App for Slack is used to integrate notifications such as [Alerts](../alerts/index.md) with your Slack Workspace
 by providing a bot for Slack.
 
 The following scopes of permissions are required to install the App for Slack in your workspace:
@@ -185,7 +185,7 @@ The following scopes of permissions are required to install the App for Slack in
 - For sending messages in public channels in your Workspace:
   - View basic information about public channels in your workspace
   - Send messages as @terramate
-  - Send messages to channels @terramate isn't a member of
+  - Send messages to channels @terramate is not a member of
 - For mapping users with their Terramate Cloud profiles:
   - View people in your workspace
   - View email addresses of people in your workspace
@@ -194,8 +194,8 @@ The following scopes of permissions are required to install the App for Slack in
 
 #### Webhook for Slack
 
-In addition to the App for Slack, Terramate Cloud also allows you to configure a webhook used for sending notifications about
-failed deployments, detected drifts, etc. to a centralize Slack channel.
+In addition to the App for Slack, Terramate Cloud also allows you to configure a webhook for sending notifications about
+failed deployments, detected drift, and other events to a centralized Slack channel.
 
-This requires you to [configure a webhook](https://api.slack.com/messaging/webhooks) in your Slack Workspace authorized to
-send messages to a selected channel. For details, please see the [webhook documentation for Slack](https://api.slack.com/messaging/webhooks).
+This requires you to [configure a webhook](https://api.slack.com/messaging/webhooks) in your Slack workspace, authorized to
+send messages to a selected channel. For details, see the [webhook documentation for Slack](https://api.slack.com/messaging/webhooks).

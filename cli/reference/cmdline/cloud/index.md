@@ -29,7 +29,7 @@ jobs:
 ```
 
 Additionally you have to set up your Terramate Cloud organization to trust tokens issued by
-this repository. Check the [OIDC configuration](../../../../cloud/organization/settings.md#setup-vcs-open-id-connect-oidc) for more details.
+this repository. Check the [OIDC configuration](/settings/settings.md#setup-vcs-open-id-connect-oidc) for more details.
 
 For security reasons, this is the recommended method for Github Actions because the tokens are only valid during the pipeline execution.
 
@@ -60,7 +60,7 @@ Example:
 
 The API key method is the only authentication strategy that works in all possible environments and CI/CD vendors. It can be used as a fallback if you need to run Terramate from a non-conventional CI runner.
 
-For configuring it you just need to export the `TMC_TOKEN` environment variable with the value obtained from the Terramate Cloud settings page. Check the [API keys](../../../../cloud/organization/api-keys.md) page for detailed instructions for creating them.
+For configuring it you just need to export the `TMC_TOKEN` environment variable with the value obtained from the Terramate Cloud settings page. Check the [API keys](/settings/api-keys.md) page for detailed instructions for creating them.
 
 Examples:
 
@@ -95,5 +95,5 @@ jobs:
 The user credential is intended to be used when executing Terramate locally.
 It should never be used in CI/CD automations unless you know what you are doing.
 
-Once you authenticate with either `terramate cloud login --google` or `terramate cloud login --github`, a file is created at `~/.terramate.d/credentials.tmrc.json` (this is the default location unless you have `user_terramate_dir` set in your [CLI configuration file](../../../reference/cmdline/index.md#cli-configuration)).
+Once you authenticate with either `terramate cloud login --google` or `terramate cloud login --github`, a file is created at `~/.terramate.d/credentials.tmrc.json` (this is the default location unless you have `user_terramate_dir` set in your [CLI configuration file](/cli/reference/cmdline/.md#cli-configuration)).
 If the file is present, Terramate will use the `id_token` stored in it and automatically refresh token as needed.

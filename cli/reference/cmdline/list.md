@@ -7,6 +7,11 @@ description: List all stacks or apply filters to selectively list stacks in the 
 
 The `terramate list` command lists all Terramate stacks in the current directory recursively. These can be additionally filtered based on Terramate Cloud status with the `--status=<status>` filter (valid statuses are documented on the [trigger page](./trigger.md))
 
+For conceptual background, see:
+
+- [Explanation: Stacks Model](/explanations/stacks)
+- [Explanation: Change Detection Model](/explanations/change-detection)
+
 ## Usage
 
 `terramate list [options]`
@@ -78,10 +83,10 @@ terramate list --changed --only-all-dependents
 
 ### Dependency Filters
 
-These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id`) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](../../change-detection/index.md#dependency-filters) documentation for details.
+These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id`) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](/orchestration/change-detection/index.md#dependency-filters) documentation for details.
 
 ::: warning
-Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](../../change-detection/index.md#understanding-dependencies-and-dependents) for details.
+Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](/orchestration/change-detection/index.md#understanding-dependencies-and-dependents) for details.
 :::
 
 #### Include Dependencies

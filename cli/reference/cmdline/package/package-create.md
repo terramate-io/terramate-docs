@@ -2,7 +2,7 @@
 title: terramate package create
 description: Create a package (catalog) containing bundles and components for remote distribution.
 type: reference
-product: catalyst
+product: cli
 outline: [2, 4]
 ---
 
@@ -28,5 +28,5 @@ terramate package create <output-dir> \
 
 ### Related guides and references
 
-- Concepts: [Collections](/catalyst/concepts/collections)
-- How‑to: [Use a Remote Catalog](/catalyst/how-to/use-remote-catalog)
+- Concepts: [Collections](/self-service/collections)
+- How‑to: [How to Use a Remote Catalog](/self-service/use-remote-catalog)

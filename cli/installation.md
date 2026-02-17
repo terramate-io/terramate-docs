@@ -1,6 +1,7 @@
 ---
 title: How to Install Terramate CLI
 description: Learn how to install Terramate CLI and how to connect the CLI to Terramate Cloud.
+type: how-to
 outline: [2, 4]
 ---
 
@@ -70,6 +71,20 @@ install the completion just run the command below and open a new shell session:
 terramate install-completions
 ```
 
+### Agent Skills
+
+When working with AI coding agents such as Claude Code, Cursor, Codex, or OpenCode, install the
+[Terramate Agent Skills](https://github.com/terramate-io/agent-skills) in your IaC repositories
+to give your agent best-practice guidance for Terraform, OpenTofu, and Terramate:
+
+```sh
+npx skills add terramate-io/agent-skills
+```
+
+The skills include rules for environment management, orchestration, code generation, CI/CD integration,
+security best practices, and more. Once installed, the agent uses them automatically when relevant
+tasks are detected.
+
 ## Sign in to Terramate Cloud
 
 To authenticate the CLI with Terramate Cloud, you can run the [`terramate cloud login`](./reference/cmdline/cloud/cloud-info.md) command.
@@ -93,7 +108,7 @@ terramate list --status=drifted
 ```
 
 For more details about how to initially sync your data to Terramate Cloud, please see
-[getting started with Terramate Cloud](../cloud/on-boarding/index.md#connect-terramate-cli-to-terramate-cloud)
+[Set up Terramate Cloud](/cloud/on-boarding/)
 
 ## Alternative installation methods
 

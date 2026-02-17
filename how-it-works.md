@@ -1,75 +1,134 @@
 ---
-title: How does Terramate work?
-description: Learn how Terramate works to enable better infrastructure as code management by integrating with any existing IaC setup, all major CI/CD platforms and all of your existing tooling.
+title: About Terramate — How the IaC Platform for Terraform & OpenTofu Works
+description: Terramate is an Infrastructure as Code development platform that helps teams deploy and manage cloud infrastructure faster, with less risk and toil, and greater value from their existing IaC investments.
 ---
 
-# How does Terramate work?
+# About Terramate
 
-Terramate works with any existing IaC setup, all major CI/CD platforms and all of your existing tooling. Adding advanced
-capabilities such as custom approval workflows, role-based security policies, and AI-powered observability that allow you
-to turn your existing CI/CD into a powerful vending machine for self-service infrastructure with IaC in less than 5 minutes.
+Terramate is the **Infrastructure as Code (IaC) Development Platform** that helps platform teams, developers, and AI agents deploy and
+manage cloud infrastructure at scale with Terraform, OpenTofu, Terragrunt, and Kubernetes so they can ship faster across teams,
+reduce risk and platform toil, and maximize the value of their existing IaC investment.
 
-Terramate allows you to visualize, navigate, and observe your provisioned and deployed infrastructure resources and more.
-With a UI, ChatOps Bot for Slack for notifications and actionable observability, Terramate enables self-service infrastructure
-that provides everything teams need for continuous delivery of their infrastructure with automated workflows that help
-everyone understand the impact of proposed infrastructure changes.
+The platform consists of two components:
 
-## Terramate CLI and Terramate Cloud
+<div class="tm-overview-grid">
+  <a href="https://github.com/terramate-io/terramate" class="tm-overview-card" target="_blank" rel="noreferrer noopener">
+    <h3>Terramate CLI <span class="tm-badge">OSS</span></h3>
+    <p>Structure, orchestrate, and automate IaC locally and in any CI/CD.</p>
+    <ul class="tm-capabilities">
+      <li>Stacks</li>
+      <li>Environment management</li>
+      <li>Code generation</li>
+      <li>Dependency-aware orchestration</li>
+      <li>Change detection</li>
+      <li>Parallel execution</li>
+      <li>State-aware retries</li>
+      <li>CI/CD & GitOps automation</li>
+      <li>Self-service infrastructure</li>
+    </ul>
+  </a>
+  <a href="https://cloud.terramate.io" class="tm-overview-card" target="_blank" rel="noreferrer noopener">
+    <h3>Terramate Cloud <span class="tm-badge">SaaS</span><span class="tm-badge">BYOC</span></h3>
+    <p>Observe, collaborate, and govern infrastructure delivery at scale.</p>
+    <ul class="tm-capabilities">
+      <li>Dashboard</li>
+      <li>Pull request previews</li>
+      <li>Deployment tracking</li>
+      <li>Drift management</li>
+      <li>Alerts</li>
+      <li>Policy controls</li>
+      <li>DORA insights</li>
+      <li>AI agents</li>
+      <li>MCP server & skills</li>
+      <li>SlackOps workflows</li>
+      <li>Integrations</li>
+    </ul>
+  </a>
+</div>
 
-The Terramate platform comprises two main components:
+![Terramate Overview](./cli/assets/terramate_platform_overview_dark.png "Terramate Overview")
 
-- **Terramate CLI**: An open-source Infrastructure as Code (IaC) orchestration and code generation tool for Terraform,
-  OpenTofu, Terragrunt, Kubernetes, Pulumi, Cloud Formation, CDK, Azure Resource Manager (ARM), and others. Used by
-  developers and in any CI/CD.
+## Architecture
 
-- **Terramate Cloud**: An Infrastructure as Code management platform that provides a control plane used to manage and observe
-  all your infrastructure managed with IaC in stacks among one or multiple repositories. The platform provides a better
-  **collaboration**, **observability**, **visibility**, and **governance** experience when managing cloud infrastructure
-  with Infrastructure as Code. Terramate Cloud integrates seamlessly with all your tooling such as Slack or GitHub.
+Terramate CLI runs locally or in your CI/CD and executes infrastructure workflows where your code already lives.
+It then pushes metadata and workflow outcomes to Terramate Cloud for visibility, governance, and collaboration.
 
-## What can you do with Terramate?
+```mermaid
+flowchart LR
+    CICD["Your CI/CD\n(GitHub Actions, GitLab CI,\nBitbucket Pipelines, ...)"]
+    CLI["Terramate CLI"]
+    TF["Terraform / OpenTofu"]
+    Cloud["Terramate Cloud"]
 
-- Build, deploy, manage, and observe cloud infrastructure with IaC in one or multiple repositories.
-- Configure fully customizable GitOps workflows that run in any CI/CD to streamline the deployment processes of your infrastructure.
-- Automatically detect and resolve drift.
-- Monitor, observe, and analyze what infrastructure is managed and by whom.
-- Detect and resolve misconfigurations to prevent security vulnerabilities or costs.
-- Provide better developer experience and self-service.
+    CICD --> CLI
+    CLI --> TF
+    CLI -->|"push metadata\n& resources (opt-in)"| Cloud
+    Cloud -->|"PR comments,\nchecks & alerts"| CICD
+```
 
-## How it works
+Terramate CLI orchestrates Terraform/OpenTofu inside your CI/CD runner, then pushes deployment, preview, and drift metadata to Terramate Cloud. Cloud closes the loop by reporting results back to your pull requests as comments, status checks, and alerts.
 
-Terramate CLI is used to orchestrate commands such as `terraform plan`
-or `tofu plan` in stacks and optionally sends data to Terramate Cloud.
+::: tip Important
+Terramate is **not** a CI/CD platform. It runs inside your existing delivery setup, so you keep your current CI/CD, secrets management, and permissions model (for example, GitHub Actions, GitLab CI/CD, Bitbucket, Azure DevOps, Atlantis, CircleCI, and Jenkins).
+::::
 
-Example: Run `terraform apply` in all changed stacks and sync the data to Terramate Cloud.
+Terramate Cloud does not require access to your source code / repositories, Terraform state backend, or cloud accounts.
+
+## How a typical workflow works
+
+1. **Define**: Organize infrastructure into environments with bundles, components, and stacks, and keep them DRY by using reusable code generation patterns.
+2. **Orchestrate**: Change detection identifies which environments contain changes and orchestrates `plan`/`apply` only there, instead of running across the entire repository.
+3. **Preview**: Run plans in pull requests to review impact and risk before applying changes.
+4. **Deploy**: Execute dependency-aware applies with parallel execution and state-aware retries.
+
+## Day-2 operations
+
+Once infrastructure is running, Terramate keeps it healthy:
+
+- **Observe**: Track deployments, detect drift, and route alerts through Terramate Cloud.
+- **Maintain**: Use AI agents to update, remediate, and maintain infrastructure with less day-2 effort.
+
+## CLI in action
+
+Run `terraform apply` only in changed stacks and sync deployment data to Terramate Cloud:
 
 ```sh
 terramate run \
   --changed \
+  --parallel 5 \
   --sync-deployment \
   --terraform-plan-file=out.tfplan \
   -- \
-  terraform apply -input=false -auto-approve -lock-timeout=5m out.tfplan
+  terraform apply -input=false -auto-approve out.tfplan
 ```
 
-Terramate Cloud will create a new deployment and provide insights about all stacks that have changed in the deployment
-triggered by the command mentioned above. Execution can be done locally or in any CI/CD. Terramate Cloud accepts data
-for various workflows, e.g., pull request previews, deployments, and drift runs, to mention a few. The data flow is ***push***
-(from Terramate CLI to Terramate Cloud). Terramate doesn't need access to your code, state files or cloud accounts.
-However, the Cloud provides a native Pull Request integration to enrich your pull request previews with additional data.
+What this command does:
 
-Please find the diagram below for a more detailed overview of how Terramate works.
+- `terramate run` executes any command across targeted stacks. In this example, it orchestrates `terraform apply`.
+- `--changed` runs only in stacks affected by your changes, not across the whole repository.
+- `--parallel 5` executes up to five eligible stacks concurrently for faster delivery.
+- `--terraform-plan-file=out.tfplan` explicitly sets the plan filename created in each stack, which Terramate uses to extract resources and metadata for Terramate Cloud sync.
+- `--sync-deployment` is explicit opt-in; remove this flag to run locally or in CI without syncing to Terramate Cloud.
 
-![Data Flow in Terramate](./cli/assets/terramate_platform_overview_dark.png "Data Flow in Terramate")
+## Security and data handling
 
-## How to get started
+Terramate uses a push-based model: execution happens in your local or CI environment, and Terramate CLI pushes workflow data to Terramate Cloud.
+Terramate Cloud does not require direct access to your source code, Terraform state files, or cloud provider accounts.
 
-1. Start by installing [Terramate CLI](https://github.com/terramate-io/terramate).
-2. Add Terramate to any existing [Terraform](./cli/on-boarding/terraform.md), [OpenTofu](./cli/on-boarding/opentofu.md)
-  or [Terragrunt](./cli/on-boarding/terragrunt.md) project. Or simply start with a [new project](./cli/getting-started/index.md)!
-3. Instead of running `terraform apply` (or any other command), start using [`terramate run terraform apply`](./cli/reference/cmdline/run.md).
-4. Set up your CI/CD by using our [GitOps Automation Blueprints](./cli/automation/index.md).
-5. [Sign up](https://cloud.terramate.io) for a free Terramate Cloud Account (or run `terramate cloud login`).
-6. Sync your stacks to Terramate Cloud.
-7. Connect Slack, GitHub, or GitLab, configure workflows, drift detection, and notifications.
-8. Onboard your team, onboard more repositories, and explore!
+- **Execution control stays with you**: Keep Terraform/OpenTofu execution in your own runtime and permission boundary.
+- **Data flow is explicit**: Send only the deployment, preview, and drift metadata needed for visibility and collaboration.
+- **Client-side sanitization**: When extracting resources from plan files, Terramate CLI redacts all sensitive values -- such as secrets, certificates, and credentials -- on the client side before pushing any data to Terramate Cloud. No sensitive data ever leaves your environment.
+- **Security docs**: Learn more in [Security and Data Processing](/security/).
+
+## Next steps
+
+- [Install Terramate CLI](/cli/installation)
+- Onboard an existing project: [Terraform](/get-started/terraform), [OpenTofu](/get-started/opentofu), [Terragrunt](/get-started/terragrunt)
+- [Set up Terramate Cloud](/cloud/on-boarding/)
+
+## Learn more
+
+- [Why Terramate](/why-terramate)
+<!-- - [Concepts](/explanations/) -->
+- [Security and Data Processing](/security/)
+- Join the [Discord community](https://terramate.io/discord)

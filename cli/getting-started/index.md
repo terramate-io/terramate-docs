@@ -11,9 +11,9 @@ project that manages Terraform or OpenTofu in stacks using the most essential Te
 
 ::: tip Onboard Terramate to existing project
 If, instead, you want to learn how to use Terramate in an existing project, go here:
-- [Start with existing Terraform project](../on-boarding/terraform.md)
-- [Start with existing OpenTofu project](../on-boarding/opentofu.md)
-- [Start with existing Terragrunt project](../on-boarding/terragrunt.md)
+- [Start with existing Terraform project](/get-started/terraform)
+- [Start with existing OpenTofu project](/get-started/opentofu)
+- [Start with existing Terragrunt project](/get-started/terragrunt)
 :::
 
 ::: tip Terramate Community Discord Server

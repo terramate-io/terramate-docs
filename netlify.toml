@@ -121,6 +121,16 @@ to = "/environments/reference/variables"
 status = 301
 
 [[redirects]]
+from = "/catalyst"
+to = "/environments/"
+status = 301
+
+[[redirects]]
+from = "/catalyst/*"
+to = "/environments/"
+status = 301
+
+[[redirects]]
 from = "/cli/self-service/*"
 to = "/self-service/:splat"
 status = 301

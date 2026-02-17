@@ -49,12 +49,11 @@ define bundle {
     type        = string
     description = "Environment identifier"
     default     = "dev"
-    immutable   = true
   }
 }
 ```
 
-Inputs define the bundle contract consumed by scaffolding/reconfigure workflows.
+Inputs define the bundle contract consumed by scaffolding workflows.
 
 Supported types: `string`, `bool`, `number`, `any`, `object`, `list(T)`, `set(T)`, `map(T)`, `tuple(T1, T2, ..., Tn)`, and schema references.
 
@@ -102,20 +101,145 @@ define bundle {
 
 Implicit input schemas are available as `input.<name>` for cross-referencing between inputs in the same bundle.
 
+#### Schema definitions
+
+Object attribute definitions can be extracted into reusable schemas. A schema is a top-level definition block, like bundles and components, and can be placed anywhere.
+
+##### Defining schemas
+
+```hcl
+define schema "person" {
+  attribute "name" {
+    type = string
+  }
+  attribute "age" {
+    type = number
+  }
+}
+```
+
+##### Using schemas in bundles
+
+Import schemas into a bundle with `uses schemas` and reference them in type expressions:
+
+```hcl
+define bundle {
+  uses schemas "common" {
+    source = "/schemas/terramate.io/common/v1"
+  }
+
+  input "owner" {
+    type    = common.person
+    default = { name = "hans", age = 33 }
+  }
+}
+```
+
+`source` can be a local or remote path, just like a component. Multiple schemas can exist in the same directory -- all are included and available under the assigned namespace, preventing naming collisions when importing from multiple sources.
+
+##### Implicit input schemas
+
+When attributes are defined directly in an input, they implicitly define a schema. Implicit input schemas are available under the `input` namespace and can be referenced in other inputs:
+
+```hcl
+define bundle {
+  input "owner" {
+    attribute "name" { type = string }
+    attribute "age"  { type = number }
+    default = { name = "hans", age = 33 }
+  }
+
+  input "backup_owner" {
+    type = input.owner
+  }
+}
+```
+
 #### Type expressions
+
+Terramate uses its own type expression language for input validation. The following type constructors are available:
 
 | Type | Description |
 |---|---|
-| `any` | Matches any value |
-| `string`, `bool`, `number` | Primitive types |
-| `object` | Object; with `attribute` blocks validates structure |
-| `list(T)`, `set(T)`, `map(T)` | Collection types (`set` deduplicates) |
-| `tuple(T1, T2, ..., Tn)` | Fixed-length typed sequence |
-| `any_of(A, B, ...)` | Union/variant type |
-| `has(T)` | Non-strict validation (allows extra attributes) |
-| `A + B` | Schema composition (merge attributes) |
+| `any` | Matches any value. |
+| `string` | A string value. |
+| `bool` | A boolean value. |
+| `number` | A numeric value. |
+| `object` | An object. Without attributes, matches any object. With `attribute` blocks, validates structure. |
+| `list(T)` | An ordered list where all elements match `T`. |
+| `set(T)` | Like `list(T)` but automatically removes duplicate values. Order of first occurrence is preserved. |
+| `map(T)` | A map with string keys and values matching `T`. |
+| `tuple(T1, T2, ..., Tn)` | A fixed-length sequence where each position matches its type. |
 
-For the full type system reference with detailed examples, see [Bundle Definition (HCL)](/catalyst/reference/bundle-definition#type-expressions).
+##### Sets
+
+`set(T)` is useful when you need guaranteed uniqueness, for example when collecting tags or labels:
+
+```hcl
+define bundle {
+  input "tags" {
+    type    = set(string)
+    default = ["web", "api", "web", "prod"]  # Results in ["web", "api", "prod"]
+  }
+}
+```
+
+##### Object with attached attributes
+
+When `object` appears inside a collection type, `attribute` blocks are attached to the object definition:
+
+```hcl
+define bundle {
+  input "people" {
+    type = list(object)
+
+    attribute "name" {
+      type = string
+    }
+
+    attribute "age" {
+      type = number
+    }
+
+    default = [{ name = "hans", age = 33 }, { name = "frieda", age = 34 }]
+  }
+}
+```
+
+The implicit schema type for `people` is `list(object)`. To make the person concept reusable, define it in an external schema and use `type = list(common.person)`.
+
+##### Variants
+
+`any_of(A, B, ...)` accepts a value matching any of the listed types, similar to union types:
+
+```hcl
+type = any_of(string, number)
+type = list(any_of(string, common.person))
+```
+
+Operands can be any type expression.
+
+##### Non-strict object validation
+
+By default, attribute validation is strict -- unexpected attributes cause an error. Use `has(T)` for non-strict validation that allows extra attributes:
+
+```hcl
+# Given { name = "hans", age = 33, unknown = "bla" }:
+type = common.person        # Error: unexpected attribute "unknown"
+type = has(common.person)   # OK: extra attributes allowed
+```
+
+`has(T)` expresses a "has-a" relationship instead of the default "is-a".
+
+##### Schema composition
+
+Schemas can be combined with the `+` operator:
+
+```hcl
+type = schemaA + schemaB              # Merge both, must match exactly
+type = has(schemaA + schemaB)         # Merge both, allow extras
+type = common.person + object         # Merge person schema with local attributes
+```
 
 ### Scaffolding
 
@@ -131,7 +255,8 @@ define bundle scaffolding {
 }
 ```
 
-Scaffolding controls where instance configuration is generated and whether a bundle is selectable.
+- `path`/`name`: controls output location and default instance name used by `terramate scaffold`.
+- `enabled` blocks: optional gating for whether a bundle is selectable in the scaffold UI. When the `condition` evaluates to false, the bundle is disabled and `error_message` is shown.
 
 ### Environments
 

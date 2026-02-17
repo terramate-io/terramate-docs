@@ -23,13 +23,6 @@ cd path/to/module
 terramate component create
 ```
 
-Or point to the module directly using a relative or project-relative absolute path:
-
-```sh
-terramate component create path/to/module
-terramate component create /path/to/module   # resolved from project root
-```
-
 - Review generated component metadata and inputs.
 
 2) Define a Bundle that uses the Component

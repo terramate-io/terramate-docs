@@ -1,14 +1,12 @@
 ---
 name: terramate-source-verification
-description: Ask-first verification of docs against Terramate CLI source code to ensure accuracy and completeness.
+description: Ask-first verification of docs against Terramate CLI and Catalyst source code to ensure accuracy and completeness.
 metadata:
-  version: "2026.02.12"
+  version: "2026.01.29"
   owner: Terramate Docs
 ---
 
-This skill helps agents verify any documentation about Terramate CLI against the actual source code. It is opt-in to avoid adding unnecessary context. Always ask the user before inspecting repositories.
-
-> **Note**: Catalyst capabilities (bundles, components, scaffold, packages, self-service) have been merged into Terramate CLI. There is no separate Catalyst repo; everything lives in the CLI repo.
+This skill helps agents verify any documentation about Terramate CLI or Terramate Catalyst against the actual source code. It is opt-in to avoid adding unnecessary context. Always ask the user before inspecting repositories.
 
 ## Ask-first workflow (always prompt)
 
@@ -16,17 +14,20 @@ Use this short prompt before proceeding:
 
 > Do you want me to verify this against the source code?  
 > - Terramate CLI: https://github.com/terramate-io/terramate/  
+> - Catalyst (dev): https://github.com/terramate-io/terramate-catalyst-dev  
 > Note: This may add context and take extra time.
 
-If the user says "yes," proceed. Otherwise, skip verification and continue normally.
+If the user says “yes,” proceed. Otherwise, skip verification and continue normally.
 
 ## Targets
 
 - Terramate CLI source: `https://github.com/terramate-io/terramate/`
+- Terramate Catalyst (dev): `https://github.com/terramate-io/terramate-catalyst-dev`
 - Examples (optional for practical behavior): `https://github.com/terramate-io/terramate-catalyst-examples`
 
 ## Scope control
 
+- Confirm product: CLI vs Catalyst (or both).
 - Confirm version/tag/branch if relevant; otherwise default to `main`.
 - Limit reads to areas relevant to the current doc changes (commands/features touched).
 - Prefer browsing specific files/directories over cloning entire repos.
@@ -38,14 +39,17 @@ If the user says "yes," proceed. Otherwise, skip verification and continue norma
 - Errors: notable error conditions or constraints users should know.
 - References: paths and link structure (to avoid dead links).
 
-## Where to look
+## Where to look (CLI)
 
 - `cmd/**` and `commands/**`: command wiring, flag definitions, help text.
 - `generate/**`, `stack/**`, `run/**`: core engine behavior (change detection, orchestration).
-- `commands/**` (e.g., scaffold, component, package): self-service CLI UX and flags.
+- `CHANGELOG.md`, `README.md`: user-facing changes and top-level behavior notes.
+
+## Where to look (Catalyst)
+
+- `commands/**` (e.g., scaffold, component, package): CLI UX and flags.
 - `config/**`, `inputs/**`: shapes, required fields, defaults.
 - `functions/**` or helpers: exposed functions and metadata access.
-- `CHANGELOG.md`, `README.md`: user-facing changes and top-level behavior notes.
 - For end-to-end reality checks, cross-reference `terramate-catalyst-examples`.
 
 ## Suggested approach
@@ -63,8 +67,9 @@ If the user says "yes," proceed. Otherwise, skip verification and continue norma
 - List of any changes needed in docs (bulleted).  
 - Links to specific files/lines if possible.
 
-## Do nots
+## Don’ts
 
-- Do not change code; read-only verification only.  
-- Do not add broad, non-relevant repo context.  
-- Do not proceed without explicit user consent (ask-first).
+- Don’t change code; read-only verification only.  
+- Don’t add broad, non-relevant repo context.  
+- Don’t proceed without explicit user consent (ask-first).
+

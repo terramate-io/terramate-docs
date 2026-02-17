@@ -25,14 +25,6 @@ globals {
 Will work exactly as Terraform's `try` function.
 Terramate also provides some custom functions of its own.
 
-## Capability-specific functions
-
-Some functions are specific to Terramate capability workflows (bundles/components) and are documented with Environment Management:
-
-- [tm_bundles](/environments/reference/functions/tm_bundles)
-- [tm_bundle](/environments/reference/functions/tm_bundle)
-- [tm_source](/environments/reference/functions/tm_source)
-
 To define each function prototype we use with a small pseudo language
 where each parameter is defined just with its type and `-> type` to
 indicate a return type, if any.

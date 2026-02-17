@@ -11,9 +11,9 @@ project that manages Terraform or OpenTofu in stacks using the most essential Te
 
 ::: tip Onboard Terramate to existing project
 If, instead, you want to learn how to use Terramate in an existing project, go here:
-- [Start with existing Terraform project](/get-started/terraform)
-- [Start with existing OpenTofu project](/get-started/opentofu)
-- [Start with existing Terragrunt project](/get-started/terragrunt)
+- [Start with existing Terraform project](../on-boarding/terraform.md)
+- [Start with existing OpenTofu project](../on-boarding/opentofu.md)
+- [Start with existing Terragrunt project](../on-boarding/terragrunt.md)
 :::
 
 ::: tip Terramate Community Discord Server
@@ -132,7 +132,7 @@ stack {
 
 ::: info How does Terramate detect stacks?
 Stacks in Terramate are identified by a directory that includes a `*.tm.hcl` file, which contains a `stack {}` block.
-The file can have any name but the [terramate create](/cli/reference/cmdline/create.md) command always creates a file named `stack.tm.hcl`
+The file can have any name but the [terramate create](../reference/cmdline/create.md) command always creates a file named `stack.tm.hcl`
 :::
 
 Next, let's check in our newly created stack to the repository:
@@ -142,7 +142,7 @@ $ git add stacks/alice/stack.tm.hcl
 $ git commit -m "Create a first stack with Terramate"
 ```
 
-To verify that Terramate is aware of the new stack, you can run [`terramate list`](/cli/reference/cmdline/list.md), which returns
+To verify that Terramate is aware of the new stack, you can run [`terramate list`](../reference/cmdline/list.md), which returns
 a list of all stacks available in your project.
 
 ```sh
@@ -166,7 +166,7 @@ $ git add stacks/bob/stack.tm.hcl
 $ git commit -m "Create a second stack with Terramate"
 ```
 
-To verify that Terramate is aware of both stacks, we can run [`terramate list`](/cli/reference/cmdline/list.md) again.
+To verify that Terramate is aware of both stacks, we can run [`terramate list`](../reference/cmdline/list.md) again.
 
 ```sh
 $ terramate list
@@ -177,7 +177,7 @@ stacks/bob
 ## Change detection in action
 
 Since we created our stacks step by step and created a git commit per stack, we can leverage
-[change detection](/orchestration/change-detection/index.md) to see what changes we introduced in our latest commit.
+[change detection](../change-detection/index.md) to see what changes we introduced in our latest commit.
 
 ```sh
 $ terramate list --changed
@@ -185,9 +185,9 @@ stacks/bob
 ```
 
 By running the command mentioned above, you will see only the second stack is listed now, as we newly introduced the
-second stack without changing the first stack. Terramate’s [change detection](/orchestration/change-detection/index.md) is based on a
-[Git integration](/orchestration/change-detection/integrations/git.md) but also supports more integrations like
-[Terraform](/orchestration/change-detection/integrations/terraform.md) to detect affected stacks using a local Terraform Module
+second stack without changing the first stack. Terramate’s [change detection](../change-detection/index.md) is based on a
+[Git integration](../change-detection/integrations/git.md) but also supports more integrations like
+[Terraform](../change-detection/integrations/terraform.md) to detect affected stacks using a local Terraform Module
 that has been updated outside of the stack.
 
 ## Code generation
@@ -228,7 +228,7 @@ EOF
 
 This configures Terramate to generate a `backend.tf` file in every stack it can reach within the `stacks/` directory. In this case, it applies to our `alice` and `bob` stacks.
 
-To trigger the code generation we need to run the [`terramate generate`](/cli/reference/cmdline/generate.md) command:
+To trigger the code generation we need to run the [`terramate generate`](../reference/cmdline/generate.md) command:
 
 ```sh
 $ terramate generate
@@ -257,14 +257,14 @@ $ git commit -m 'Add a backend configuration to all stacks'
 
 ::: tip
 It's a recommended best practice to check in generated code to your repository.
-For details, please see [code generation best practices](/code-generation/index.md#best-practices).
+For details, please see [code generation best practices](../code-generation/index.md#best-practices).
 :::
 
 ## Orchestration in action
 
 The stacks created in the previous sections represent isolated environments, often referred
 to as "root modules" in Terraform and OpenTofu. To make them functional, we must run `terraform init` or `tofu init`
-in both. Terramate allows you to orchestrate any command in stacks using the [terramate run](/cli/reference/cmdline/run.md) command.
+in both. Terramate allows you to orchestrate any command in stacks using the [terramate run](../reference/cmdline/run.md) command.
 
 But before we can start, we need to prepare git to ignore temporary Terraform files by adding a `.gitignore` file, which is
 located in the root directory of our repository:
@@ -317,7 +317,7 @@ for demonstration. Null Resources do not need to configure any cloud credentials
 resources but only virtual ones.
 
 This example will show:
-- You can use plain Terraform config in any stack without using [code generation](/code-generation/index.md).
+- You can use plain Terraform config in any stack without using [code generation](../code-generation/index.md).
 - Running only on changed stacks can save us time running and reviewing.
 
 ::: code-group
@@ -343,7 +343,7 @@ $ git commit -m "Add a null resource"
 :::
 
 To apply the changes, re-initialize Terraform and run `terraform apply` in the updated stacks.
-As we only added the resource to the `bob` stack, we can leverage [change detection](/orchestration/change-detection/index.md)
+As we only added the resource to the `bob` stack, we can leverage [change detection](../change-detection/index.md)
 to run in the changed stack only.
 
 Running commands only in stacks containing changes allows us to keep execution run times fast and blast radius small.
@@ -407,7 +407,7 @@ experience. Terramate Cloud is free for individual use, with features available 
 To start using the cloud, you need to sign up for a free cloud account and create an organization.
 
 - Sign in and Sign up to [cloud.terramate.io](https://cloud.terramate.io) and
-- Create your Organization. You can edit GitHub Trust [settings](../../settings/settings.md#general-settings) to establish a trust relationship with GitHub Actions, which is required to sync data from GitHub, and specify whether to sync the entire organization or a specific repository with Terramate Cloud. Similarly, GitLab Trust settings can be configured to sync data from GitLab.
+- Create your Organization. You can edit GitHub Trust [settings](../../cloud/organization/settings.md#general-settings) to establish a trust relationship with GitHub Actions, which is required to sync data from GitHub, and specify whether to sync the entire organization or a specific repository with Terramate Cloud. Similarly, GitLab Trust settings can be configured to sync data from GitLab.
 
 Remember the organization's short name that you set for accessing the organization on Terramate Cloud to configure your Terramate CLI in the next steps.
 
@@ -456,6 +456,7 @@ Terramate Cloud requires a GitHub, GitLab, or BitBucket repository to work prope
 Let's start by [creating a new repository](https://github.com/new) in your personal GitHub account or an organization.
 We'll name the repository `terramate-quickstart` and create it as a private repository.
 
+![Create a new GitHub Repository](../assets/quickstart/github-create-new-repo.png)
 
 Once the repository is created on GitHub, you can add it to your local repository and push your data to GitHub.
 Don't forget to replace `your-account` with your GitHub account or organization handle.
@@ -513,6 +514,7 @@ In a nutshell, the command above runs a `terraform plan` or `tofu plan` in all y
 Terramate Cloud. Since the plans don't detect any changes, Terramate Cloud won't mark those stacks as drifted but only
 adds them to your inventory of stacks.
 
+![Terramate Cloud Stack Inventory](../assets/quickstart/terramate-cloud-stack-inventory.png)
 
 ## Trigger a deployment
 
@@ -577,15 +579,16 @@ $ terramate run \
 
 A new deployment has started in Terramate Cloud. Check out the Deployments section to see it.
 
+![Terramate Cloud Deployment](../assets/quickstart/terramate-cloud-deployment.png)
 
 ## Summary
 
 We hope this tutorial has helped you grasp the basics of Terramate. Here's a summary of what we learned:
 
 - How to initialize a Terramate Project in a Git repository.
-- How to create [stacks](/stacks/index.md).
-- How to leverage [change detection](/orchestration/change-detection/index.md) when [managing stacks](/stacks/manage.md) or [running commands](/orchestration/run-commands-in-stacks.md).
-- How to [generate code](/code-generation/index.md) in all stacks to keep the configuration DRY.
+- How to create [stacks](../stacks/index.md).
+- How to leverage [change detection](../change-detection/index.md) when [managing stacks](../stacks/manage.md) or [running commands](../orchestration/run-commands-in-stacks.md).
+- How to [generate code](../code-generation/index.md) in all stacks to keep the configuration DRY.
 - How to deploy Terraform and OpenTofu using a local backend and [null resources](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource.html) as an example.
 - How to create a [Terramate Cloud](https://cloud.terramate.io) account and connect it to your project.
 

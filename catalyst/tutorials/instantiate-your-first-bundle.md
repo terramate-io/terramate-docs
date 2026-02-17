@@ -12,7 +12,7 @@ This tutorial guides you from zero to a generated set of stacks and Terraform co
 
 ## Prerequisites
 
-- [Terramate CLI installed](/cli/installation)
+- [Terramate Catalyst CLI installed](../installation.md)
 - A repository with at least one available bundle (local or remote catalog)
 
 ## Steps

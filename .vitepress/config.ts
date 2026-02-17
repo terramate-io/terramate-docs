@@ -191,50 +191,49 @@ export default withMermaid(defineConfig({
           { text: 'Code Generation Model', link: '/explanations/code-generation' },
         ],
       },
-      {
-        text: 'Learning Terramate',
-        collapsed: true,
-        items: [
-          {
-            text: 'Tutorials',
-            collapsed: true,
-            items: [
-              { text: 'Overview', link: '/tutorials/' },
-              { text: 'Learn Terramate from scratch', link: '/tutorials/migrate-from-terragrunt' },
-              { text: 'Migrate from Terragrunt', link: '/tutorials/migrate-from-terragrunt' },
-              { text: 'Migrate from Terraform', link: '/tutorials/migrate-from-plain-terraform' },
-              {
-                text: 'Reference Architectures',
-                collapsed: true,
-                items: [
-                  { text: 'AWS', link: 'https://github.com/terramate-io/terramate-catalyst-examples' },
-                  { text: 'Microsoft Azure', link: 'https://github.com/terramate-io/terramate-quickstart-azure' },
-                  {
-                    text: 'Terragrunt',
-                    link: 'https://github.com/terramate-io/terramate-terragrunt-infrastructure-live-example',
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            text: 'Guides',
-            collapsed: true,
-            items: [
-              { text: 'Overview', link: '/guides/' },
-              { text: 'Migrate from Terragrunt', link: '/guides/migrate-from-terragrunt' },
-              { text: 'Migrate from Terraform', link: '/guides/migrate-from-plain-terraform' },
-              { text: 'Manage Terraform at Scale', link: '/guides/manage-terraform-at-scale' },
-              { text: 'Set Up Terramate Cloud', link: '/guides/set-up-terramate-cloud' },
-              { text: 'Set Up Drift Detection', link: '/guides/set-up-drift-detection' },
-              { text: 'Migrate from Terragrunt', link: '/guides/migrate-from-terragrunt' },
-              { text: 'Migrate from Terraform', link: '/guides/migrate-from-plain-terraform' },
-            ],
-          },
+      // {
+      //   text: 'Learning Terramate',
+      //   collapsed: true,
+      //   items: [
+      //     {
+      //       text: 'Tutorials',
+      //       collapsed: true,
+      //       items: [
+      //         { text: 'Overview', link: '/tutorials/' },
+      //         { text: 'Learn Terramate from scratch', link: '/tutorials/migrate-from-terragrunt' },
+      //         { text: 'Migrate from Terragrunt', link: '/tutorials/migrate-from-terragrunt' },
+      //         { text: 'Migrate from Terraform', link: '/tutorials/migrate-from-plain-terraform' },
+      //         {
+      //           text: 'Reference Architectures',
+      //           collapsed: true,
+      //           items: [
+      //             { text: 'AWS', link: 'https://github.com/terramate-io/terramate-catalyst-examples' },
+      //             { text: 'Microsoft Azure', link: 'https://github.com/terramate-io/terramate-quickstart-azure' },
+      //             {
+      //               text: 'Terragrunt',
+      //               link: 'https://github.com/terramate-io/terramate-terragrunt-infrastructure-live-example',
+      //             },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       text: 'Guides',
+      //       collapsed: true,
+      //       items: [
+      //         { text: 'Overview', link: '/guides/' },
+      //         { text: 'Migrate from Terragrunt', link: '/guides/migrate-from-terragrunt' },
+      //         { text: 'Migrate from Terraform', link: '/guides/migrate-from-plain-terraform' },
+      //         { text: 'Manage Terraform at Scale', link: '/guides/manage-terraform-at-scale' },
+      //         { text: 'Set Up Terramate Cloud', link: '/guides/set-up-terramate-cloud' },
+      //         { text: 'Set Up Drift Detection', link: '/guides/set-up-drift-detection' },
+      //         { text: 'Migrate from Terragrunt', link: '/guides/migrate-from-terragrunt' },
+      //         { text: 'Migrate from Terraform', link: '/guides/migrate-from-plain-terraform' },
+      //       ],
+      //     },
 
-        ],
-
-      },
+      //   ],
+      // },
       {
         text: 'Platform',
         items: [
@@ -309,88 +308,88 @@ export default withMermaid(defineConfig({
               },
             ],
           },
-        {
-          text: 'Orchestration & Automation',
-          collapsed: true,
-          items: [
-            {
-              text: 'Orchestration',
-              collapsed: true,
-              items: [
-                { text: 'Overview', link: '/orchestration/' },
-                { text: 'Run Commands in Stacks', link: '/orchestration/run-commands-in-stacks' },
-                { text: 'Order of Execution', link: '/orchestration/order-of-execution' },
-                { text: 'Configure Order of Execution', link: '/orchestration/configure-order-of-execution' },
-                { text: 'Parallel Execution', link: '/orchestration/parallel-execution' },
-                { text: 'Set Up Parallel Execution', link: '/orchestration/set-up-parallel-execution' },
-                { text: 'Tag Filter', link: '/orchestration/tag-filter' },
-                { text: 'Scripts', link: '/orchestration/scripts' },
-                { text: 'Safeguards', link: '/orchestration/safeguards' },
-                { text: 'Runtime Configuration', link: '/orchestration/runtime-configuration' },
-                { text: 'Outputs Sharing', link: '/orchestration/outputs-sharing' },
-                { text: 'Share Outputs Between Stacks', link: '/orchestration/share-outputs-between-stacks' },
-              ],
-            },
-            {
-              text: 'Change Detection',
-              collapsed: true,
-              items: [
-                { text: 'Overview', link: '/orchestration/change-detection/' },
-                { text: 'Run Commands Across Changed Stacks', link: '/orchestration/change-detection/run-commands-across-changed-stacks' },
-                { text: 'File Watchers', link: '/orchestration/change-detection/file-watchers' },
-                { text: 'Stack Triggers', link: '/orchestration/change-detection/stack-triggers' },
-                { text: 'Troubleshoot Change Detection', link: '/orchestration/change-detection/troubleshoot-change-detection' },
-                {
-                  text: 'Integrations',
-                  collapsed: true,
-                  items: [
-                    { text: 'Git', link: '/orchestration/change-detection/integrations/git' },
-                    { text: 'Terraform', link: '/orchestration/change-detection/integrations/terraform' },
-                    { text: 'OpenTofu', link: '/orchestration/change-detection/integrations/opentofu' },
-                    { text: 'Terragrunt', link: '/orchestration/change-detection/integrations/terragrunt' },
-                  ],
-                },
-              ],
-            },
-            {
-              text: 'CI/CD',
-              collapsed: true,
-              items: [
-                { text: 'Overview', link: '/ci-cd/' },
-                {
-                  text: 'GitHub Actions',
-                  collapsed: true,
-                  items: [
-                    { text: 'Overview', link: '/ci-cd/github-actions/' },
-                    { text: 'Deployment Workflow', link: '/ci-cd/github-actions/deployment-workflow' },
-                    { text: 'Drift Check Workflow', link: '/ci-cd/github-actions/drift-check-workflow' },
-                    { text: 'Preview Workflow', link: '/ci-cd/github-actions/preview-workflow' },
-                  ],
-                },
-                {
-                  text: 'GitLab CI',
-                  collapsed: true,
-                  items: [
-                    { text: 'Overview', link: '/ci-cd/gitlab-ci/' },
-                    { text: 'Deployment Workflow', link: '/ci-cd/gitlab-ci/deployment-workflow' },
-                    { text: 'Drift Check Workflow', link: '/ci-cd/gitlab-ci/drift-check-workflow' },
-                    { text: 'Preview Workflow', link: '/ci-cd/gitlab-ci/preview-workflow' },
-                  ],
-                },
-                {
-                  text: 'Bitbucket Pipelines',
-                  collapsed: true,
-                  items: [
-                    { text: 'Overview', link: '/ci-cd/bitbucket-pipelines/' },
-                    { text: 'Deployment Workflow', link: '/ci-cd/bitbucket-pipelines/deployment-workflow' },
-                    { text: 'Drift Check Workflow', link: '/ci-cd/bitbucket-pipelines/drift-check-workflow' },
-                    { text: 'Preview Workflow', link: '/ci-cd/bitbucket-pipelines/preview-workflow' },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
+          {
+            text: 'Orchestration & Automation',
+            collapsed: true,
+            items: [
+              {
+                text: 'Orchestration',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: '/orchestration/' },
+                  { text: 'Run Commands in Stacks', link: '/orchestration/run-commands-in-stacks' },
+                  { text: 'Order of Execution', link: '/orchestration/order-of-execution' },
+                  { text: 'Configure Order of Execution', link: '/orchestration/configure-order-of-execution' },
+                  { text: 'Parallel Execution', link: '/orchestration/parallel-execution' },
+                  { text: 'Set Up Parallel Execution', link: '/orchestration/set-up-parallel-execution' },
+                  { text: 'Tag Filter', link: '/orchestration/tag-filter' },
+                  { text: 'Scripts', link: '/orchestration/scripts' },
+                  { text: 'Safeguards', link: '/orchestration/safeguards' },
+                  { text: 'Runtime Configuration', link: '/orchestration/runtime-configuration' },
+                  { text: 'Outputs Sharing', link: '/orchestration/outputs-sharing' },
+                  { text: 'Share Outputs Between Stacks', link: '/orchestration/share-outputs-between-stacks' },
+                ],
+              },
+              {
+                text: 'Change Detection',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: '/orchestration/change-detection/' },
+                  { text: 'Run Commands Across Changed Stacks', link: '/orchestration/change-detection/run-commands-across-changed-stacks' },
+                  { text: 'File Watchers', link: '/orchestration/change-detection/file-watchers' },
+                  { text: 'Stack Triggers', link: '/orchestration/change-detection/stack-triggers' },
+                  { text: 'Troubleshoot Change Detection', link: '/orchestration/change-detection/troubleshoot-change-detection' },
+                  {
+                    text: 'Integrations',
+                    collapsed: true,
+                    items: [
+                      { text: 'Git', link: '/orchestration/change-detection/integrations/git' },
+                      { text: 'Terraform', link: '/orchestration/change-detection/integrations/terraform' },
+                      { text: 'OpenTofu', link: '/orchestration/change-detection/integrations/opentofu' },
+                      { text: 'Terragrunt', link: '/orchestration/change-detection/integrations/terragrunt' },
+                    ],
+                  },
+                ],
+              },
+              {
+                text: 'CI/CD',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: '/ci-cd/' },
+                  {
+                    text: 'GitHub Actions',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/ci-cd/github-actions/' },
+                      { text: 'Deployment Workflow', link: '/ci-cd/github-actions/deployment-workflow' },
+                      { text: 'Drift Check Workflow', link: '/ci-cd/github-actions/drift-check-workflow' },
+                      { text: 'Preview Workflow', link: '/ci-cd/github-actions/preview-workflow' },
+                    ],
+                  },
+                  {
+                    text: 'GitLab CI',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/ci-cd/gitlab-ci/' },
+                      { text: 'Deployment Workflow', link: '/ci-cd/gitlab-ci/deployment-workflow' },
+                      { text: 'Drift Check Workflow', link: '/ci-cd/gitlab-ci/drift-check-workflow' },
+                      { text: 'Preview Workflow', link: '/ci-cd/gitlab-ci/preview-workflow' },
+                    ],
+                  },
+                  {
+                    text: 'Bitbucket Pipelines',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/ci-cd/bitbucket-pipelines/' },
+                      { text: 'Deployment Workflow', link: '/ci-cd/bitbucket-pipelines/deployment-workflow' },
+                      { text: 'Drift Check Workflow', link: '/ci-cd/bitbucket-pipelines/drift-check-workflow' },
+                      { text: 'Preview Workflow', link: '/ci-cd/bitbucket-pipelines/preview-workflow' },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
           {
             text: 'Operations & Governance',
             collapsed: true,

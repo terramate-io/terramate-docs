@@ -139,7 +139,6 @@ Terramate Cloud offers to sign in using:
 - A GitHub Account
 - A Microsoft Entra ID Account
 
-
 ## 4: Create your Organization
 
 After you set up your profile, join an organization you were invited to or create your own. To create an organization,
@@ -148,7 +147,6 @@ in the Terramate CLI when you select an organization to sync or retrieve data fr
 
 You can belong to multiple organizations and teams. Click the “join” button to become an active member, then click
 “visit” to view your organization.
-
 
 ## 5: Configure your repository
 
@@ -227,7 +225,6 @@ Terramate Cloud.
 
 If the plans don't contain any changes, Terramate will simply create an inventory of all infrastructure configured in
 Terramate Cloud. If the plans changes, Terramate will additionally create drift alerts.
-
 
 And that's it. You just learned how to onboard Terramate to your Terraform repository in less than 5 minutes.
 Next, you can onboard your CI/CD platform by using our [CI/CD pipeline workflows](/ci-cd/index.md).

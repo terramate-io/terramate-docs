@@ -61,5 +61,5 @@ You can disable code generation upon stack creation by passing the `--no-generat
 
 Terramate can detect and import various existing configurations.
 
-- `terramate create --all-terraform` will [import existing Terraform and OpenTofu](../on-boarding/terraform.md)
-- `terramate create --all-terragrunt` will [import existing Terragrunt](../on-boarding/terragrunt.md)
+- `terramate create --all-terraform` will [import existing Terraform and OpenTofu](/get-started/terraform)
+- `terramate create --all-terragrunt` will [import existing Terragrunt](/get-started/terragrunt)

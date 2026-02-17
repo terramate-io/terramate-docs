@@ -56,6 +56,67 @@ define bundle {
 
 Inputs define the bundle contract consumed by scaffolding/reconfigure workflows.
 
+Supported types: `string`, `bool`, `number`, `any`, `object`, `list(T)`, `set(T)`, `map(T)`, `tuple(T1, T2, ..., Tn)`, and schema references.
+
+#### Object attributes
+
+Inputs can define `attribute` blocks for structured validation. When attributes are present, the default type becomes `object`:
+
+```hcl
+define bundle {
+  input "person" {
+    attribute "name" {
+      type     = string
+      required = true
+    }
+    attribute "age" {
+      type     = number
+      required = true
+    }
+    default = { name = "hans", age = 33 }
+  }
+}
+```
+
+#### Schemas
+
+Object attribute definitions can be extracted into reusable `define schema` blocks and imported with `uses schemas`:
+
+```hcl
+define schema "person" {
+  attribute "name" { type = string }
+  attribute "age"  { type = number }
+}
+
+define bundle {
+  uses schemas "common" {
+    source = "/schemas/terramate.io/common/v1"
+  }
+
+  input "owner" {
+    type    = common.person
+    default = { name = "hans", age = 33 }
+  }
+}
+```
+
+Implicit input schemas are available as `input.<name>` for cross-referencing between inputs in the same bundle.
+
+#### Type expressions
+
+| Type | Description |
+|---|---|
+| `any` | Matches any value |
+| `string`, `bool`, `number` | Primitive types |
+| `object` | Object; with `attribute` blocks validates structure |
+| `list(T)`, `set(T)`, `map(T)` | Collection types (`set` deduplicates) |
+| `tuple(T1, T2, ..., Tn)` | Fixed-length typed sequence |
+| `any_of(A, B, ...)` | Union/variant type |
+| `has(T)` | Non-strict validation (allows extra attributes) |
+| `A + B` | Schema composition (merge attributes) |
+
+For the full type system reference with detailed examples, see [Bundle Definition (HCL)](/catalyst/reference/bundle-definition#type-expressions).
+
 ### Scaffolding
 
 ```hcl

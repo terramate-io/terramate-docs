@@ -6,7 +6,7 @@ description: Mark a stacks as changed so they will be triggered in Change Detect
 # Trigger
 
 The `terramate trigger` command forcibly marks a stack as "changed" even if it doesn't contain any code changes according to the
-[change detection](/orchestration/change-detection/index.md). It does this by creating a file (by default in `/.tmtriggers`)
+[change detection](../../change-detection/index.md). It does this by creating a file (by default in `/.tmtriggers`)
 which should then be committed. `terramate run` will then execute commands against any stacks that have been triggered
 in the last commit (as well as any other changed stacks).
 

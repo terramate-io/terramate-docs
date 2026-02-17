@@ -8,7 +8,7 @@ description: Execute any commands in all stacks or in a filtered subset of stack
 ## Overview
 
 The `terramate run` command executes **any command** in all or a subset of stacks honoring
-the defined [order of execution](/orchestration/index.md). Commands can be executed sequentially or in parallel.
+the defined [order of execution](../../orchestration/index.md). Commands can be executed sequentially or in parallel.
 
 When running commands you can filter for a specific subset of stacks such as:
 
@@ -19,10 +19,8 @@ When running commands you can filter for a specific subset of stacks such as:
 
 For details on how the change detection and order of execution works in Terramate please see:
 
-- [Change Detection](/orchestration/change-detection/index.md)
-- [Orchestration](/orchestration/index.md)
-- [Explanation: Change Detection Model](/explanations/change-detection)
-- [Explanation: Orchestration Model](/explanations/orchestration)
+- [Change Detection](../../change-detection/index.md)
+- [Orchestration](../../orchestration/index.md)
 
 For using the Terramate Cloud features, check the [TMC Getting Started](../../../cloud/signup/index.md) page and
 the [CLI authentication](./cloud/index.md#cli-authentication) page for details.
@@ -58,7 +56,7 @@ terramate run --chdir stacks/aws -- terraform init
 
 ### Run in changed stacks
 
-Stacks [containing changes](/orchestration/change-detection/index.md) can be selected with the `--changed` flag.
+Stacks [containing changes](../../change-detection/index.md) can be selected with the `--changed` flag.
 This flag is also supported in `terramate list` which can be used to preview the affected stacks in advance.
 
 ```bash
@@ -261,12 +259,12 @@ Disable specific change detection features (multiple options supported): 'git-un
 
   Filter stacks by tags not being set.
 
-### [Outputs Sharing](/orchestration/outputs-sharing.md)
+### [Outputs Sharing](../../orchestration/outputs-sharing.md)
 
 - `--enable-sharing`
 
   Running `terramate run --enable-sharing` collects output values from stacks with defined outputs, passing them to the command specified in `sharing_backend.command`. If the backend type is `Terraform`, it configures variables in stacks with `input` blocks by exporting them as `TF_var_` environment variables. It enables the smooth sharing of values across stacks.
-  More info about [Outputs Sharing](https://terramate.io/docs/orchestration/outputs-sharing)
+  More info about [Outputs Sharing](https://terramate.io/docs/cli/orchestration/outputs-sharing)
 
 - `--mock-on-fail`
 
@@ -274,10 +272,10 @@ Disable specific change detection features (multiple options supported): 'git-un
 
 ### Dependency Filters
 
-These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id` for [outputs sharing](/orchestration/outputs-sharing.md)) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](/orchestration/change-detection/index.md#dependency-filters) documentation for details.
+These flags allow you to expand or narrow the selection of stacks by including or excluding their dependencies and dependents. They work with both Terramate dependencies (via `input.from_stack_id` for [outputs sharing](../../orchestration/outputs-sharing.md)) and Terragrunt dependencies (via `dependency` blocks). See the [Change Detection dependency filters](../../change-detection/index.md#dependency-filters) documentation for details.
 
 ::: warning
-Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](/orchestration/change-detection/index.md#understanding-dependencies-and-dependents) for details.
+Dependency filters only consider **data dependencies** (stacks that share outputs or data), not ordering or forced-execution relationships. Stacks defined in `stack.wants`, `stack.wanted_by`, `stack.before`, or `stack.after` are not considered dependencies for filtering purposes. See the [Change Detection documentation](../../change-detection/index.md#understanding-dependencies-and-dependents) for details.
 :::
 
 #### Include Dependencies
@@ -488,7 +486,7 @@ Before using this feature, enable targets for your project by setting the config
 
 The `terramate` block at the project root can be used to customize
 the default exported environment variables in the
-[terramate.config.run.env](/cli/projects/configuration.md#the-terramateconfigrunenv-block).
+[terramate.config.run.env](../../projects/configuration.md#the-terramateconfigrunenv-block).
 
 It's also possible to set a different `PATH` environment variable and
 in this case, Terramate will honor it when looking up the program's

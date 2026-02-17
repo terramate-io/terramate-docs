@@ -74,10 +74,10 @@ An imported file can import other files but cycles are not allowed.
 Multiple configuration blocks of the same type defined in a directory are merged into
 a single configuration, provided their contents do not conflict. For instance, the
 block definitions can be split into several blocks, with each one defining a part of
-the whole. The exceptions to this are the [generate](/code-generation/index.md) and
+the whole. The exceptions to this are the [generate](../../code-generation/index.md) and
 `import` blocks.
 
-The [globals](/cli/reference/variables/globals.md) block extends the merging to the hierarchy of globals.
+The [globals](../../reference/variables/globals.md) block extends the merging to the hierarchy of globals.
 
 For example, the configuration below is valid:
 
@@ -131,7 +131,7 @@ The terramate configuration is defined by the following top-level blocks:
 
 ## terramate block schema
 
-For detailed information about this block, see the [Project Configuration](/cli/projects/configuration.md#project-configuration) docs.
+For detailed information about this block, see the [Project Configuration](../../projects/configuration.md#project-configuration) docs.
 
 The `terramate` block has no labels, supports [merging](#config-merging) and has
 the following schema:
@@ -201,7 +201,7 @@ The `terramate.config.run` block has no labels and has the following schema:
 The `terramate.config.run.env` block has no labels and it allows arbitrary
 attributes. Each attribute **must** evaluate to a string.
 
-More details can be found [here](/cli/projects/configuration.md#the-terramateconfigrunenv-block).
+More details can be found [here](../../projects/configuration.md#the-terramateconfigrunenv-block).
 
 ## terramate.config.cloud
 
@@ -223,10 +223,10 @@ and has the following schema:
 | name             | string         | The name of the stack |
 | description      | string         | The description of the stack |
 | tags             | list(string)   | The tags of the stack |
-| before           | list(string)   | The list of `before` stacks. See [ordering](/orchestration/index.md#stacks-ordering) docs. |
-| after            | list(string)   | The list of `after` stacks. See [ordering](/orchestration/index.md#stacks-ordering) docs |
-| wants            | list(string)   | The list of `wanted` stacks. See [ordering](/orchestration/index.md#stacks-ordering) docs |
-| watch            | list(string)   | The list of `watch` files. See [change detection](/orchestration/change-detection/index.md) for details |
+| before           | list(string)   | The list of `before` stacks. See [ordering](../../orchestration/index.md#stacks-ordering) docs. |
+| after            | list(string)   | The list of `after` stacks. See [ordering](../../orchestration/index.md#stacks-ordering) docs |
+| wants            | list(string)   | The list of `wanted` stacks. See [ordering](../../orchestration/index.md#stacks-ordering) docs |
+| watch            | list(string)   | The list of `watch` files. See [change detection](../../change-detection/index.md) for details |
 
 ## assert block schema
 
@@ -275,7 +275,7 @@ The `generate_file` block requires one label, **do not** support [merging](#conf
 | inherit          | bool           | If the block must be inherited in child stacks |
 | content          | string         | The content to be generated |
 
-For detailed documentation about this block, see the [File Code Generation](/code-generation/generate-file.md) docs.
+For detailed documentation about this block, see the [File Code Generation](../../code-generation/generate-file.md) docs.
 
 ## generate_hcl block schema
 
@@ -288,7 +288,7 @@ The `generate_hcl` block requires one label, **do not** support [merging](#confi
 | inherit          | bool           | If the block must be inherited in child stacks |
 | [content](#generate_hclcontent-block-schema) | block | The content to be generated |
 
-For detailed documentation about this block, see the [HCL Code Generation](/code-generation/generate-hcl.md) docs.
+For detailed documentation about this block, see the [HCL Code Generation](../../code-generation/generate-hcl.md) docs.
 
 ## lets block schema
 

@@ -1,7 +1,5 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
-import CopyPageMarkdown from './components/CopyPageMarkdown.vue'
-import LastUpdated from './components/LastUpdated.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -19,10 +17,6 @@ const { Layout } = DefaultTheme
         </iframe>
       </noscript>
       <!-- End Google Tag Manager (noscript) -->
-    </template>
-    <template #doc-before>
-      <CopyPageMarkdown />
-      <LastUpdated />
     </template>
   </Layout>
 </template>

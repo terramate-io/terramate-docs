@@ -21,11 +21,11 @@ generate_file "hello_world.json" {
 
 The label of the `generate_file` block names the file that will be generated.
 Terramate Variables (`let`, `global`, and `terramate` namespaces) and all [Terramate Functions](../functions/index.md)
-are supported when defining labels. For more details about how code generation uses labels check the [Labels Overview](/code-generation/index.md#labels) docs.
+are supported when defining labels. For more details about how code generation uses labels check the [Labels Overview](../../code-generation/index.md#labels) docs.
 
 ### Argument reference of the `generate_file` block
 
-- `context` *(optional string)* The `context` attributes that override the [generation context](/code-generation/index.md#generation-context)
+- `context` *(optional string)* The `context` attributes that override the [generation context](../../code-generation/index.md#generation-context)
 - `content` *(required string)* The `content` argument defines the string that will be generated as the content of the file.
   The value of the **`content`** has access to different Terramate features
   depending on the `context` defined.

@@ -23,7 +23,7 @@ generate_hcl "backend.tf" {
 }
 ```
 
-The label of the `generate_hcl` block names the file that will be generated within a stack. For more details about how code generation uses labels check the [Labels Overview](/code-generation/index.md#labels) docs.
+The label of the `generate_hcl` block names the file that will be generated within a stack. For more details about how code generation uses labels check the [Labels Overview](../../code-generation/index.md#labels) docs.
 
 ### Argument reference of the `generate_hcl` block
 

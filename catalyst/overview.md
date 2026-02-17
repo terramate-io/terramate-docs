@@ -133,7 +133,7 @@ Catalyst is a good fit if you:
 
 ## Next steps
 
-- [Install Terramate Catalyst CLI](./installation.md)
+- [Install Terramate CLI](/cli/installation)
 - [Tutorial: Technical introduction](https://terramate.io/rethinking-iac/technical-introduction-to-terramate-catalyst/)
 - Learn about the Concepts in Catalyst:
   - [Bundles](/catalyst/concepts/bundles)

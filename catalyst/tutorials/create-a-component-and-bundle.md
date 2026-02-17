@@ -53,4 +53,4 @@ terramate generate
 ## Next steps
 
 - How‑to: [Convert a module to a Component](/catalyst/how-to/convert-module-to-component)
-- Reference: [Bundle Definition](/catalyst/reference/bundle-definition)
+- Reference: [Bundle Definition](/cli/reference/blocks/define-bundle)

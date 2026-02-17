@@ -7,6 +7,19 @@ description: Learn how to configure reusable workflows using the script block.
 
 Use the script block to define a [script](https://terramate.io/docs/cli/orchestration/scripts). You can place the script block in any Terramate configuration file in your project hierarchy.
 
+::: info
+Scripts is an experimental feature. To use this block, enable the experiment in your Terramate configuration:
+
+```hcl
+terramate {
+  config {
+    experiments = ["scripts"]
+  }
+}
+```
+
+:::
+
 ## Arguments
 
 - `name` (optional) - specifies a name for the jobs being executed (up to 128 characters)

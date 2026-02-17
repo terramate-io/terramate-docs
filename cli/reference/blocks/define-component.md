@@ -1,8 +1,6 @@
 ---
-title: Component Definition (HCL)
-description: Define a Component’s metadata, inputs, and the code generation surface it exposes to bundles.
-type: reference
-product: catalyst
+title: define component | Block | Configuration Language
+description: Define a Component's metadata, inputs, and the code generation surface it exposes to bundles.
 outline: [2, 4]
 ---
 
@@ -47,7 +45,7 @@ define component {
 All Terramate configuration in the component directory participates in code generation (`generate_hcl`, `generate_file`, or `.tmgen` files).
 
 - Access component inputs as `component.input.<name>.value`.
-- Pass bundle inputs down explicitly via the bundle’s component instantiation `inputs` map.
+- Pass bundle inputs down explicitly via the bundle's component instantiation `inputs` map.
 
 Example component instantiation inside a bundle stack:
 

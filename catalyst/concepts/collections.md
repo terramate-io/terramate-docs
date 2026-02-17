@@ -91,4 +91,4 @@ scaffold {
 
 - How‑to: [Use a remote catalog with scaffolding](/catalyst/how-to/use-remote-catalog)
 - CLI: [terramate package create](/cli/reference/cmdline/package/package-create)
-- Reference: [Component Definition](/catalyst/reference/component-definition)
+- Reference: [Component Definition](/cli/reference/blocks/define-component)

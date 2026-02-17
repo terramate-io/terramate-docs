@@ -42,5 +42,5 @@ flowchart TD
 ### Related guides and references
 
 - How‑to: [Instantiate a bundle via CLI](/catalyst/how-to/instantiate-bundle-cli)
-- Reference: [Bundle scaffolding config](/catalyst/reference/bundle-definition#bundle-scaffolding-hcl-block)
+- Reference: [Bundle scaffolding config](/cli/reference/blocks/define-bundle#bundle-scaffolding-hcl-block)
 - Reference: [`terramate generate`](../../cli/reference/cmdline/generate.md)

@@ -89,4 +89,4 @@ define bundle stack "storage" {
 
 ### See also
 
-- Reference: [Component Definition](/catalyst/reference/component-definition)
+- Reference: [Component Definition](/cli/reference/blocks/define-component)

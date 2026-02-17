@@ -15,6 +15,14 @@ Use the `terramate` block to define project-wide configurations. The `terramate`
     - `config.generate`: [configure](../../projects/configuration.md#the-terramate-config-generate-block) code generation feature
     - `config.run`: [configure](../../projects/configuration.md#the-terramate-config-generate-block) the `terramate run` command or set environment variables for it
     - `config.cloud`: [configure](../../projects/configuration.md#the-terramate-config-cloud-block) the default Terramate Cloud organization name
+    - `config.change_detection`: configure change detection behavior
+        - `config.change_detection.terragrunt`: configure Terragrunt change detection
+            - `enabled` _(string)_ - One of `"auto"`, `"off"`, or `"force"`
+        - `config.change_detection.git`: configure git-based change detection
+            - `untracked` _(bool or string)_ - Whether untracked files trigger change detection (`true`/`false` or `"on"`/`"off"`)
+            - `uncommitted` _(bool or string)_ - Whether uncommitted files trigger change detection (`true`/`false` or `"on"`/`"off"`)
+    - `config.telemetry`: configure CLI telemetry
+        - `enabled` _(bool or string)_ - Enable or disable telemetry (`true`/`false` or `"on"`/`"off"`)
 
 ## Syntax
 
@@ -53,6 +61,20 @@ terramate {
       organization = "cloud-org-name"
       # location = "us" # default is "eu"
     }
+
+    # change_detection {
+    #   terragrunt {
+    #     enabled = "auto" # "auto", "off", or "force"
+    #   }
+    #   git {
+    #     untracked   = true
+    #     uncommitted = true
+    #   }
+    # }
+
+    # telemetry {
+    #   enabled = true
+    # }
 
     # Enable Terramate Scripts
     experiments = [

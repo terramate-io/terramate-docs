@@ -1,8 +1,6 @@
 ---
-title: Bundle Definition (HCL)
-description: Define a Bundle’s metadata, inputs, scaffolding, stacks, component instances, and exports.
-type: reference
-product: catalyst
+title: define bundle | Block | Configuration Language
+description: Define a Bundle's metadata, inputs, scaffolding, stacks, component instances, and exports.
 outline: [2, 4]
 ---
 
@@ -159,4 +157,4 @@ Exports make precomputed values available to other bundles or code generation (e
 ### Related guides and references
 
 - Concepts: [Bundles](/catalyst/concepts/bundles)
-- Reference: [Component Definition](/catalyst/reference/component-definition)
+- Reference: [Component Definition](/cli/reference/blocks/define-component)

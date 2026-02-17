@@ -10,7 +10,7 @@ outline: [2, 4]
 
 ## Prerequisites
 
-- Terramate Catalyst CLI installed
+- [Terramate CLI installed](/cli/installation)
 - At least one bundle available (local `/bundles` or a configured remote catalog)
 
 ## Steps
@@ -50,4 +50,4 @@ This scaffolds the bundle and runs `terramate generate` in one step.
 ### Related guides and references
 
 - Concepts: [Scaffolding and Code Generation](/catalyst/concepts/scaffolding-and-generation)
-- Reference: [Bundle Instantiation](/catalyst/reference/bundle-instantiation)
+- Reference: [Bundle Instantiation](/cli/reference/blocks/bundle)

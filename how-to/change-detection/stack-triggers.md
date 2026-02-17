@@ -23,7 +23,7 @@ A trigger marks a stack as changed even though no direct or indirect code change
 
 ## Prerequisites
 
-- Terramate CLI or Terramate Catalyst is installed
+- Terramate CLI is installed
 - A repository with one or more stacks under version control (Git)
 
 ### 1. Create a new branch

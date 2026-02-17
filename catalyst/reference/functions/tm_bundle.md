@@ -79,6 +79,6 @@ locals {
 
 ## See Also
 
-- [Bundle Definition](/catalyst/reference/bundle-definition)
-- [Bundle Instantiation](/catalyst/reference/bundle-instantiation)
+- [Bundle Definition](/cli/reference/blocks/define-bundle)
+- [Bundle Instantiation](/cli/reference/blocks/bundle)
 - [Variables](/catalyst/reference/variables)

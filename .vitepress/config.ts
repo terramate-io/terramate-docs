@@ -529,10 +529,6 @@ export default withMermaid(defineConfig({
               link: '/catalyst/overview',
             },
             {
-              text: 'Install Terramate Catalyst CLI',
-              link: '/catalyst/installation',
-            },
-            {
               text: 'Concepts',
               collapsed: true,
               items: [

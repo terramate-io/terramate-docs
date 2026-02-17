@@ -99,5 +99,5 @@ bundle "my-svc" {
 ### Related guides and references
 
 - How‑to: [Instantiate a bundle via CLI](/catalyst/how-to/instantiate-bundle-cli)
-- Reference: [Bundle instantiation syntax](/catalyst/reference/bundle-instantiation)
-- Reference: [Bundle definition syntax](/catalyst/reference/bundle-definition)
+- Reference: [Bundle instantiation syntax](/cli/reference/blocks/bundle)
+- Reference: [Bundle definition syntax](/cli/reference/blocks/define-bundle)

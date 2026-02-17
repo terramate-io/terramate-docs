@@ -1,8 +1,6 @@
 ---
-title: Bundle Instantiation (HCL and YAML)
+title: bundle | Block | Configuration Language
 description: Syntax for instantiating a Bundle in HCL or YAML to drive scaffolding and generation.
-type: reference
-product: catalyst
 outline: [2, 4]
 ---
 
@@ -48,7 +46,7 @@ bundle "{name}" {
 - Default: `terramate scaffold` generates YAML by default. Use `--output-format hcl` to emit HCL instead.
 - YAML: `metadata.name` mirrors the HCL label; `spec` mirrors the HCL body.
 - YAML: values may embed HCL expressions via `!hcl {expression}`.
-- YAML: bundle instances are auto‑loaded by the Catalyst binary at startup; no additional import is required.
+- YAML: bundle instances are auto‑loaded by Terramate at startup; no additional import is required.
 
 ### Rules
 
@@ -72,4 +70,4 @@ bundle "{name}" {
 See also
 
 - Concepts: [Bundles](/catalyst/concepts/bundles)
-- Reference: [Bundle Definition](/catalyst/reference/bundle-definition)
+- Reference: [Bundle Definition](/cli/reference/blocks/define-bundle)

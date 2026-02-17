@@ -30,4 +30,4 @@ terramate generate
 
 ### Related guides and references
 
-- Reference: [Bundle Instantiation](/catalyst/reference/bundle-instantiation)
+- Reference: [Bundle Instantiation](/cli/reference/blocks/bundle)

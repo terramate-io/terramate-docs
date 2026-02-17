@@ -110,6 +110,6 @@ Then `tm_source("../../_modules/shared-module")` in the component will be transl
 
 ## See Also
 
-- [Component Definition](/catalyst/reference/component-definition)
-- [Bundle Definition](/catalyst/reference/bundle-definition)
+- [Component Definition](/cli/reference/blocks/define-component)
+- [Bundle Definition](/cli/reference/blocks/define-bundle)
 - [Scaffolding & Generation](/catalyst/concepts/scaffolding-and-generation)

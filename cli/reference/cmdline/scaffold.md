@@ -28,5 +28,5 @@ terramate scaffold [--output-format yaml|hcl] [--generate]
 ### Related guides and references
 
 - terramate generate (core CLI)
-- Reference: [Bundle Instantiation](/catalyst/reference/bundle-instantiation)
+- Reference: [Bundle Instantiation](/cli/reference/blocks/bundle)
 - Concepts: [Collections](/catalyst/concepts/collections)

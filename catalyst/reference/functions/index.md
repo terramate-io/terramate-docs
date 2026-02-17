@@ -22,6 +22,6 @@ Terramate Catalyst provides specialized functions for working with bundles, comp
 
 ## Related References
 
-- [Bundle Definition](/catalyst/reference/bundle-definition)
-- [Component Definition](/catalyst/reference/component-definition)
+- [Bundle Definition](/cli/reference/blocks/define-bundle)
+- [Component Definition](/cli/reference/blocks/define-component)
 - [Variables](/catalyst/reference/variables)

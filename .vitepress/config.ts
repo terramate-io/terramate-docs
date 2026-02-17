@@ -561,9 +561,6 @@ export default withMermaid(defineConfig({
               text: 'Reference',
               collapsed: true,
               items: [
-                { text: 'Bundle Instantiation', link: '/catalyst/reference/bundle-instantiation' },
-                { text: 'Bundle Definition', link: '/catalyst/reference/bundle-definition' },
-                { text: 'Component Definition', link: '/catalyst/reference/component-definition' },
                 {
                   text: 'Functions',
                   link: '/catalyst/reference/functions/',
@@ -731,7 +728,16 @@ export default withMermaid(defineConfig({
                 { text: 'script', link: '/cli/reference/blocks/script' },
                 { text: 'assert', link: '/cli/reference/blocks/assert' },
                 { text: 'import', link: '/cli/reference/blocks/import' },
-                // { text: 'vendor', link: '/cli/code-generation/variables/vendor' },
+                { text: 'vendor', link: '/cli/reference/blocks/vendor' },
+                { text: 'sharing_backend', link: '/cli/reference/blocks/sharing-backend' },
+                { text: 'input', link: '/cli/reference/blocks/input' },
+                { text: 'output', link: '/cli/reference/blocks/output' },
+                { text: 'bundle', link: '/cli/reference/blocks/bundle' },
+                { text: 'define bundle', link: '/cli/reference/blocks/define-bundle' },
+                { text: 'component', link: '/cli/reference/blocks/component' },
+                { text: 'define component', link: '/cli/reference/blocks/define-component' },
+                { text: 'scaffold', link: '/cli/reference/blocks/scaffold' },
+                { text: 'environment', link: '/cli/reference/blocks/environment' },
               ],
             },
             {

@@ -53,5 +53,5 @@ define component {
 
 ### Related guides and references
 
-- Reference: [Component definition syntax](/catalyst/reference/component-definition)
+- Reference: [Component definition syntax](/cli/reference/blocks/define-component)
 - How‑to: [Convert a TF module to a Component](/catalyst/how-to/convert-module-to-component)

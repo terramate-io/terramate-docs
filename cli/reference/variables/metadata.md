@@ -33,6 +33,7 @@ The following keys are available in the `terramate.stack` object and can be acce
     - `to_root` (string) The relative path from the stack to the repository root (upwards).
   - `parent` (object): An object defining metadata for the immediate parent stack (if it exists):
     - `id` (string): The unique ID of the immediate parent stack.
+    - `tags` (list of string) The user-defined `tags` of the immediate parent stack.
 
 ## Repository Metadata
 

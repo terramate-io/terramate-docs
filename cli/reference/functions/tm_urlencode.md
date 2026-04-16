@@ -29,3 +29,8 @@ tm_urlencode("☃")
 tm_urlencode("http://example.com/search?q=${"terraform urlencode"}")
 http://example.com/search?q=terraform+urlencode
 ```
+
+## Related Functions
+
+* [`tm_urldecode`](./tm_urldecode.md) performs the opposite operation, decoding
+  a URL-encoded string.

@@ -151,3 +151,5 @@ For more information, see the main documentation for
 
 * [`tm_file`](./tm_file.md) reads a file from disk and returns its literal contents
   without any template interpretation.
+* [`tm_templatestring`](./tm_templatestring.md) takes a string and renders it as
+  a template, without reading from a file.

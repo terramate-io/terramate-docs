@@ -25,6 +25,8 @@ an S3 website.
 
 ## Related Functions
 
+* [`tm_base64gunzip`](./tm_base64gunzip.md) performs the opposite operation,
+  decoding a Base64 string and decompressing the result with gzip.
 * [`tm_base64encode`](./tm_base64encode.md) applies Base64 encoding _without_
   gzip compression.
 * [`tm_filebase64`](./tm_filebase64.md) reads a file from the local filesystem

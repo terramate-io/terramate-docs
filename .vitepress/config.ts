@@ -905,6 +905,10 @@ export default withMermaid(defineConfig({
                       link: '/cli/reference/functions/tm_unslug',
                     },
                     {
+                      text: 'tm_templatestring',
+                      link: '/cli/reference/functions/tm_templatestring',
+                    },
+                    {
                       text: 'tm_upper',
                       link: '/cli/reference/functions/tm_upper',
                     },
@@ -1061,6 +1065,10 @@ export default withMermaid(defineConfig({
                       link: '/cli/reference/functions/tm_base64gzip',
                     },
                     {
+                      text: 'tm_base64gunzip',
+                      link: '/cli/reference/functions/tm_base64gunzip',
+                    },
+                    {
                       text: 'tm_csvdecode',
                       link: '/cli/reference/functions/tm_csvdecode',
                     },
@@ -1095,6 +1103,10 @@ export default withMermaid(defineConfig({
                     {
                       text: 'tm_textencodebase64',
                       link: '/cli/reference/functions/tm_textencodebase64',
+                    },
+                    {
+                      text: 'tm_urldecode',
+                      link: '/cli/reference/functions/tm_urldecode',
                     },
                     {
                       text: 'tm_urlencode',

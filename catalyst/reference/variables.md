@@ -22,7 +22,7 @@ terramate.bundles[{class}][{alias}].export
 ### Example usage
 
 ```hcl
-allowed_values = tm_concat(
+options = tm_concat(
   [{ name = "-- None --", value = null }],
   [for parent in tm_try(
     tm_joinlist("/",

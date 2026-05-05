@@ -52,19 +52,22 @@ define bundle {
   input "name" {
     type        = string
     description = "Set a name for the service"
-    prompt      = "Name of the Service"
-    required_for_scaffold = true
+    prompt {
+      text = "Name of the Service"
+    }
   }
 
   input "visibility" {
     type        = string
     description = "Visibility of the Resource"
     default     = "private"
-    prompt      = "Visibility"
-    allowed_values = [
-      { name = "A public resource", value = "public" },
-      { name = "A private resource", value = "private" },
-    ]
+    prompt {
+      text    = "Visibility"
+      options = [
+        { name = "A public resource", value = "public" },
+        { name = "A private resource", value = "private" },
+      ]
+    }
   }
 }
 ```
@@ -72,8 +75,8 @@ define bundle {
 ### Notes
 
 - Supported types: `string`, `number`, `any`, `list(...)`, `map(...)`. (Terraform‑style `object` is not supported.)
-- `prompt`, `allowed_values`, `multiselect`, `multiline`, `required_for_scaffold` are used by `terramate scaffold`.
-- `required_for_scaffold` (boolean): include this input in the interactive scaffold flow and require a value.
+- For an input to be shown by `terramate ui`, there needs to be a `prompt` block. It can contain the following attributes:
+  - `text`, `options`, `multiselect`, `multiline`
 
 ## Scaffolding
 
@@ -152,7 +155,7 @@ define bundle export "team_tuple" {
 }
 ```
 
-Exports make precomputed values available to other bundles or code generation (e.g., for `allowed_values`).
+Exports make precomputed values available to other bundles or code generation (e.g., for `options`).
 
 ### Related guides and references
 

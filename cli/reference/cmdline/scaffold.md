@@ -22,7 +22,7 @@ terramate scaffold [--output-format yaml|hcl] [--generate]
 ## Behavior
 
 - Lists Bundles discovered locally (e.g., `/bundles`) and from configured remote catalogs.
-- Prompts for inputs as defined by the bundle (supports `prompt`, `allowed_values`, `multiselect`, `multiline`).
+- Prompts for inputs as defined by the `prompt` sub-block (supports `text`, `options`, `multiselect`, `multiline`).
 - Writes an instantiation file (`bundle.tm.hcl` or `bundle.tm.yml`) based on the bundle’s scaffolding configuration.
 
 ### Related guides and references
